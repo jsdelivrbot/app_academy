@@ -75,7 +75,7 @@ end
 # [1, 2, 3, 4, 5, 6].bsearch(0) # => nil
 # [1, 2, 3, 4, 5, 7].bsearch(6) # => nil
 class Array
-def bsearch(rollover = 0, target)
+def binary_search(rollover = 0, target)
   return nil if self.empty?
   return nil if self.length == 1 && self[0] != target
 
@@ -84,9 +84,9 @@ def bsearch(rollover = 0, target)
 
 
   if target < self[midx]
-    self.take(midx).bsearch(0, target)
+    self.take(midx).binary_search(0, target)
   else
-    self.drop(midx).bsearch(midx + rollover, target)
+    self.drop(midx).binary_search(midx + rollover, target)
   end
 end
 end
