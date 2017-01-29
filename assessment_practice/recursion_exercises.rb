@@ -1,15 +1,3 @@
-def recursive_fibonacci(n)
-  return [1, 1].take(n) if n <= 2
-  previous = recursive_fibonacci(n - 1)
-  previous << (previous[-2] + previous[-1])
-end
-
-def iterative_fibonacci(n)
-  result = []
-  n.times { |i| result << (i <= 1 ? 1 : result[-2] + result[-1]) }
-  result
-end
-
 class Array
   def deep_dup
     self.map { |el| el.is_a?(Array) ? el.deep_dup : el }
@@ -59,58 +47,34 @@ class Array
 
 end
 
-def make_change(amount, coins = [25, 10, 5, 1])
-  return [amount] if coins.include?(amount)
-  change = []
-  coins.each do |coin|
-    if coin < amount
-  end
+def recursive_fibonacci(n)
+  return [1, 1].take(n) if n <= 2
+  previous = recursive_fibonacci(n - 1)
+  previous << (previous[-2] + previous[-1])
 end
 
+def iterative_fibonacci(n)
+  result = []
+  n.times { |i| result << (i <= 1 ? 1 : result[-2] + result[-1]) }
+  result
+end
 
+def make_change(amount, coins = [25, 10, 5, 1])
+  return [amount] if coins.include?(amount)
+  next_coin = best_coin(amount, coins) || largest_coin(amount, coins)
+  [next_coin] + make_change((amount - next_coin), coins)
+end
 
-# Make Change
-#
-# RubyQuiz: Make change.
-#
-# Here's a game plan for solving the problem:
-#
-# First, write a 'greedy' version called greedy_make_change:
-#
-# Take as many of the biggest coin as possible and add them to your
-# result.
-# Add to the result by recursively calling your method on the remaining
-# amount, leaving out the biggest coin, until the remainder is zero.
-# Once you have a working greedy version, talk with your partner about
-# refactoring this to make_better_change. What's wrong with
-# greedy_make_change?
-#
-# Consider the case of greedy_make_change(24, [10,7,1]). Because it
-#   takes as many 10 pieces as possible, greedy_make_change misses the
-#   correct answer of [10,7,7] (try it in pry).
-#
-# To make_better_change, we only take one coin at a time and never rule
-# out denominations that we've already used. This allows each coin to be
-# available each time we get a new remainder. By iterating over the
-# denominations and continuing to search for the best change, we assure
-# that we test for 'non-greedy' uses of each denomination.
-#
-# Discuss the following game plan and then work together to implement
-# your new method:
-#
-# Iterate over each coin.
-# Grab only one of that one coin and recursively call make_better_change
-# on the remainder using coins less than or equal to the current coin.
-# Add the change for the remainder to the single coin you originally
-# grabbed to obtain a possible solution.
-# Keep track of the best solution and return it at the end.
-# N.B. Don't generate every possible permutation of coins and then
-# compare them. Remember that a permutation is not the same thing as a
-# combination - we will need to check every combination of coins that
-# add up to our target, we just don't want to check the same combination
-# in different orders. If you get stuck you can start by writing a
-# solution that calculates and compares all of the permutations without
-# storing them in an array. Then go back and refactor your solution so
-# that it only calculates and compares all of the different combinations.
-#
-# Make sure you and your partner understand each line before moving on.
+def best_coin(amount, coins = [25, 10, 5, 1])
+  coins.each do |coin|
+    return coin if amount % coin == 0 && coin != 1
+  end
+  nil
+end
+
+def largest_coin(amount, coins = [25, 10, 5, 1])
+  coins.each do |coin|
+    return coin if coin <= amount
+  end
+  nil
+end
