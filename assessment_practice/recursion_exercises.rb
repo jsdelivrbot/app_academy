@@ -1,64 +1,46 @@
+def recursive_fibonacci(n)
+  return [1, 1].take(n) if n <= 2
+  previous = recursive_fibonacci(n - 1)
+  previous << (previous[-2] + previous[-1])
+end
+
+def iterative_fibonacci(n)
+  result = []
+  n.times { |i| result << (i <= 1 ? 1 : result[-2] + result[-1]) }
+  result
+end
+
 class Array
   def deep_dup
     self.map { |el| el.is_a?(Array) ? el.deep_dup : el }
   end
-end
 
-# Fibonacci
-#
-# Write a recursive and an iterative Fibonacci method. The method should
-# take in an integer n and return the first n Fibonacci numbers in an
-# array.
-#
-# You shouldn't have to pass any arrays between methods; you should be
-# able to do this just passing a single argument for the number of
-#   Fibonacci numbers requested.
+  def permutations
+    return [self] if self.length <= 1
+    result = []
 
-  def recursive_fibonacci(n)
+    self.each_with_index do |el,i|
+      prev_perms = (self.take(i) + self.drop(i+1)).permutations
+
+      prev_perms.each do |perm|
+        result << perm + [el]
+      end
+    end
+
+    result
   end
 
-  def iterative_fibonacci(n)
+  def subsets
+    return [[]] if self.length < 1
+    result = []
+
+    self.length.times do |i|
+      result += (self.take(i) + self.drop(i+1)).subsets
+      result << self
+    end
+    result.uniq
   end
 
-# Array Subsets
-#
-# Write a method subsets that will return all subsets of an array.
-#
-# subsets([]) # => [[]]
-# subsets([1]) # => [[], [1]]
-# subsets([1, 2]) # => [[], [1], [2], [1, 2]]
-# subsets([1, 2, 3])
-# # => [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
-# You can implement this as an Array method if you prefer.
-#
-# Hint: For subsets([1, 2, 3]), there are two kinds of subsets:
-#
-# Those that do not contain 3 (all of these are subsets of [1, 2]).
-# For every subset that does not contain 3, there is also a
-# corresponding subset that is the same, except it also does contain 3.
-
-def subsets
-end
-
-# Permutations
-
-
-# Write a recursive method permutations(array) that calculates all the
-# permutations of the given array. For an array of length n there are
-# n! different permutations. So for an array with three elements we
-# will have 3 * 2 * 1 = 6 different permutations.
-#
-# permutations([1, 2, 3]) # => [[1, 2, 3], [1, 3, 2],
-#                         #     [2, 1, 3], [2, 3, 1],
-#                         #     [3, 2, 1], [3, 1, 2]]
-# You can use Ruby's built in Array#permutation method to get a better
-# understanding of what you will be building.
-#
-# [1, 2, 3].permutation.to_a  # => [[1, 2, 3], [1, 3, 2],
-#                             #     [2, 1, 3], [2, 3, 1],
-#                             #     [3, 2, 1], [3, 1, 2]]
-
-def permutations
 end
 
 # Binary Search
@@ -85,15 +67,28 @@ end
 #
 # Make sure that these test cases are working:
 #
-# bsearch([1, 2, 3], 1) # => 0
-# bsearch([2, 3, 4, 5], 3) # => 1
-# bsearch([2, 4, 6, 8, 10], 6) # => 2
-# bsearch([1, 3, 4, 5, 9], 5) # => 3
-# bsearch([1, 2, 3, 4, 5, 6], 6) # => 5
-# bsearch([1, 2, 3, 4, 5, 6], 0) # => nil
-# bsearch([1, 2, 3, 4, 5, 7], 6) # => nil
+# [1, 2, 3].bsearch(1) # => 0
+# [2, 3, 4, 5].bsearch(3) # => 1
+# [2, 4, 6, 8, 10].bsearch(6) # => 2
+# [1, 3, 4, 5, 9].bsearch(5) # => 3
+# [1, 2, 3, 4, 5, 6].bsearch(6) # => 5
+# [1, 2, 3, 4, 5, 6].bsearch(0) # => nil
+# [1, 2, 3, 4, 5, 7].bsearch(6) # => nil
+class Array
+def bsearch(rollover = 0, target)
+  return nil if self.empty?
+  return nil if self.length == 1 && self[0] != target
 
-def bsearch
+  midx = self.length / 2
+  return midx + rollover if self[midx] == target
+
+
+  if target < self[midx]
+    self.take(midx).bsearch(0, target)
+  else
+    self.drop(midx).bsearch(midx + rollover, target)
+  end
+end
 end
 
 # Make Change
