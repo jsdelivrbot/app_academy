@@ -19,6 +19,14 @@ class Array
     result
   end
 
+  def my_reject(&prc)
+    result = []
+    self.my_each do |el|
+      result << el unless prc.call(el)
+    end
+    result
+  end
+
   def my_inject(acc = nil)
     acc ||= self.shift
 
@@ -29,13 +37,18 @@ class Array
     acc
   end
 
-  def my_reject
+  def my_any?(&prc)
+    self.my_each do |el|
+      return true if prc.call(el)
+    end
+    false
   end
 
-  def my_any?
-  end
-
-  def my_all?
+  def my_all?(&prc)
+    self.each do |el|
+      return false unless prc.call(el)
+    end
+    true
   end
 
   def my_flatten(res = [])
