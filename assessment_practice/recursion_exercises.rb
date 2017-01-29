@@ -41,55 +41,33 @@ class Array
     result.uniq
   end
 
+  def binary_search(rollover = 0, target)
+    return nil if self.empty?
+    return nil if self.length == 1 && self[0] != target
+
+    midx = self.length / 2
+    return midx + rollover if self[midx] == target
+
+
+    if target < self[midx]
+      self.take(midx).binary_search(0, target)
+    else
+      self.drop(midx).binary_search(midx + rollover, target)
+    end
+
+  end
+
 end
 
-# Binary Search
-#
-# The binary search algorithm begins by comparing the target value to
-# the value of the middle element of the sorted array. If the target
-# value is equal to the middle element's value, then the position is
-# returned and the search is finished. If the target value is less than
-# the middle element's value, then the search continues on the lower
-# half of the array; or if the target value is greater than the middle
-# element's value, then the search continues on the upper half of the
-# array. This process continues, eliminating half of the elements, and
-# comparing the target value to the value of the middle element of the
-# remaining elements - until the target value is either found (and its
-# associated element position is returned), or until the entire array
-# has been searched (and "not found" is returned).
-#
-# Write a recursive binary search: bsearch(array, target). Note that
-# binary search only works on sorted arrays. Make sure to return the
-# location of the found object (or nil if not found!). Hint: you will
-# probably want to use subarrays.
-#
-# This your first problem which is half a PITA to solve iteratively.
-#
-# Make sure that these test cases are working:
-#
-# [1, 2, 3].bsearch(1) # => 0
-# [2, 3, 4, 5].bsearch(3) # => 1
-# [2, 4, 6, 8, 10].bsearch(6) # => 2
-# [1, 3, 4, 5, 9].bsearch(5) # => 3
-# [1, 2, 3, 4, 5, 6].bsearch(6) # => 5
-# [1, 2, 3, 4, 5, 6].bsearch(0) # => nil
-# [1, 2, 3, 4, 5, 7].bsearch(6) # => nil
-class Array
-def binary_search(rollover = 0, target)
-  return nil if self.empty?
-  return nil if self.length == 1 && self[0] != target
-
-  midx = self.length / 2
-  return midx + rollover if self[midx] == target
-
-
-  if target < self[midx]
-    self.take(midx).binary_search(0, target)
-  else
-    self.drop(midx).binary_search(midx + rollover, target)
+def make_change(amount, coins = [25, 10, 5, 1])
+  return [amount] if coins.include?(amount)
+  change = []
+  coins.each do |coin|
+    if coin < amount
   end
 end
-end
+
+
 
 # Make Change
 #
