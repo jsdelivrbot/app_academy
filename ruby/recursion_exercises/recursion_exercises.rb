@@ -42,7 +42,6 @@ class Array
     else
       self.drop(midx).binary_search(midx + rollover, target)
     end
-
   end
 
 end
