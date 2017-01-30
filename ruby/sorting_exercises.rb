@@ -37,17 +37,15 @@ class Array
   end
 
   def quick_sort
-    def quick_sort
-      return self if self.length <= 1
+    return self if self.length <= 1
+    
+    arr = self.dup
+    pivot = arr.shift
+    left = []
+    right = []
 
-      pivot = self.first
-      left = []
-      right = []
+    arr.each { |el| el < pivot ? left << el : right << el }
 
-      self[1..-1].each { |el| el < pivot ? left << el : right << el }
-
-      left.quick_sort + [pivot] + right.quick_sort
-
-    end
+    left.quick_sort + [pivot] + right.quick_sort
   end
 end

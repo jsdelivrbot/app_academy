@@ -20,13 +20,13 @@ class Array
 
   def subsets
     return [[]] if self.length < 1
-    result = []
+    result = [self]
 
     self.length.times do |i|
       result += (self.take(i) + self.drop(i+1)).subsets
-      result << self
     end
-    result.uniq
+    
+    result.uniq.sort_by{|set| set.length}
   end
 
   def binary_search(target, rollover = 0)
