@@ -1,5 +1,5 @@
 class Array
-#2:32min
+
   def bubble_sort(&prc)
     prc ||= Proc.new{|x,y| x<=>y}
     arr = self.dup
@@ -17,7 +17,6 @@ class Array
     arr
   end
 
-#4:02min
   def merge_sort
     return self if self.length <=1
     current = self.dup
@@ -36,7 +35,6 @@ class Array
     end
     result + self + arr2
   end
-
 
   def quick_sort
     def quick_sort
