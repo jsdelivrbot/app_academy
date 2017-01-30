@@ -1,10 +1,5 @@
 class Simon
-  COLORS = [
-    "red",
-    "blue",
-    "green",
-    "yellow"
-  ]
+  COLORS = %w(red blue yellow green)
 
   attr_accessor :sequence_length, :game_over, :seq
 
