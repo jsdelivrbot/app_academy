@@ -37,12 +37,19 @@ class Array
     result + self + arr2
   end
 
-#1:44min
+
   def quick_sort
-    return self if self.length <= 1
-    pivot = self.first
-    left = self[1..-1].select{ |el| el < pivot}.quick_sort
-    right = self[1..-1].select{ |el| el >= pivot}.quick_sort
-    left + [pivot] + right
+    def quick_sort
+      return self if self.length <= 1
+
+      pivot = self.first
+      left = []
+      right = []
+
+      self[1..-1].each { |el| el < pivot ? left << el : right << el }
+
+      left.quick_sort + [pivot] + right.quick_sort
+
+    end
   end
 end
