@@ -108,4 +108,24 @@ class Array
     result
   end
 
+  def my_uniq
+    result = []
+    self.each do |el|
+      result << el unless result.include?(el)
+    end
+    result
+  end
+
+  def my_transpose
+    result = []
+    self[0].length.times do |col_i|
+      new_row = []
+      self.length.times do |row_i|
+        new_row << self[row_i][col_i]
+      end
+      result << new_row
+    end
+    result
+  end
+
 end

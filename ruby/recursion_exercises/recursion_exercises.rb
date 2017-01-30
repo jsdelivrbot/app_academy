@@ -29,18 +29,15 @@ class Array
     result.uniq
   end
 
-  def binary_search(rollover = 0, target)
-    return nil if self.empty?
-    return nil if self.length == 1 && self[0] != target
+  def binary_search(target, rollover = 0)
+    return nil if self.length <= 1 && self.first != target
+    pivot = self.length/2
+    return pivot + rollover if self[pivot] == target
 
-    midx = self.length / 2
-    return midx + rollover if self[midx] == target
-
-
-    if target < self[midx]
-      self.take(midx).binary_search(0, target)
+    if target < self[pivot]
+      self.take(pivot).binary_search(target, rollover)
     else
-      self.drop(midx).binary_search(midx + rollover, target)
+      self.drop(pivot).binary_search(target, pivot + rollover)
     end
   end
 
