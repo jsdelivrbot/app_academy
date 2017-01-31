@@ -5,12 +5,15 @@ class Rook < Piece
 
   attr_reader :face
 
-  def initialize
-    @face = "\u2656" #white "\u2656", black is "\u265c"
+  def initialize(color, initial_pos)
+    super
+    @face = (color == :white ? "\u2656" : "\u265c")#white "\u2656", black is "\u265c"
   end
 
   def move_dirs
-    #use .move from Sliders module
+    Sliders::LATERALS
   end
+
+
 
 end

@@ -20,7 +20,9 @@ class Display
 
       row.each_with_index do |piece, col_index|
         current_pos = [row_index, col_index]
-        if current_pos == @cursor.cursor_pos
+        if current_pos == @cursor.selected_pos && !board.empty?(current_pos)
+            row_result += piece.face.yellow + "|"
+        elsif current_pos == @cursor.cursor_pos
           if board.empty?(current_pos)
             row_result += "\u2022".red + "|"
           else

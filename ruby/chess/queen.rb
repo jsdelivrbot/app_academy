@@ -5,12 +5,13 @@ class Queen < Piece
 
   attr_reader :face
 
-  def initialize
-    @face = "\u2655" # white queen: "\u2655", black queen: "\u265b"
+  def initialize(color, initial_pos)
+    super
+    @face = (color == :white ? "\u2655" : "\u265b") # white queen: "\u2655", black queen: "\u265b"
   end
 
   def move_dirs
-    #use .move from Sliders module
+    Sliders::LATERALS + Sliders::DIAGONALS
   end
 
 end

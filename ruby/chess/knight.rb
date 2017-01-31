@@ -5,7 +5,8 @@ class Knight < Piece
 
     attr_reader :face
 
-    def initialize
-      @face = "\u2658" # white "\u2658", black knight: "\u265E"
+    def initialize(color, initial_pos)
+    super
+    @face = (color == :white ? "\u2658" : "\u265E")
     end
 end

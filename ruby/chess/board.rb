@@ -15,30 +15,45 @@ class Board
   end
 
   def set_grid
+
+    col_indices = (0..7).to_a
     top_row = [
-        Rook.new,
-        Knight.new,
-        Bishop.new,
-        Queen.new,
-        King.new,
-        Bishop.new,
-        Knight.new,
-        Rook.new
+        Rook.new(:black, [0, col_indices.shift]),
+        Knight.new(:black, [0, col_indices.shift]),
+        Bishop.new(:black, [0, col_indices.shift]),
+        Queen.new(:black, [0, col_indices.shift]),
+        King.new(:black, [0, col_indices.shift]),
+        Bishop.new(:black, [0, col_indices.shift]),
+        Knight.new(:black, [0, col_indices.shift]),
+        Rook.new(:black, [0, col_indices.shift])
       ]
 
-    top_pawn_row = Array.new(1) { Array.new(8) { Pawn.new } }
-    mid_rows = Array.new(4) { Array.new(8) { NullPiece.new } }
-    bottom_pawn_row = Array.new(1) { Array.new(8) { Pawn.new } }
+    col_indices = (0..7).to_a
+    top_pawn_row = Array.new(1) do
+      Array.new(8) do
+        Pawn.new(:black, [1, col_indices.shift])
+      end
+    end
 
+    mid_rows = Array.new(4) { Array.new(8) { NullPiece.new } }
+
+    col_indices = (0..7).to_a
+    bottom_pawn_row = Array.new(1) do
+      Array.new(8) do
+        Pawn.new(:white, [6, col_indices.shift])
+      end
+    end
+
+    col_indices = (0..7).to_a
     bottom_row = [
-        Rook.new,
-        Knight.new,
-        Bishop.new,
-        Queen.new,
-        King.new,
-        Bishop.new,
-        Knight.new,
-        Rook.new
+        Rook.new(:white, [7, col_indices.shift]),
+        Knight.new(:white, [7, col_indices.shift]),
+        Bishop.new(:white, [7, col_indices.shift]),
+        Queen.new(:white, [7, col_indices.shift]),
+        King.new(:white, [7, col_indices.shift]),
+        Bishop.new(:white, [7, col_indices.shift]),
+        Knight.new(:white, [7, col_indices.shift]),
+        Rook.new(:white, [7, col_indices.shift])
       ]
 
     @grid = [top_row] +
@@ -48,16 +63,21 @@ class Board
       [bottom_row]
   end
 
+  def remove_piece
+  end
+
   def move_piece(start_pos, end_pos)
     raise "not a valid move" unless valid_move?(start_pos, end_pos)
 
     if self[start_pos].color != self[end_pos].color
       self[end_pos] = self[start_pos]
       self[start_pos] = NullPiece.new
+      #remove_piece()
     else
       self[start_pos], self[end_pos] = self[end_pos], self[start_pos]
     end
 
+    self[end_pos].current_pos = end_pos
   end
 
   def valid_move?(start_pos, end_pos)

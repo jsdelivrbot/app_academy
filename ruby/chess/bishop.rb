@@ -5,12 +5,12 @@ class Bishop < Piece
   include Sliders
   attr_reader :face
 
-  def initialize
-    @face = "\u2657" #white bishop: "\u2657", black bishop: "\u265d"
+  def initialize(color, initial_pos)
+    @face = (color == :white ? "\u2657" : "\u265d")
   end
 
   def move_dirs
-    #use .move from Sliders module
+    Sliders::DIAGONALS
   end
 
 end

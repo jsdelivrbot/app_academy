@@ -4,8 +4,9 @@ class Pawn < Piece
 
   attr_reader :face
 
-  def initialize
-    @face = "\u2659" #white pawn: "\u2659", black pawn: "\u265d"
+  def initialize(color, initial_pos)
+    super
+    @face = (color == :white ? "\u2659" : "\u265d")
   end
 
   def move_dirs

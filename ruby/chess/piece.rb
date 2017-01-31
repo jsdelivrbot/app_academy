@@ -1,9 +1,10 @@
 class Piece
-  attr_reader :color, :face
+  attr_reader :color
+  attr_accessor :current_pos
 
-  def initialize
-    @color = nil
-    @face = "p"
+  def initialize(color, initial_pos)
+    @color = color
+    @current_pos = initial_pos
   end
 
   def moves

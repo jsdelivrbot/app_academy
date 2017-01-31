@@ -6,8 +6,9 @@ class King < Piece
 
   attr_reader :face
 
-  def initialize
-    @face = "\u2654" #white king: "\u2654", black king: "\u265a"
+  def initialize(color, initial_pos)
+    super
+    @face = (color == :white ? "\u2654" : "\u265a")
   end
 
 end
