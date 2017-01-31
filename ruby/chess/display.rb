@@ -22,7 +22,7 @@ class Display
         current_pos = [row_index, col_index]
         if current_pos == @cursor.cursor_pos
           if board.empty?(current_pos)
-            row_result += "X".red + "|"
+            row_result += "\u2022".red + "|"
           else
             row_result += piece.face.red + "|"
           end
@@ -52,5 +52,4 @@ if __FILE__ == $0
   board = Board.new
   display = Display.new(board)
   display.get_input(board)
-
 end

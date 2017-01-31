@@ -1,5 +1,11 @@
 require_relative 'piece'
 require_relative 'null_piece'
+require_relative 'bishop'
+require_relative 'king'
+require_relative 'knight'
+require_relative 'pawn'
+require_relative 'queen'
+require_relative 'rook'
 
 class Board
   attr_reader :grid
@@ -9,10 +15,37 @@ class Board
   end
 
   def set_grid
-    end_rows = Array.new(2) { Array.new(8) { Piece.new } }
+    top_row = [
+        Rook.new,
+        Knight.new,
+        Bishop.new,
+        Queen.new,
+        King.new,
+        Bishop.new,
+        Knight.new,
+        Rook.new
+      ]
+
+    top_pawn_row = Array.new(1) { Array.new(8) { Pawn.new } }
     mid_rows = Array.new(4) { Array.new(8) { NullPiece.new } }
-    other_rows = Array.new(2) { Array.new(8) { Piece.new } }
-    @grid = end_rows + mid_rows + other_rows
+    bottom_pawn_row = Array.new(1) { Array.new(8) { Pawn.new } }
+
+    bottom_row = [
+        Rook.new,
+        Knight.new,
+        Bishop.new,
+        Queen.new,
+        King.new,
+        Bishop.new,
+        Knight.new,
+        Rook.new
+      ]
+
+    @grid = [top_row] +
+      top_pawn_row +
+      mid_rows +
+      bottom_pawn_row +
+      [bottom_row]
   end
 
   def move_piece(start_pos, end_pos)
