@@ -2,13 +2,7 @@ require_relative 'board'
 require_relative 'display'
 require_relative 'human_player'
 
-class Game#(two players)
-  # ###only allow you to click pieces of current_player color
-  # allow you to select where to move to
-  # move there via Board#move_piece
-    # unset selected pieces in cursor
-  # display removed pieces
-  #add undo function
+class Game
   attr_reader :board, :player1, :player2, :displayer
 
   def initialize(player1, player2)
@@ -28,16 +22,12 @@ class Game#(two players)
     until game_over?
       @displayer.get_input(@board)
     end
-
     p "#{winner} wins!!"
   end
 
   def display
     @displayer = Display.new(@board)
     @displayer.render(board)
-  end
-
-  def switch_players
   end
 
   def game_over?
@@ -57,11 +47,15 @@ class Game#(two players)
     return "white" if black_lost?
   end
 
-  def check?
-  end
-
-  def checkmate?
-  end
+  # TODO
+  # def check?
+  # end
+  #
+  # def checkmate?
+  # end
+  #
+  # def switch_players
+  # end
 
 end
 

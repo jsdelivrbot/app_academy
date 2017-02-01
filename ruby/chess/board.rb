@@ -19,7 +19,6 @@ class Board
   end
 
   def set_grid
-
     col_indices = (0..7).to_a
     top_row = [
         Rook.new(:black, [0, col_indices.shift], self),
@@ -83,8 +82,6 @@ class Board
       self[start_pos] = NullPiece.new
     end
   end
-
-
 
   def valid_move?(start_pos, end_pos)
     !empty?(start_pos) &&

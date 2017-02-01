@@ -114,4 +114,5 @@ class Cursor
     @board.different_colors?(@selected_start, @cursor_pos)
     )
   end
+  
 end
