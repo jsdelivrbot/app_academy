@@ -5,7 +5,8 @@ class Bishop < Piece
   include Sliders
   attr_reader :face
 
-  def initialize(color, initial_pos)
+  def initialize(color, initial_pos, board)
+    super
     @face = (color == :white ? "\u2657" : "\u265d")
   end
 

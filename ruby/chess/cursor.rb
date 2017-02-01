@@ -33,12 +33,13 @@ MOVES = {
 
 class Cursor
 
-  attr_reader :cursor_pos, :board, :selected_pos
+  attr_reader :cursor_pos, :board
+  attr_accessor :selected_start, :selected_end
 
   def initialize(cursor_pos, board)
     @cursor_pos = cursor_pos
     @board = board
-    @selected_pos = nil
+    @selected_start = nil
   end
 
   def get_input
@@ -100,7 +101,17 @@ class Cursor
   end
 
   def toggle_selected
-    @selected_pos = @cursor_pos
+    if valid_end_pos?
+      @selected_end = @cursor_pos
+    else
+      @selected_start = @cursor_pos
+    end
   end
 
+  def valid_end_pos?
+    @selected_start && (
+    @board.empty?(@cursor_pos) ||
+    @board.different_colors?(@selected_start, @cursor_pos)
+    )
+  end
 end

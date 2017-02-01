@@ -14,9 +14,13 @@ module Sliders
     [-1, 0]
   ]
 
+  def valid_movement?(start_pos, end_pos)
+    return true if move_options(board).include?(end_pos)
+    false
+  end
+
   def move_options(board)
     options = []
-
     move_dirs.each do |change|
       new_pos = add_diff(self.current_pos, change)
       dead_end = false

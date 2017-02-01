@@ -1,5 +1,6 @@
 require_relative 'board'
 require_relative 'display'
+require_relative 'human_player'
 
 class Game#(two players)
   # ###only allow you to click pieces of current_player color
@@ -7,10 +8,64 @@ class Game#(two players)
   # move there via Board#move_piece
     # unset selected pieces in cursor
   # display removed pieces
+  #add undo function
+  attr_reader :board, :player1, :player2, :displayer
 
+  def initialize(player1, player2)
+    @board = Board.new
+    @player1 = HumanPlayer.new(player1)
+    @player2 = HumanPlayer.new(player2)
+    assign_colors
+  end
 
+  def assign_colors
+    @player1.color = [:black, :white].sample
+    @player2.color = (@player1.color == :white ? :black : :white)
+  end
 
+  def play
+    display
+    until game_over?
+      @displayer.get_input(@board)
+    end
 
-  # include swtich player function
+    p "#{winner} wins!!"
+  end
 
+  def display
+    @displayer = Display.new(@board)
+    @displayer.render(board)
+  end
+
+  def switch_players
+  end
+
+  def game_over?
+    white_lost? || black_lost?
+  end
+
+  def white_lost?
+    @board.graveyard.white_dead_pieces.any?{|piece| piece.is_a?(King)}
+  end
+
+  def black_lost?
+    @board.graveyard.black_dead_pieces.any?{|piece| piece.is_a?(King)}
+  end
+
+  def winner
+    return "black" if white_lost?
+    return "white" if black_lost?
+  end
+
+  def check?
+  end
+
+  def checkmate?
+  end
+
+end
+
+if __FILE__ == $0
+  game = Game.new("James", "Nicole")
+  game.play
 end
