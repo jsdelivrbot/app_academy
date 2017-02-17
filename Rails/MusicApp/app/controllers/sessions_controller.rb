@@ -1,13 +1,18 @@
 class SessionsController < ApplicationController
   def new
-    render :new
+    if logged_in?
+      flash[:errors] = ["You silly goose, you're already lawged in!"]
+      redirect_to bands_url
+    else
+      render :new
+    end
   end
 
   def create
     user = User.find_by_credentials(params[:user][:email], params[:user][:password])
     if user
       session[:session_token] = user.reset_session_token!
-      redirect_to user_url(user)
+      redirect_to bands_url
     else
       flash[:errors] = ["Invalid login credentials"]
       redirect_to new_session_url

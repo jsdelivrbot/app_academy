@@ -27,6 +27,8 @@ class BandsController < ApplicationController
   end
 
   def show
+    @band = Band.find(params[:id])
+    @band ? (render :show) : index
   end
 
   def destroy

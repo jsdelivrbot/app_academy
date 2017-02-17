@@ -4,3 +4,10 @@
 <%= button_to "Add band", new_band_url, method: :get %>
 <%= button_to "Add album", new_album_url, method: :get  %>
 <%= button_to "Add track", new_track_url, method: :get  %>
+
+<ul>
+<% Band.all.each do |band| %>
+  <% band = band %>
+  <li> <%= link_to band.name, band_url(band.id), method: :show %></li> 
+<% end %>
+</ul>
