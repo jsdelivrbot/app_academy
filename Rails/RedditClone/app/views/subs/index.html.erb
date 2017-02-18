@@ -1,0 +1,7 @@
+<h1>Subs#index</h1>
+
+<ul>
+  <% Sub.all.each do |subs| %>
+    <li><%= link_to subs.title ,sub_url(subs), method: :get %></li>
+  <% end %>
+</ul>

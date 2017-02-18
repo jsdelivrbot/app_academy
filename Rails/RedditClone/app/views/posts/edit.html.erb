@@ -1,0 +1,7 @@
+<h1>Posts#edit</h1>
+<p>Find me in app/views/posts/edit.html.erb</p>
+
+
+<% if @post.sub_id %>
+<h3> Current Sub: <%= Sub.find(@post.sub_id).title %> </h3>
+<% end %>

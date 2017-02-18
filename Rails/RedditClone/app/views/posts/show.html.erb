@@ -1,0 +1,12 @@
+
+
+<% if @post.sub_id %>
+<h3> Current Sub: <%= Sub.find(@post.sub_id).title %> </h3>
+<% end %>
+
+
+<h1><%= @post.title %></h1>
+<% unless @post.url == "" %>
+<a href=" <%= @post.url %>" > link </a>
+<% end %>
+<p> <%= @post.content %></p>

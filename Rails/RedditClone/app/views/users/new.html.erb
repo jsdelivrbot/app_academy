@@ -1,0 +1,16 @@
+<h1>Sign up</h1>
+
+<form action="<%= users_url %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>"
+
+  <label>Username</label>
+  <input type="text" name="user[username]">
+  <br>
+  <label>Password</label>
+  <input type="password" name="user[password]">
+  <br>
+  <input type="submit" value="Sign Up">
+
+</form>
+
+<%= button_to "Already a User?", new_session_url, method: :get%>
