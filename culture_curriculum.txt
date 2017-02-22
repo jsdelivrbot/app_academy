@@ -1,6 +1,6 @@
 
 Goals:
--inform students of important social issues housed in or exacerbated by the tech industry, to get students to better understand the real social impacts of their work in the tech industry and to familiarize them with big picture social justice discussions surrounding their work
+-inform students of important social issues housed in or exacerbated by the tech industry, to get students to better understand the real social impacts of their work in the tech industry and to familiarize them with big picture discussions surrounding their work
 -to save more informed students from having to explain all the issues to their peers
 -to provide resources for those who want to be supportive allies, but who don’t know where to start when trying to inform themselves
 -the goal is not to paint certain companies or CEOs or types of people as good or bad, but to paint a picture of the factual social state of the tech industry today and to bring light to issues in tech that are being talked about at large
