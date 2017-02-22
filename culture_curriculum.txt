@@ -14,7 +14,7 @@ WEEKLY TOPICS:
 -women's issues: wage gap <link1>, sexual harassment in STEM <link3>, gendered beliefs about intelligence<link16>, a good article that breaks down the uber harassment story, something about Sheryl Sandberg-brand feminism (i.e. white feminism vs intersectional feminism)
 -citizenship/immigration, issues specifically impacting immigrants in Silicon Valley
 -government surveillance: Glenn Greenwald <link10>, specific impact on Muslim Americans, tech companies' compliance with/resistance to giving the NSA access to data
--Silicon Valley's impacts abroad: social media for political protest <link5>, refugee communication <link6>
+-Silicon Valley's impacts abroad: social media for political protest <link5>, refugee communication <link6>, Facebook's botched 'Free Basics' campaign in India
 -discrimination in the job search: <link8>
 -free speech on the internet: awesome xkcd comic<link4>, hate speech online, trolls <links11>
 -gentrification in SF
