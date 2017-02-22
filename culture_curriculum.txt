@@ -22,7 +22,7 @@ WEEKLY TOPICS:
 -government surveillance: Glenn Greenwald <link10>, specific impact on Muslim Americans, tech companies' compliance with/resistance to giving the NSA access to data
 -Silicon Valley's impacts abroad: social media for political protest <link5>, refugee communication <link6>, Facebook's botched 'Free Basics' campaign in India
 -discrimination in the job search: Palantir case <link8>, resumes and response rates (sexism <link22>, racism <>)
--free speech on the internet: awesome xkcd comic<link4>, hate speech online, trolls <links11>
+-free speech on the internet: awesome xkcd comic<link4>, trolls <links11>, cracking down on hate speech and hate groups online and <link24> (this optimistic article on cracking down on ISIS via Google algorithms MUST be paired with articles showing Google's lack of cracking down on groups like the KKK, and something explaining the racism of it)
 -gentrification in SF
 -(potential)social benefits of tech(if you inform yourselves and commit yourself to doing good things): the internet as a vehicle for social change (arab spring <link20>, blm <link21> 
 
@@ -80,3 +80,5 @@ http://www.pewinternet.org/2016/08/15/the-hashtag-blacklivesmatter-emerges-socia
 https://www.theatlantic.com/business/archive/2016/10/privilege-helps-men-not-women-get-lucrative-jobs/504497/
 <link23>
 https://www.theguardian.com/education/ng-interactive/2015/may/28/language-barrier-internet-experience
+<link24>
+https://www.wired.com/2016/09/googles-clever-plan-stop-aspiring-isis-recruits/
