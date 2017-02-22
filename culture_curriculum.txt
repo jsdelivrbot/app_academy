@@ -1,19 +1,20 @@
 
 Articles/topics:
--benefits of diversity in tech: <link2>
--women's issues: wage gap <link1>, sexual harassment in STEM <link3>
+-benefits of/need for diversity in tech: <link2>, <link9>
+-women's issues: wage gap <link1>, sexual harassment in STEM <link3>, good article on uber harassment story
 -citizenship/immigration: Silicon Valley's dependence on immigrants
--government surveillance: glenn greenwald
--Silicon Valley's impacts abroad: social media for political protest <link5>
--implicit bias in the job search
--free speech on the internet: awesome xkcd comic<link4>, trolls
+-government surveillance: Glenn Greenwald <link10>, specific impact on Muslim Americans, tech companies' compliance with/resistance to giving government access to data
+-Silicon Valley's impacts abroad: social media for political protest <link5>, refugee communication <link6>
+-discrimination in the job search: <link8>
+-free speech on the internet: awesome xkcd comic<link4>, the messy problem of policing hate speech, trolls
 -gentrification in SF
 -(potential)social benefits of tech(if you make it do good things)
 
 
 Topics that need to be addressed:
--affirmative action and "diversity hires"
+-affirmative action, "diversity hires", and "reverse racism" <link7>
 -intersectionality
+-Sheryl Sandberg-brand feminism (and white feminism vs intersectional feminism)
 
 
 
@@ -27,3 +28,13 @@ https://www.theatlantic.com/science/archive/2016/07/how-women-are-harassed-out-o
 http://forums.xkcd.com/viewtopic.php?t=108674
 <link5>
 http://timesofindia.indiatimes.com/india/All-WhatsApp-groups-to-be-monitored-in-Jammu-Kashmirs-Kupwara/articleshow/51898762.cms
+<link6>
+https://qz.com/500062/the-most-crucial-item-that-migrants-and-refugees-carry-is-a-smartphone/
+<link7>
+http://www.salon.com/2015/10/26/diversity_is_for_white_people_the_big_lie_behind_a_well_intended_word/
+<link8>
+https://techcrunch.com/2016/09/26/u-s-department-of-labor-sues-palantir-for-racial-discrimination/
+<link9>
+https://www.theguardian.com/technology/2016/may/05/airbnbwhileblack-hashtag-highlights-potential-racial-bias-rental-app
+<link10>
+https://www.ted.com/talks/glenn_greenwald_why_privacy_matters
