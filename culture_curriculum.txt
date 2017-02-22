@@ -4,7 +4,7 @@ Goals:
 -to save more informed students from having to explain all the issues to their peers
 -to provide resources for those who want to be supportive allies, but who don’t know where to start when trying to inform themselves
 -the goal is not to paint certain companies or CEOs or types of people as good or bad, but to paint a picture of the factual social state of the tech industry today and to bring light to issues in tech that are being talked about at large
--to make learning about social issues super interesting, engaging, and relevant
+-to make learning about social issues feel super engaging and relevant by focusing on important and multi-dimensional issues that students may not have thought about or been exposed to before, and veering away from the kinds of issues that people already have really entrenched views about and are commonly perceived as 'political'
 
 The how:
 -every W?D5 in the main curriculum, provide a few links to culture curriculum resources related to that week's topic
@@ -15,16 +15,27 @@ For context - amazing lol-worthy quote displaying the desperation of tech compan
 
 --------
 
-WEEKLY TOPICS:
+POTENTIAL WEEKLY TOPICS:
+
 -intro to social issues in tech: racist and sexist search algorithms as a reflection of Silicon Valley's lack of diversity/racist and sexist culture <link2>, <link9>, <link12>, <link13>, <link14>, <link15>, <link17>, <link18>, <link19>
+
 -women's issues: wage gap <link1>, sexual harassment in STEM <link3>, gendered beliefs about intelligence<link16>, a good article that breaks down the uber harassment story, something about Sheryl Sandberg-brand feminism (i.e. white feminism vs intersectional feminism)
+
 -citizenship/immigration: issues specifically impacting immigrants in Silicon Valley, Silicon Valley's dependence on immigrants, impact of the travel ban on tech industry, digital language divide <link23>
+
 -government surveillance: Glenn Greenwald <link10>, specific impact on Muslim Americans, tech companies' compliance with/resistance to giving the NSA access to data
+
 -Silicon Valley's impacts abroad: social media for political protest <link5>, refugee communication <link6>, Facebook's botched 'Free Basics' campaign in India
+
 -discrimination in the job search: Palantir case <link8>, resumes and response rates (sexism <link22>, racism <>)
+
 -free speech on the internet: awesome xkcd comic<link4>, trolls <links11>, cracking down on hate speech and hate groups online and <link24> (this optimistic article on cracking down on ISIS via Google algorithms MUST be paired with articles showing Google's lack of cracking down on groups like the KKK, and something explaining the racism of it)
+
 -gentrification in SF
--(potential)social benefits of tech(if you inform yourselves and commit yourself to doing good things): the internet as a vehicle for social change (arab spring <link20>, blm <link21>)
+
+-(potential)social benefits of tech(if we inform ourselves and commit ourselves to doing good things): the internet as a vehicle for social change (arab spring <link20>, blm <link21>)
+
+--
 
 Topics that need to be worked into all that or at least alluded to somewhere:
 -affirmative action, "diversity hires", and "reverse racism" <link7>
