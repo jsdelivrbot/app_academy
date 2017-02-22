@@ -1,0 +1,29 @@
+
+Articles/topics:
+-benefits of diversity in tech: <link2>
+-women's issues: wage gap <link1>, sexual harassment in STEM <link3>
+-citizenship/immigration: Silicon Valley's dependence on immigrants
+-government surveillance: glenn greenwald
+-Silicon Valley's impacts abroad: social media for political protest <link5>
+-implicit bias in the job search
+-free speech on the internet: awesome xkcd comic<link4>, trolls
+-gentrification in SF
+-(potential)social benefits of tech(if you make it do good things)
+
+
+Topics that need to be addressed:
+-affirmative action and "diversity hires"
+-intersectionality
+
+
+
+
+<link1> https://www.nytimes.com/2016/03/20/upshot/as-women-take-over-a-male-dominated-field-the-pay-drops.html?_r=0
+<link2>
+https://www.theatlantic.com/technology/archive/2016/09/the-internet-may-be-as-segregated-as-a-city/498608/
+<link3>
+https://www.theatlantic.com/science/archive/2016/07/how-women-are-harassed-out-of-science/492521/
+<link4>
+http://forums.xkcd.com/viewtopic.php?t=108674
+<link5>
+http://timesofindia.indiatimes.com/india/All-WhatsApp-groups-to-be-monitored-in-Jammu-Kashmirs-Kupwara/articleshow/51898762.cms
