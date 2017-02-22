@@ -3,11 +3,16 @@ Goals:
 -inform students of important social issues housed in or exacerbated by the tech industry, to get students to better understand the real social impacts of their work in the tech industry and to familiarize them with big picture social justice discussions surrounding their work
 -to save more informed students from having to explain all the issues to their peers
 -to provide resources for those who want to be supportive allies, but who don’t know where to start when trying to inform themselves
--the goal is not to paint certain companies as good and certain companies as bad, but to paint a picture of the factual social state of the tech industry today
+-the goal is not to paint certain companies or CEOs or types of people as good or bad, but to paint a picture of the factual social state of the tech industry today and to bring light to issues in tech that are being talked about at large
 
 The how:
 -every W?D5 in the main curriculum, provide a few links to culture curriculum resources related to that week's topic
 -don't require the students read it, and make clear that they will never have to read or talk about these issues if they do not want to/feel comfortable doing so. These are simply meant to inform those who want to be better informed but who may not know much about the specific issue (i.e. the majority of a/A students)
+
+For context - amazing lol-worthy quote displaying the desperation of tech companies to figure out how to deal with these problems and curb all the negative publicity:
+"AirBnB’s head of diversity and belonging, David King, said: 'We recognise that bias and discrimination present significant challenges, and we are taking steps to address them. Profile photos are an important part of our community and are one of the many tools that help hosts and guests connect with one another. We welcome the opportunity to work with anyone that can help us reduce potential discrimination in the Airbnb community.' " Source: <link9>
+
+--------
 
 WEEKLY TOPICS:
 -intro to social issues in tech: racist and sexist search algorithms as a reflection of Silicon Valley's lack of diversity/racist and sexist culture <link2>, <link9>, <link12>, <link13>, <link14>, <link15>, <link17>, <link18>, <link19>
@@ -15,7 +20,7 @@ WEEKLY TOPICS:
 -citizenship/immigration, issues specifically impacting immigrants in Silicon Valley
 -government surveillance: Glenn Greenwald <link10>, specific impact on Muslim Americans, tech companies' compliance with/resistance to giving the NSA access to data
 -Silicon Valley's impacts abroad: social media for political protest <link5>, refugee communication <link6>, Facebook's botched 'Free Basics' campaign in India
--discrimination in the job search: <link8>
+-discrimination in the job search: Palantir case <link8>, resumes and response rates (sexism <link22>, racism <>)
 -free speech on the internet: awesome xkcd comic<link4>, hate speech online, trolls <links11>
 -gentrification in SF
 -(potential)social benefits of tech(if you inform yourselves and commit yourself to doing good things): the internet as a vehicle for social change (arab spring <link20>, blm <link21> 
@@ -42,6 +47,7 @@ http://www.salon.com/2015/10/26/diversity_is_for_white_people_the_big_lie_behind
 https://techcrunch.com/2016/09/26/u-s-department-of-labor-sues-palantir-for-racial-discrimination/
 <link9>
 https://www.theguardian.com/technology/2016/may/05/airbnbwhileblack-hashtag-highlights-potential-racial-bias-rental-app
+http://www.npr.org/2016/04/26/475773261/when-personalization-leads-to-discrimination-on-airbnb
 <link10>
 https://www.ted.com/talks/glenn_greenwald_why_privacy_matters
 <links11>
@@ -66,3 +72,5 @@ https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sen
 http://www.journalism.org/2012/11/28/role-social-media-arab-uprisings/
 <link21>
 http://www.pewinternet.org/2016/08/15/the-hashtag-blacklivesmatter-emerges-social-activism-on-twitter/
+<link22>
+https://www.theatlantic.com/business/archive/2016/10/privilege-helps-men-not-women-get-lucrative-jobs/504497/
