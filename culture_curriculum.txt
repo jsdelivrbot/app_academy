@@ -1,12 +1,12 @@
 
 Articles/topics:
--benefits of/need for diversity in tech: <link2>, <link9>
+-benefits of/need for diversity in tech: <link2>, <link9>, <link12>, <link13>, <link14>
 -women's issues: wage gap <link1>, sexual harassment in STEM <link3>, good article on uber harassment story
--citizenship/immigration: Silicon Valley's dependence on immigrants
+-citizenship/immigration: Silicon Valley's dependence on immigrant
 -government surveillance: Glenn Greenwald <link10>, specific impact on Muslim Americans, tech companies' compliance with/resistance to giving government access to data
 -Silicon Valley's impacts abroad: social media for political protest <link5>, refugee communication <link6>
 -discrimination in the job search: <link8>
--free speech on the internet: awesome xkcd comic<link4>, the messy problem of policing hate speech, trolls
+-free speech on the internet: awesome xkcd comic<link4>, the messy problem of policing hate speech, trolls <links11>
 -gentrification in SF
 -(potential)social benefits of tech(if you make it do good things)
 
@@ -15,6 +15,7 @@ Topics that need to be addressed:
 -affirmative action, "diversity hires", and "reverse racism" <link7>
 -intersectionality
 -Sheryl Sandberg-brand feminism (and white feminism vs intersectional feminism)
+-how to be a good ally
 
 
 
@@ -38,3 +39,11 @@ https://techcrunch.com/2016/09/26/u-s-department-of-labor-sues-palantir-for-raci
 https://www.theguardian.com/technology/2016/may/05/airbnbwhileblack-hashtag-highlights-potential-racial-bias-rental-app
 <link10>
 https://www.ted.com/talks/glenn_greenwald_why_privacy_matters
+<links11>
+https://www.theguardian.com/commentisfree/2017/jan/03/ive-left-twitter-unusable-anyone-but-trolls-robots-dictators-lindy-west
+<link12>
+https://www.theguardian.com/technology/2016/aug/03/algorithm-racist-human-employers-work
+<link13>
+https://www.washingtonpost.com/news/morning-mix/wp/2016/06/10/google-faulted-for-racial-bias-in-image-search-results-for-black-teenagers/?utm_term=.030b16d84cff
+<link14>
+https://www.nytimes.com/2015/07/10/upshot/when-algorithms-discriminate.html
