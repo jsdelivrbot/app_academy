@@ -5,7 +5,11 @@ Goals:
 -to provide resources for those who want to be supportive allies, but who don’t know where to start when trying to inform themselves
 -the goal is not to paint certain companies as good and certain companies as bad, but to paint a picture of the social state of the tech industry today
 
-Topics:
+The how:
+-every W?D5 in the main curriculum, provide a few links to culture curriculum resources related to that week's topic
+-don't require the students read it, and make clear that they will never have to read or talk about these issues if they do not want to/feel comfortable doing so. These are simply meant to inform those who want to be better informed but who may not know much about the specific issue (i.e. the majority of a/A students)
+
+TOPICS:
 -intro to social issues in tech - benefits of/need for diversity in tech: <link2>, <link9>, <link12>, <link13>, <link14>
 -women's issues: wage gap <link1>, sexual harassment in STEM <link3>, a good article that breaks down the uber harassment story
 -citizenship/immigration: Silicon Valley's dependence on immigrants
@@ -16,6 +20,10 @@ Topics:
 -gentrification in SF
 -(potential)social benefits of tech(if you inform yourselves and commit yourself to doing good things)
 
+Things to be mindful of:
+-include a diversity of journalists, ted talk speakers, topics, etc.
+-don't make minorities talk about these issues or defend their stance
+-stay away from overtly political topics (LOL but ya)
 
 Topics that need to be worked into all that somewhere:
 -affirmative action, "diversity hires", and "reverse racism" <link7>
