@@ -4,6 +4,7 @@ Goals:
 -to save more informed students from having to explain all the issues to their peers
 -to provide resources for those who want to be supportive allies, but who don’t know where to start when trying to inform themselves
 -the goal is not to paint certain companies or CEOs or types of people as good or bad, but to paint a picture of the factual social state of the tech industry today and to bring light to issues in tech that are being talked about at large
+-to make learning about social issues super interesting and engaging
 
 The how:
 -every W?D5 in the main curriculum, provide a few links to culture curriculum resources related to that week's topic
@@ -17,7 +18,7 @@ For context - amazing lol-worthy quote displaying the desperation of tech compan
 WEEKLY TOPICS:
 -intro to social issues in tech: racist and sexist search algorithms as a reflection of Silicon Valley's lack of diversity/racist and sexist culture <link2>, <link9>, <link12>, <link13>, <link14>, <link15>, <link17>, <link18>, <link19>
 -women's issues: wage gap <link1>, sexual harassment in STEM <link3>, gendered beliefs about intelligence<link16>, a good article that breaks down the uber harassment story, something about Sheryl Sandberg-brand feminism (i.e. white feminism vs intersectional feminism)
--citizenship/immigration: issues specifically impacting immigrants in Silicon Valley, Silicon Valley's dependence on immigrants, impact of the travel ban on tech industry
+-citizenship/immigration: issues specifically impacting immigrants in Silicon Valley, Silicon Valley's dependence on immigrants, impact of the travel ban on tech industry, digital language divide <link23>
 -government surveillance: Glenn Greenwald <link10>, specific impact on Muslim Americans, tech companies' compliance with/resistance to giving the NSA access to data
 -Silicon Valley's impacts abroad: social media for political protest <link5>, refugee communication <link6>, Facebook's botched 'Free Basics' campaign in India
 -discrimination in the job search: Palantir case <link8>, resumes and response rates (sexism <link22>, racism <>)
@@ -25,11 +26,13 @@ WEEKLY TOPICS:
 -gentrification in SF
 -(potential)social benefits of tech(if you inform yourselves and commit yourself to doing good things): the internet as a vehicle for social change (arab spring <link20>, blm <link21> 
 
-Topics that need to be worked into all that somewhere:
+Topics that need to be worked into all that or at least alluded to somewhere:
 -affirmative action, "diversity hires", and "reverse racism" <link7>
 -intersectionality
--how to be a good ally(somewhere in the intro)
+-how to be a good ally dos and donts(somewhere in the intro)
 -net neutrality
+-strategies for staying informed and keeping up with current events
+-strategies for identifying socially problematic business strategies, algorithm implementations, etc.
 
 <link1> https://www.nytimes.com/2016/03/20/upshot/as-women-take-over-a-male-dominated-field-the-pay-drops.html?_r=0
 <link2>
@@ -75,3 +78,5 @@ http://www.journalism.org/2012/11/28/role-social-media-arab-uprisings/
 http://www.pewinternet.org/2016/08/15/the-hashtag-blacklivesmatter-emerges-social-activism-on-twitter/
 <link22>
 https://www.theatlantic.com/business/archive/2016/10/privilege-helps-men-not-women-get-lucrative-jobs/504497/
+<link23>
+https://www.theguardian.com/education/ng-interactive/2015/may/28/language-barrier-internet-experience
