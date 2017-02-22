@@ -1,8 +1,14 @@
 
-Articles/topics:
+Goals:
+-inform students of important social issues housed in or exacerbated by the tech industry, to better understand the real social impacts of their work in the tech industry
+-to save more informed students from having to explain the all the issues to their peers
+-to provide resources for those who want to be supportive allies, but who don’t know where to start when trying to inform themselves
+-the goal is not to paint certain companies as good and certain companies as bad, but to paint a picture of the social state of the tech industry today
+
+Topics:
 -intro to social issues in tech - benefits of/need for diversity in tech: <link2>, <link9>, <link12>, <link13>, <link14>
--women's issues: wage gap <link1>, sexual harassment in STEM <link3>, good article on uber harassment story
--citizenship/immigration: Silicon Valley's dependence on immigrant
+-women's issues: wage gap <link1>, sexual harassment in STEM <link3>, a good article that breaks down the uber harassment story
+-citizenship/immigration: Silicon Valley's dependence on immigrants
 -government surveillance: Glenn Greenwald <link10>, specific impact on Muslim Americans, tech companies' compliance with/resistance to giving government access to data
 -Silicon Valley's impacts abroad: social media for political protest <link5>, refugee communication <link6>
 -discrimination in the job search: <link8>
@@ -11,13 +17,11 @@ Articles/topics:
 -(potential)social benefits of tech(if you inform yourselves and commit yourself to doing good things)
 
 
-Topics that need to be addressed:
+Topics that need to be worked into all that somewhere:
 -affirmative action, "diversity hires", and "reverse racism" <link7>
 -intersectionality
 -Sheryl Sandberg-brand feminism (and white feminism vs intersectional feminism)
 -how to be a good ally
-
-
 
 
 <link1> https://www.nytimes.com/2016/03/20/upshot/as-women-take-over-a-male-dominated-field-the-pay-drops.html?_r=0
