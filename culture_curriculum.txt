@@ -1,6 +1,6 @@
 
 Articles/topics:
--benefits of/need for diversity in tech: <link2>, <link9>, <link12>, <link13>, <link14>
+-intro to social issues in tech - benefits of/need for diversity in tech: <link2>, <link9>, <link12>, <link13>, <link14>
 -women's issues: wage gap <link1>, sexual harassment in STEM <link3>, good article on uber harassment story
 -citizenship/immigration: Silicon Valley's dependence on immigrant
 -government surveillance: Glenn Greenwald <link10>, specific impact on Muslim Americans, tech companies' compliance with/resistance to giving government access to data
@@ -8,7 +8,7 @@ Articles/topics:
 -discrimination in the job search: <link8>
 -free speech on the internet: awesome xkcd comic<link4>, the messy problem of policing hate speech, trolls <links11>
 -gentrification in SF
--(potential)social benefits of tech(if you make it do good things)
+-(potential)social benefits of tech(if you inform yourselves and commit yourself to doing good things)
 
 
 Topics that need to be addressed:
