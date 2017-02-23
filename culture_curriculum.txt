@@ -19,7 +19,7 @@ POTENTIAL WEEKLY TOPICS:
 
 -intro to social issues in tech: racist and sexist search algorithms as a reflection of Silicon Valley's lack of diversity/racist and sexist culture <link2>, <link9>, <link12>, <link13>, <link14>, <link15>, <link17>, <link18>, <link19>
 
--women's issues: wage gap <link1>, sexual harassment in STEM <link3>, gendered beliefs about intelligence<link16>, a good article that breaks down the uber harassment story, something about Sheryl Sandberg-brand feminism (i.e. white feminism vs intersectional feminism)
+-women's issues: wage gap <link1>, sexual harassment in STEM <link3>, gendered beliefs about intelligence<link16>, a good article that breaks down the uber harassment story, sexual harassment specifically in tech <link25>, something about Sheryl Sandberg-brand feminism (i.e. white feminism vs intersectional feminism)
 
 -citizenship/immigration: issues specifically impacting immigrants in Silicon Valley, Silicon Valley's dependence on immigrants, impact of the travel ban on tech industry, digital language divide <link23>
 
@@ -93,3 +93,5 @@ https://www.theatlantic.com/business/archive/2016/10/privilege-helps-men-not-wom
 https://www.theguardian.com/education/ng-interactive/2015/may/28/language-barrier-internet-experience
 <link24>
 https://www.wired.com/2016/09/googles-clever-plan-stop-aspiring-isis-recruits/
+<link25>
+https://www.theguardian.com/technology/2016/jan/12/silicon-valley-women-harassment-gender-discrimination
