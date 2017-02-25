@@ -44,6 +44,7 @@ Topics that need to be worked into all that or at least alluded to somewhere:
 -net neutrality
 -strategies for staying informed and keeping up with current events
 -strategies for identifying socially problematic business strategies, algorithm implementations, etc.
+-how to deal with your privilege guilt
 
 <link1> https://www.nytimes.com/2016/03/20/upshot/as-women-take-over-a-male-dominated-field-the-pay-drops.html?_r=0
 <link2>
