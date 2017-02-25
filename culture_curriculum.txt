@@ -1,25 +1,20 @@
 
 Goals:
--inform students of important social issues housed in or exacerbated by the tech industry, to get students to better understand the real social impacts of their work in the tech industry and to familiarize them with big picture discussions surrounding their work
+-inform students of important socio-cultural issues related to the tech industry, to get students to better understand the real social impacts of their work in the tech industry and to familiarize them with big picture discussions surrounding their work
 -to save more informed students from having to explain all the issues to their peers
 -to provide resources for those who want to be supportive allies, but who don’t know where to start when trying to inform themselves
 -the goal is not to paint certain companies or CEOs or types of people as good or bad, but to paint a picture of the factual social state of the tech industry today and to bring light to issues in tech that are being talked about at large
--to make learning about social issues feel super engaging and relevant by focusing on important and multi-dimensional issues that students may not have thought about or been exposed to before, and veering away from the kinds of issues that people already have really entrenched views about and are commonly perceived as 'political'
+-to make learning about social issues feel engaging and relevant
 
 The how:
 -every W?D5 in the main curriculum, provide a few links to culture curriculum resources related to that week's topic
--don't require the students read it, and make clear that they will never have to read or talk about these issues if they do not want to/feel comfortable doing so. These are simply meant to inform those who want to be better informed but who may not know much about the specific issue (i.e. the majority of a/A students)
-
-For context - amazing lol-worthy quote displaying the desperation of tech companies to figure out how to deal with these problems and curb all the negative publicity:
-"AirBnB’s head of diversity and belonging, David King, said: 'We recognise that bias and discrimination present significant challenges, and we are taking steps to address them. Profile photos are an important part of our community and are one of the many tools that help hosts and guests connect with one another. We welcome the opportunity to work with anyone that can help us reduce potential discrimination in the Airbnb community.' " (My translation: "SOS SOMEONE PLEASE HELP US") Source: <link9>
+-don't require the students read it, and make clear that they will never have to read or talk about these issues if they do not want to/feel comfortable doing so. These are simply meant to inform those who want to be better informed but who may not know much about the specific issue
 
 --------
 
 POTENTIAL WEEKLY TOPICS:
 
--intro to social issues in tech: racist and sexist search algorithms as a reflection of Silicon Valley's lack of diversity/racist and sexist culture <link2>, <link9>, <link12>, <link13>, <link14>, <link15>, <link17>, <link18>, <link19>
-
--women's issues: wage gap <link1>, sexual harassment in STEM <link3>, gendered beliefs about intelligence<link16>, a good article that breaks down the uber harassment story, sexual harassment specifically in tech <link25>, something about Sheryl Sandberg-brand feminism (i.e. white feminism vs intersectional feminism)
+-intro to social issues in tech - racist and sexist search algorithms as a reflection of Silicon Valley's lack of diversity/racist and sexist culture: racial segregation in internet traffic <link2>, racial discrimination on AirBnB <link9>, racial bias in image searches <link13>, discriminatory algorithms <link14>, discriminatory facebook advertisements <link15>, racial bias in algorithms used in court to aid in criminal sentencing <link18>
 
 -citizenship/immigration: issues specifically impacting immigrants in Silicon Valley, Silicon Valley's dependence on immigrants, impact of the travel ban on tech industry, digital language divide <link23>
 
@@ -27,13 +22,15 @@ POTENTIAL WEEKLY TOPICS:
 
 -Silicon Valley's impacts abroad: social media for political protest <link5>, refugee communication <link6>, Facebook's botched 'Free Basics' campaign in India
 
--discrimination in the job search: Palantir case <link8>, resumes and response rates (sexism <link22>, racism <>)
+-discrimination in the job search: Palantir case <link8>, resumes and response rates (sexism <link22>, racism <>), <link12>, an article about how diversity-training programs backfire (based on the Harvard Business Review's 2016 study, but need an article that's more accessible)
 
--free speech on the internet: awesome xkcd comic<link4>, trolls <links11>, cracking down on hate speech and hate groups online and <link26><link24> (this optimistic article on cracking down on ISIS via Google algorithms MUST be paired with articles showing Google's lack of cracking down on groups like the KKK, and something explaining the racism of it)
+-free speech on the internet: awesome xkcd comic<link4>, trolls <links11><link26>, cracking down on hate groups online <link24> (this optimistic article on cracking down on ISIS via Google algorithms MUST be paired with articles showing Google's indifference towards groups like the KKK, and something explaining the racism of it)
+
+-women's issues: wage gap <link1>, sexual harassment in STEM <link3><link25>, gendered beliefs about intelligence <link16>, a good article that breaks down the uber harassment story, something about Sheryl Sandberg-brand feminism (i.e. white feminism vs intersectional feminism)
 
 -gentrification, homelessness, and rising income diparity in SF
 
--(potential)social benefits of tech(if we inform ourselves and commit ourselves to doing good things): the internet as a vehicle for social change (arab spring <link20>, blm <link21>)
+-(potential)social benefits of tech(if we inform ourselves and commit ourselves to doing good things): the internet as a vehicle for social change (arab spring <link20>, blm <link21>), for connectivity and accessibility
 
 --
 
@@ -46,55 +43,55 @@ Topics that need to be worked into all that or at least alluded to somewhere:
 -strategies for identifying socially problematic business strategies, algorithm implementations, etc.
 -how to deal with your privilege guilt
 
-<link1> https://www.nytimes.com/2016/03/20/upshot/as-women-take-over-a-male-dominated-field-the-pay-drops.html?_r=0
-<link2>
-https://www.theatlantic.com/technology/archive/2016/09/the-internet-may-be-as-segregated-as-a-city/498608/
+*<link1>
+  https://www.nytimes.com/2016/03/20/upshot/as-women-take-over-a-male-dominated-field-the-pay-drops.html?_r=0
+*<link2>
+  https://www.theatlantic.com/technology/archive/2016/09/the-internet-may-be-as-segregated-as-a-city/498608/
 <link3>
-https://www.theatlantic.com/science/archive/2016/07/how-women-are-harassed-out-of-science/492521/
-<link4>
-http://forums.xkcd.com/viewtopic.php?t=108674
-<link5>
-http://timesofindia.indiatimes.com/india/All-WhatsApp-groups-to-be-monitored-in-Jammu-Kashmirs-Kupwara/articleshow/51898762.cms
+  https://www.theatlantic.com/science/archive/2016/07/how-women-are-harassed-out-of-science/492521/
+*<link4>
+  http://forums.xkcd.com/viewtopic.php?t=108674
+*<link5>
+  http://timesofindia.indiatimes.com/india/All-WhatsApp-groups-to-be-monitored-in-Jammu-Kashmirs-Kupwara/articleshow/51898762.cms
 <link6>
-https://qz.com/500062/the-most-crucial-item-that-migrants-and-refugees-carry-is-a-smartphone/
+  https://qz.com/500062/the-most-crucial-item-that-migrants-and-refugees-carry-is-a-smartphone/
 <link7>
-http://www.salon.com/2015/10/26/diversity_is_for_white_people_the_big_lie_behind_a_well_intended_word/
+  http://www.salon.com/2015/10/26/diversity_is_for_white_people_the_big_lie_behind_a_well_intended_word/
 <link8>
-https://techcrunch.com/2016/09/26/u-s-department-of-labor-sues-palantir-for-racial-discrimination/
+  https://techcrunch.com/2016/09/26/u-s-department-of-labor-sues-palantir-for-racial-discrimination/
 <link9>
-https://www.theguardian.com/technology/2016/may/05/airbnbwhileblack-hashtag-highlights-potential-racial-bias-rental-app
-http://www.npr.org/2016/04/26/475773261/when-personalization-leads-to-discrimination-on-airbnb
+  https://www.theguardian.com/technology/2016/may/05/airbnbwhileblack-hashtag-highlights-potential-racial-bias-rental-app
+  http://www.npr.org/2016/04/26/475773261/when-personalization-leads-to-discrimination-on-airbnb
 <link10>
-https://www.ted.com/talks/glenn_greenwald_why_privacy_matters
+  https://www.ted.com/talks/glenn_greenwald_why_privacy_matters
 <links11>
-https://www.theguardian.com/commentisfree/2017/jan/03/ive-left-twitter-unusable-anyone-but-trolls-robots-dictators-lindy-west
+  https://www.theguardian.com/commentisfree/2017/jan/03/ive-left-twitter-unusable-anyone-but-trolls-robots-dictators-lindy-west
 <link12>
-https://www.theguardian.com/technology/2016/aug/03/algorithm-racist-human-employers-work
+  https://www.theguardian.com/technology/2016/aug/03/algorithm-racist-human-employers-work
 <link13>
-https://www.washingtonpost.com/news/morning-mix/wp/2016/06/10/google-faulted-for-racial-bias-in-image-search-results-for-black-teenagers/?utm_term=.030b16d84cff
+  https://www.washingtonpost.com/news/morning-mix/wp/2016/06/10/google-faulted-for-racial-bias-in-image-search-results-for-black-teenagers/?utm_term=.030b16d84cff
 <link14>
-https://www.nytimes.com/2015/07/10/upshot/when-algorithms-discriminate.html
+  https://www.nytimes.com/2015/07/10/upshot/when-algorithms-discriminate.html
 <link15>
-http://www.motherjones.com/politics/2016/10/facebook-advertisers-exclude-users-by-race
+  http://www.motherjones.com/politics/2016/10/facebook-advertisers-exclude-users-by-race
 <link16>
-https://www.theatlantic.com/science/archive/2017/01/six-year-old-girls-already-have-gendered-beliefs-about-intelligence/514340/
-<link17>
-http://www.npr.org/2016/03/14/470427605/can-computers-be-racist-the-human-like-bias-of-algorithms
+  https://www.theatlantic.com/science/archive/2017/01/six-year-old-girls-already-have-gendered-beliefs-about-intelligence/514340/
 <link18>
-https://www.brookings.edu/blog/up-front/2016/08/22/are-criminal-risk-assessment-scores-racist/
-<link19>
-https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing
+  https://www.brookings.edu/blog/up-front/2016/08/22/are-criminal-risk-assessment-scores-racist/
+  https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing
 <link20>
-http://www.journalism.org/2012/11/28/role-social-media-arab-uprisings/
+  http://www.journalism.org/2012/11/28/role-social-media-arab-uprisings/
 <link21>
-http://www.pewinternet.org/2016/08/15/the-hashtag-blacklivesmatter-emerges-social-activism-on-twitter/
+  http://www.pewinternet.org/2016/08/15/the-hashtag-blacklivesmatter-emerges-social-activism-on-twitter/
 <link22>
-https://www.theatlantic.com/business/archive/2016/10/privilege-helps-men-not-women-get-lucrative-jobs/504497/
+  https://www.theatlantic.com/business/archive/2016/10/privilege-helps-men-not-women-get-lucrative-jobs/504497/
 <link23>
-https://www.theguardian.com/education/ng-interactive/2015/may/28/language-barrier-internet-experience
+  https://www.theguardian.com/education/ng-interactive/2015/may/28/language-barrier-internet-experience
 <link24>
-https://www.wired.com/2016/09/googles-clever-plan-stop-aspiring-isis-recruits/
+  https://www.wired.com/2016/09/googles-clever-plan-stop-aspiring-isis-recruits/
 <link25>
-https://www.theguardian.com/technology/2016/jan/12/silicon-valley-women-harassment-gender-discrimination
+  https://www.theguardian.com/technology/2016/jan/12/silicon-valley-women-harassment-gender-discrimination
 <link26>
-https://www.technologyreview.com/s/603072/if-only-ai-could-save-us-from-ourselves/
+  https://www.technologyreview.com/s/603072/if-only-ai-could-save-us-from-ourselves/
+ 
+ * = personal favorites
