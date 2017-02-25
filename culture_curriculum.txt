@@ -43,15 +43,15 @@ Topics that need to be worked into all that or at least alluded to somewhere:
 -strategies for identifying socially problematic business strategies, algorithm implementations, etc.
 -how to deal with your privilege guilt
 
-*<link1>
+<link1>
   https://www.nytimes.com/2016/03/20/upshot/as-women-take-over-a-male-dominated-field-the-pay-drops.html?_r=0
-*<link2>
+<link2>
   https://www.theatlantic.com/technology/archive/2016/09/the-internet-may-be-as-segregated-as-a-city/498608/
 <link3>
   https://www.theatlantic.com/science/archive/2016/07/how-women-are-harassed-out-of-science/492521/
-*<link4>
+<link4>
   http://forums.xkcd.com/viewtopic.php?t=108674
-*<link5>
+<link5>
   http://timesofindia.indiatimes.com/india/All-WhatsApp-groups-to-be-monitored-in-Jammu-Kashmirs-Kupwara/articleshow/51898762.cms
 <link6>
   https://qz.com/500062/the-most-crucial-item-that-migrants-and-refugees-carry-is-a-smartphone/
@@ -93,5 +93,3 @@ Topics that need to be worked into all that or at least alluded to somewhere:
   https://www.theguardian.com/technology/2016/jan/12/silicon-valley-women-harassment-gender-discrimination
 <link26>
   https://www.technologyreview.com/s/603072/if-only-ai-could-save-us-from-ourselves/
- 
- * = personal favorites
