@@ -4,7 +4,8 @@ Goals:
 -to save more informed students from having to explain the issues to their peers
 -to provide resources for those who want to be supportive allies, but who don’t know where to start when trying to inform themselves
 -the goal is not to paint certain companies or CEOs or types of people as good or bad, but to paint a picture of the factual social state of the tech industry today and to bring light to issues in tech that are being talked about at large
--to make learning about social issues feel engaging and relevant 
+-to make learning about social issues feel engaging and relevant
+-nobody should be able to graduate from App Academy without knowing who Ellen Pao and Sheryl Sandberg are, and knowing how influential black twitter is. Full stop, that's unacceptable.
 
 The how:
 -every W?D5 in the main curriculum, provide a few links to culture curriculum resources related to that week's topic
@@ -24,7 +25,7 @@ POTENTIAL WEEKLY TOPICS:
 
 -free speech on the internet: awesome xkcd comic<link4>, trolls <links11><link26>, cracking down on hate groups online <link24> (this optimistic article on cracking down on ISIS via Google algorithms MUST be paired with articles showing Google's indifference towards groups like the KKK, and something explaining the racism of it)
 
--women's issues, pt 1: wage gap <link1>, sexual harassment in STEM <link3><link25>, gendered beliefs about intelligence <link16>, a good article that breaks down the uber harassment story
+-women's issues, pt 1: wage gap <link1>, sexual harassment in STEM <link3><link25>, gendered beliefs about intelligence <link16>, a good article that breaks down the uber harassment story, the importance of Pao vs. Kleiner for women in tech
 
 -women's issues, pt 2/intro to intersectionality: a breakdown of Sheryl Sandberg-brand feminism (i.e. white feminism vs intersectional feminism)
 
