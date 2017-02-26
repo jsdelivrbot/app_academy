@@ -22,13 +22,15 @@ POTENTIAL WEEKLY TOPICS:
 
 -Silicon Valley's impacts abroad: social media for political protest <link5>, refugee communication <link6>, Facebook's botched 'Free Basics' campaign in India
 
--discrimination in the job search: Palantir case <link8>, resumes and response rates (sexism <link22>, racism <>), <link12>, an article about how diversity-training programs backfire (based on the Harvard Business Review's 2016 study, but need an article that's more accessible)
-
 -free speech on the internet: awesome xkcd comic<link4>, trolls <links11><link26>, cracking down on hate groups online <link24> (this optimistic article on cracking down on ISIS via Google algorithms MUST be paired with articles showing Google's indifference towards groups like the KKK, and something explaining the racism of it)
 
--women's issues: wage gap <link1>, sexual harassment in STEM <link3><link25>, gendered beliefs about intelligence <link16>, a good article that breaks down the uber harassment story, something about Sheryl Sandberg-brand feminism (i.e. white feminism vs intersectional feminism)
+-women's issues, pt 1: wage gap <link1>, sexual harassment in STEM <link3><link25>, gendered beliefs about intelligence <link16>, a good article that breaks down the uber harassment story
+
+-women's issues, pt 2/intro to intersectionality: a breakdown of Sheryl Sandberg-brand feminism (i.e. white feminism vs intersectional feminism)
 
 -gentrification, homelessness, and rising income diparity in SF
+
+-discrimination in the job search: Palantir case <link8>, resumes and response rates (sexism <link22>, racism <>), <link12>, an article about how diversity-training programs backfire (based on the Harvard Business Review's 2016 study, but need an article that's more accessible)
 
 -(potential)social benefits of tech(if we inform ourselves and commit ourselves to doing good things): the internet as a vehicle for social change (arab spring <link20>, blm <link21>), dramatic increase in the diversity of voices that the mainstream hears from (black twitter<link27>)
 
