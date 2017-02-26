@@ -5,7 +5,7 @@ Goals:
 -to provide resources for those who want to be supportive allies, but who don’t know where to start when trying to inform themselves
 -the goal is not to paint certain companies or CEOs or types of people as good or bad, but to paint a picture of the factual social state of the tech industry today and to bring light to issues in tech that are being talked about at large
 -to make learning about social issues feel engaging and relevant
--nobody should be able to graduate from App Academy without knowing having some exposure to all of these issues.
+-nobody should be able to graduate from App Academy without having some exposure to all of these issues. You should not be able to graduate without having heard of Sheryl Sandberg, Ellen Pao, and black twitter. Full stop.
 
 The how:
 -every W?D5 in the main curriculum, provide a few links to culture curriculum resources related to that week's topic
@@ -19,7 +19,7 @@ POTENTIAL WEEKLY TOPICS:
 
 -citizenship/immigration: issues specifically impacting immigrants in Silicon Valley, Silicon Valley's dependence on immigrants, impact of the travel ban on tech industry, digital language divide <link23>
 
--government surveillance: Glenn Greenwald <link10>, specific impact on Muslim Americans, tech companies' compliance with/resistance to giving the NSA access to data
+-government surveillance: something from Glenn Greenwald or Edward Snowden, specific impact on Muslim Americans, tech companies' compliance with/resistance to giving the NSA access to data
 
 -Silicon Valley's impacts abroad: social media for political protest <link5>, refugee communication <link6>, Facebook's botched 'Free Basics' campaign in India
 
@@ -65,8 +65,6 @@ Topics that need to be worked into all that or at least alluded to somewhere:
 <link9>
   https://www.theguardian.com/technology/2016/may/05/airbnbwhileblack-hashtag-highlights-potential-racial-bias-rental-app
   http://www.npr.org/2016/04/26/475773261/when-personalization-leads-to-discrimination-on-airbnb
-<link10>
-  https://www.ted.com/talks/glenn_greenwald_why_privacy_matters
 <links11>
   https://www.theguardian.com/commentisfree/2017/jan/03/ive-left-twitter-unusable-anyone-but-trolls-robots-dictators-lindy-west
 <link12>
