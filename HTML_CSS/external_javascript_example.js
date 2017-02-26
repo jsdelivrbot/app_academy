@@ -38,13 +38,5 @@ var getName = function(event) {
 };
 
 var getComment = function(event) {
-  var commentText;
-  var formChildren = event.target.children;
-  for (var i = 0; i < formChildren.length; i++) {
-    if (formChildren[i].tagName === "LABEL" && formChildren[i].children[0]) {
-      commentText = formChildren[i].children[0].value;
-    }
-  }
-
-  return commentText;
+  return event.target.children.comment.value;
 };
