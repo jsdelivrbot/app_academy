@@ -30,7 +30,7 @@ POTENTIAL WEEKLY TOPICS:
 
 -gentrification, homelessness, and rising income diparity in SF
 
--(potential)social benefits of tech(if we inform ourselves and commit ourselves to doing good things): the internet as a vehicle for social change (arab spring <link20>, blm <link21>), for connectivity and accessibility
+-(potential)social benefits of tech(if we inform ourselves and commit ourselves to doing good things): the internet as a vehicle for social change (arab spring <link20>, blm <link21>), dramatic increase in the diversity of voices that the mainstream hears from (black twitter<link27>)
 
 --
 
@@ -93,3 +93,5 @@ Topics that need to be worked into all that or at least alluded to somewhere:
   https://www.theguardian.com/technology/2016/jan/12/silicon-valley-women-harassment-gender-discrimination
 <link26>
   https://www.technologyreview.com/s/603072/if-only-ai-could-save-us-from-ourselves/
+ <link27>
+  https://www.theatlantic.com/technology/archive/2015/04/the-truth-about-black-twitter/390120/
