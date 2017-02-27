@@ -23,10 +23,21 @@
     </div>
 
     <header>
-      <a href="http://www.nybooks.com/"><img class="logo" src="http://www.nybooks.com/wp-content/themes/nyrb/img/icon/NYRB.png" alt="ny review of books"></a>
+      <table>
+        <tr>
+          <td><a href="http://www.nybooks.com/"><img src="http://www.nybooks.com/wp-content/themes/nyrb/img/icon/NYRB.png" alt="ny review of books"></a></td>
+          <td>
+            <form class="search-bar" action="index.html" method="get">
+              <input type="text" placeholder="Enter search keywords...">
+              <input type="submit" name="" value="Search">
+            </form>
+          </td>
+        </tr>
+
+      </table>
 
       <nav>
-        <table width=100%>
+        <table>
           <tr>
             <td><a href="http://www.nybooks.com/subscriptions/order/">Subscribe</a></td>
             <td><a href="http://www.nybooks.com/current-issue/">Current Issue</a></td>
@@ -41,17 +52,15 @@
         </table>
     </nav>
 
-      <a href="http://www.nybooks.com/daily/"><img class="logo" src="http://www.nybooks.com/wp-content/themes/nyrb/img/icon/NYR_daily.png" alt="NYDaily" width=200px></a>
+    <a href="http://www.nybooks.com/daily/"><img class="logo" src="http://www.nybooks.com/wp-content/themes/nyrb/img/icon/NYR_daily.png" alt="NYDaily"></a>
 
-      <div class="red-header-line"></div>
-      <div class="white-header-line"></div>
-      <div class="red-header-line"></div>
+    <div class="red-header-line"></div>
+    <div class="white-header-line"></div>
+    <div class="red-header-line"></div>
 
-      </div>
-
-      <input type="button"  class="twitter-button" onclick="location.href='https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fwww.nybooks.com%2Fdaily%2F2016%2F11%2F10%2Ftrump-election-autocracy-rules-for-survival%2F&ref_src=twsrc%5Etfw&text=Autocracy%3A%20Rules%20for%20Survival&tw_p=tweetbutton&url=http%3A%2F%2Fwww.nybooks.com%2Fdaily%2F2016%2F11%2F10%2Ftrump-election-autocracy-rules-for-survival%2F&via=nybooks';" value="Tweet" />
-      <input type="button"  class="facebook-button" onclick="location.href='https://www.facebook.com/';" value="Share">
-    </header>
+    <input type="button"  class="twitter-button" onclick="location.href='https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fwww.nybooks.com%2Fdaily%2F2016%2F11%2F10%2Ftrump-election-autocracy-rules-for-survival%2F&ref_src=twsrc%5Etfw&text=Autocracy%3A%20Rules%20for%20Survival&tw_p=tweetbutton&url=http%3A%2F%2Fwww.nybooks.com%2Fdaily%2F2016%2F11%2F10%2Ftrump-election-autocracy-rules-for-survival%2F&via=nybooks';" value="Tweet" />
+    <input type="button"  class="facebook-button" onclick="location.href='https://www.facebook.com/';" value="Share">
+  </header>
 
     <section>
       <h1 id=top><a href="http://www.nybooks.com/daily/2016/11/10/trump-election-autocracy-rules-for-survival/">Autocracy: Rules for Survival</a></h1>
@@ -60,9 +69,7 @@
       <br>
       <img src="http://www.nybooks.com/wp-content/uploads/2016/11/love-trumps-hate.jpg" alt="love trumps hate" width=100%>
       <p class="caption">Protesters outside Trump Tower the day after the election, New York City, November 9, 2016</p>
-    </section>
 
-    <section>
       <p>“Thank you, my friends. Thank you. Thank you. We have lost. We have lost, and this is the last day of my political career, so I will say what must be said. We are standing at the edge of the abyss. Our political system, our society, our country itself are in greater danger than at any time in the last century and a half. The president-elect has made his intentions clear, and it would be immoral to pretend otherwise. We must band together right now to defend the laws, the institutions, and the ideals on which our country is based.”</p>
 
       <p>That, or something like that, is what Hillary Clinton should have said on Wednesday. Instead, she said, resignedly:</p>
@@ -84,9 +91,7 @@
       <p>But Trump is anything but a regular politician and this has been anything but a regular election. Trump will be only the fourth candidate in history and the second in more than a century to win the presidency after losing the popular vote. He is also probably the first candidate in history to win the presidency despite having been shown repeatedly by the national media to be a chronic liar, sexual predator, serial tax-avoider, and race-baiter who has attracted the likes of the Ku Klux Klan. Most important, Trump is the first candidate in memory who ran not for president but for autocrat—and won.</p>
 
       <p>I have lived in autocracies most of my life, and have spent much of my career writing about Vladimir Putin’s Russia. I have learned a few rules for surviving in an autocracy and salvaging your sanity and self-respect. It might be worth considering them now:</p>
-    </section>
 
-    <section>
       <ol>
         <h2 id=rule1><li>Believe the autocrat.</li></h2>
 
@@ -130,9 +135,9 @@
 
       <br>
       <div class="black-footer-line"></div>
-    </section>
 
-    <h3><section id="comments"></h3>
+
+    <div id="comments">
       <h2>Comments</h2>
 
       <form id="comment-form" action="/comments" method="post">
@@ -147,12 +152,105 @@
 
         <input type="submit" value="Add Comment">
       </form>
-    </section>
+    </div>
+    <p><a href="#top">Return to top</a></p>
+        </section>
+
+    <aside>
+      <img class="header-logo" src="http://www.nybooks.com/wp-content/themes/nyrb/img/icon/NYR_daily.png" alt="NYDaily">
+      <table>
+        <tr>
+          <td>
+            <img class="sidebar-article" src="http://www.nybooks.com/wp-content/uploads/2017/02/reichstag-fire-63x63-c-default.jpg" alt="reichstag">
+            <h3 class="sidebar-article">The Reichstag Warning</h3>
+            <p class="sidebar-article">Timothy Snyder</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <img class="sidebar-article" src="http://www.nybooks.com/wp-content/uploads/2016/12/bendak-stupa-63x63-c-default.jpg" alt="tibet">
+            <h3 class="sidebar-article">Tibet’s Hidden Kingdom</h3>
+            <p class="sidebar-article">David Shulman</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <img class="sidebar-article" src="http://www.nybooks.com/wp-content/uploads/2017/02/nature-zeus-faber-63x63-c-default.jpg" alt="Our Animal History">
+            <h3 class="sidebar-article">Our Animal History</h3>
+            <p class="sidebar-article">Jenny Uglow</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <img class="sidebar-article" src="http://www.nybooks.com/wp-content/uploads/2017/02/apple-magritte-63x63-c-default.jpg" alt="The Object of Consciousness">
+            <h3 class="sidebar-article">The Object of Consciousness</h3>
+            <p class="sidebar-article">Riccardo Manzotti and Tim Parks</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <img class="sidebar-article" src="http://www.nybooks.com/wp-content/uploads/2017/02/kara-murza-63x63-c-default.jpg" alt="Poisoned by Putin?">
+            <h3 class="sidebar-article">Poisoned by Putin?</h3>
+            <p class="sidebar-article">Masha Gessen</p>
+          </td>
+        </tr>
+      </table>
+    </aside>
+
+    <aside>
+      <img class="cartoon" src="http://www.nybooks.com/wp-content/uploads/2017/02/nyrb030917-520x0-c-default.png" alt="nyreview cartoon">
+
+      <table>
+        <tr>
+          <td>
+            <img class="sidebar-article" src="http://www.nybooks.com/wp-content/uploads/2017/02/reichstag-fire-63x63-c-default.jpg" alt="reichstag">
+            <h3 class="sidebar-article">The Reichstag Warning</h3>
+            <p class="sidebar-article">Timothy Snyder</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <img class="sidebar-article" src="http://www.nybooks.com/wp-content/uploads/2016/12/bendak-stupa-63x63-c-default.jpg" alt="tibet">
+            <h3 class="sidebar-article">Tibet’s Hidden Kingdom</h3>
+            <p class="sidebar-article">David Shulman</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <img class="sidebar-article" src="http://www.nybooks.com/wp-content/uploads/2017/02/nature-zeus-faber-63x63-c-default.jpg" alt="Our Animal History">
+            <h3 class="sidebar-article">Our Animal History</h3>
+            <p class="sidebar-article">Jenny Uglow</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <img class="sidebar-article" src="http://www.nybooks.com/wp-content/uploads/2017/02/apple-magritte-63x63-c-default.jpg" alt="The Object of Consciousness">
+            <h3 class="sidebar-article">The Object of Consciousness</h3>
+            <p class="sidebar-article">Riccardo Manzotti and Tim Parks</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <img class="sidebar-article" src="http://www.nybooks.com/wp-content/uploads/2017/02/kara-murza-63x63-c-default.jpg" alt="Poisoned by Putin?">
+            <h3 class="sidebar-article">Poisoned by Putin?</h3>
+            <p class="sidebar-article">Masha Gessen</p>
+          </td>
+        </tr>
+      </table>
+      <a class="more-link" href="http://www.nybooks.com/issues/2017/03/09/">MORE>></a>
+    </aside>
+
+
+
+
   </body>
 
-  <footer>
-
-    <p><a href="#top">Return to top</a></p>
-
-  </footer>
 </html>
