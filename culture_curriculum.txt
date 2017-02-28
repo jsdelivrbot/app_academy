@@ -100,3 +100,4 @@ Topics that need to be worked into all that or at least alluded to somewhere:
   https://www.youtube.com/watch?v=dw_mRaIHb-M
  <link29>
   https://theoutline.com/post/1166/programmers-are-confessing-their-coding-sins-to-protest-a-broken-job-interview-process
+  http://blog.interviewing.io/you-cant-fix-diversity-in-tech-without-fixing-the-technical-interview/
