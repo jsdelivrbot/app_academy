@@ -31,7 +31,7 @@ POTENTIAL WEEKLY TOPICS:
 
 -gentrification, homelessness, and rising income diparity in SF
 
--discrimination in the job search: Palantir case <link8>, resumes and response rates (sexism <link22>, racism <>), <link12>, an article about how diversity-training programs backfire (based on the Harvard Business Review's 2016 study, but need an article that's more accessible), some explanation of why reverse racism is not a thing <link28>
+-discrimination in the job search: whiteboarding weeds out more diverse applicants <link29>, Palantir case <link8>, resumes and response rates (sexism <link22>, racism <>), <link12>, an article about how diversity-training programs backfire (based on the Harvard Business Review's 2016 study, but need an article that's more accessible), some explanation of why reverse racism is not a thing <link28>
 
 -(potential)social benefits of tech(if we inform ourselves and commit ourselves to doing good things): the internet as a vehicle for social change (arab spring <link20>, blm <link21>), dramatic increase in the diversity of voices that the mainstream hears from (black twitter<link27>)
 
@@ -98,3 +98,5 @@ Topics that need to be worked into all that or at least alluded to somewhere:
   https://www.theatlantic.com/technology/archive/2015/04/the-truth-about-black-twitter/390120/
  <link28>
   https://www.youtube.com/watch?v=dw_mRaIHb-M
+ <link29>
+  https://theoutline.com/post/1166/programmers-are-confessing-their-coding-sins-to-protest-a-broken-job-interview-process
