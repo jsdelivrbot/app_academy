@@ -1,0 +1,19 @@
+.sections-nav {
+  display:flex;
+  justify-content: center;
+}
+
+.sections-ul {
+  display:flex;
+  font-family: $sans-serif;
+}
+
+.sections-ul li {
+	margin-left: 5px;
+  padding: 3px 4px;
+}
+
+.sections-ul li:hover {
+  background-color: $light-gray;
+	cursor: pointer;
+}
