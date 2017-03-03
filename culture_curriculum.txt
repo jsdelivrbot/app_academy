@@ -16,7 +16,7 @@ The how:
 
 POTENTIAL WEEKLY TOPICS:
 
--intro to social issues in tech - racist and sexist search algorithms as a reflection of Silicon Valley's lack of diversity/racist and sexist culture: racial segregation in internet traffic <link2>, racial discrimination on AirBnB <link9>, racial bias in image searches <link13>, discriminatory algorithms <link14>, discriminatory facebook advertisements <link15>, racial bias in algorithms used in court to aid in criminal sentencing <link18>
+-intro to social issues in tech - racist and sexist search algorithms as a reflection of Silicon Valley's lack of diversity/racist and sexist culture: racial segregation in internet traffic <link2>, racial discrimination on AirBnB <link9>, racial bias in image searches <link13>, more discriminatory algorithms <link14>, discriminatory facebook advertisements <link15>, racial bias in algorithms used in court to aid in criminal sentencing <link18>
 
 -citizenship/immigration: issues specifically impacting immigrants in Silicon Valley, Silicon Valley's dependence on immigrants, impact of the travel ban on tech industry, digital language divide <link23>
 
@@ -24,15 +24,15 @@ POTENTIAL WEEKLY TOPICS:
 
 -Silicon Valley's impacts abroad: social media for political protest <link5>, refugee communication <link6>, Facebook's botched 'Free Basics' campaign in India
 
--free speech on the internet: awesome xkcd comic<link4>, trolls <links11><link26>, cracking down on hate groups online <link24> (this optimistic article on cracking down on ISIS via Google algorithms MUST be paired with articles showing Google's indifference towards groups like the KKK, and something explaining the racism of it), net neutrality
+-free speech on the internet: awesome xkcd comic <link4>, trolls <links11><link26>, cracking down on hate groups online <link24> (this optimistic article on cracking down on ISIS via Google algorithms MUST be paired with articles showing Google's indifference towards groups like the KKK, and something explaining the racism of it), net neutrality
 
--women's issues, pt 1: wage gap <link1>, sexual harassment in STEM <link3><link25>, gendered beliefs about intelligence <link16>, a good article that breaks down the uber harassment story, the importance of Pao vs. Kleiner for women in tech
+-women's issues, pt 1: wage gap <link1>, sexual harassment in STEM <link3><link25>, gendered beliefs about intelligence <link16>, a good article that breaks down the uber harassment story, the importance of Pao v. Kleiner for women in tech
 
 -women's issues, pt 2/intro to intersectionality: a breakdown of Sheryl Sandberg-brand feminism (i.e. white feminism vs intersectional feminism)
 
 -gentrification, homelessness, and rising income diparity in SF
 
--discrimination in the job search: whiteboarding weeds out more diverse applicants <link29>, Palantir case <link8>, resumes and response rates (sexism <link22>, racism <>), <link12>, an article about how diversity-training programs backfire (based on the Harvard Business Review's 2016 study, but need an article that's more accessible), some explanation of why reverse racism is not a thing <link28>
+-discrimination in the job search: whiteboarding weeds out more diverse applicants <link29>, Palantir case <link8>, resumes and response rates (sexism <link22>, racism <>), more discriminatory algorithms <link12>, an article about how diversity-training programs backfire (based on the Harvard Business Review's 2016 study, but need an article that's more accessible), some explanation of why reverse racism is not a thing (this might be too controversial for an intro course...) <link28>
 
 -(potential)social benefits of tech(if we inform ourselves and commit ourselves to doing good things): the internet as a vehicle for social change (arab spring <link20>, blm <link21>), dramatic increase in the diversity of voices that the mainstream hears from (black twitter<link27>), representation <link30>
 
@@ -42,7 +42,6 @@ Topics that need to be worked into all that or at least alluded to somewhere:
 -affirmative action, "diversity hires", and "reverse racism" <link7>
 -intersectionality
 -how to be a good ally dos and donts(somewhere in the intro)
--net neutrality
 -strategies for staying informed and keeping up with current events
 -strategies for identifying socially problematic business strategies, algorithm implementations, etc.
 -how to deal with your privilege guilt
