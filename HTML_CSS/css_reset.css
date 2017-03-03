@@ -27,24 +27,25 @@ p.caption{
   text-align: center;
 }
 
-nav table {
-  border-top: double;
-  border-bottom: double;
-  border-collapse: collapse;
+nav ul {
+  list-style: none;
   margin: 20px 0;
-  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-nav td{
+nav li{
   border: 1px solid black;
+  border-top: double;
+  border-bottom: double;
   text-align: center;
   font-weight:bold;
-  padding: 10px;
+  padding: 5px 20px;
 }
 
 .colorstrip {
   height: 60px;
-  background-color: black;
+  background-color: gray;
   margin: 0 -200px 20px -200px;
   color: white;
   vertical-align: bottom;
@@ -185,4 +186,52 @@ aside table td{
 .more-link{
   margin-left: 290px;
   color: #990101;
+}
+
+.hamburger-dropdown {
+  display: none;
+}
+
+@media (max-width: 1350px) {
+  nav ul, .search-bar {
+    display: none;
+  }
+
+  .hamburger-dropdown {
+    display: block;
+    flex-direction: column;
+  }
+
+  .hamburger-dropdown > li {
+    background: url(https://raw.githubusercontent.com/appacademy/curriculum/master/html-css/assets/images/hamburger.png?token=ATzK_0lftQtwa9oAX-OmpDd0ZwxmLo-Jks5Yww4nwA%3D%3D);
+    background-size: 50px 50px;
+    width: 10px;
+    height: 40px;
+    border: none;
+    position: absolute;
+    top: 6px;
+    right: 50px;
+    cursor: pointer;
+  }
+
+  .hamburger-dropdown ul {
+    position: relative;
+  }
+
+  .hamburger-dropdown:hover ul {
+    display: block;
+    position: absolute;
+    top: 30px;
+    right: 10px;
+  }
+
+  .hamburger-dropdown:hover li {
+    flex-direction: column;
+    background-color: gray;
+    border: none;
+    display: block;
+  }
+
+
+
 }
