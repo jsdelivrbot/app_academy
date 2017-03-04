@@ -1,5 +1,4 @@
 .masthead {
-	justify-content: space-between;
 	border-bottom: 2px solid black;
 	position: relative;
 }
@@ -38,7 +37,6 @@ nav.language-nav {
 .masthead-links ul {
 	display: flex;
 	justify-content: space-between;
-	width: 38.5%;
 }
 
 .logo img {
@@ -68,12 +66,12 @@ nav.language-nav {
 }
 
 .masthead-links li {
-	margin-left: 10px;
 	border-right: 1px solid $light-gray;
+	margin-right: 10px;
 }
 
 .masthead-links li:last-of-type {
-	border-right: 0 solid $light-gray;
+	border-right: 0;
 }
 
 .masthead-links li:hover {
