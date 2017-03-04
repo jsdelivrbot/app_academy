@@ -18,7 +18,7 @@ POTENTIAL WEEKLY TOPICS:
 
 -intro to social issues in tech - racist and sexist search algorithms as a reflection of Silicon Valley's lack of diversity/racist and sexist culture: racial segregation in internet traffic <link2>, racial discrimination on AirBnB <link9>, racial bias in image searches <link13>, more discriminatory algorithms <link14>, discriminatory facebook advertisements <link15>, racial bias in algorithms used in court to aid in criminal sentencing <link18>
 
--citizenship/immigration: issues specifically impacting immigrants in Silicon Valley, Silicon Valley's dependence on immigrants, impact of the travel ban on tech industry, digital language divide <link23>
+-citizenship/immigration: issues specifically impacting immigrants in Silicon Valley, Silicon Valley's dependence on immigrants, impact of the travel ban on tech industry, digital language divide <link23>, Palantir and ICE <link31>
 
 -government surveillance: something from Glenn Greenwald or Edward Snowden, specific impact on Muslim Americans, tech companies' compliance with/resistance to giving the NSA access to data
 
@@ -26,7 +26,7 @@ POTENTIAL WEEKLY TOPICS:
 
 -free speech on the internet: awesome xkcd comic <link4>, trolls <links11><link26>, cracking down on hate groups online <link24> (this optimistic article on cracking down on ISIS via Google algorithms MUST be paired with articles showing Google's indifference towards groups like the KKK, and something explaining the racism of it), net neutrality
 
--women's issues, pt 1: wage gap <link1>, sexual harassment in STEM <link3><link25>, gendered beliefs about intelligence <link16>, a good article that breaks down the uber harassment story, the importance of Pao v. Kleiner for women in tech
+-women's issues, pt 1: wage gap <link1>, sexual harassment in STEM <link3><link25>, gendered beliefs about intelligence <link16>, a good article that breaks down the uber harassment story <link32>, the importance of Pao v. Kleiner for women in tech
 
 -women's issues, pt 2/intro to intersectionality: a breakdown of Sheryl Sandberg-brand feminism (i.e. white feminism vs intersectional feminism)
 
@@ -104,3 +104,7 @@ Topics that need to be worked into all that or at least alluded to somewhere:
   http://blog.interviewing.io/you-cant-fix-diversity-in-tech-without-fixing-the-technical-interview/
  <link30>
   https://modelviewculture.com/pieces/finding-ourselves-in-play-a-new-database-of-games-on-sexuality-gender-and-relationships
+ <link31>
+  https://theintercept.com/2017/03/02/palantir-provides-the-engine-for-donald-trumps-deportation-machine/
+ <link32>
+  https://www.theguardian.com/world/2017/mar/01/silicon-valley-sexual-harassment-startups
