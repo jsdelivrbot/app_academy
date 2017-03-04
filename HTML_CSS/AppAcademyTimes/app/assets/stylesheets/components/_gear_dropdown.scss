@@ -9,13 +9,11 @@
   background-color: white;
   flex-direction: column;
   width: 120px;
-  
+  padding: 10px;
 }
 
 .gear-dropdown > li {
   position: relative;
-  padding: 10px 0;
-  margin-left: -10px;
 }
 
 .gear-dropdown > li > ul {
@@ -26,11 +24,13 @@
 }
 
 .gear-dropdown > li > ul > li{
-  padding: 3px 0;
+  padding: 5px 0 5px 15px;
+  align-items: center;
 }
 
 .editions li:hover{
   background-color: $light-gray;
+  border-radius: 2.5px;
 }
 
 .help li:hover{
@@ -39,10 +39,13 @@
 
 .dropdown-subtitle {
   font-family: $sans-serif;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: bolder;
+  cursor: auto;
+  width: 100%;
+  border-bottom: 1px solid $light-gray;
 }
 
 .editions {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
