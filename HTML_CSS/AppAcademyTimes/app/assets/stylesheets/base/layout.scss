@@ -123,17 +123,18 @@ h1:hover, h2:hover {
 	text-decoration: underline;
 }
 
-.fa-sign-in, .fa-address-book {
-	display: none;
-}
-
 @media all and (max-width: 1043px) {
 	.search, .sections {
 		display: none;
 	}
-	
 
-	.fa-sign-in, .fa-address-book {
-		display: block;
+	i.fa-bars, i.fa-search {
+		font-size: 18px;
+	}
+}
+
+@media all and (max-width: 905px) {
+	.sections-bar {
+		display: none;
 	}
 }
