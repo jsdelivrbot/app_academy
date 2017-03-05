@@ -2,7 +2,7 @@
 
 html, body, header, nav, h1, a,
 ul, li, strong, main, button, i,
-section, img, div, h2, p, form,
+section, img, figcaption, div, h2, h3, p, form,
 fieldset, label, input, textarea,
 span, article, footer, time, small {
   margin:0;
@@ -11,7 +11,7 @@ span, article, footer, time, small {
   outline: none;
   font: inherit;
   color: black;
-  text-align: justify;
+  text-align: left;
   text-decoration: none;
   vertical-align: inherit;
   box-sizing: inherit;
