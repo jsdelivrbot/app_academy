@@ -109,4 +109,4 @@ Topics that need to be worked into all that or at least alluded to somewhere:
  <link32>
   https://www.theguardian.com/world/2017/mar/01/silicon-valley-sexual-harassment-startups
  <link33>
-  https://www.cnet.com/news/oops-google-accidentally-spreads-fake-news-and-conspiracies/
+  https://www.washingtonpost.com/business/economy/why-facebook-and-google-are-struggling-to-purge-fake-news/2016/11/15/85022897-f765-422e-9f53-c720d1f20071_story.html?utm_term=.099ae913b32e

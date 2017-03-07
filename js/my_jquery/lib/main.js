@@ -7,8 +7,9 @@ const getNodes = CSSselector => {
 };
 
 window.$l = arg => {
-  switch( typeof(arg) ){
-    case "string":
-      return getNodes(arg);
+  if( typeof arg === "string"){ //CSS selector
+    return getNodes(arg);
+  } else if(arg instanceof HTMLElement){ //HTML el
+    return new DOMNodeCollection(arg);
   }
 };
