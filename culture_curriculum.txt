@@ -16,7 +16,7 @@ The how:
 
 POTENTIAL WEEKLY TOPICS:
 
--intro to social issues in tech - racist and sexist search algorithms as a reflection of Silicon Valley's lack of diversity/racist and sexist culture: racial segregation in internet traffic <link2>, racial discrimination on AirBnB <link9>, racial bias in image searches <link13>, more discriminatory algorithms <link14>, discriminatory facebook advertisements <link15>, racial bias in algorithms used in court to aid in criminal sentencing <link18>
+-intro to social issues in tech - racist and sexist search algorithms as a reflection of Silicon Valley's lack of diversity/racist and sexist culture: racial segregation in internet traffic <link2>, racial discrimination on AirBnB <link9>, racial bias in image searches <link13>, more discriminatory algorithms <link14>, discriminatory facebook advertisements <link15>, racial bias in algorithms used in court to aid in criminal sentencing <link18>, algorithms promoting fake news <link33>
 
 -citizenship/immigration: issues specifically impacting immigrants in Silicon Valley, Silicon Valley's dependence on immigrants, impact of the travel ban on tech industry, digital language divide <link23>, Palantir and ICE <link31>
 
@@ -108,3 +108,5 @@ Topics that need to be worked into all that or at least alluded to somewhere:
   https://theintercept.com/2017/03/02/palantir-provides-the-engine-for-donald-trumps-deportation-machine/
  <link32>
   https://www.theguardian.com/world/2017/mar/01/silicon-valley-sexual-harassment-startups
+ <link33>
+  https://www.cnet.com/news/oops-google-accidentally-spreads-fake-news-and-conspiracies/
