@@ -28,7 +28,7 @@ POTENTIAL WEEKLY TOPICS:
 
 -women's issues, pt 1: wage gap <link1>, sexual harassment in STEM <link3><link25>, gendered beliefs about intelligence <link16>, a good article that breaks down the uber harassment story <link32>, the importance of Pao v. Kleiner for women in tech
 
--women's issues, pt 2/intro to intersectionality: a breakdown of Sheryl Sandberg-brand feminism (i.e. white feminism vs intersectional feminism)
+-women's issues, pt 2/intro to intersectionality: a breakdown of trickle-down feminism and white feminism vs intersectional feminism. (maybe pull a link from <link34>'s "On Hillary Clinton, Liberal Feminism, and 'Trickle-Down' Feminism" section)
 
 -gentrification, homelessness, and rising income diparity in SF
 
@@ -110,3 +110,5 @@ Topics that need to be worked into all that or at least alluded to somewhere:
   https://www.theguardian.com/world/2017/mar/01/silicon-valley-sexual-harassment-startups
  <link33>
   https://www.washingtonpost.com/business/economy/why-facebook-and-google-are-struggling-to-purge-fake-news/2016/11/15/85022897-f765-422e-9f53-c720d1f20071_story.html?utm_term=.099ae913b32e
+  <link34>
+    http://thenewinquiry.com/features/a-womens-strike-syllabus/
