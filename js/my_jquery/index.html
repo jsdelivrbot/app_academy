@@ -3,14 +3,18 @@
 
   <head>
     <title>My jQuery</title>
-    <script type="text/javascript" src="lib/my_jquery.js" charset="utf-8"></script>
-    <script type="text/javascript"  src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="lib/jquery_lite.js" charset="utf-8"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+
   </head>
 
   <body>
     <script>
-      $l(() => {
-
+      function dothing(){
+        var el = document.getElementsByClassName("this-list");
+        var newEl = el.children.first;
+        newEl.html("NEW TEXT");
+        debugger;
       })
     </script>
 
@@ -22,6 +26,8 @@
         <li>more things</li>
       </ul>
     </div>
+
+    <button onclick="dothing();">Button</button>
   </body>
 
 </html>

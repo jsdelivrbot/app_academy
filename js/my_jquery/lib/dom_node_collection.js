@@ -13,21 +13,23 @@ class DOMNodeCollection {
 // Let's write the method html first. It can optionally receive a string as a parameter.
 
 DOMNodeCollection.prototype.html = (string) => {
-  if(string){ // If it receives an argument, this will become the innerHTML (hint hint) of the each of the nodes.
+  if(typeof string === "string"){ // If it receives an argument, this will become the innerHTML (hint hint) of the each of the nodes.
     this.each( node => {
       node.innerHTML = string;
     });
-  } else { //If it does not receive an argument, it should return the innerHTML of the first node in the array.
+  } else {
     return this.nodes[0].innerHTML;
   }
-  debugger;
 };
 // empty
 //
-// This method clears out the content of all nodes in the internal array. I set the html of all nodes to an empty string.
+// This method clears out the content of all nodes in the internal array.
+//I set the html of all nodes to an empty string.
 
 DOMNodeCollection.prototype.empty = () => {
-
+  this.each( node => {
+    node.html('')
+  });
 };
 // append
 //
@@ -35,8 +37,7 @@ DOMNodeCollection.prototype.empty = () => {
 // other methods
 //
 
-DOMNodeCollection.prototype.append = () => {
-
+DOMNodeCollection.prototype.append = (children) => {
 };
 // I will leave it up to you to figure out ways to implement attr, addClass, and removeClass. All the information for how to change nodes is available in this resource.
 // traversal
@@ -74,3 +75,5 @@ DOMNodeCollection.prototype.remove = () => {
 // It should also remove all nodes from the array.
 
 module.exports = DOMNodeCollection;
+
+var nodes =
