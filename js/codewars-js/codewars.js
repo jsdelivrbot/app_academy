@@ -27,10 +27,25 @@ const maxAndMin = function(arr1, arr2) {
   return [Math.max(...allDiffs), Math.min(...allDiffs)];
 };
 
-console.log(maxAndMin([1,2,3,4,5],[6,7,8,9,10])); //[9,1]
-console.log(maxAndMin([3,10,5],[3,10,5])); // [7,0]
-console.log(maxAndMin([3],[20])); //  [17,17]
+// console.log(maxAndMin([1,2,3,4,5],[6,7,8,9,10])); //[9,1]
+// console.log(maxAndMin([3,10,5],[3,10,5])); // [7,0]
+// console.log(maxAndMin([3],[20])); //  [17,17]
 
+// Kontti language is a finnish word play game, you add -kontti to the
+// end of a word and then switch their first letters until the first
+// vowel (as in "aeiouy"); if no vowel is present, the word stays the
+// same.
+//
+// For example the word lamppu becomes komppu-lantti; aeiou becomes
+// koeiou-antti and so on.
+//
+// Write a string method that turns a sentence into a kontti sentence!
+
+String.prototype.kontti = function(){
+
+};
+
+// https://www.codewars.com/kata/kontti-language/train/javascript
 
 const sqInRect = (w, h, firstRound = true) => {
   if (w > h) {
