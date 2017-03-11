@@ -44,11 +44,16 @@
 /* 0 */
 /***/ function(module, exports) {
 
-	(function(global) {
-	  global.$nic = arg => {
+	(function(global, document) {
 
-	  }
-	}(window));
+	  global.$nic = arg => {
+	    //if the arg is a string, treat as a CSS selector and return matching nodes on the page
+	    if(typeof arg === "string"){
+
+	    }
+	  };
+
+	}(window, document));
 
 
 /***/ }

@@ -31,6 +31,7 @@ const maxAndMin = function(arr1, arr2) {
 // console.log(maxAndMin([3,10,5],[3,10,5])); // [7,0]
 // console.log(maxAndMin([3],[20])); //  [17,17]
 
+// https://www.codewars.com/kata/kontti-language/train/javascript
 // Kontti language is a finnish word play game, you add -kontti to the
 // end of a word and then switch their first letters until the first
 // vowel (as in "aeiouy"); if no vowel is present, the word stays the
@@ -45,7 +46,47 @@ String.prototype.kontti = function(){
 
 };
 
-// https://www.codewars.com/kata/kontti-language/train/javascript
+// Test.assertEquals("lamppu".kontti(), "komppu-lantti");
+// Test.assertEquals("lamppu sofia".kontti(), "komppu-lantti kofia-sontti");
+// Test.assertEquals("silly game".kontti(), "kolly-sintti kome-gantti");
+// Test.assertEquals("".kontti(), "");
+// Test.assertEquals("silly grrr".kontti(), "kolly-sintti grrr");
+
+// console.log("lamppu".kontti()); //=> "komppu-lantti"
+// console.log("lamppu sofia".kontti()); //=> "komppu-lantti kofia-sontti"
+// console.log("silly game".kontti());//=> "kolly-sintti kome-gantti"
+// console.log("".kontti());//=> ""
+// console.log("silly grrr".kontti());//=> "kolly-sintti grrr"
+
+
+// https://www.codewars.com/kata/replace-with-alphabet-position/train/javascript
+// Welcome. In this kata you are required to, given a string, replace
+// every letter with its position in the alphabet. If anything in the
+// text isn't a letter, ignore it and don't return it. a being 1, b
+// being 2, etc.
+
+const alphabetPosition = string => {
+  let startIndex = /[a-zA-Z]/.exec(string).index;
+  let result = `${letterPosition(string[startIndex])}`;
+
+  string.slice(startIndex + 1).split("").forEach( char => {
+    if (letterPosition(char)) result += " " + letterPosition(char);
+  });
+
+  return result;
+};
+
+const letterPosition = (letter) => {
+  let alphabetArr = "abcdefghijklmnopqrstuvwxyz".split("");
+  let capsAlphabetArr = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+  let returnVal =
+    alphabetArr.indexOf(letter) + 1
+    || capsAlphabetArr.indexOf(letter) + 1;
+  return returnVal ? returnVal : null;
+};
+
+// console.log(alphabetPosition("The sunset sets at twelve o' clock." ) === "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11");
+// console.log(alphabetPosition( "The narwhal bacons at midnight.") === "20 8 5 14 1 18 23 8 1 12 2 1 3 15 14 19 1 20 13 9 4 14 9 7 8 20");
 
 const sqInRect = (w, h, firstRound = true) => {
   if (w > h) {
