@@ -5,11 +5,23 @@
     <title>nicQuery</title>
     <script type="text/javascript" src="lib/jquery-3.1.1.js"></script>
     <script type="text/javascript" src="lib/nicQuery.js"></script>
+
+
+    <script>
+    $(document).ready(
+     function() {
+       $( "[type=submit]" ).on("click", () => {
+         alert("checked!");
+       });
+     }
+    )
+</script>
   </head>
   <body>
     <h1>Welcome to this webpage</h1>
     <div class="test-div">
-      <ul class="list-of-things">
+      <ul id="list-of-things">
+        <li><input id="check1" type="submit"></li>
         <li>thing1</li>
         <li>thing 2</li>
         <li>things things things</li>
