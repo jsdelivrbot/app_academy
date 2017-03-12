@@ -1,0 +1,114 @@
+
+Goals:
+-inform students about important socio-cultural issues related to the tech industry, to get students to better understand the real social impacts of their work in the tech industry and to familiarize them with big picture discussions surrounding their work
+-to save more informed students from having to explain the issues to their peers
+-to provide resources for those who want to be supportive allies, but who don’t know where to start when trying to inform themselves
+-the goal is not to paint certain companies or CEOs or types of people as good or bad, but to paint a picture of the factual social state of the tech industry today and to bring light to issues in tech that are being talked about at large
+-to make learning about social issues feel engaging and relevant
+-nobody should be able to graduate from App Academy without having some exposure to all of these issues. You should not be able to graduate without knowing why Sheryle Sandberg's controversial and knowing how influential black twitter is. Full stop.
+
+The how:
+-every W?D5 in the main curriculum, provide a few links to culture curriculum resources related to that week's topic
+-don't require the students read it, and make clear that they will never have to read about or talk about these issues if they do not want to/feel comfortable doing so
+-"you can lead a horse to water but you can't make it drink" - we need to at least put the water in front of the horse. This is the water.
+
+--------
+
+POTENTIAL WEEKLY TOPICS:
+
+-intro to social issues in tech - racist and sexist search algorithms as a reflection of Silicon Valley's lack of diversity/racist and sexist culture: racial segregation in internet traffic <link2>, racial discrimination on AirBnB <link9>, racial bias in image searches <link13>, more discriminatory algorithms <link14>, discriminatory facebook advertisements <link15>, racial bias in algorithms used in court to aid in criminal sentencing <link18>, algorithms promoting fake news <link33>
+
+-citizenship/immigration: issues specifically impacting immigrants in Silicon Valley, Silicon Valley's dependence on immigrants, impact of the travel ban on tech industry, digital language divide <link23>, Palantir and ICE <link31>
+
+-government surveillance: something from Glenn Greenwald or Edward Snowden, specific impact on Muslim Americans, tech companies' compliance with/resistance to giving the NSA access to data
+
+-Silicon Valley's impacts abroad: social media for political protest <link5>, refugee communication <link6>, Facebook's botched 'Free Basics' campaign in India
+
+-free speech on the internet: awesome xkcd comic <link4>, trolls <links11><link26>, cracking down on hate groups online <link24> (this optimistic article on cracking down on ISIS via Google algorithms MUST be paired with articles showing Google's indifference towards groups like the KKK, and something explaining the racism of it), net neutrality
+
+-women's issues, pt 1: wage gap <link1>, sexual harassment in STEM <link3><link25>, gendered beliefs about intelligence <link16>, a good article that breaks down the uber harassment story <link32>, the importance of Pao v. Kleiner for women in tech
+
+-women's issues, pt 2/intro to intersectionality: a breakdown of trickle-down feminism and white feminism vs intersectional feminism. (maybe pull a link from <link34>'s "On Hillary Clinton, Liberal Feminism, and 'Trickle-Down' Feminism" section)
+
+-gentrification, homelessness, and rising income diparity in SF
+
+-discrimination in the job search: whiteboarding weeds out more diverse applicants <link29>, Palantir case <link8>, resumes and response rates (sexism <link22>, racism <>), more discriminatory algorithms <link12>, an article about how diversity-training programs backfire (based on the Harvard Business Review's 2016 study, but need an article that's more accessible), some explanation of why reverse racism is not a thing (this might be too controversial for an intro course...) <link28>
+
+-(potential)social benefits of tech(if we inform ourselves and commit ourselves to doing good things): the internet as a vehicle for social change (arab spring <link20>, blm <link21>), dramatic increase in the diversity of voices that the mainstream hears from (black twitter<link27>), representation <link30>
+
+--
+
+Topics that need to be worked into all that or at least alluded to somewhere:
+-affirmative action, "diversity hires", and "reverse racism" <link7>
+-intersectionality
+-how to be a good ally dos and donts(somewhere in the intro)
+-strategies for staying informed and keeping up with current events
+-strategies for identifying socially problematic business strategies, algorithm implementations, etc.
+-how to deal with your privilege guilt
+-more from here: https://modelviewculture.com/resources
+
+<link1>
+  https://www.nytimes.com/2016/03/20/upshot/as-women-take-over-a-male-dominated-field-the-pay-drops.html?_r=0
+<link2>
+  https://www.theatlantic.com/technology/archive/2016/09/the-internet-may-be-as-segregated-as-a-city/498608/
+<link3>
+  https://www.theatlantic.com/science/archive/2016/07/how-women-are-harassed-out-of-science/492521/
+<link4>
+  http://forums.xkcd.com/viewtopic.php?t=108674
+<link5>
+  http://timesofindia.indiatimes.com/india/All-WhatsApp-groups-to-be-monitored-in-Jammu-Kashmirs-Kupwara/articleshow/51898762.cms
+<link6>
+  https://qz.com/500062/the-most-crucial-item-that-migrants-and-refugees-carry-is-a-smartphone/
+<link7>
+  http://www.salon.com/2015/10/26/diversity_is_for_white_people_the_big_lie_behind_a_well_intended_word/
+<link8>
+  https://techcrunch.com/2016/09/26/u-s-department-of-labor-sues-palantir-for-racial-discrimination/
+<link9>
+  https://www.theguardian.com/technology/2016/may/05/airbnbwhileblack-hashtag-highlights-potential-racial-bias-rental-app
+  http://www.npr.org/2016/04/26/475773261/when-personalization-leads-to-discrimination-on-airbnb
+<links11>
+  https://www.theguardian.com/commentisfree/2017/jan/03/ive-left-twitter-unusable-anyone-but-trolls-robots-dictators-lindy-west
+<link12>
+  https://www.theguardian.com/technology/2016/aug/03/algorithm-racist-human-employers-work
+<link13>
+  https://www.washingtonpost.com/news/morning-mix/wp/2016/06/10/google-faulted-for-racial-bias-in-image-search-results-for-black-teenagers/?utm_term=.030b16d84cff
+<link14>
+  https://www.nytimes.com/2015/07/10/upshot/when-algorithms-discriminate.html
+<link15>
+  http://www.motherjones.com/politics/2016/10/facebook-advertisers-exclude-users-by-race
+<link16>
+  https://www.theatlantic.com/science/archive/2017/01/six-year-old-girls-already-have-gendered-beliefs-about-intelligence/514340/
+<link18>
+  https://www.brookings.edu/blog/up-front/2016/08/22/are-criminal-risk-assessment-scores-racist/
+  https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing
+<link20>
+  http://www.journalism.org/2012/11/28/role-social-media-arab-uprisings/
+<link21>
+  http://www.pewinternet.org/2016/08/15/the-hashtag-blacklivesmatter-emerges-social-activism-on-twitter/
+<link22>
+  https://www.theatlantic.com/business/archive/2016/10/privilege-helps-men-not-women-get-lucrative-jobs/504497/
+<link23>
+  https://www.theguardian.com/education/ng-interactive/2015/may/28/language-barrier-internet-experience
+<link24>
+  https://www.wired.com/2016/09/googles-clever-plan-stop-aspiring-isis-recruits/
+<link25>
+  https://www.theguardian.com/technology/2016/jan/12/silicon-valley-women-harassment-gender-discrimination
+<link26>
+  https://www.technologyreview.com/s/603072/if-only-ai-could-save-us-from-ourselves/
+ <link27>
+  https://www.theatlantic.com/technology/archive/2015/04/the-truth-about-black-twitter/390120/
+ <link28>
+  https://www.youtube.com/watch?v=dw_mRaIHb-M
+ <link29>
+  https://theoutline.com/post/1166/programmers-are-confessing-their-coding-sins-to-protest-a-broken-job-interview-process
+  http://blog.interviewing.io/you-cant-fix-diversity-in-tech-without-fixing-the-technical-interview/
+ <link30>
+  https://modelviewculture.com/pieces/finding-ourselves-in-play-a-new-database-of-games-on-sexuality-gender-and-relationships
+ <link31>
+  https://theintercept.com/2017/03/02/palantir-provides-the-engine-for-donald-trumps-deportation-machine/
+ <link32>
+  https://www.theguardian.com/world/2017/mar/01/silicon-valley-sexual-harassment-startups
+ <link33>
+  https://www.washingtonpost.com/business/economy/why-facebook-and-google-are-struggling-to-purge-fake-news/2016/11/15/85022897-f765-422e-9f53-c720d1f20071_story.html?utm_term=.099ae913b32e
+  <link34>
+    http://thenewinquiry.com/features/a-womens-strike-syllabus/

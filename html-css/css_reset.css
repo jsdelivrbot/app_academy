@@ -1,0 +1,237 @@
+html, body, h1, h2, h3, table, tr, td, aside, footer, header, nav, section, aside{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  line-height: 1.5;
+  margin: 0 100px 0 100px;
+}
+
+ol, ul {
+}
+
+p{
+  text-align: justify;
+  margin: 12px 0;
+}
+
+p.caption{
+  margin-top: 2px;
+  margin-bottom: 12px;
+  font-style: italic;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav li{
+  border: 1px solid black;
+  border-top: double;
+  border-bottom: double;
+  text-align: center;
+  font-weight:bold;
+  padding: 5px 20px;
+}
+
+.colorstrip {
+  height: 60px;
+  background-color: gray;
+  margin: 0 -200px 20px -200px;
+  color: white;
+  vertical-align: bottom;
+  border: 1px solid transparent;
+}
+
+p.colorstrip{
+  margin-left: 200px;
+  margin-top: 20px;
+  background-color: transparent;
+}
+
+.colorstrip:hover{
+  font-style: underline;
+  color: white;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: inline-block;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 25px 0 5px 0;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+p.by-line {
+  font-size: 16px;
+  font-weight: bold;
+  margin:0;
+}
+
+.button:hover{
+  background: #990101;
+  color: white;
+  cursor: pointer;
+}
+
+.red-header-line{
+  height: 2px;
+  background: #990101;
+}
+
+.white-header-line{
+  height: 2px;
+  background: white;
+}
+
+.black-footer-line{
+  height: 2px;
+  background: black;
+  margin-top: 10px;
+}
+
+.logo{
+  margin: 30px 0 5px 0;
+  width:270px;
+}
+
+.search-bar {
+  margin-left: 270px;
+}
+
+.twitter-button{
+  background: #00aced;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+
+}
+
+.facebook-button{
+  background: #3b5998;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+
+}
+
+section {
+  width: 700px;
+  float:left;
+}
+
+aside {
+  background-color: #F5F5F5;
+  width: 400px;
+  float: left;
+  margin: 10px 0 50px 50px;
+  padding-bottom: 30px;
+}
+
+img.header-logo {
+  width: 200px;
+  display:block;
+  margin: 30px auto;
+
+}
+
+img.cartoon {
+  width: 350px;
+  display:block;
+  margin: 20px auto;
+}
+
+img.sidebar-article{
+  float:left;
+  margin: 20px 10px;
+  width: 70px;
+}
+
+h3.sidebar-header, p.sidebar-author{
+  width:200px;
+  float:left;
+}
+
+aside table{
+  margin: auto;
+  margin: auto 20px auto 20px;
+}
+
+aside table td{
+  width: 300px;
+}
+
+.more-link{
+  margin-left: 290px;
+  color: #990101;
+}
+
+.hamburger-dropdown {
+  display: none;
+}
+
+@media (max-width: 1350px) {
+  nav ul, .search-bar {
+    display: none;
+  }
+
+  .hamburger-dropdown {
+    display: block;
+    flex-direction: column;
+  }
+
+  .hamburger-dropdown > li {
+    background: url(https://raw.githubusercontent.com/appacademy/curriculum/master/html-css/assets/images/hamburger.png?token=ATzK_0lftQtwa9oAX-OmpDd0ZwxmLo-Jks5Yww4nwA%3D%3D);
+    background-size: 50px 50px;
+    width: 10px;
+    height: 40px;
+    border: none;
+    position: absolute;
+    top: 6px;
+    right: 50px;
+    cursor: pointer;
+  }
+
+  .hamburger-dropdown ul {
+    position: relative;
+  }
+
+  .hamburger-dropdown:hover ul {
+    display: block;
+    position: absolute;
+    top: 30px;
+    right: 10px;
+  }
+
+  .hamburger-dropdown:hover li {
+    flex-direction: column;
+    background-color: gray;
+    border: none;
+    display: block;
+  }
+
+
+
+}

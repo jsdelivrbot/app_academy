@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>nicQuery</title>
+    <script type="text/javascript" src="lib/jquery-3.1.1.js"></script>
+    <script type="text/javascript" src="lib/nicQuery.js"></script>
+
+    <script>
+      $(() => {
+         nic$( "li" ).on("click", () => alert("you clicked an li!"));
+       });
+    </script>
+    
+  </head>
+  <body>
+    <h1>Welcome to this webpage</h1>
+    <div class="test-div">
+      <ul id="list-of-things">
+        <li><input id="check1" type="submit"></li>
+        <li>thing1</li>
+        <li>thing 2</li>
+        <li>things things things</li>
+        <li>more things</li>
+        <ul class="things-within-things">
+          <li>thing</li>
+          <li>thing</li>
+          <li>and one more</li>
+          <li>for good luck</li>
+        </ul>
+      </ul>
+    </div>
+  </body>
+</html>

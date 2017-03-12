@@ -1,0 +1,9 @@
+<h1> <%= @band.name %> </h1>
+
+<ul>
+<% Album.all.each do |album| %>
+  <% if album.band_id == @band.id %>
+    <li> <%= link_to album.name, album_url(album.id), method: :show %></li>
+  <% end %>
+<% end %>
+</ul>

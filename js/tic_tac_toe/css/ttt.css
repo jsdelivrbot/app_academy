@@ -1,0 +1,49 @@
+.gamebox, .square {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  background-color: #ab8d60;
+  background-image: url(http://www.hdimageson.com/wp-content/uploads/2016/06/Amazing-Coffee-Beans-HD-Wallpaper.jpg);
+}
+
+h1 {
+  font: 55px arial, sans-serif;
+  color: #ffdead;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.gamebox {
+  width: 600px;
+  height: 600px;
+  border: 5px solid #56472f;
+  margin: 60px auto;
+}
+
+.square {
+  width: 31.667%;
+  height: 31.667%;
+  float: left;
+  border: 5px solid #56472f;
+  background-color: #ccb28a;
+}
+
+.square:hover{
+  background-color: #7f6030;
+  cursor: pointer;
+}
+
+
+.marked {
+  width: 31.667%;
+  height: 31.667%;
+  float: left;
+  border: 5px solid #56472f;
+  background-color: #ffd494;
+  font: 200px arial, sans-serif;
+  text-align: center;
+}

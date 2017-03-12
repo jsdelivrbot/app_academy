@@ -1,0 +1,17 @@
+<h1><%= @sub.title %></h1>
+<br>
+<p><%= @sub.description %></p>
+
+
+<ul>
+  <% Post.all.each do |post| %>
+  <% if post.subs.include?(@sub.id) %>
+    <li> <%= link_to post.title, post_url, method: :get %></li>
+    <% end %>
+  <% end %>
+
+</ul>
+
+<%= button_to "Create post", sub_posts_url(@sub.id), method: :post%>
+
+<p>Moderator:<%= User.find(@sub.user_id).username %></p>
