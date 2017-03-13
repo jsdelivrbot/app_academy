@@ -8,7 +8,9 @@ import React, { Component } from 'react';
 //class-based component
 class SearchBar extends Component{
   render() {
-    return <input />;
+    return <input onChange={ event => {
+      console.log(event.target.value);
+    }}/>;
   }
 }
 
