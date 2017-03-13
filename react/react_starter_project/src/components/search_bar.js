@@ -7,10 +7,21 @@ import React, { Component } from 'react';
 
 //class-based component
 class SearchBar extends Component{
-  render() {
-    return <input onChange={ event => {
-      console.log(event.target.value);
-    }}/>;
+  constructor(props){
+    super(props);
+
+    this.state = { term: '' };
+  }
+
+  render(){
+    return (
+      <div>
+        <input onChange={ event => {
+          this.setState({term: event.target.value})
+        }}/>
+        value of term: {this.state.term}
+      </div>
+    );
   }
 }
 
