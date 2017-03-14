@@ -43,14 +43,17 @@ const maxAndMin = function(arr1, arr2) {
 // Write a string method that turns a sentence into a kontti sentence!
 
 String.prototype.kontti = function(){
-
+  return this.split(' ').map( word => {
+    let firstWord = wordChunks('kontti', true) + wordChunks(word);
+    let lastWord = wordChunks(word, true) + wordChunks('kontti');
+    return wordChunks(word, true) ? `${firstWord}-${lastWord}` : word;
+  }).join(' ');
 };
 
-// Test.assertEquals("lamppu".kontti(), "komppu-lantti");
-// Test.assertEquals("lamppu sofia".kontti(), "komppu-lantti kofia-sontti");
-// Test.assertEquals("silly game".kontti(), "kolly-sintti kome-gantti");
-// Test.assertEquals("".kontti(), "");
-// Test.assertEquals("silly grrr".kontti(), "kolly-sintti grrr");
+const wordChunks = function (word, firstChunk) {
+  let idx = /[aeiou]/.search(word) ? (/[aeiouy]/.search(word).index) + 1 : 0;
+  return firstChunk ? word.slice(0, idx) : word.slice(idx);
+};
 
 // console.log("lamppu".kontti()); //=> "komppu-lantti"
 // console.log("lamppu sofia".kontti()); //=> "komppu-lantti kofia-sontti"
