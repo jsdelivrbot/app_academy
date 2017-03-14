@@ -20,7 +20,7 @@ POTENTIAL WEEKLY TOPICS:
 
 -citizenship/immigration: issues specifically impacting immigrants in Silicon Valley, Silicon Valley's dependence on immigrants, impact of the travel ban on tech industry, digital language divide <link23>, Palantir and ICE <link31>
 
--government surveillance: something from Glenn Greenwald or Edward Snowden, specific impact on Muslim Americans, tech companies' compliance with/resistance to giving the NSA access to data
+-government surveillance: something from Glenn Greenwald or Edward Snowden, specific impact on Muslim Americans, tech companies' compliance with/resistance to giving the NSA access to data <link35>
 
 -Silicon Valley's impacts abroad: social media for political protest <link5>, refugee communication <link6>, Facebook's botched 'Free Basics' campaign in India
 
@@ -112,3 +112,5 @@ Topics that need to be worked into all that or at least alluded to somewhere:
   https://www.washingtonpost.com/business/economy/why-facebook-and-google-are-struggling-to-purge-fake-news/2016/11/15/85022897-f765-422e-9f53-c720d1f20071_story.html?utm_term=.099ae913b32e
   <link34>
     http://thenewinquiry.com/features/a-womens-strike-syllabus/
+  <link35>
+    https://www.theguardian.com/technology/2017/mar/13/facebook-instagram-surveillance-privacy-data
