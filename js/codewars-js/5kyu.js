@@ -8,16 +8,33 @@
 // n (integer >= m) which gives the end of the search (n inclusive)
 //
 // In the example above gap(2, 3, 50) will return [3, 5] or (3, 5) or {3, 5} which is the first pair between 3 and 50 with a 2-gap.
-// So this function should return the first pair of two prime numbers spaced with a gap of g between the limits m, n if these numbers exist otherwise nil or null or None or Nothing (depending on the language). In C++ return in such a case {0, 0}.
-//
-// Examples:
-//
-// gap(2, 5, 7) --> [5, 7] or (5, 7) or {5, 7}
-// gap(2, 5, 5) --> nil or in C++ {0, 0}
-// gap(4, 130, 200) --> [163, 167] or (163, 167) or {163, 167}
-//
-// ([193, 197] is also such a 4-gap primes between 130 and 200 but it's not the first pair)
-// gap(6,100,110) --> nil or {0, 0} : between 100 and 110 we have 101, 103, 107, 109 but 101-107is not a 6-gap because there is 103in between and 103-109is not a 6-gap because there is 107in between.
+// So this function should return the first pair of two prime numbers spaced with a gap of g between the limits m, n if these numbers exist otherwise nil or null or None or Nothing (depending on the language).
+
+const gap = function(gapNum, startNum, endNum){
+  let prevPrime = startNum;
+  for (var num = startNum; num <= endNum; num++) {
+    if(isPrime(num)){
+      if (num - prevPrime === gapNum){
+        return [prevPrime, num];
+      } else {
+        prevPrime = num;
+      }
+    }
+  }
+  return null;
+};
+
+const isPrime = function(num) {
+  for (var i = 2; i < num; i++) {
+    if (num % i === 0) return false;
+  }
+  return (num < 2) ? false : true;
+};
+
+// console.log(gap(2, 5, 7));// => [5, 7]
+// console.log(gap(2, 5, 5));// => null
+// console.log(gap(4, 130, 200));// => [163, 167]
+// console.log(gap(6,100,110)); // => null (between 100 and 110 we have 101, 103, 107, 109 but 101-107is not a 6-gap because there is 103in between and 103-109is not a 6-gap because there is 107in between.)
 
 // https://www.codewars.com/kata/directions-reduction
 // Once upon a time, on a way through the old wild west,…
