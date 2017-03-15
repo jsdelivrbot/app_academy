@@ -1,7 +1,3 @@
-// ------------------------------
-//            ~ 7 kyu ~
-// ------------------------------
-
 // Write function replaceAll that will replace all occuriencies of
 // an item with another. Should work and both string and array inputs
 //
