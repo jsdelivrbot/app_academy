@@ -1,7 +1,3 @@
-// ------------------------------
-//            ~ 6 kyu ~
-// ------------------------------
-
 // Given two array of integers(arr1,arr2). Your task is going to find a
 // pair of numbers(an element in arr1, and another element in arr2), their
 // difference is as big as possible(absolute value); Again, you should to
@@ -131,18 +127,3 @@ Array.prototype.flatten = function () {
 // console.log(sqInRect(5, 3));
 // console.log(sqInRect(16, 31));
 // console.log(sqInRect(4, 16));
-
-// ------------------------------
-//            ~ 7 kyu ~
-// ------------------------------
-
-// Write function replaceAll that will replace all occuriencies of
-// an item with another. Should work and both string and array inputs
-//
-// Ex: replaceAll([1,2,2], 1, 2) => [2,2,2]
-
-const replaceAll = (input, find, replace) => {
-  return Array.isArray(input)
-    ? input.map( el => el === find ? replace : el )
-    : input.replace(RegExp(find, 'g'), replace);
-};
