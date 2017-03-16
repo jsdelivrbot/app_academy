@@ -11,13 +11,14 @@
 // So this function should return the first pair of two prime numbers spaced with a gap of g between the limits m, n if these numbers exist otherwise nil or null or None or Nothing (depending on the language).
 
 const gap = function(gapNum, startNum, endNum){
-  let prevPrime = startNum;
+  let prevPrime = null;
+
   for (var num = startNum; num <= endNum; num++) {
     if(isPrime(num)){
-      if (num - prevPrime === gapNum){
-        return [prevPrime, num];
-      } else {
+      if (!prevPrime || num - prevPrime !== gapNum) {
         prevPrime = num;
+      } else {
+        return [prevPrime, num];
       }
     }
   }
@@ -30,6 +31,8 @@ const isPrime = function(num) {
   }
   return (num < 2) ? false : true;
 };
+
+// console.log(gap(4, 340107, 340121));//Expected: '[340117, 340121]', instead got: '[340107, 340111]'
 
 // console.log(gap(2, 5, 7));// => [5, 7]
 // console.log(gap(2, 5, 5));// => null
