@@ -7,8 +7,8 @@ import PostsNew from './components/posts_new';
 import PostsShow from './components/posts_show';
 
 export default (
-  <Route path='/' component={ App }>
-    <IndexRoute component={ PostsIndex } />
+  <Route path='/' component={ App }> //displays App component on every page, in addition to children routes
+    <IndexRoute component={ PostsIndex } /> //only display when at the index url
     <Route path='posts/new' component={ PostsNew } />
     <Route path='posts/:id' component={ PostsShow } />
   </Route>
