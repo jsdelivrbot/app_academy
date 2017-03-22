@@ -1,24 +1,22 @@
-var webpack = require('webpack');
-
 module.exports = {
-  entry: "./index.jsx",
+  entry: './src/scripts/main.js',
   output: {
-    filename: "./bundle.js"
+    path: __dirname + '/build',
+    filename: 'bundle.js'
+  },
+  devServer: {
+    inline: true
   },
   module: {
     loaders: [
       {
-        test: [/\.jsx?$/, /\.js?$/],
-        exclude: /(node_modules)/,
-        loader: 'babel',
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
         query: {
           presets: ['es2015', 'react']
         }
       }
     ]
-  },
-  devtool: 'source-map',
-  resolve: {
-    extensions: ["",".js", ".jsx" ]
   }
 };
