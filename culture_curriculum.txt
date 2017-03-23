@@ -24,7 +24,7 @@ POTENTIAL WEEKLY TOPICS:
 
 -Silicon Valley's impacts abroad: social media for political protest <link5>, refugee communication <link6>, Facebook's botched 'Free Basics' campaign in India
 
--free speech on the internet: awesome xkcd comic <link4>, trolls <links11><link26>, snuffing out hate groups’ online recruitment efforts <link24> (this optimistic article on cracking down on ISIS via Google algorithms MUST be paired with articles showing Google's indifference towards groups like the KKK, and something explaining the racism of it), net neutrality
+-free speech on the internet: awesome xkcd comic <link4>, trolls <links11><link26>, snuffing out hate groups’ online recruitment efforts <link37><link24> (this optimistic article on cracking down on ISIS via Google algorithms MUST be paired with articles showing Google's indifference towards groups like the KKK, and something explaining the racism of it),
 
 -women's issues, pt 1: wage gap <link1>, sexual harassment in STEM <link3><link25>, gendered beliefs about intelligence <link16>, an article that breaks down the uber harassment story in a reasonable way <link32>, the importance of Pao v. Kleiner for women in tech
 
@@ -116,3 +116,5 @@ Topics that need to be worked into all that or at least alluded to somewhere:
     https://www.theguardian.com/technology/2017/mar/13/facebook-instagram-surveillance-privacy-data
   <link36>
     https://www.theguardian.com/technology/2016/oct/11/aclu-geofeedia-facebook-twitter-instagram-black-lives-matter
+  <link37>
+    http://www.theverge.com/2017/3/21/14998122/google-youtube-ad-extremist-content-hate-speech
