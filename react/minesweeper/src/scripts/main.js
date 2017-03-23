@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Game from '../components/game';
 
 ReactDOM.render(
-  <h1>hello</h1>,
+  <Game />,
   document.getElementById('app')
 );
