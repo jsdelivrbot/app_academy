@@ -38,9 +38,3 @@ class Board extends Component {
 }
 
 export default Board;
-
-// Our Board component will be responsible for a single task — rendering rows of Tile components. The construction logic will live in our render function. We're going to return a component tree, starting with a top-level <div>. Inside of this, use Array#map on the grid of this.props.board to return a <div> component for each row. Remember that the function passed to map is given two arguments, the object and the index, both of which we'll need here.
-//
-// Each row of the board's grid consists of individual tiles. We want to map these into React components. Add an inner call to map, this time on the row being mapped by the outer function. Again, keep track of the index. Create a new Tile component for each element in the row, passing two props: the tile object being mapped, and the updateGame function we passed into the Board component as a prop.
-//
-// Lastly, ensure that both the rows and Tile components are passed a key. This isn't strictly needed right now, since our tiles won't be reordered and aren't stateful, but it's a good habit to get into. Read more on keys here, then use the indexes to pass each tile a unique key.
