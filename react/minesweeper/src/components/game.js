@@ -34,19 +34,22 @@ class Game extends Component {
     if (this.state.board.won() || this.state.board.lost()) {
       const modalText = this.state.board.won() ? "you win :D" : "you lose :'(" ;
       modal =
+        <div className='modal-screen'>
           <div className='modal-content'>
             <p>{modalText}</p>
-            <button onClick={ this.restartGame }>Restart Game</button>
+            <button onClick={ this.restartGame }>Play Again</button>
+          </div>
         </div>;
     }
-    console.log(modal);
 
     return (
-      <div className={`main ${modal-screen}`}>
-        <h1>minesweeper</h1>
-        <p>click to explore<br />'alt' + click to flag</p>
-        <Board board={ this.state.board } updateGame={ this.updateGame } />
+      <div>
         { modal }
+        <div className='main'>
+          <h1>minesweeper</h1>
+          <p>click to explore<br />'alt' + click to flag</p>
+          <Board board={ this.state.board } updateGame={ this.updateGame } />
+        </div>
       </div>
     );
   }
