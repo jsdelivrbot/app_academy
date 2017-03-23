@@ -1,0 +1,20 @@
+.tile {
+  width: 30px;
+  height: 30px;
+  border: 1px solid gray;
+  margin: 0;
+}
+
+.row {
+  float: left;
+}
+
+.explored {
+  border-style: inset;
+  background-color: #D8D8D8;
+}
+
+.unexplored {
+  border-style: outset;
+  background-color: #B0B0B0;
+}

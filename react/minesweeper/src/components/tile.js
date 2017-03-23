@@ -1,35 +1,46 @@
 import React, { Component } from 'react';
+import * as Minesweeper from '../../minesweeper.js';
 
 class Tile extends Component {
+  constructor(props){
+    super(props);
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(){
+
+  }
+
   render(){
     let tile = this.props.tile;
     let text = '';
-    let category = '';
+    let category = 'tile';
 
     if (tile.explored) {
-      category = 'explored';
+      category += ' explored';
       if (tile.bombed) {
         text = '\uD83D\uDCA3';
-        category += 'bombed';
+        category += ' bombed';
       } else {
         if (tile.adjacentBombCount() > 0) {
-          text = ``;
+          text = '';
         } else {
           text = `${tile.adjacentBombCount()}`;
         }
       }
     } else {
-      category = 'unexplored';
+      category += ' unexplored';
       if (tile.flagged) {
         text = '\u2691';
-        category += 'flagged';
+        category += ' flagged';
       } else {
-        text = 'X';
+        text = '';
       }
     }
 
     return (
-      <div className={ category }>{ text }</div>
+      <div className={ category } onClick={ this.handleClick }>{ text }</div>
     );
   }
 }

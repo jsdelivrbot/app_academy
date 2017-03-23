@@ -13,15 +13,14 @@ class Game extends Component {
     this.updateGame = this.updateGame.bind(this);
   }
 
-  updateGame(){
-    // Stub out a second function, updateGame, but don't write anything here yet. We'll return to this after we have a properly rendering board.
+  updateGame(tile, flagged){
+
   }
 
   render(){
     return (
       <div>
         <Board board={this.state.board} updateGame={this.updateGame} />
-        <h1>game loaded</h1>
       </div>
     );
   }
