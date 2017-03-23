@@ -11,6 +11,7 @@ class Game extends Component {
     };
 
     this.updateGame = this.updateGame.bind(this);
+    this.restartGame = this.restartGame.bind(this);
   }
 
   updateGame(tile, flagged){
@@ -21,19 +22,31 @@ class Game extends Component {
     }
 
     this.setState( { board: tile.board } );
+  }
 
-    setTimeout(() => {
-      if (tile.bombed) alert('You lose');
-    }, 500);
-
+  restartGame(){
+    this.setState({ board: new Minesweeper.Board(9, 10) });
   }
 
   render(){
+    let modal;
+
+    if (this.state.board.won() || this.state.board.lost()) {
+      const modalText = this.state.board.won() ? "you win :D" : "you lose :'(" ;
+      modal =
+          <div className='modal-content'>
+            <p>{modalText}</p>
+            <button onClick={ this.restartGame }>Restart Game</button>
+        </div>;
+    }
+    console.log(modal);
+
     return (
-      <div className='main'>
+      <div className={`main ${modal-screen}`}>
         <h1>minesweeper</h1>
         <p>click to explore<br />'alt' + click to flag</p>
-        <Board board={this.state.board} updateGame={this.updateGame} />
+        <Board board={ this.state.board } updateGame={ this.updateGame } />
+        { modal }
       </div>
     );
   }
