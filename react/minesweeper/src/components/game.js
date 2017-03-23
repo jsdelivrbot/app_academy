@@ -21,15 +21,18 @@ class Game extends Component {
     }
 
     this.setState( { board: tile.board } );
+
     setTimeout(() => {
-      if (tile.bombed) alert('gameover');
+      if (tile.bombed) alert('You lose');
     }, 500);
 
   }
 
   render(){
     return (
-      <div className='board'>
+      <div className='main'>
+        <h1>minesweeper</h1>
+        <p>click to explore<br />'alt' + click to flag</p>
         <Board board={this.state.board} updateGame={this.updateGame} />
       </div>
     );

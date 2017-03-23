@@ -7,7 +7,7 @@ class Board extends Component {
 
   render(){
     return (
-      <div>
+      <div className='board'>
         {this.props.board.grid.map( (row, rowIdx) => {
           return this.renderRows(row, rowIdx);
         }
