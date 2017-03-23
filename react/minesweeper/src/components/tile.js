@@ -8,8 +8,9 @@ class Tile extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(){
-
+  handleClick(e){
+    let flagged = e.altKey;
+    this.props.updateGame(this.props.tile, flagged);
   }
 
   render(){
@@ -23,7 +24,7 @@ class Tile extends Component {
         text = '\uD83D\uDCA3';
         category += ' bombed';
       } else {
-        if (tile.adjacentBombCount() > 0) {
+        if (tile.adjacentBombCount() < 1) {
           text = '';
         } else {
           text = `${tile.adjacentBombCount()}`;
