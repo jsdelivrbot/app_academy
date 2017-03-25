@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
+import App from './components/app';
 import { allTodos } from './reducers/selectors';
 import { receiveTodos, receiveTodo } from './actions/todo_actions';
 
@@ -11,5 +12,5 @@ window.receiveTodos = receiveTodos;
 
 
 document.addEventListener("DOMContentLoaded", function(){
-  ReactDOM.render(<h1 >Todos App</h1>, document.getElementById('root'));
+  ReactDOM.render(<App />, document.getElementById('root'));
 });
