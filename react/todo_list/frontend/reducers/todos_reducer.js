@@ -22,12 +22,12 @@ export default function(state = initialState, action) {
 
   switch(action.type){
     case RECEIVE_TODOS:
-      return {
-        todos: action.todos
-      };
+      let newTodos = {};
+      action.todos.forEach( todo => newTodos[todo.id] = todo );
+      return Object.assign({}, state, newTodos);
     case RECEIVE_TODO:
-    // debugger
-      nextState = Object.assign({}, action.todo, state.todos);
+      let newTodo = { [action.todo.id]: action.todo };
+      nextState = Object.assign({}, newTodo, state);
       return nextState;
     default:
       return state;
