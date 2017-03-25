@@ -3,12 +3,9 @@ import { connect } from 'react-redux';
 import { allTodos } from '../reducers/selectors';
 import { receiveTodos, receiveTodo } from '../actions/todo_actions';
 import TodoListItem from '../components/todo_list_item';
+import TodoForm from '../components/todo_form';
 
 class TodoList extends Component {
-  renderTodo(todo){
-    return <li key={todo.id}>{todo.title}: {todo.body}</li>;
-  }
-
   render(){
     let todos = allTodos(this.props.state);
     return (
@@ -18,6 +15,7 @@ class TodoList extends Component {
             return <TodoListItem key={todo.id} todo={todo} />;
           })}
         </ul>
+        <TodoForm receiveTodo={ receiveTodo }/>
       </div>
     );
   }
