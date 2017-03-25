@@ -5,11 +5,18 @@ import { receiveTodos, receiveTodo } from '../actions/todo_actions';
 
 class TodoList extends Component {
   render(){
+    let todos = allTodos(this.props.state);
     return (
       <div>
-        <p>hello from containers/todo_list</p>
+        <ul>
+          {todos.map( todo => this.renderTodo(todo))}
+        </ul>
       </div>
     );
+  }
+
+  renderTodo(todo){
+    return <li key={todo.id}>{todo.title}: {todo.body}</li>;
   }
 }
 
