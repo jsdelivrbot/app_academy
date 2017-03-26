@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { uniqueId } from '../util/id_generator';
 import { receiveTodo, removeTodo } from '../actions/todo_actions';
-import StepsList from './steps-list';
+import StepsList from '../containers/steps-list';
 
 class TodoListItem extends Component {
   constructor(props){
