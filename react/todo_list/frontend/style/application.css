@@ -1,0 +1,14 @@
+.todo-list-item-title.done {
+  text-decoration: line-through;
+}
+
+.todo-list-item-body.done {
+  display: none;
+}
+
+.todo-list-item-title:hover {
+  cursor: pointer;
+}
+
+.todo-list-item, .todo-form {
+}
