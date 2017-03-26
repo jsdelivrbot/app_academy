@@ -27,7 +27,7 @@ export default function(state = initialState, action) {
       return Object.assign({}, state, newTodos);
     case RECEIVE_TODO:
       let newTodo = { [action.todo.id]: action.todo };
-      nextState = Object.assign({}, newTodo, state);
+      nextState = Object.assign({}, state, newTodo);
       return nextState;
     default:
       return state;

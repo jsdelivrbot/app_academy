@@ -11,4 +11,11 @@
 }
 
 .todo-list-item, .todo-form {
+  margin: 20px auto;
+}
+
+.todo-list-item {
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #D3D3D3;
 }

@@ -12,12 +12,15 @@ class TodoListItem extends Component {
   }
 
   toggleDone(e){
-    console.log('toggling');
+    console.log('toggling:');
+    console.log(this.props.todo);
     e.preventDefault();
     let updatedTodo = Object.assign(
       {}, this.props.todo,
       { done: !this.props.todo.done }
     );
+    console.log('new todo:');
+    console.log(updatedTodo);
     this.props.receiveTodo(updatedTodo);
   }
 
