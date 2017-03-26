@@ -8,3 +8,14 @@ export const allTodos = ({ todos }) => {
 
   return todosArr;
 };
+
+export const allSteps = ({ steps }) => {
+  let stepsArr = [];
+  let stepIds = Object.keys(steps);
+
+  stepIds.forEach( id => {
+    stepsArr.push(steps[id]);
+  });
+
+  return stepsArr;
+};
