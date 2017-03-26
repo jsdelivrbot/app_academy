@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { uniqueId } from '../util/id_generator';
 import { receiveTodo, removeTodo } from '../actions/todo_actions';
+import StepsList from './steps-list';
 
 class TodoListItem extends Component {
   constructor(props){
@@ -40,6 +41,8 @@ class TodoListItem extends Component {
           className={`todo-list-item-body${todo.done ? ' done' : ''}`}>
           {todo.body}
         </p>
+
+        <StepsList className={`steps-list${todo.done ? ' done' : ''}`} />
 
         <button className='delete-btn' onClick={ this.deleteTodo }>
           delete

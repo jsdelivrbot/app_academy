@@ -1,0 +1,8 @@
+ul.steps-list {
+  list-style-type: disc;
+  margin: auto 30px;
+}
+
+.steps-list.done {
+  display:none;
+}
