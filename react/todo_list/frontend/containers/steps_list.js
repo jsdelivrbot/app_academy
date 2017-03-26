@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { allSteps } from '../reducers/selectors';
 import { receiveSteps, receiveStep, removeStep } from '../actions/todo_actions';
 import StepListItem from '../components/step_list_item';
+import StepForm from '../components/step_form';
 
 export default class StepsList extends Component {
   render(){
@@ -11,6 +12,7 @@ export default class StepsList extends Component {
         <ul className='steps-list'>
           <StepListItem />
         </ul>
+        <StepForm />
       </div>
     );
   }
