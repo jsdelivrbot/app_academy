@@ -1,9 +1,9 @@
-div, h1, h2, h3, ul, li, p, button {
+div, h1, h2, h3, ul, li, p, button, form {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
   border-style: none;
-  background-color: white;
+  background-color: inherit;;
 }
 
 ol, ul {
