@@ -1,4 +1,4 @@
-import { RECEIVE_TODOS, RECEIVE_TODO } from '../actions/todo_actions';
+import { RECEIVE_TODOS, RECEIVE_TODO, REMOVE_TODO } from '../actions/todo_actions';
 
 const initialState = {
   1: {
@@ -28,6 +28,10 @@ export default function(state = initialState, action) {
     case RECEIVE_TODO:
       let newTodo = { [action.todo.id]: action.todo };
       nextState = Object.assign({}, state, newTodo);
+      return nextState;
+    case REMOVE_TODO:
+      nextState = Object.assign({}, state);
+      delete nextState[action.todo.id];
       return nextState;
     default:
       return state;

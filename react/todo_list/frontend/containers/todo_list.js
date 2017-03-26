@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { allTodos } from '../reducers/selectors';
-import { receiveTodos, receiveTodo } from '../actions/todo_actions';
+import { receiveTodos, receiveTodo, removeTodo } from '../actions/todo_actions';
 import TodoListItem from '../components/todo_list_item';
 import TodoForm from '../components/todo_form';
 
@@ -15,7 +15,7 @@ class TodoList extends Component {
             return <TodoListItem key={todo.id} todo={todo} />;
           })}
         </ul>
-        <TodoForm receiveTodo={ receiveTodo }/>
+        <TodoForm receiveTodo={ receiveTodo } removeTodo= { removeTodo }/>
       </div>
     );
   }
@@ -35,6 +35,9 @@ const mapDispatchToProps = dispatch => {
     },
     receiveTodos: () => {
       dispatch(receiveTodos());
+    },
+    removeTodo: () => {
+      dispatch(removeTodo());
     }
   };
 };

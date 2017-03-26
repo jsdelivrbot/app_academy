@@ -1,7 +1,9 @@
-div, h1, h2, h3, ul, li, p {
+div, h1, h2, h3, ul, li, p, button {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
+  border-style: none;
+  background-color: white;
 }
 
 ol, ul {
