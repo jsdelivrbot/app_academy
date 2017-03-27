@@ -38,7 +38,7 @@ class TodoForm extends Component {
         <label>add todo
           <input
             type='text'
-            placeholder='Organize surprise party for Jessica'
+            placeholder='organize surprise party for Jessica'
             value={ this.state.title }
             onChange={ this.handleChange('title') }
             />
@@ -46,7 +46,7 @@ class TodoForm extends Component {
         <br />
         <label>details
           <textarea
-            placeholder='Make sure not to tell Jessica'
+            placeholder='make sure not to tell Jessica'
             value={ this.state.body }
             onChange={ this.handleChange('body') }
             />

@@ -21,3 +21,23 @@
   border-radius: 5px;
   border: 1px solid #D3D3D3;
 }
+
+.todo-form {
+  background-color: #D3D3D3;
+  width: 50%;
+  height: 50%;
+}
+
+input[type=text], textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea {
+    height: 100px;
+}
