@@ -9,11 +9,9 @@ class StepForm extends Component {
     super(props);
 
     this.state = {
-      id: null,
       title: '',
       body: '',
-      done: false,
-      todo_id: null
+      done: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,14 +26,12 @@ class StepForm extends Component {
       this.state,
       { todo_id: this.props.todoId, id: uniqueId() }
     );
-    this.props.receiveStep(step);
     
+    this.props.receiveStep(step);
     this.setState({
-      id: null,
       title: '',
       body: '',
-      done: false,
-      todo_id: null
+      done: false
     });
   }
 
