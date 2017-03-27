@@ -34,7 +34,7 @@ class TodoListItem extends Component {
         <h3
           className={`todo-list-item-title${todo.done ? ' done' : ''}`}
           onClick={this.toggleDone}>
-          {this.props.todo.title}
+          {todo.title}
         </h3>
 
         <p
@@ -44,7 +44,8 @@ class TodoListItem extends Component {
 
         <StepsList
           className={`steps-list${todo.done ? ' done' : ''}`}
-          todoId={ todo.id } />
+          todoId={ todo.id }
+          />
 
         <button className='delete-btn' onClick={ this.deleteTodo }>
           delete
