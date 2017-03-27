@@ -42,7 +42,9 @@ class TodoListItem extends Component {
           {todo.body}
         </p>
 
-        <StepsList className={`steps-list${todo.done ? ' done' : ''}`} />
+        <StepsList
+          className={`steps-list${todo.done ? ' done' : ''}`}
+          todoId={ todo.id } />
 
         <button className='delete-btn' onClick={ this.deleteTodo }>
           delete

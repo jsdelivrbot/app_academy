@@ -2,23 +2,23 @@ export const RECEIVE_STEPS = "RECEIVE_STEPS";
 export const RECEIVE_STEP = "RECEIVE_STEP";
 export const REMOVE_STEP = "REMOVE_STEP";
 
-export const receiveTodos = todos => {
+export const receiveSteps = steps => {
   return {
     type: RECEIVE_STEPS,
-    todos: todos
+    steps: steps
   };
 };
 
-export const receiveTodo = todo => {
+export const receiveStep = step => {
   return {
     type: RECEIVE_STEP,
-    todo: todo
+    step: step
   };
 };
 
-export const removeTodo = todo => {
+export const removeStep = step => {
   return {
     type: REMOVE_STEP,
-    todo: todo
+    step: step
   };
 };

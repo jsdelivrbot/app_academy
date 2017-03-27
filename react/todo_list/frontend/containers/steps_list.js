@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { allSteps } from '../reducers/selectors';
-import { receiveSteps, receiveStep, removeStep } from '../actions/todo_actions';
+import { receiveSteps, receiveStep, removeStep } from '../actions/step_actions';
 import StepListItem from '../components/step_list_item';
 import StepForm from '../components/step_form';
 
@@ -12,7 +12,7 @@ export default class StepsList extends Component {
         <ul className='steps-list'>
           <StepListItem />
         </ul>
-        <StepForm />
+        <StepForm todoId={ this.props.todoId } receiveStep={ receiveStep } removeStep= { removeStep } />
       </div>
     );
   }
