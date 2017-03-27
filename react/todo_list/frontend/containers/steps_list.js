@@ -5,9 +5,9 @@ import { receiveSteps, receiveStep, removeStep } from '../actions/step_actions';
 import StepListItem from './step_list_item';
 import StepForm from '../components/step_form';
 
-export default class StepsList extends Component {
+class StepsList extends Component {
   render(){
-    let steps = allSteps(window.store.getState());//FIX THIS!!!!!!!
+    let steps = allSteps(this.props.state);//FIX THIS!!!!!!!
     return(
       <div className={ this.props.className }>
 
@@ -24,3 +24,26 @@ export default class StepsList extends Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    todos: allSteps(state),
+    state: state
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    receiveStep: step => {
+      dispatch(receiveStep(step));
+    },
+    receiveSteps: () => {
+      dispatch(receiveSteps());
+    },
+    removeStep: () => {
+      dispatch(removeStep());
+    }
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(StepsList);
