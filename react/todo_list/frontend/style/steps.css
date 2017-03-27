@@ -34,11 +34,11 @@ ul.steps-list {
   border: 1px solid #D3D3D3;
 }
 
-.step-form.hide {
+.step-form.hide, .steps-list.hide {
   display: none;
 }
 
-.add-note-link {
+.toggle-link {
   font-style: italic;
   cursor: pointer;
 }

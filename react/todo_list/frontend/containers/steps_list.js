@@ -10,6 +10,18 @@ class StepsList extends Component {
     super(props);
 
     this.toggleFormDisplay = this.toggleFormDisplay.bind(this);
+    this.toggleListDisplay = this.toggleListDisplay.bind(this);
+  }
+
+  toggleListDisplay(e){
+    let list = document.getElementById('steps-list');
+    if (list.classList.contains('hide')) {
+      list.classList.remove('hide');
+      e.target.innerHTML = 'hide notes';
+    } else {
+      list.classList.add('hide');
+      e.target.innerHTML = 'see notes';
+    }
   }
 
   toggleFormDisplay(e){
@@ -28,7 +40,11 @@ class StepsList extends Component {
     return(
       <div className={ this.props.className }>
 
-        <ul className='steps-list'>
+        <p className='toggle-link' onClick={ this.toggleListDisplay }>
+          see notes
+        </p>
+
+        <ul id='steps-list' className='steps-list hide'>
           {steps.filter( step => {
             return step.todo_id === this.props.todoId;
           }).map( step => {
@@ -39,7 +55,7 @@ class StepsList extends Component {
           })}
         </ul>
 
-        <p id='add-note-link' className='add-note-link' onClick={ this.toggleFormDisplay }>
+        <p className='toggle-link' onClick={ this.toggleFormDisplay }>
           add note
         </p>
 
