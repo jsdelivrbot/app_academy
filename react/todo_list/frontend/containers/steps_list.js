@@ -7,7 +7,7 @@ import StepForm from '../components/step_form';
 
 class StepsList extends Component {
   render(){
-    let steps = allSteps(this.props.state);//FIX THIS!!!!!!!
+    let steps = allSteps(this.props.state);
     return(
       <div className={ this.props.className }>
 

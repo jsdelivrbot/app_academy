@@ -3,9 +3,29 @@ div, h1, h2, h3, ul, li, p, button, form {
   margin: 0;
   padding: 0;
   border-style: none;
-  background-color: inherit;;
+  background-color: inherit;
+}
+
+body {
+  background-color: #66CDAA;
 }
 
 ol, ul {
   list-style-type: none;
+}
+
+.delete-btn:hover {
+  cursor: pointer;
+}
+
+input {
+  margin: 20px;
+}
+
+button, .submit-btn {
+  color: white;
+  padding: 4px 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  background-color: #778899;
 }

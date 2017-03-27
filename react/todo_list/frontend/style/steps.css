@@ -6,3 +6,11 @@ ul.steps-list {
 .steps-list.done {
   display:none;
 }
+
+.step-list-item-body.done {
+  display: none;
+}
+
+.step-list-item-title:hover {
+  cursor: pointer;
+}

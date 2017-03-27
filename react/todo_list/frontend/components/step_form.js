@@ -26,7 +26,7 @@ class StepForm extends Component {
       this.state,
       { todo_id: this.props.todoId, id: uniqueId() }
     );
-    
+
     this.props.receiveStep(step);
     this.setState({
       title: '',
@@ -59,32 +59,9 @@ class StepForm extends Component {
               />
           </label>
           <br />
-          <button className='submit-btn' type='submit'>submit</button>
+          <button className='submit-btn' type='submit'>create step</button>
         </form>
     );
-
-    // return(
-    //   <form className='todo-form' onSubmit={this.handleSubmit}>
-    //     <label>Title
-    //       <input
-    //         type='text'
-    //         placeholder='add new todo'
-    //         value={ this.state.title }
-    //         onChange={ this.handleChange('title') }
-    //         />
-    //     </label>
-    //     <br />
-    //     <label>body
-    //       <textarea
-    //         placeholder='describe todo'
-    //         value={ this.state.body }
-    //         onChange={ this.handleChange('body') }
-    //         />
-    //     </label>
-    //     <br />
-    //     <button className='submit-btn' type='submit'>submit</button>
-    //   </form>
-    // );
   }
 }
 

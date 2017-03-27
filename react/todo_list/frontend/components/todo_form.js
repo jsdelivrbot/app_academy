@@ -52,7 +52,7 @@ class TodoForm extends Component {
             />
         </label>
         <br />
-        <button className='submit-btn' type='submit'>submit</button>
+        <button className='submit-btn' type='submit'>create todo</button>
       </form>
     );
   }

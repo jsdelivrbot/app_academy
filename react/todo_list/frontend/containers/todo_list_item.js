@@ -48,7 +48,7 @@ class TodoListItem extends Component {
           />
 
         <button className='delete-btn' onClick={ this.deleteTodo }>
-          delete
+          delete todo
         </button>
       </li>
     );

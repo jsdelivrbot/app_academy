@@ -1,7 +1,3 @@
-body {
-  background-color: #66CDAA;
-}
-
 .todo-list-item-title.done {
   text-decoration: line-through;
 }
@@ -10,7 +6,7 @@ body {
   display: none;
 }
 
-.todo-list-item-title:hover, .delete-btn:hover {
+.todo-list-item-title:hover {
   cursor: pointer;
 }
 
@@ -20,16 +16,4 @@ body {
   padding: 20px;
   border-radius: 5px;
   border: 1px solid #D3D3D3;
-}
-
-input {
-  margin: 20px;
-}
-
-button, .submit-btn {
-  color: white;
-  padding: 4px 10px;
-  margin: 10px 0;
-  border-radius: 5px;
-  background-color: #778899;
 }

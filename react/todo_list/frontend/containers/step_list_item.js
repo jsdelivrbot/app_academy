@@ -3,7 +3,6 @@ import { allSteps } from '../reducers/selectors';
 
 export default class StepListItem extends Component {
   render(){
-    console.log(this.props);
     let step = this.props.step;
     return (
       <li className='step-list-item'>
