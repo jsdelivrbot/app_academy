@@ -3,13 +3,17 @@ ul.steps-list {
   margin: auto 30px;
 }
 
-/*unshow when corresponding todo is done*/
+/*unshow steps list when corresponding todo is marked done*/
 .steps-list.done {
   display:none;
 }
 
 .step-list-item-body.done {
   display: none;
+}
+
+.step-list-item-title {
+  font-weight: bold;
 }
 
 .step-list-item-title.done {

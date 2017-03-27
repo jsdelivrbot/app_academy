@@ -35,18 +35,18 @@ class TodoForm extends Component {
   render(){
     return(
       <form className='todo-form' onSubmit={this.handleSubmit}>
-        <label>Title
+        <label>add todo
           <input
             type='text'
-            placeholder='add new todo'
+            placeholder='Organize surprise party for Jessica'
             value={ this.state.title }
             onChange={ this.handleChange('title') }
             />
         </label>
         <br />
-        <label>body
+        <label>details
           <textarea
-            placeholder='describe todo'
+            placeholder='Make sure not to tell Jessica'
             value={ this.state.body }
             onChange={ this.handleChange('body') }
             />

@@ -42,18 +42,18 @@ class StepForm extends Component {
   render(){
     return (
         <form className='step-form' onSubmit={this.handleSubmit}>
-          <label>Title
+          <label>add note
             <input
               type='text'
-              placeholder='add new step'
+              placeholder='Buy chips'
               value={ this.state.title }
               onChange={ this.handleChange('title') }
               />
           </label>
           <br />
-          <label>body
+          <label>details
             <textarea
-              placeholder='describe todo'
+              placeholder='Remember that Jessica is gluten-free'
               value={ this.state.body }
               onChange={ this.handleChange('body') }
               />

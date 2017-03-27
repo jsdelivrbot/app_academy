@@ -28,18 +28,18 @@ class StepListItem extends Component {
   render(){
     let step = this.props.step;
     return (
-      <li className='step-list-item'>
+      <li>
 
-        <h3
+        <div
           className={`step-list-item-title${step.done ? ' done' : ''}`}
           onClick={ this.toggleDone }>
           {step.title}
-        </h3>
+        </div>
 
-        <p
+        <div
           className={`step-list-item-body${step.done ? ' done' : ''}`}>
           {step.body}
-        </p>
+        </div>
 
         <button className='delete-btn' onClick={ this.deleteStep }>
           delete step

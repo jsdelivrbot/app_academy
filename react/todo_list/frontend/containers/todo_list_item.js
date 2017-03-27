@@ -31,11 +31,11 @@ class TodoListItem extends Component {
     return (
       <li className='todo-list-item'>
 
-        <h3
+        <h2
           className={`todo-list-item-title${todo.done ? ' done' : ''}`}
           onClick={this.toggleDone}>
           {todo.title}
-        </h3>
+        </h2>
 
         <p
           className={`todo-list-item-body${todo.done ? ' done' : ''}`}>

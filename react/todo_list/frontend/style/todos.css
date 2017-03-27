@@ -2,6 +2,10 @@
   text-decoration: line-through;
 }
 
+.todo-list-item-body {
+  font-style: italic;
+}
+
 .todo-list-item-body.done {
   display: none;
 }
