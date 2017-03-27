@@ -9,9 +9,11 @@ class StepForm extends Component {
     super(props);
 
     this.state = {
+      id: null,
       title: '',
       body: '',
       done: false,
+      todo_id: null
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,22 +22,21 @@ class StepForm extends Component {
 
   handleSubmit(e){
     e.preventDefault();
+
     let step = Object.assign(
       {},
       this.state,
       { todo_id: this.props.todoId, id: uniqueId() }
     );
-      console.log(this.props);
-      console.log(this.state);
-      console.log(step);
-      console.log(window.store.getState());
     this.props.receiveStep(step);
-      console.log(window.store.getState());
-    this.state = {
+    
+    this.setState({
+      id: null,
       title: '',
       body: '',
       done: false,
-    };
+      todo_id: null
+    });
   }
 
   handleChange(property){
