@@ -13,7 +13,6 @@ class StepListItem extends Component {
   }
 
   toggleDone(e){
-    console.log(this.props.step);
     let updatedStep = Object.assign(
       {},
       this.props.step,
@@ -51,7 +50,7 @@ class StepListItem extends Component {
 }
 
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators( { receiveStep, removeStep }, dispatch)
-}
+  return bindActionCreators( { receiveStep, removeStep }, dispatch);
+};
 
 export default connect(null, mapDispatchToProps)(StepListItem);
