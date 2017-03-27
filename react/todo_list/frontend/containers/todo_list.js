@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { allTodos } from '../reducers/selectors';
 import { receiveTodos, receiveTodo, removeTodo } from '../actions/todo_actions';
-import TodoListItem from '../components/todo_list_item';
+import TodoListItem from './todo_list_item';
 import TodoForm from '../components/todo_form';
 
 class TodoList extends Component {
