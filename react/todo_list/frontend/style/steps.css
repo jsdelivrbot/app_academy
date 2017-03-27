@@ -3,12 +3,17 @@ ul.steps-list {
   margin: auto 30px;
 }
 
+/*unshow when corresponding todo is done*/
 .steps-list.done {
   display:none;
 }
 
 .step-list-item-body.done {
   display: none;
+}
+
+.step-list-item-title.done {
+  text-decoration: line-through;
 }
 
 .step-list-item-title:hover {

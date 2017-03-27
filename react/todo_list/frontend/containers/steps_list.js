@@ -15,11 +15,14 @@ class StepsList extends Component {
           {steps.filter( step => {
             return step.todo_id === this.props.todoId;
           }).map( step => {
-            return <StepListItem key={step.id} step={step} />;
+            return <StepListItem
+              key={step.id}
+              step={step}
+              removeStep={ removeStep }/>;
           })}
         </ul>
 
-        <StepForm todoId={ this.props.todoId } receiveStep={ receiveStep } removeStep= { removeStep } />
+        <StepForm todoId={ this.props.todoId } receiveStep={ receiveStep }/>
       </div>
     );
   }

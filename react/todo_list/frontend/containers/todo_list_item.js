@@ -15,14 +15,14 @@ class TodoListItem extends Component {
 
   toggleDone(e){
     let updatedTodo = Object.assign(
-      {}, this.props.todo,
+      {},
+      this.props.todo,
       { done: !this.props.todo.done }
     );
     this.props.receiveTodo(updatedTodo);
   }
 
   deleteTodo(e){
-    console.log('deleteTodo called');
     this.props.removeTodo(this.props.todo);
   }
 
