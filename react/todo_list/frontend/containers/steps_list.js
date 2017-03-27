@@ -11,28 +11,57 @@ class StepsList extends Component {
 
     this.toggleFormDisplay = this.toggleFormDisplay.bind(this);
     this.toggleListDisplay = this.toggleListDisplay.bind(this);
+    this.linkInnerHTML = this.linkInnerHTML.bind(this);
   }
 
   toggleListDisplay(e){
     let list = document.getElementById('steps-list');
+    let addNoteLink = document.getElementById('add-note-link');
+    let form = document.getElementById('step-form');
+
+    //show all notes, show add-note-link
     if (list.classList.contains('hide')) {
       list.classList.remove('hide');
+      addNoteLink.classList.remove('hide');
       e.target.innerHTML = 'hide notes';
+
+    //close all notes, close note link, close note form
     } else {
       list.classList.add('hide');
+      addNoteLink.classList.add('hide');
+      if (!form.classList.contains('hide')) form.classList.add('hide');
       e.target.innerHTML = 'see notes';
     }
+
+    this.adjustAddNoteLinkDisplay();
+    
   }
 
   toggleFormDisplay(e){
+
     let form = document.getElementById('step-form');
-    if (form.classList.contains('hide')) {
-     form.classList.remove('hide');
-     e.target.innerHTML = 'hide form';
-    } else {
-      form.classList.add('hide');
-      e.target.innerHTML = 'add note';
-    }
+
+    form.classList.contains('hide')
+    ? form.classList.remove('hide')
+    : form.classList.add('hide');
+
+    this.adjustAddNoteLinkDisplay();
+  }
+
+  adjustAddNoteLinkDisplay(){
+    let addNoteLink = document.getElementById('add-note-link');
+    let form = document.getElementById('step-form');
+    let newInnerHTML = form.classList.contains('hide')
+      ? 'add note'
+      : 'hide form';
+
+    addNoteLink.innerHTML = newInnerHTML;
+  }
+
+  linkInnerHTML(){
+    let form = document.getElementById('step-form');
+    console.log('hit the addnotelinkinnerhtml fxn');
+    return form.classList.contains('hide') ? 'add note' : 'nvm' ;
   }
 
   render(){
@@ -53,11 +82,14 @@ class StepsList extends Component {
               step={step}
               removeStep={ removeStep }/>;
           })}
+          <p
+            id='add-note-link'
+            className='toggle-link'
+            onClick={ this.toggleFormDisplay }>
+            add note
+          </p>
         </ul>
 
-        <p className='toggle-link' onClick={ this.toggleFormDisplay }>
-          add note
-        </p>
 
         <StepForm todoId={ this.props.todoId } receiveStep={ receiveStep }/>
       </div>
