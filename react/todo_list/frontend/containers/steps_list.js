@@ -11,7 +11,6 @@ class StepsList extends Component {
 
     this.toggleFormDisplay = this.toggleFormDisplay.bind(this);
     this.toggleListDisplay = this.toggleListDisplay.bind(this);
-    this.linkInnerHTML = this.linkInnerHTML.bind(this);
   }
 
   toggleListDisplay(e){
@@ -34,7 +33,7 @@ class StepsList extends Component {
     }
 
     this.adjustAddNoteLinkDisplay();
-    
+
   }
 
   toggleFormDisplay(e){
@@ -56,12 +55,6 @@ class StepsList extends Component {
       : 'hide form';
 
     addNoteLink.innerHTML = newInnerHTML;
-  }
-
-  linkInnerHTML(){
-    let form = document.getElementById('step-form');
-    console.log('hit the addnotelinkinnerhtml fxn');
-    return form.classList.contains('hide') ? 'add note' : 'nvm' ;
   }
 
   render(){
