@@ -6,6 +6,23 @@ import StepListItem from './step_list_item';
 import StepForm from '../components/step_form';
 
 class StepsList extends Component {
+  constructor(props){
+    super(props);
+
+    this.toggleFormDisplay = this.toggleFormDisplay.bind(this);
+  }
+
+  toggleFormDisplay(e){
+    let form = document.getElementById('step-form');
+    if (form.classList.contains('hide')) {
+     form.classList.remove('hide');
+     e.target.innerHTML = 'hide form';
+    } else {
+      form.classList.add('hide');
+      e.target.innerHTML = 'add note';
+    }
+  }
+
   render(){
     let steps = allSteps(this.props.state);
     return(
@@ -21,6 +38,10 @@ class StepsList extends Component {
               removeStep={ removeStep }/>;
           })}
         </ul>
+
+        <p id='add-note-link' className='add-note-link' onClick={ this.toggleFormDisplay }>
+          add note
+        </p>
 
         <StepForm todoId={ this.props.todoId } receiveStep={ receiveStep }/>
       </div>

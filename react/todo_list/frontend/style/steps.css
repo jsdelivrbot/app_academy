@@ -23,3 +23,22 @@ ul.steps-list {
 .step-list-item-title:hover {
   cursor: pointer;
 }
+
+.step-form {
+  background-color: inherit;
+  padding: 20px;
+  width: 50%;
+  height: 50%;
+  transform: translateX(50%);
+  border-radius: 5px;
+  border: 1px solid #D3D3D3;
+}
+
+.step-form.hide {
+  display: none;
+}
+
+.add-note-link {
+  font-style: italic;
+  cursor: pointer;
+}

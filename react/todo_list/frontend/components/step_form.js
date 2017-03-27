@@ -41,7 +41,7 @@ class StepForm extends Component {
 
   render(){
     return (
-        <form className='step-form' onSubmit={this.handleSubmit}>
+        <form id='step-form' className='step-form hide' onSubmit={this.handleSubmit}>
           <label>add note
             <input
               type='text'
@@ -59,7 +59,7 @@ class StepForm extends Component {
               />
           </label>
           <br />
-          <button className='submit-btn' type='submit'>create step</button>
+          <button className='submit-btn' type='submit'>add note</button>
         </form>
     );
   }
