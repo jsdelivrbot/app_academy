@@ -45,6 +45,7 @@ class TodoListItem extends Component {
         <StepsList
           className={`steps-list${todo.done ? ' done' : ''}`}
           todo={ todo }
+          receiveTodo={ receiveTodo }
           />
 
         <button className='delete-btn' onClick={ this.deleteTodo }>

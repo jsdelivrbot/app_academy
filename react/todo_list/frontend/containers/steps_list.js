@@ -2,15 +2,39 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { allSteps } from '../reducers/selectors';
 import { receiveSteps, receiveStep, removeStep } from '../actions/step_actions';
+import { receiveTodo } from '../actions/todo_actions';
 import StepListItem from './step_list_item';
 import StepForm from '../components/step_form';
 
 class StepsList extends Component {
+  constructor(props){
+    super(props);
+
+    this.toggleShowNotesLink = this.toggleShowNotesLink.bind(this);
+
+  }
+
+  toggleShowNotesLink(e){
+    e.preventDefault();
+    let newTodo = Object.assign(
+      {},
+      this.props.todo,
+      { stepsHidden: !this.props.todo.stepsHidden }
+    );
+    console.log(this.props);
+    this.props.receiveTodo(newTodo);
+  }
 
   render(){
     let steps = allSteps(this.props.state);
     return(
       <div className={ this.props.className }>
+
+        <p
+          className={`toggle-link`}
+          onClick={ this.toggleShowNotesLink }>
+          {this.props.todo.stepsHidden ? ' show notes': 'hide notes' }
+        </p>
 
         <ul className={`steps-list${this.props.todo.stepsHidden ? ' hide': '' }`}>
           {steps.filter( step => {
@@ -47,6 +71,9 @@ const mapDispatchToProps = dispatch => {
     },
     removeStep: () => {
       dispatch(removeStep());
+    },
+    receiveTodo: todo => {
+      dispatch(receiveTodo(todo));
     }
   };
 };
