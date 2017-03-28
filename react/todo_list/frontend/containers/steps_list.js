@@ -71,7 +71,10 @@ class StepsList extends Component {
         </p>
 
 
-        <StepForm todo={ this.props.todo } receiveStep={ receiveStep }/>
+        <StepForm
+          todo={ this.props.todo }
+          receiveStep={ receiveStep }
+          receiveTodo={this.props.receiveTodo}/>
 
       </div>
     );

@@ -48,7 +48,7 @@ class TodoForm extends Component {
         <br />
         <label>details
           <textarea
-            placeholder='make sure not to tell Jessica'
+            placeholder='April 4th, 2017, 8pm'
             value={ this.state.body }
             onChange={ this.handleChange('body') }
             />

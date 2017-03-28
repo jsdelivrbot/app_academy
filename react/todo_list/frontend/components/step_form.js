@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { receiveStep } from '../actions/step_actions';
+import { receiveTodo } from '../actions/todo_actions';
 import { bindActionCreators } from 'redux';
 import { uniqueId } from '../util/id_generator';
 
@@ -20,14 +21,20 @@ class StepForm extends Component {
 
   handleSubmit(e){
     e.preventDefault();
-
     let step = Object.assign(
       {},
       this.state,
       { todo_id: this.props.todo.id, id: uniqueId() }
     );
 
+    let newTodo = Object.assign(
+      {},
+      this.props.todo,
+      { stepsHidden: false }
+    );
+
     this.props.receiveStep(step);
+    this.props.receiveTodo(newTodo);
     this.setState({
       title: '',
       body: '',
@@ -68,7 +75,7 @@ class StepForm extends Component {
 }
 
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ receiveStep }, dispatch);
+  return bindActionCreators({ receiveStep, receiveTodo }, dispatch);
 };
 
 export default connect(null, mapDispatchToProps)(StepForm);

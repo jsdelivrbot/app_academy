@@ -42,7 +42,7 @@ class StepListItem extends Component {
         </div>
 
         <button className='delete-btn' onClick={ this.deleteStep }>
-          delete step
+          delete note
         </button>
       </li>
     );
