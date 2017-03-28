@@ -56,12 +56,13 @@ class StepsList extends Component {
               step={step}
               removeStep={ removeStep }/>;
           })}
-          <p
-            className={`toggle-link`}
-            onClick={ this.toggleFormLink }>
-            {this.props.todo.stepFormHidden ? 'add note': "nvm, don't add note" }
-          </p>
         </ul>
+
+        <p
+          className={`toggle-link${this.props.todo.stepsHidden ? ' hide': '' }`}
+          onClick={ this.toggleFormLink }>
+          {this.props.todo.stepFormHidden ? 'add note': "nvm, don't add note" }
+        </p>
 
 
         <StepForm todo={ this.props.todo } receiveStep={ receiveStep }/>

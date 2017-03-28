@@ -34,14 +34,10 @@ ul.steps-list {
   border: 1px solid #D3D3D3;
 }
 
-.step-form.hide, .steps-list.hide {
-  display: none;
-}
-
 .toggle-link {
   font-style: italic;
   cursor: pointer;
   font-size: 12px;
   padding: 30px 15px 5px 5px;
-  
+
 }
