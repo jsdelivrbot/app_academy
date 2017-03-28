@@ -24,7 +24,7 @@ class StepForm extends Component {
     let step = Object.assign(
       {},
       this.state,
-      { todo_id: this.props.todoId, id: uniqueId() }
+      { todo_id: this.props.todo.id, id: uniqueId() }
     );
 
     this.props.receiveStep(step);
@@ -41,7 +41,7 @@ class StepForm extends Component {
 
   render(){
     return (
-        <form id='step-form' className='step-form hide' onSubmit={this.handleSubmit}>
+        <form id='step-form' className='step-form' onSubmit={this.handleSubmit}>
           <label>add note
             <input
               type='text'
