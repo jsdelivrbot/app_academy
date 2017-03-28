@@ -11,17 +11,28 @@ class StepsList extends Component {
     super(props);
 
     this.toggleShowNotesLink = this.toggleShowNotesLink.bind(this);
+    this.toggleFormLink = this.toggleFormLink.bind(this);
 
   }
 
   toggleShowNotesLink(e){
-    e.preventDefault();
     let newTodo = Object.assign(
       {},
       this.props.todo,
-      { stepsHidden: !this.props.todo.stepsHidden }
+      { stepsHidden: !this.props.todo.stepsHidden,
+      stepFormHidden: true }
     );
-    console.log(this.props);
+
+    this.props.receiveTodo(newTodo);
+  }
+
+  toggleFormLink(e){
+    let newTodo = Object.assign(
+      {},
+      this.props.todo,
+      { stepFormHidden: !this.props.todo.stepFormHidden }
+    );
+
     this.props.receiveTodo(newTodo);
   }
 
@@ -33,7 +44,7 @@ class StepsList extends Component {
         <p
           className={`toggle-link`}
           onClick={ this.toggleShowNotesLink }>
-          {this.props.todo.stepsHidden ? ' show notes': 'hide notes' }
+          {this.props.todo.stepsHidden ? 'show notes': 'hide notes' }
         </p>
 
         <ul className={`steps-list${this.props.todo.stepsHidden ? ' hide': '' }`}>
@@ -45,10 +56,16 @@ class StepsList extends Component {
               step={step}
               removeStep={ removeStep }/>;
           })}
+          <p
+            className={`toggle-link`}
+            onClick={ this.toggleFormLink }>
+            {this.props.todo.stepFormHidden ? 'add note': "nvm, don't add note" }
+          </p>
         </ul>
 
 
         <StepForm todo={ this.props.todo } receiveStep={ receiveStep }/>
+
       </div>
     );
   }
