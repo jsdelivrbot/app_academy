@@ -38,11 +38,17 @@ class StepsList extends Component {
 
   render(){
     let steps = allSteps(this.props.state);
+    let stepsListEmpty = (
+      steps.filter( step => {
+        return step.todo_id === this.props.todo.id;
+      }).length === 0
+    );
+
     return(
       <div className={ this.props.className }>
 
         <p
-          className={`toggle-link`}
+          className={`toggle-link${stepsListEmpty ? ' hide': '' }`}
           onClick={ this.toggleShowNotesLink }>
           {this.props.todo.stepsHidden ? 'show notes': 'hide notes' }
         </p>
@@ -59,7 +65,7 @@ class StepsList extends Component {
         </ul>
 
         <p
-          className={`toggle-link${this.props.todo.stepsHidden ? ' hide': '' }`}
+          className={`toggle-link${(this.props.todo.stepsHidden && !stepsListEmpty) ? ' hide': '' }`}
           onClick={ this.toggleFormLink }>
           {this.props.todo.stepFormHidden ? 'add note': "nvm, don't add note" }
         </p>
