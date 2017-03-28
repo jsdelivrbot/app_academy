@@ -12,7 +12,7 @@ class StepsList extends Component {
     return(
       <div className={ this.props.className }>
 
-        <ul className={`steps-list${this.props.todo.stepsHidden ? 'hide': '' }`}>
+        <ul className={`steps-list${this.props.todo.stepsHidden ? ' hide': '' }`}>
           {steps.filter( step => {
             return step.todo_id === this.props.todo.id;
           }).map( step => {

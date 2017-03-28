@@ -41,7 +41,9 @@ class StepForm extends Component {
 
   render(){
     return (
-        <form id='step-form' className='step-form' onSubmit={this.handleSubmit}>
+        <form
+          className={`step-form${this.props.todo.stepFormHidden ? ' hide' : ''}`}
+          onSubmit={this.handleSubmit}>
           <label>add note
             <input
               type='text'

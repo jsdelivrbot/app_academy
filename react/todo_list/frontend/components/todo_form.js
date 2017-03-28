@@ -12,6 +12,8 @@ class TodoForm extends Component {
       title: '',
       body: '',
       done: false,
+      stepsHidden: true,
+      stepFormHidden: true
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
