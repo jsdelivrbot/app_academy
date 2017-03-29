@@ -1,35 +1,6 @@
 import { RECEIVE_STEPS, RECEIVE_STEP, REMOVE_STEP } from '../actions/step_actions';
 
-const initialState = {
-  1: {
-    id: 1,
-    todo_id: 1,
-    title: "buy car",
-    body: "with 4wd",
-    done: false
-  },
-  2: {
-    id: 2,
-    todo_id: 1,
-    title: "get the car dirty",
-    body: "let it play in the mud",
-    done: true
-  },
-  3: {
-    id: 3,
-    todo_id: 1,
-    title: "buy soap",
-    body: "",
-    done: true
-  },
-  4: {
-    id: 4,
-    todo_id: 2,
-    title: "buy champu",
-    body: "",
-    done: false
-  }
-};
+const initialState = {};
 
 
 export default function(state = initialState, action) {

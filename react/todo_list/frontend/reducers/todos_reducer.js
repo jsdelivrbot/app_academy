@@ -1,23 +1,6 @@
 import { RECEIVE_TODOS, RECEIVE_TODO, REMOVE_TODO } from '../actions/todo_actions';
 
-const initialState = {
-  1: {
-    id: 1,
-    title: "wash car",
-    body: "with soap",
-    done: false,
-    stepsHidden: true,
-    stepFormHidden: true
-  },
-  2: {
-    id: 2,
-    title: "wash dog",
-    body: "with shampoo",
-    done: true,
-    stepsHidden: true,
-    stepFormHidden: true
-  },
-};
+const initialState = {};
 
 
 export default function(state = initialState, action) {
