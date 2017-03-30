@@ -30,7 +30,7 @@ POTENTIAL WEEKLY TOPICS:
 
 -women's issues, pt 2/intro to intersectionality: a breakdown of trickle-down feminism and white feminism vs intersectional feminism. (maybe pull a link from <link34>'s "On Hillary Clinton, Liberal Feminism, and 'Trickle-Down' Feminism" section)
 
--gentrification, homelessness, and rising income disparity in SF
+-gentrification, homelessness, and rising income disparity in SF: tech driving income inequality <link39>, tech-driven gentrification <link40>
 
 -discrimination in the job search: whiteboarding weeds out more diverse applicants <link29>, Palantir racism case <link8>, resumes and response rates (sexism <link22>, racism <>), more discriminatory algorithms <link12>, an article about how diversity-training programs backfire (based on the Harvard Business Review's 2016 study, but need an article that's more accessible), some explanation of why reverse racism is not a thing (this might be too controversial for an intro course...) <link28>
 
@@ -120,3 +120,7 @@ Topics that need to be worked into all that or at least alluded to somewhere:
     http://www.theverge.com/2017/3/21/14998122/google-youtube-ad-extremist-content-hate-speech
   <link38>
     https://www.nytimes.com/2017/03/27/technology/whatsapp-rudd-terrorists-uk-attack.html?_r=0
+  <link39>
+    https://www.theguardian.com/technology/2016/jan/14/silicon-valley-tech-firms-income-inequality-world-bank
+  <link40>
+    https://www.theguardian.com/technology/2016/sep/21/silicon-valley-eviction-facebook-trion-properties
