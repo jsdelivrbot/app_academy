@@ -2586,7 +2586,6 @@ var removeTodo = exports.removeTodo = function removeTodo(todo) {
 
 var fetchTodos = exports.fetchTodos = function fetchTodos() {
   return function (dispatch) {
-    console.log(TodoAPIUtil.fetchTodos);
     return TodoAPIUtil.fetchTodos().then(function (todos) {
       return dispatch(receiveTodos(todos));
     });
@@ -11182,6 +11181,11 @@ var TodoList = function (_Component) {
   }
 
   _createClass(TodoList, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.props.fetchTodos;
+    }
+  }, {
     key: 'render',
     value: function render() {
       var todos = (0, _selectors.allTodos)(this.props.state);
@@ -11220,6 +11224,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     removeTodo: function removeTodo() {
       dispatch((0, _todo_actions.removeTodo)());
+    },
+    fetchTodos: function fetchTodos() {
+      dispatch((0, _todo_actions.fetchTodos)());
     }
   };
 };

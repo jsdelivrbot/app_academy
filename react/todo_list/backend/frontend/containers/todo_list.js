@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { allTodos } from '../reducers/selectors';
-import { receiveTodos, receiveTodo, removeTodo } from '../actions/todo_actions';
+import {
+  receiveTodos,
+  receiveTodo,
+  removeTodo,
+  fetchTodos } from '../actions/todo_actions';
 import TodoListItem from './todo_list_item';
 import TodoForm from '../components/todo_form';
 
 class TodoList extends Component {
+  componentDidMount(){
+    this.props.fetchTodos;
+  }
+
   render(){
     let todos = allTodos(this.props.state);
     return (
@@ -38,6 +46,9 @@ const mapDispatchToProps = dispatch => {
     },
     removeTodo: () => {
       dispatch(removeTodo());
+    },
+    fetchTodos: () => {
+      dispatch(fetchTodos());
     }
   };
 };

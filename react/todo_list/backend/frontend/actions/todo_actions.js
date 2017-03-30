@@ -26,6 +26,5 @@ export const removeTodo = todo => {
 };
 
 export const fetchTodos = () => dispatch => {
-  console.log(TodoAPIUtil.fetchTodos);
   return TodoAPIUtil.fetchTodos().then( todos => dispatch(receiveTodos(todos)));
 };
