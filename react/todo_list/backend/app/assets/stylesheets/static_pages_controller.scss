@@ -1,3 +1,131 @@
 // Place all the styles related to the StaticPagesController controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//app.css
+div, h1, h2, h3, ul, li, p, button, form {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  border-style: none;
+  background-color: inherit;
+}
+
+body {
+  background-color: #66CDAA;
+}
+
+ol, ul {
+  list-style-type: none;
+}
+
+.delete-btn:hover {
+  cursor: pointer;
+}
+
+input {
+  margin: 20px;
+}
+
+button, .submit-btn {
+  color: white;
+  padding: 4px 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  background-color: #778899;
+}
+
+input[type=text], textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea {
+    height: 100px;
+}
+
+.hide {
+  display: none;
+}
+
+//todos.css
+.todo-list-item-title.done {
+  text-decoration: line-through;
+}
+
+.todo-list-item-body {
+  font-style: italic;
+}
+
+.todo-list-item-body.done {
+  display: none;
+}
+
+.todo-list-item-title:hover {
+  cursor: pointer;
+}
+
+.todo-list-item, .todo-form {
+  background-color: #FAF0E6;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #D3D3D3;
+}
+
+.todo-form {
+  background-color: #D3D3D3;
+  width: 50%;
+  height: 50%;
+}
+
+// steps.css
+ul.steps-list {
+  list-style-type: disc;
+  margin: auto 30px;
+}
+
+/*unshow steps list when corresponding todo is marked done*/
+.steps-list.done {
+  display:none;
+}
+
+.step-list-item-body.done {
+  display: none;
+}
+
+.step-list-item-title {
+  font-weight: bold;
+}
+
+.step-list-item-title.done {
+  text-decoration: line-through;
+}
+
+.step-list-item-title:hover {
+  cursor: pointer;
+}
+
+.step-form {
+  background-color: inherit;
+  padding: 20px;
+  width: 50%;
+  height: 50%;
+  transform: translateX(50%);
+  border-radius: 5px;
+  border: 1px solid #D3D3D3;
+}
+
+.toggle-link {
+  font-style: italic;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 30px 15px 5px 5px;
+
+}
