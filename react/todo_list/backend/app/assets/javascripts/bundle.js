@@ -10543,9 +10543,13 @@ var _root_reducer = __webpack_require__(107);
 
 var _root_reducer2 = _interopRequireDefault(_root_reducer);
 
+var _thunk = __webpack_require__(234);
+
+var _thunk2 = _interopRequireDefault(_thunk);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var configureStore = (0, _redux.createStore)(_root_reducer2.default);
+var configureStore = (0, _redux.createStore)(_root_reducer2.default, (0, _redux.applyMiddleware)(_thunk2.default));
 
 exports.default = configureStore;
 
@@ -11450,7 +11454,13 @@ var _root = __webpack_require__(97);
 
 var _root2 = _interopRequireDefault(_root);
 
+var _root_reducer = __webpack_require__(107);
+
+var _root_reducer2 = _interopRequireDefault(_root_reducer);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+window.store = _store2.default;
 
 document.addEventListener("DOMContentLoaded", function () {
   _reactDom2.default.render(_react2.default.createElement(_root2.default, { store: _store2.default }), document.getElementById('root'));
@@ -24951,6 +24961,33 @@ module.exports = function(module) {
 	return module;
 };
 
+
+/***/ }),
+/* 233 */,
+/* 234 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var thunkFunc = function thunkFunc(_ref) {
+  var dispatch = _ref.dispatch,
+      getState = _ref.getState;
+  return function (next) {
+    return function (action) {
+      if (typeof action === 'function') {
+        return action(dispatch, getState);
+      } else {
+        return next(action);
+      }
+    };
+  };
+};
+
+exports.default = thunkFunc;
 
 /***/ })
 /******/ ]);
