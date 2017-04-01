@@ -9,5 +9,7 @@ window.fetchSearchGiphys = fetchSearchGiphys;
 window.receiveSearchGiphys = receiveSearchGiphys;
 
 document.addEventListener("DOMContentLoaded", function(){
-  ReactDOM.render(<Root store={ configureStore } />, document.getElementById('root'));
+  const store = configureStore();
+  const rootNode = document.getElementById('root');
+  ReactDOM.render(<Root store={ store } />, rootNode);
 });

@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 
-import GiphysSearchContainer from './giphys_search_container';
+import GiphysSearch from '../containers/giphys_search';
 
 export default class Root extends Component {
   render(){
     return (
-      <div>
-        <h1>inside root</h1>
-        <GiphysSearchContainer />
-      </div>
+      <Provider store={ this.props.store }>
+        <GiphysSearch />
+      </Provider>
     );
   }
 }
