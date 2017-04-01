@@ -12,5 +12,5 @@ export const clearErrors = errors => {
   return {
     type: CLEAR_ERRORS,
     errors: errors
-  }
+  };
 };

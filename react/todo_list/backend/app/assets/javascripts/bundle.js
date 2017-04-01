@@ -2557,6 +2557,8 @@ var _todo_api_util = __webpack_require__(112);
 
 var TodoAPIUtil = _interopRequireWildcard(_todo_api_util);
 
+var _error_actions = __webpack_require__(235);
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 var RECEIVE_TODOS = exports.RECEIVE_TODOS = "RECEIVE_TODOS";
@@ -2596,6 +2598,8 @@ var createTodo = exports.createTodo = function createTodo(thisTodo) {
   return function (dispatch) {
     return TodoAPIUtil.createTodo({ todo: thisTodo }).then(function (newTodo) {
       return dispatch(receiveTodo(newTodo));
+    }, function (error) {
+      return dispatch((0, _error_actions.receiveErrors)(error.responseJSON));
     });
   };
 };
@@ -11505,6 +11509,8 @@ var _root = __webpack_require__(97);
 var _root2 = _interopRequireDefault(_root);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+window.store = _store2.default;
 
 document.addEventListener("DOMContentLoaded", function () {
   _reactDom2.default.render(_react2.default.createElement(_root2.default, { store: _store2.default }), document.getElementById('root'));
@@ -25030,6 +25036,33 @@ module.exports = function(module) {
 	return module;
 };
 
+
+/***/ }),
+/* 235 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var RECEIVE_ERRORS = exports.RECEIVE_ERRORS = 'RECEIVE_ERRORS';
+var CLEAR_ERRORS = exports.CLEAR_ERRORS = 'CLEAR_ERRORS';
+
+var receiveErrors = exports.receiveErrors = function receiveErrors(errors) {
+  return {
+    type: RECEIVE_ERRORS,
+    errors: errors
+  };
+};
+
+var clearErrors = exports.clearErrors = function clearErrors(errors) {
+  return {
+    type: CLEAR_ERRORS,
+    errors: errors
+  };
+};
 
 /***/ })
 /******/ ]);
