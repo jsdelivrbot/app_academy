@@ -10805,6 +10805,10 @@ var _todo_actions = __webpack_require__(20);
 
 var _redux = __webpack_require__(19);
 
+var _error_list = __webpack_require__(237);
+
+var _error_list2 = _interopRequireDefault(_error_list);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -10854,6 +10858,7 @@ var TodoForm = function (_Component) {
       return _react2.default.createElement(
         'form',
         { className: 'todo-form', onSubmit: this.handleSubmit },
+        _react2.default.createElement(_error_list2.default, { errors: this.props.errors }),
         _react2.default.createElement(
           'label',
           null,
@@ -11203,7 +11208,7 @@ var TodoList = function (_Component) {
             return _react2.default.createElement(_todo_list_item2.default, { key: todo.id, todo: todo });
           })
         ),
-        _react2.default.createElement(_todo_form2.default, { createTodo: _todo_actions.createTodo, removeTodo: _todo_actions.removeTodo })
+        _react2.default.createElement(_todo_form2.default, { createTodo: _todo_actions.createTodo, removeTodo: _todo_actions.removeTodo, errors: this.props.errors })
       );
     }
   }]);
@@ -11214,6 +11219,7 @@ var TodoList = function (_Component) {
 var mapStateToProps = function mapStateToProps(state) {
   return {
     todos: (0, _selectors.allTodos)(state),
+    errors: state.errors,
     state: state
   };
 };
@@ -11388,11 +11394,16 @@ var _steps_reducer = __webpack_require__(109);
 
 var _steps_reducer2 = _interopRequireDefault(_steps_reducer);
 
+var _error_reducer = __webpack_require__(238);
+
+var _error_reducer2 = _interopRequireDefault(_error_reducer);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var rootReducer = (0, _redux.combineReducers)({
   todos: _todos_reducer2.default,
-  steps: _steps_reducer2.default
+  steps: _steps_reducer2.default,
+  errors: _error_reducer2.default
 });
 
 exports.default = rootReducer;
@@ -25057,12 +25068,101 @@ var receiveErrors = exports.receiveErrors = function receiveErrors(errors) {
   };
 };
 
-var clearErrors = exports.clearErrors = function clearErrors(errors) {
+var clearErrors = exports.clearErrors = function clearErrors() {
   return {
-    type: CLEAR_ERRORS,
-    errors: errors
+    type: CLEAR_ERRORS
   };
 };
+
+/***/ }),
+/* 236 */,
+/* 237 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(8);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ErrorList = function (_Component) {
+  _inherits(ErrorList, _Component);
+
+  function ErrorList() {
+    _classCallCheck(this, ErrorList);
+
+    return _possibleConstructorReturn(this, (ErrorList.__proto__ || Object.getPrototypeOf(ErrorList)).apply(this, arguments));
+  }
+
+  _createClass(ErrorList, [{
+    key: "render",
+    value: function render() {
+      if (this.props.errors.length === 0) return null;
+
+      return _react2.default.createElement(
+        "ul",
+        { className: "error-list" },
+        this.props.errors.map(function (error) {
+          return _react2.default.createElement(
+            "li",
+            { key: error },
+            error
+          );
+        })
+      );
+    }
+  }]);
+
+  return ErrorList;
+}(_react.Component);
+
+exports.default = ErrorList;
+
+/***/ }),
+/* 238 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function () {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+  var action = arguments[1];
+
+  Object.freeze(state);
+
+  switch (action.errors) {
+    case _error_actions.RECEIVE_ERRORS:
+      return action.errors;
+    case _error_actions.CLEAR_ERRORS:
+      return [];
+    default:
+      return state;
+  }
+};
+
+var _error_actions = __webpack_require__(235);
+
+var initialState = [];
 
 /***/ })
 /******/ ]);

@@ -3,6 +3,7 @@ import { uniqueId } from '../util/id_generator';
 import { connect } from 'react-redux';
 import { createTodo } from '../actions/todo_actions';
 import { bindActionCreators } from 'redux';
+import ErrorList from './error_list';
 
 class TodoForm extends Component {
   constructor(props){
@@ -31,6 +32,7 @@ class TodoForm extends Component {
   render(){
     return(
       <form className='todo-form' onSubmit={this.handleSubmit}>
+        <ErrorList errors={ this.props.errors } />
         <label>add todo
           <input
             type='text'

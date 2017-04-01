@@ -23,7 +23,7 @@ class TodoList extends Component {
             return <TodoListItem key={todo.id} todo={todo} />;
           })}
         </ul>
-        <TodoForm createTodo={ createTodo } removeTodo= { removeTodo }/>
+        <TodoForm createTodo={ createTodo } removeTodo= { removeTodo } errors={ this.props.errors }/>
       </div>
     );
   }
@@ -32,6 +32,7 @@ class TodoList extends Component {
 const mapStateToProps = state => {
   return {
     todos: allTodos(state),
+    errors: state.errors,
     state: state
   };
 };
