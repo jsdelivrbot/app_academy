@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { allTodos } from '../reducers/selectors';
 import {
   receiveTodos,
-  receiveTodo,
   removeTodo,
-  fetchTodos } from '../actions/todo_actions';
+  fetchTodos,
+  createTodo } from '../actions/todo_actions';
 import TodoListItem from './todo_list_item';
 import TodoForm from '../components/todo_form';
 
@@ -23,7 +23,7 @@ class TodoList extends Component {
             return <TodoListItem key={todo.id} todo={todo} />;
           })}
         </ul>
-        <TodoForm receiveTodo={ receiveTodo } removeTodo= { removeTodo }/>
+        <TodoForm createTodo={ createTodo } removeTodo= { removeTodo }/>
       </div>
     );
   }
@@ -38,8 +38,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    receiveTodo: todo => {
-      dispatch(receiveTodo(todo));
+    createTodo: todo => {
+      dispatch(createTodo(todo));
     },
     receiveTodos: () => {
       dispatch(receiveTodos());

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { uniqueId } from '../util/id_generator';
 import { connect } from 'react-redux';
-import { receiveTodo } from '../actions/todo_actions';
+import { createTodo } from '../actions/todo_actions';
 import { bindActionCreators } from 'redux';
 
 class TodoForm extends Component {
@@ -10,10 +10,7 @@ class TodoForm extends Component {
 
     this.state = {
       title: '',
-      body: '',
-      done: false,
-      stepsHidden: true,
-      stepFormHidden: true
+      body: ''
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,12 +19,9 @@ class TodoForm extends Component {
   handleSubmit(e){
     e.preventDefault();
     let todo = Object.assign({}, this.state, { id: uniqueId() });
-    this.props.receiveTodo(todo);
-    this.setState({
-      title: '',
-      body: '',
-      done: false,
-    });
+    this.props.createTodo(todo).then(
+      this.setState({ title: '', body: '' })
+    );
   }
 
   handleChange(property){
@@ -61,7 +55,7 @@ class TodoForm extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ receiveTodo }, dispatch);
+  return bindActionCreators({ createTodo }, dispatch);
 }
 
 export default connect(null, mapDispatchToProps)(TodoForm);
