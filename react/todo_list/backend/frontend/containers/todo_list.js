@@ -38,18 +38,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    createTodo: todo => {
-      dispatch(createTodo(todo));
-    },
-    receiveTodos: () => {
-      dispatch(receiveTodos());
-    },
-    removeTodo: () => {
-      dispatch(removeTodo());
-    },
-    fetchTodos: () => {
-      dispatch(fetchTodos());
-    }
+    createTodo: todo => dispatch(createTodo(todo)),
+    receiveTodos: () => dispatch(receiveTodos()),
+    removeTodo: () => dispatch(removeTodo()),
+    fetchTodos: () => dispatch(fetchTodos())
   };
 };
 

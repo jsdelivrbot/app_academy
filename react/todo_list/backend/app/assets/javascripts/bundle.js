@@ -11217,16 +11217,16 @@ var mapStateToProps = function mapStateToProps(state) {
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     createTodo: function createTodo(todo) {
-      dispatch((0, _todo_actions.createTodo)(todo));
+      return dispatch((0, _todo_actions.createTodo)(todo));
     },
     receiveTodos: function receiveTodos() {
-      dispatch((0, _todo_actions.receiveTodos)());
+      return dispatch((0, _todo_actions.receiveTodos)());
     },
     removeTodo: function removeTodo() {
-      dispatch((0, _todo_actions.removeTodo)());
+      return dispatch((0, _todo_actions.removeTodo)());
     },
     fetchTodos: function fetchTodos() {
-      dispatch((0, _todo_actions.fetchTodos)());
+      return dispatch((0, _todo_actions.fetchTodos)());
     }
   };
 };
