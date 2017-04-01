@@ -11183,7 +11183,7 @@ var TodoList = function (_Component) {
   _createClass(TodoList, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      this.props.fetchTodos;
+      this.props.fetchTodos();
     }
   }, {
     key: 'render',
@@ -11478,16 +11478,7 @@ var _root = __webpack_require__(97);
 
 var _root2 = _interopRequireDefault(_root);
 
-var _root_reducer = __webpack_require__(107);
-
-var _root_reducer2 = _interopRequireDefault(_root_reducer);
-
-var _todo_actions = __webpack_require__(20);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-window.store = _store2.default;
-window.ft = _store2.default.dispatch((0, _todo_actions.fetchTodos)());
 
 document.addEventListener("DOMContentLoaded", function () {
   _reactDom2.default.render(_react2.default.createElement(_root2.default, { store: _store2.default }), document.getElementById('root'));

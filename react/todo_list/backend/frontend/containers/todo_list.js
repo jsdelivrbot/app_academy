@@ -11,7 +11,7 @@ import TodoForm from '../components/todo_form';
 
 class TodoList extends Component {
   componentDidMount(){
-    this.props.fetchTodos;
+    this.props.fetchTodos();
   }
 
   render(){
