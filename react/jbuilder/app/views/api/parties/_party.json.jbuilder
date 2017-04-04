@@ -1,0 +1,1 @@
+json.(@party, :name, :location)
