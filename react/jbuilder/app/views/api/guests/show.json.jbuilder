@@ -1,1 +1,1 @@
-json.(@guest, :name, :age, :favorite_color)
+json.partial! 'api/guests/guest'
