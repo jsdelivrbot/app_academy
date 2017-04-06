@@ -30,7 +30,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  requestSinglePokemon: () => dispatch(requestSinglePokemon())
+  requestSinglePokemon: id => dispatch(requestSinglePokemon(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PokemonDetail);
