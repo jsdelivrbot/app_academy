@@ -12,6 +12,7 @@ const PokemonDetailReducer = (state = {}, action) => {
         pokemon: state.pokemon,
         pokemonDetail: _values(action.pokemon)
       };
+      console.log(nextState);
       return nextState;
     default:
       return state;

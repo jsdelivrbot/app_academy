@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-import { receiveAllPokemon, requestAllPokemon } from './actions/pokemon_actions';
-import { fetchAllPokemon } from './util/api_util';
+import { receiveAllPokemon, requestAllPokemon, receiveSinglePokemon, requestSinglePokemon } from './actions/pokemon_actions';
+import { fetchAllPokemon, fetchSinglePokemon } from './util/api_util';
 import configureStore from './store/store';
 import { selectAllPokemon } from './reducers/selectors';
 
@@ -21,5 +21,9 @@ window.fetchAllPokemon = fetchAllPokemon;
 window.receiveAllPokemon = receiveAllPokemon;
 window.requestAllPokemon = requestAllPokemon;
 window.selectAllPokemon = selectAllPokemon;
+
+window.fetchSinglePokemon = fetchSinglePokemon;
+window.receiveSinglePokemon = receiveSinglePokemon;
+window.requestSinglePokemon = requestSinglePokemon;
 const store = configureStore();
 window.store = store;

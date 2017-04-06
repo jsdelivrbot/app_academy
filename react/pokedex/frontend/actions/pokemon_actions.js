@@ -19,7 +19,7 @@ export const receiveSinglePokemon = pokemon => ({
   type: RECEIVE_SINGLE_POKEMON,
   pokemon: pokemon
 });
-export const requestSinglePokemon = () => dispatch => {
-  return ApiUtil.fetchSinglePokemon()
+export const requestSinglePokemon = id => dispatch => {
+  return ApiUtil.fetchSinglePokemon(id)
     .then(pokemon => dispatch(receiveSinglePokemon(pokemon)));
 };
