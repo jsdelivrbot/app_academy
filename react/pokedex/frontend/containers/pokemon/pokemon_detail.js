@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { requestSinglePokemon } from '../../actions/pokemon_actions';
 import { selectSinglePokemon } from '../../reducers/selectors';
-// import PokemonIndexItem from '../../components/pokemon/pokemon_index_item';
 
 class PokemonDetail extends Component {
   componentDidMount(){
