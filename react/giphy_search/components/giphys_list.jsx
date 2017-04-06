@@ -17,7 +17,6 @@ class GiphysList extends Component {
     return (
       <ul className='giphys-ul'>
         {this.props.giphys.map( giphy => {
-          console.log(giphy);
           return this.renderGiphy(giphy);
         })}
       </ul>
