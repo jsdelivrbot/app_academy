@@ -20,6 +20,7 @@ class PokemonDetail extends Component {
     return (
       <section className="poke-detail">
         <p>poke-detail</p>
+        <p>{this.props.match.params.pokemonId}</p>
       </section>
     );
   }
