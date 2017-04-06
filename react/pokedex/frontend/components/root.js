@@ -10,7 +10,7 @@ const Root = ({ store }) => {
     <Provider store={store}>
       <BrowserRouter>
         <Route path="/" component={ PokemonIndex }>
-          <Route path="pokemon/:pokemonId" component={ PokemonDetail } />
+          <Route path="api/pokemon/:pokemonId" component={ PokemonDetail } />
         </Route>
       </BrowserRouter>
     </Provider>

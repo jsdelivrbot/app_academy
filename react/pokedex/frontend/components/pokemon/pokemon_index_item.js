@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 
 const PokemonIndexItem = ({pokemon}) => (
     <li key={ pokemon.id } className="poke-li">
-      <Link to={`/pokemon/${pokemon.id}`}>
+      <Link
+      to={`api/pokemon/${pokemon.id}`}
+      onClick={e => this.setState(Object.assign({}, this.state))}>
         <h3>{ pokemon.name }</h3>
         <p><img src={pokemon.image_url} /></p>
       </Link>
