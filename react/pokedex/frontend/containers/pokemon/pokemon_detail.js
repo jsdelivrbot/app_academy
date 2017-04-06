@@ -6,8 +6,8 @@ import { selectSinglePokemon } from '../../reducers/selectors';
 class PokemonDetail extends Component {
   componentDidMount(){
     console.log('in pokemon_detail componentDidMount:');
-    console.log(this.props.params);
-    this.props.requestSinglePokemon(this.props.params.pokemonId);
+    console.log(this.props.match.params.pokemonId);
+    this.props.requestSinglePokemon(this.props.match.params.pokemonId);
   }
 
   componentWillReceiveProps(newProps){
