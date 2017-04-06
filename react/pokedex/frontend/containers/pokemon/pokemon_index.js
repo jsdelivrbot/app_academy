@@ -2,30 +2,24 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { requestAllPokemon } from '../../actions/pokemon_actions';
 import { selectAllPokemon } from '../../reducers/selectors';
+import PokemonIndexItem from '../../components/pokemon/pokemon_index_item';
 
 class PokemonIndex extends Component {
   componentDidMount(){
     this.props.requestAllPokemon();
   }
 
-  renderEachPokeLi(poke){
-    return (
-      <li key={poke.id} className="poke-li">
-        <h3>{poke.name}</h3>
-        <p><img src={poke.image_url} /></p>
-      </li>
-    );
-  }
-
   render(){
+    const pokemonItems = this.props.pokemon.map(poke =>
+      <PokemonIndexItem key={poke.id} pokemon={poke} />
+    );
+
     return (
-      <ul>
-        {
-          this.props.pokemon.map( poke => {
-            return this.renderEachPokeLi(poke);
-          })
-        }
-      </ul>
+      <section className="pokedex">
+        <ul>
+          {pokemonItems}
+        </ul>
+      </section>
     );
   }
 }
