@@ -18,6 +18,7 @@ class PokemonIndex extends Component {
       <section className="pokedex">
         <ul>
           {pokemonItems}
+          {this.props.children}
         </ul>
       </section>
     );
