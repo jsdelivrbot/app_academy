@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { requestSinglePokemon } from '../../actions/pokemon_actions';
-import { selectSinglePokemon } from '../../reducers/selectors';
+import { bindActionCreators } from 'redux';
 
 class PokemonDetail extends Component {
+
   componentDidMount(){
     console.log('in pokemon_detail componentDidMount:');
     console.log(this.props.match.params.pokemonId);
@@ -17,6 +18,12 @@ class PokemonDetail extends Component {
   }
 
   render(){
+    const pokeAttributes = this.props.pokemonDetail;
+    // const pokeDetailData = this.props.pokemonDetail[0];
+    // const pokeIds = Object.keys(pokeData);
+    // const pokemonItems = pokeIds.map(pokeId =>
+    //   <PokemonIndexItem key={pokeId} pokemon={pokeData[pokeId]} />
+    // );
     return (
       <section className="poke-detail">
         <p>poke-detail</p>

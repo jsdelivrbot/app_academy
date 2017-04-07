@@ -6,10 +6,8 @@ export const fetchAllPokemon = () => (
 );
 
 export const fetchSinglePokemon = id => {
-  console.log('id arg in ApiUtil:');
-  console.log(id);
   return $.ajax({
     method: 'GET',
-    url: `api/pokemon/${id}`
+    url: `/api/pokemon/${id}`
   });
 };

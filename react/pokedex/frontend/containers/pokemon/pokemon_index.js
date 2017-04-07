@@ -10,8 +10,11 @@ class PokemonIndex extends Component {
   }
 
   render(){
-    const pokemonItems = this.props.pokemon.map(poke =>
-      <PokemonIndexItem key={poke.id} pokemon={poke} />
+
+    const pokeData = this.props.pokemon[0];
+    const pokeIds = Object.keys(pokeData);
+    const pokemonItems = pokeIds.map(pokeId =>
+      <PokemonIndexItem key={pokeId} pokemon={pokeData[pokeId]} />
     );
 
     return (
