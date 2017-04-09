@@ -16,40 +16,44 @@ BACKEND
 FRONTEND
 * `npm init --yes` to create a package.json file with the default setup.
 * Set up frontend folders:
-  mkdir frontend
-  cd frontend
-  mkdir actions components containers reducers store util
-  touch [project_name].js
+    mkdir frontend
+    cd frontend
+    mkdir actions components containers reducers store util
+    touch [project_name].js
 * Run in root directory: `npm install --save webpack react react-dom react-router redux react-redux babel-core babel-loader babel-preset-react babel-preset-es2015`
 * `touch webpack.config.js`
+    const path = require('path');
 
-```
-  const path = require('path');
-
-  module.exports = {
-    context: __dirname,
-    entry: './frontend/bench_bnb.js',
-    output: {
-      path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
-      filename: 'bundle.js'
-    },
-    resolve: {
-      extensions: ['.js', '.jsx', '*']
-    },
-    module: {
-      loaders: [
-        {
-          test: /\.jsx?$/,
-          exclude: /(node_modules|bower_components)/,
-          loader: 'babel-loader',
-          query: {
-            presets: ['react', 'es2015']
+    module.exports = {
+      context: __dirname,
+      entry: './frontend/[project_name].js',
+      output: {
+        path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
+        filename: 'bundle.js'
+      },
+      resolve: {
+        extensions: ['.js', '.jsx', '*']
+      },
+      module: {
+        loaders: [
+          {
+            test: /\.jsx?$/,
+            exclude: /(node_modules|bower_components)/,
+            loader: 'babel-loader',
+            query: {
+              presets: ['react', 'es2015']
+            }
           }
-        }
-      ]
-    },
-    devtool: 'source-maps'
-  };
-```
-* [ ] `git commit` again (Verify that your `.gitignore` works).
-  * `git push` your skeleton.
+        ]
+      },
+      devtool: 'source-maps'
+    };
+* Add 'script' to package.json:
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "postinstall": "webpack",
+      "webpack": "webpack --watch"
+    }
+* Add `//= require bundle` to `app/assets/javascripts/application.js`
+* Run `webpack` in commandline to create bundle.js
+
