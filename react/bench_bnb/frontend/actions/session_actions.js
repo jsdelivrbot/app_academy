@@ -5,8 +5,11 @@ export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 
 export const signUp = user => dispatch => {
   ApiUtil.signUp(user)
-    .then(user => dispatch(receiveCurrentUser(user)),
-    errors => console.log(errors))
+    .then(user => {
+      dispatch(receiveCurrentUser(user);
+    }), errors => {
+      console.log(errors);
+    })
 }
 
 // export const signup = user => dispatch => (
@@ -49,7 +52,8 @@ export const signOut = () => dispatch => {
 export const receiveCurrentUser = currentUser => {
   return {
     type: RECEIVE_CURRENT_USER,
-    currentUser: currentUser
+    currentUser: currentUser,
+    errors: []
   }
 }
 // export const receiveCurrentUser = currentUser => ({
@@ -61,6 +65,7 @@ export const receiveCurrentUser = currentUser => {
 export const receiveErrors = errors => {
   return {
     type: RECEIVE_ERRORS,
+    currentUser: null,
     errors: errors
   }
 }
