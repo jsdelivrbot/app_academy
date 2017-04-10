@@ -1,13 +1,12 @@
+
 import React from 'react';
+import { Provider } from 'react-redux';
+import App from './app';
 
-const Root = ({ store }) => {
-  return (
-    <div>
-      <p>root component, current store:</p>
-      <p>{console.log(store.getState())}</p>
-    </div>
-
-  );
-};
+const Root = ({ store }) => (
+  <Provider store={ store }>
+    <App />
+  </Provider>
+);
 
 export default Root;
