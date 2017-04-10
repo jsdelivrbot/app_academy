@@ -9,9 +9,12 @@ window.signOut = signOut;
 window.signIn = signIn;
 window.signUp = signUp;
 
+const root = document.getElementById('root');
+const preloadedState = window.currentUser
+  ? { session: { currentUser: window.currentUser } }
+  : {};
+const store = configureStore(preloadedState);
 
 document.addEventListener('DOMContentLoaded', () => {
-  const store = configureStore();
-  const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store }/>, root);
 });
