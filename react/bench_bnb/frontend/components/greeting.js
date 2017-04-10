@@ -1,12 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { signOut } from '../actions/session_actions';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
-const linkToNewSession = () => {
+const linkToNewSessionForm = () => {
   return (
     <nav className="signin-signup">
-      <p>asdfasdf</p>
+      <Link to="/signin">Sign In</Link>
+      <br/>
+      <Link to="/signup">Sign Up</Link>
     </nav>
   );
 };
@@ -14,16 +16,18 @@ const linkToNewSession = () => {
 const displayGreeting = (props) => (
   <div>
     <h2 className="header-name">Hi, {props.currentUser.username}!</h2>
-    <button className="header-button" onClick={signOut}>Sign Out</button>
+    <button className="header-button" onClick={props.signOut}>Sign Out</button>
   </div>
 );
 
 const Greeting  = (props) => {
-  return (props.currentUser ? displayGreeting(props): linkToNewSession());
+  return (props.currentUser
+    ? displayGreeting(props)
+    : linkToNewSessionForm());
   };
 
-const mapStateToProps = store => {
-  return { currentUser: store.session.currentUser };
+const mapStateToProps = state => {
+  return { currentUser: state.session.currentUser };
 };
 
 const mapDispatchToProps = dispatch => {
