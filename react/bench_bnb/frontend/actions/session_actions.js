@@ -12,13 +12,6 @@ export const signUp = user => dispatch => {
     });
 };
 
-// export const signup = user => dispatch => (
-//   APIUtil.signup(user)
-//     .then(user => dispatch(receiveCurrentUser(user)),
-//       err => dispatch(receiveErrors(err.responseJSON)))
-// );
-//
-
 export const signIn = user => dispatch => {
   ApiUtil.signIn(user)
     .then(userPromise => {
@@ -28,14 +21,6 @@ export const signIn = user => dispatch => {
     });
 };
 
-// export const login = user => dispatch => (
-//   APIUtil.login(user)
-//     .then(user => dispatch(receiveCurrentUser(user)),
-//       err => dispatch(receiveErrors(err.responseJSON)))
-// );
-//
-
-
 export const signOut = () => dispatch => {
   ApiUtil.signOut()
     .then(() => {
@@ -44,10 +29,6 @@ export const signOut = () => dispatch => {
       console.log(errors);
     });
 };
-// export const logout = () => dispatch => (
-//   APIUtil.logout().then(user => dispatch(receiveCurrentUser(null)))
-// );
-//
 
 export const receiveCurrentUser = currentUser => {
   return {
@@ -56,11 +37,6 @@ export const receiveCurrentUser = currentUser => {
     errors: []
   };
 };
-// export const receiveCurrentUser = currentUser => ({
-//   type: RECEIVE_CURRENT_USER,
-//   currentUser
-// });
-//
 
 export const receiveErrors = errors => {
   return {
@@ -69,7 +45,3 @@ export const receiveErrors = errors => {
     errors: errors
   };
 };
-// export const receiveErrors = errors => ({
-//   type: RECEIVE_ERRORS,
-//   errors
-// });

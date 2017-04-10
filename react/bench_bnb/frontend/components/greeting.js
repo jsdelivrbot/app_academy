@@ -1,18 +1,26 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { signOut } from '../actions/session_actions';
+import { Link } from 'react-router';
 
-class Greeting extends React.Component {
+const linkToNewSession = () => {
+  return (
+    <nav className="signin-signup">
+      <p>asdfasdf</p>
+    </nav>
+  );
+};
 
-  render() {
-    console.log('inside greeting');
-    console.log(this.props);
-    return (
-      <div>greeting</div>
-    );
-  }
+const displayGreeting = (props) => (
+  <div>
+    <h2 className="header-name">Hi, {props.currentUser.username}!</h2>
+    <button className="header-button" onClick={signOut}>Sign Out</button>
+  </div>
+);
 
-}
+const Greeting  = (props) => {
+  return (props.currentUser ? displayGreeting(props): linkToNewSession());
+  };
 
 const mapStateToProps = store => {
   return { currentUser: store.session.currentUser };
