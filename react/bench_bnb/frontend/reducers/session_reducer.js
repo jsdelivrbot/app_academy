@@ -2,14 +2,12 @@ import {
   RECEIVE_CURRENT_USER,
   RECEIVE_ERRORS } from '../actions/session_actions';
 
-const initialState = {
-  session: {
-    currentUser: null,
-    errors: []
-  }
-};
+const nullUser = Object.freeze({
+  currentUser: null,
+  errors: []
+});
 
-const SessionReducer = (state = initialState, action) => {
+const SessionReducer = (state = nullUser, action) => {
   Object.freeze(state);
   let nextState;
 
@@ -17,14 +15,14 @@ const SessionReducer = (state = initialState, action) => {
     case RECEIVE_CURRENT_USER:
       nextState = Object.assign(
         {},
-        state,
+        nullUser,
         { currentUser: action.currentUser }
       );
       return nextState;
     case RECEIVE_ERRORS:
       nextState = Object.assign(
         {},
-        state,
+        nullUser,
         { errors: action.errors }
       );
       return nextState;
