@@ -2,14 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import { signIn, signOut, signUp } from './actions/session_actions';
-import { fetchBenches } from './util/bench_api_util';
+import { fetchBenches } from './actions/bench_actions';
 
 window.store = configureStore();
-window.signOut = signOut;
-window.signIn = signIn;
-window.signUp = signUp;
 window.fetchBenches = fetchBenches;
+
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
