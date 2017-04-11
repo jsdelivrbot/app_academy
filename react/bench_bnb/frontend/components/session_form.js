@@ -15,6 +15,10 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
 		e.preventDefault();
 		this.props.processForm({user: this.state});
+    this.setState({
+      username: '',
+      password: ''
+    });
 	}
 
   update(field) {
@@ -59,8 +63,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch, state) => {
   const formType = state.location.pathname.slice(1);
-  const processForm = (formType === 'signIn') ? signIn : signUp;
-
+  const processForm = (formType === 'signin') ? signIn : signUp;
   return {
     processForm: user => dispatch(processForm(user)),
     formType: formType
