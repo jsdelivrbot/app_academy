@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'benches/index'
+
+  get 'benches/create'
+
   root "static_pages#root"
 
   namespace :api, defaults: {format: :json} do
