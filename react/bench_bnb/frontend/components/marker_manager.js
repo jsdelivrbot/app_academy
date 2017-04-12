@@ -1,6 +1,4 @@
-import React from 'react';
-
-class MarkerManager extends React.Component {
+export default class MarkerManager {
   constructor(map) {
     this.map = map;
     this.markers = [];
@@ -9,13 +7,4 @@ class MarkerManager extends React.Component {
   updateMarkers(benches) {
     console.log('time to update');
   }
-
-  render() {
-    return (
-      <div></div>
-    );
-  }
-
 }
-
-export default MarkerManager;
