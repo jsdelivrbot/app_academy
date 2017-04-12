@@ -6,16 +6,27 @@ export default class MarkerManager {
 
   updateMarkers(benches) {
     for (let benchId in benches){
-      this.updateMarker(benches[benchId]);
+      let bench = benches[benchId];
+      this.markers[bench.id]
+        ? this.updateMarker(bench)
+        : this.addMarker(bench);
     }
   }
 
-  updateMarker(bench){
+  addMarker(bench){
     this.markers[bench.id] = new google.maps.Marker({
       position: {lat: bench.lat, lng: bench.lng},
       map: this.map,
-      title: `bench ${bench.id}`
+      benchId: bench.id
     });
-  }//: accepts a bench object as an argument; adds a marker to the map and to the markers array.
+  }
 
+  updateMarker(bench){
+    this.removeMarker(bench);
+    this.addMarker(bench);
+  }
+
+  removeMarker(bench){
+    delete this.markers[bench.id];
+  }
 }
