@@ -25,21 +25,3 @@ Bench.create!(
   lat: 37.769996,
   lng: -122.45
 )
-
-Bench.create!(
-  description: 'fghjfghjfghj',
-  lat: 37.769996,
-  lng: -122.43
-)
-
-Bench.create!(
-  description: 'tyuityuityui',
-  lat: 37.77,
-  lng: -122.42
-)
-
-Bench.create!(
-  description: 'uiopuiopuiop',
-  lat: 37.781833,
-  lng: -122.485325
-)
