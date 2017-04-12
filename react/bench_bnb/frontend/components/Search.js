@@ -1,4 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { fetchBenches } from '../actions/bench_actions';
+
 import BenchMap from './bench_map';
 import BenchIndex from './bench_index';
 
@@ -7,18 +10,17 @@ class Search extends React.Component {
   render() {
     return (
       <div>
+        <BenchIndex
+          benches={ this.props.benches }
+          fetchBenches={ this.props.fetchBenches } />
         <BenchMap />
-        <BenchIndex />
       </div>
     );
   }
 
 }
 
-
 const mapStateToProps = state => {
-  console.log('inside mapStateToProps, state:');
-  console.log(state);
   return { benches: state.benches };
 };
 

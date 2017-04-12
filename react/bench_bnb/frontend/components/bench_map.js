@@ -1,6 +1,6 @@
 import React from 'react';
 
-class BemchMap extends React.Component {
+class BenchMap extends React.Component {
 
   render() {
     return (
@@ -10,4 +10,4 @@ class BemchMap extends React.Component {
 
 }
 
-export default BemchMap;
+export default BenchMap;
