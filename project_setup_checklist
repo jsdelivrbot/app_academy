@@ -27,7 +27,7 @@ FRONTEND
         const root = document.getElementById('root');
         ReactDOM.render(<h1>Hello World</h1>, root);
       });
-* Run in root directory: `npm install --save webpack react react-dom react-router redux react-redux babel-core babel-loader babel-preset-react babel-preset-es2015`
+* Run in root directory: `npm install --save webpack react react-dom react-router redux react-redux babel-core babel-loader babel-preset-react babel-preset-es2015 react-router@^3.0.0` 
 * `touch webpack.config.js`
     const path = require('path');
 
