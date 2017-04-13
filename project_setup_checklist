@@ -2,7 +2,7 @@
 
 BACKEND
 * `rails new ProjectName --database=postgresql --skip-turbolinks`
-* Update `Gemfile`:
+* Update `Gemfile` development group:
   gem `better_errors`
   gem `binding_of_caller`
   gem `pry-rails`
