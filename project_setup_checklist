@@ -61,7 +61,7 @@ FRONTEND
       "postinstall": "webpack",
       "webpack": "webpack --watch"
     }
-* Add `//= require bundle` to `app/assets/javascripts/application.js`
+* maybe: Add `//= require bundle` to `app/assets/javascripts/application.js`
 * Run `webpack` in commandline to create bundle.js
 
 * `rails s` => localhost:3000
