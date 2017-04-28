@@ -24,10 +24,10 @@ class PostsNew extends Component {
 
         <div className={`form-group${title.touched && title.invalid ? ' has-danger' : ''}`}>
           <label>Title</label>
-          <input type='text' className='form-control' {...title} /> //{...title} connects reduxForm with the individual form inputs
-          <div className='text-help'>
-            { title.touched ? title.error : ''}
-          </div>
+          <input type='text' className='form-control' {...title} />
+            <div className='text-help'>
+              { title.touched ? title.error : ''}
+            </div>
         </div>
 
         <div className={`form-group${categories.touched && categories.invalid ? ' has-danger' : ''}`}>
