@@ -3,16 +3,16 @@
 BACKEND
 * `rails new ProjectName --database=postgresql --skip-turbolinks`
 * Update `Gemfile` development group:
-  gem `better_errors`
-  gem `binding_of_caller`
-  gem `pry-rails`
-  gem `annotate`
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'pry-rails'
+  gem 'annotate'
 * `bundle install`
 * Update `.gitignore`.
     node_modules/
     bundle.js
     bundle.js.map
-    
+
 FRONTEND
 * `npm init --yes` to create a package.json file with the default setup.
 * Set up frontend folders:
@@ -27,7 +27,7 @@ FRONTEND
         const root = document.getElementById('root');
         ReactDOM.render(<h1>Hello World</h1>, root);
       });
-* Run in root directory: `npm install --save webpack react react-dom react-router redux react-redux babel-core babel-loader babel-preset-react babel-preset-es2015 react-router@^3.0.0` 
+* Run in root directory: `npm install --save webpack react react-dom react-router redux react-redux babel-core babel-loader babel-preset-react babel-preset-es2015 react-router@^3.0.0`
 * `touch webpack.config.js`
     const path = require('path');
 
