@@ -18,8 +18,12 @@ def caesar_cipher(str, shift)
   result = ''
 
   str.chars.to_a.each do |char|
-    new_index = alphabet.to_a.index(char) + shift
-    result += alphabet[new_index % alphabet.length]
+    if char == ' '
+      result.concat(' ')
+    else
+      new_index = alphabet.to_a.index(char) + shift
+      result += alphabet[new_index % alphabet.length]
+    end
   end
 
   result
@@ -29,3 +33,4 @@ p caesar_cipher('abc', 1) == 'bcd'
 p caesar_cipher('abc', 3) == 'def'
 p caesar_cipher('abc', 26) == 'abc'
 p caesar_cipher('abc', -2) == 'yza'
+p caesar_cipher('abc def', 1) == 'bcd efg'
