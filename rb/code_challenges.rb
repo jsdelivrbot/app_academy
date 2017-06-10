@@ -14,4 +14,18 @@ p digital_root(123456) == 21
 # Write a function that takes a message and an increment amount and outputs the same letters shifted by that amount in the alphabet. Assume lowercase and no punctuation. Preserve spaces.
 
 def caesar_cipher(str, shift)
+  alphabet = ("a".."z").to_a
+  result = ''
+
+  str.chars.to_a.each do |char|
+    new_index = alphabet.to_a.index(char) + shift
+    result += alphabet[new_index % alphabet.length]
+  end
+
+  result
 end
+
+p caesar_cipher('abc', 1) == 'bcd'
+p caesar_cipher('abc', 3) == 'def'
+p caesar_cipher('abc', 26) == 'abc'
+p caesar_cipher('abc', -2) == 'yza'
