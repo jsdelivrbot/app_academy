@@ -10,3 +10,8 @@ p digital_root(1) == 1
 p digital_root(12) == 3
 p digital_root(123) == 6
 p digital_root(123456) == 21
+
+# Write a function that takes a message and an increment amount and outputs the same letters shifted by that amount in the alphabet. Assume lowercase and no punctuation. Preserve spaces.
+
+def caesar_cipher(str, shift)
+end
