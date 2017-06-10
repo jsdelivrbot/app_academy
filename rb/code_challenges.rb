@@ -41,27 +41,22 @@ p caesar_cipher('abc def', 1) == 'bcd efg'
 def longest_common_substring(str1, str2)
   long_string = str1.length > str2.length ? str1 : str2
   short_string = str1.length > str2.length ? str2 : str1
-  all_substrings = []
+  longest_substr = ''
 
   short_string.length.times do |start_idx|
     short_string.length.times do |end_idx|
       if start_idx < end_idx
-        substring = short_string.slice(start_idx, end_idx)
-        all_substrings.push(substring) if long_string.match(substring)
+        substr = short_string.slice(start_idx, end_idx)
+        if long_string.match(substr) && substr.length > longest_substr.length
+          longest_substr = substr
+        end
       end
     end
   end
 
-  longest_str(all_substrings)
+  longest_substr
 end
 
-def longest_str(arr)
-  longest_str = ''
-  arr.each do |el|
-    longest_str = el if el.length > longest_str.length
-  end
-  longest_str
-end
 
 p longest_common_substring('asdf sdfg dfgh', 'fgdf ') == 'df '
 p longest_common_substring('asdf sdfg dfgh', 'fg df ') == 'fg df'
