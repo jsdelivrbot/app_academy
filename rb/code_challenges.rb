@@ -34,3 +34,34 @@ p caesar_cipher('abc', 3) == 'def'
 p caesar_cipher('abc', 26) == 'abc'
 p caesar_cipher('abc', -2) == 'yza'
 p caesar_cipher('abc def', 1) == 'bcd efg'
+
+#1b
+# Write a function, longest_common_substring(str1, str2) that takes two strings and returns the longest common substring. A substring is defined as any consecutive slice of letters from another string.
+
+def longest_common_substring(str1, str2)
+  long_string = str1.length > str2.length ? str1 : str2
+  short_string = str1.length > str2.length ? str2 : str1
+  all_substrings = []
+
+  short_string.length.times do |start_idx|
+    short_string.length.times do |end_idx|
+      if start_idx < end_idx
+        substring = short_string.slice(start_idx, end_idx)
+        all_substrings.push(substring) if long_string.match(substring)
+      end
+    end
+  end
+
+  longest_str(all_substrings)
+end
+
+def longest_str(arr)
+  longest_str = ''
+  arr.each do |el|
+    longest_str = el if el.length > longest_str.length
+  end
+  longest_str
+end
+
+p longest_common_substring('asdf sdfg dfgh', 'fgdf ') == 'df '
+p longest_common_substring('asdf sdfg dfgh', 'fg df ') == 'fg df'
