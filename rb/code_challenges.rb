@@ -64,12 +64,8 @@ p longest_common_substring('asdf sdfg dfgh', 'fg df ') == 'fg df'
 # Write a function that takes an array of integers and returns their sum. Use recursion.
 
 def sum_rec(arr)
-  return arr.first if arr.length == 1
-  return 0 if arr.length < 1
-  last_summed = arr[-1] + arr[-2]
-  arr.pop(2)
-  arr << last_summed
-  return sum_rec(arr)
+  return 0 if arr.empty?
+  return arr[0] + sum_rec(arr.drop(1))
 end
 
 p sum_rec([1,2,3]) == 6
