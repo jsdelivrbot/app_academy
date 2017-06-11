@@ -60,3 +60,9 @@ end
 
 p longest_common_substring('asdf sdfg dfgh', 'fgdf ') == 'df '
 p longest_common_substring('asdf sdfg dfgh', 'fg df ') == 'fg df'
+
+# Write a function that takes an array of integers and returns their sum. Use recursion.
+
+def sum_rec(arr)
+  
+end
