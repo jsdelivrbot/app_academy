@@ -79,7 +79,6 @@ p sum_rec([-1,2,3]) == 4
 
 def fibs_iterative(num)
   res = [0,1]
-
   return res.shift(num) if num < 3
 
   while res.length < num
@@ -90,8 +89,22 @@ def fibs_iterative(num)
   res
 end
 
+def fibs_recursive(num, res = [0,1])
+  return res.shift(num) if num < 3
+  res.push(res[-1] + res[-2])
+  return fibs_recursive(num, res) if res.length < num
+  return res
+end
+
+
 p fibs_iterative(0) == []
 p fibs_iterative(1) == [0]
 p fibs_iterative(2) == [0,1]
 p fibs_iterative(3) == [0,1,1]
 p fibs_iterative(10) == [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+
+p fibs_recursive(0) == []
+p fibs_recursive(1) == [0]
+p fibs_recursive(2) == [0,1]
+p fibs_recursive(3) == [0,1,1]
+p fibs_recursive(10) == [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
