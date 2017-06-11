@@ -1,3 +1,4 @@
+require 'byebug'
 # 1A
 # Write a method, digital_root(num). It should sum the digits of a positive integer. If it is greater than or equal to 10, sum the digits of the resulting number. Keep repeating until there is only one digit in the result, called the "digital root". Do not use string conversion within your method.
 
@@ -72,3 +73,25 @@ p sum_rec([1,2,3]) == 6
 p sum_rec([1]) == 1
 p sum_rec([]) == 0
 p sum_rec([-1,2,3]) == 4
+
+# 2a
+# Write a function, fibs(num) which returns the first n elements from the fibonnacci sequence, given n. Solve it both iteratively and recursively.
+
+def fibs_iterative(num)
+  res = [0,1]
+
+  return res.shift(num) if num < 3
+
+  while res.length < num
+    next_num = res[-1] + res[-2]
+    res << next_num
+  end
+
+  res
+end
+
+p fibs_iterative(0) == []
+p fibs_iterative(1) == [0]
+p fibs_iterative(2) == [0,1]
+p fibs_iterative(3) == [0,1,1]
+p fibs_iterative(10) == [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
