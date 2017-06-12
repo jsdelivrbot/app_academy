@@ -108,3 +108,9 @@ p fibs_recursive(1) == [0]
 p fibs_recursive(2) == [0,1]
 p fibs_recursive(3) == [0,1,1]
 p fibs_recursive(10) == [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+
+# Write a JavaScript function that takes a string and returns true if it's a palindrome, false if it's not.
+
+def isPalindrome(str)
+  
+end
