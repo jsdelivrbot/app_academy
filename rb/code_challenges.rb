@@ -109,8 +109,23 @@ p fibs_recursive(2) == [0,1]
 p fibs_recursive(3) == [0,1,1]
 p fibs_recursive(10) == [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 
-# Write a JavaScript function that takes a string and returns true if it's a palindrome, false if it's not.
+# Write a function that takes a string and returns true if it's a palindrome, false if it's not. Don't use the native reverse method.
 
 def isPalindrome(str)
-  
+  str == reverse(str)
 end
+
+def reverse(str)
+  reversed_str = ''
+
+  str.chars.to_a.each do |char|
+    reversed_str = char + reversed_str
+  end
+
+  reversed_str
+end
+
+p isPalindrome('isPalindrome') == false
+p isPalindrome('isPalindromemordnilaPsi') == true
+p isPalindrome('isPalindrome emordnilaPsi') == true
+p isPalindrome(' ') == true
