@@ -129,3 +129,68 @@ p isPalindrome('isPalindrome') == false
 p isPalindrome('isPalindromemordnilaPsi') == true
 p isPalindrome('isPalindrome emordnilaPsi') == true
 p isPalindrome(' ') == true
+
+# Consider a function `p(x)` that returns `true` if the number of 1 bits in the binary representation of x is a perfect square, and `false` otherwise, eg:
+#
+#     p(0) # binary is "0", 0 1's, 0 is not a perfect square
+#     => false
+#
+#     p(1) # binary is "1", 1 1, 1 is a perfect square
+#     => true
+#
+#     p(23) # binary is "10111", 4 1's, 4 is a perfect square
+#     => true
+#
+#     p(24) # binary is "11000", 2 1's, 2 is not a perfect square
+#     => false
+#
+# Write a function `perfect_bits(a, b)` (you may assume that a and b are 64-bit unsigned integers and `a <= b`) that returns the number of integers on the range [a, b] for which p(x) would return true.
+#
+# For example:
+#
+#     perfect_bits(1645098712823793798, 14889998042940624528)
+#     => 1070002673201129717
+#
+# You may check your solution against [perfect-bits.binti.com](https://perfect-bits.binti.com/?a=1645098712823793798&b=14889998042940624528)
+
+def binary_rep(num)
+  num.to_s(2)
+end
+
+p binary_rep(0) == '0'
+p binary_rep(1) == '1'
+p binary_rep(23) == '10111'
+p binary_rep(24) == '11000'
+
+def count_ones(binary_num)
+  binary_num.count('1')
+end
+
+p count_ones('0') == 0
+p count_ones('1') == 1
+p count_ones('10111') == 4
+p count_ones('11000') == 2
+
+def is_perfect_square?(num)
+  return false if num < 1
+  Math.sqrt(num) % 1 == 0
+end
+
+p is_perfect_square?(0) == false
+p is_perfect_square?(1) == true
+p is_perfect_square?(4) == true
+p is_perfect_square?(2) == false
+
+def perfect_bits(a, b)
+  (a..b).to_a.count do |current_num|
+    binary_rep = binary_rep(current_num)
+    ones_count = count_ones(binary_rep)
+    is_perfect_square?(ones_count)
+  end
+end
+
+p perfect_bits(0, 5) == 3
+p perfect_bits(1, 10) == 4
+p perfect_bits(1, 100) == 33
+p perfect_bits(1, 1000) == 225
+p perfect_bits(12345, 123456) == 23391
