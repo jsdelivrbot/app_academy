@@ -38,11 +38,11 @@ end
 def is_perfect_base_two_bit?(base_two_num)
   is_perfect_square?(ones_count(base_two_num))
 end
-#
-# def next_perfect_bit(num)
-  # return 1 if num < 1
-  # Math.sqrt(num) % 1 == 0 ? next_perfect_bit(num + 1) : Math.sqrt(num).ceil**2
-# end
+
+def next_perfect_bit(num)
+  return 1 if num < 1
+  Math.sqrt(num) % 1 == 0 ? next_perfect_bit(num + 1) : Math.sqrt(num).ceil**2
+end
 
 # def perfect_bits(a, b)
 #   (a..b).to_a.count { |current_num| is_perfect_bit?(current_num) }
