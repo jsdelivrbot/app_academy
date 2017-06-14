@@ -183,27 +183,11 @@ def dynamic_chunk(base_two_num)
 
 end
 
-
-def remaining_uniq_permutations_count_of_broken_set(base_two_num)
-
-  relevant_chunk = dynamic_chunk(base_two_num)
-  ones_count = relevant_chunk.count('1')
-  zeroes_count = relevant_chunk.count('0')
-  uniq_permutations_count_w_set_ones_and_zeroes(ones_count, zeroes_count)
-end
-
-
 def remaining_uniq_permutations_count(base_ten_num)
   base_two_num = binarify(base_ten_num)
   count = 0
 
-  # number of zeroes to the left of the first hanging one'1'
-  count += count_zeroes_before_first_hanging_one(base_two_num)
-
-  # uniq_permutations_count_w_set_ones_and_zeroes
-  count += remaining_uniq_permutations_count_of_broken_set(base_two_num)
-
-  count
+  
 end
 
 # p remaining_uniq_permutations_count(53)# == 5
