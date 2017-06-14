@@ -91,24 +91,24 @@ def count_perms_fully_in_noninclusive_range(num1, num2)
 end
 
 # p '---'
-# p count_perms_fully_in_noninclusive_range(2,16)# == 9
-# p count_perms_fully_in_noninclusive_range(2,17)# == 9
+# p count_perms_fully_in_noninclusive_range(2,16) == 4
+# p count_perms_fully_in_noninclusive_range(2,17) == 4
 # p '---'
-# p count_perms_fully_in_noninclusive_range(4,16)# == 9
-# p count_perms_fully_in_noninclusive_range(3,17)# == 9
-# p count_perms_fully_in_noninclusive_range(3,31)# == 9
+# p count_perms_fully_in_noninclusive_range(4,16) == 3
+# p count_perms_fully_in_noninclusive_range(3,17) == 3
+# p count_perms_fully_in_noninclusive_range(3,31) == 3
 #
 # p '---'
-# p count_perms_fully_in_noninclusive_range(10,67)# == 20
-# p count_perms_fully_in_noninclusive_range(16,64)# == 20
+# p count_perms_fully_in_noninclusive_range(10,67) == 16
+# p count_perms_fully_in_noninclusive_range(16,64) == 16
 #
 # p '---'
-# p count_perms_fully_in_noninclusive_range(3,70)# == 20
-# p count_perms_fully_in_noninclusive_range(4,64)# == 20
+# p count_perms_fully_in_noninclusive_range(3,70) == 19
+# p count_perms_fully_in_noninclusive_range(4,64) == 19
 #
 # p '---'
-# p count_perms_fully_in_noninclusive_range(32,64)# == 11
-# p count_perms_fully_in_noninclusive_range(32,65)# == 11
+# p count_perms_fully_in_noninclusive_range(32,64) == 11
+# p count_perms_fully_in_noninclusive_range(32,65) == 11
 
 def count_perms_in_initial_range(num1, num2)
 end
