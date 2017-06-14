@@ -183,17 +183,50 @@ def dynamic_chunk(base_two_num)
 
 end
 
-def remaining_uniq_permutations_count(base_ten_num)
-  base_two_num = binarify(base_ten_num)
-  count = 0
-
-  
+def remove_index(arr, idx)
+  arr.slice(0...idx) + arr.slice((idx + 1)..arr.length)
 end
 
-# p remaining_uniq_permutations_count(53)# == 5
-# p remaining_uniq_permutations_count(43)# == 9
-# p remaining_uniq_permutations_count(113)# == 5
-# p remaining_uniq_permutations_count(86)# == 14
+# given '110101' in a sorted list of permutations, how many perms precede it?
+def prev_permutations_count(base_ten_num)
+  base_two_num = binarify(base_ten_num)
+  bits_arr = base_two_num.chars.slice(1..base_two_num.length)
+  count = 0
+
+  idx = 0
+
+  until bits_arr.length <= 1
+    if idx.to_s === bits_arr.first
+      bits_arr.shift
+      idx = 0
+    else
+      dynamic_chunk = bits_arr.slice((idx + 1)..bits_arr.length)
+      ones_count = dynamic_chunk.count('1')
+      zeroes_count = dynamic_chunk.count('0')
+
+      # add to ones count if idx == 0, otherwise subtract
+      # add to zeroes count if idx = 1, otherwise subtract
+      if idx === 0
+        ones_count += 1
+        zeroes_count -= 1
+      else
+        ones_count -= 1
+        zeroes_count += 1
+      end
+
+      count += uniq_permutations_count_w_set_ones_and_zeroes(ones_count, zeroes_count)
+      idx += 1
+    end
+  end
+
+  count
+end
+
+# p prev_permutations_count(53)# == 5
+# p prev_permutations_count(60)# == 9
+# p prev_permutations_count(99)# == 10
+# p prev_permutations_count(120)# == 19
+# p prev_permutations_count(267)# == 1
 
 def count_perms_in_initial_range_noninclusive(num1, num2)
   #skip if there is no initial range
@@ -205,7 +238,7 @@ def count_perms_in_initial_range_noninclusive(num1, num2)
   current_sq = binarify(num1).count('1')
   current_o_of_mag = binary_order_of_magnitude(num1)
 
-  count = remaining_uniq_permutations_count(num1)
+  count = prev_permutations_count(num1)
   # num1 is in the middle of a permutation set
   # num2 is the end, which should be non_inclusive
 
@@ -273,7 +306,7 @@ def perfect_bits(num1, num2)
     #subtract final chunk beyond num2
     count -= count_perms_in_final_range_inclusive(num2, next_binary_base_beyond_range)
   else
-    # debugger
+    debugger
     count += count_perms_in_initial_range_noninclusive(num1, num2)
     count += count_perms_in_mid_range_noninclusive(num1, num2)
     count += count_perms_in_final_range_inclusive(num1, num2)
@@ -282,17 +315,17 @@ def perfect_bits(num1, num2)
   count
 end
 
-p '---initial range---'
-p perfect_bits(10, 16)# == 2
-p perfect_bits(100, 128)# == 10
-p perfect_bits(30000, 32768)# == 651
-
-p '---mid range---'
-p perfect_bits(2, 4)# == 2
-p perfect_bits(16, 32)# == 6
-p perfect_bits(128, 256)# == 37
-p perfect_bits(16384, 32768)# == 3369
-
+# p '---initial range---'
+# p perfect_bits(10, 16)# == 2
+# p perfect_bits(100, 128)# == 10
+# p perfect_bits(30000, 32768)# == 651
+#
+# p '---mid range---'
+# p perfect_bits(2, 4)# == 2
+# p perfect_bits(16, 32)# == 6
+# p perfect_bits(128, 256)# == 37
+# p perfect_bits(16384, 32768)# == 3369
+#
 # p '---final range, inclusive---'
 # p perfect_bits(4, 11)# == 1
 # p perfect_bits(16, 28)# == 2
