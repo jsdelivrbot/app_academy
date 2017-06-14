@@ -71,15 +71,26 @@ end
 
 def remaining_uniq_permutations_count(base_ten_num)
   base_two_num = binarify(base_ten_num)
+# debugger
+  # snip off initial ones
+  broken_set = base_two_num.slice((base_two_num.index('0'))..base_two_num.length)
 
-  broken_set = []
+  #snip off next initial zeroes
+  broken_set = broken_set.slice(1..broken_set.length)
+
+  #snip off any remaining initial ones
+  broken_set = broken_set.slice((base_two_num.index('0') + 1)..broken_set.length)
+
+  #find all uniq perms of what remains
+  broken_set_perm_count = uniq_permutations_count_w_set_ones_and_zeroes(broken_set.length, (broken_set.count('1') - 1), (broken_set.count('0') + 1))
+
   full_set = base_two_num.slice((base_two_num.index('0') + 1)..base_two_num.length)
   full_set_perm_count = uniq_permutations_count_w_set_ones_and_zeroes(full_set.length, (full_set.count('1') - 1), (full_set.count('0') + 1))
-
+  broken_set_perm_count + full_set_perm_count + 1
 end
 
-p remaining_uniq_permutations_count(53) == 3
-p remaining_uniq_permutations_count(43) == 6
+p remaining_uniq_permutations_count(53)# == 3
+p remaining_uniq_permutations_count(43)# == 6
 
 def count_perms_fully_in_noninclusive_range(num1, num2)
   min_binary_o_of_mag = binary_order_of_magnitude(initial_base_ten_binary_base_in_range(num1, num2))
