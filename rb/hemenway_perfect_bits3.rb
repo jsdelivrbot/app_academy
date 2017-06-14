@@ -10,6 +10,10 @@ def base_tenify(base_two_num)
   base_two_num.to_i(2)
 end
 
+def binary_ones_count(base_ten_num)
+  binarify(base_ten_num).count('1')
+end
+
 def factorial(n)
   (1..n).inject(:*) || 1
 end
@@ -150,8 +154,8 @@ p remaining_uniq_permutations_count(43) == 9
 def count_perms_in_initial_range(num1, num2)
 
   #jump to the first perfect bit
-  num1 = next_perfect_bit(num1)
-  
+  num1 = is_perfect_bit?(num1) ? num1 : next_perfect_bit(num1)
+
   current_sq = binarify(num1).count('1')
   current_o_of_mag = binary_order_of_magnitude(num1)
 
@@ -170,11 +174,9 @@ def count_perms_in_initial_range(num1, num2)
   end
 
   while current_o_of_mag < max_binary_o_of_mag_of_initial_range
-    # debugger
     count += uniq_permutations_count((current_sq - 1), current_o_of_mag)
-
     next_sq = next_perfect_square(current_sq)
-# debugger
+
     if next_sq > max_binary_o_of_mag_of_initial_range
       current_o_of_mag += 1
       current_sq = 1
@@ -185,20 +187,52 @@ def count_perms_in_initial_range(num1, num2)
   count
 end
 
-p count_perms_in_initial_range(10,65)
-p count_perms_fully_in_noninclusive_range(10,65)
+p count_perms_in_initial_range(33, 130)
+p count_perms_in_initial_range(10,33)
+p count_perms_fully_in_noninclusive_range(10,33)
 
-def count_perms_in_upper_range(num1, num2)
+def count_perms_in_final_range(num1, num2)#with (10, 30)
+  initial_num_in_final_range = final_base_ten_binary_base_in_range(num1, num2) # 32
+  final_num_in_final_range = num2 # 33
+  next_binary_base_beyond_range = next_binary_base(num2) # 64
+
+  count = 0
+# debugger
+  #count number of perms that would exist if the range end was actually the next binary base
+  count += count_perms_fully_in_noninclusive_range(initial_num_in_final_range, next_binary_base_beyond_range)
+# 11
+  #subtract perms in initial range of that
+  count -= count_perms_in_initial_range(final_num_in_final_range, next_binary_base_beyond_range)
+  #  12 s/b 10
+  count
 end
+
+p count_perms_in_final_range(10,33)
 
 def perfect_bits(num1, num2)
   count = 0
 
   if binary_order_of_magnitude(num1) == binary_order_of_magnitude(num2)
+    prev_binary_base_before_range = prev_binary_base(num1)
+    next_binary_base_beyond_range = next_binary_base(num2)
+
+    #get count for full range
+    count += count_perms_fully_in_noninclusive_range(prev_binary_base_before_range, next_binary_base_beyond_range)
+
+    #subtract initial chunk before num1
+    count -= count_perms_in_initial_range(prev_binary_base_before_range, num1)
+
+    #subtract final chunk beyond num2
+    count -= count_perms_in_final_range(num2, next_binary_base_beyond_range)
   else
     count += count_perms_in_initial_range(num1, num2)
     count += count_perms_fully_in_noninclusive_range(num1, num2)
-    count += count_perms_in_upper_range(num1, num2)
+    count += count_perms_in_final_range(num1, num2)
   end
-
+  
+  count
 end
+
+# p perfect_bits(10, 33)#==7
+# p perfect_bits(200, 300)#==29
+# p perfect_bits(200, 30000)#==5669
