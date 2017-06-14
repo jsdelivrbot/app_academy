@@ -18,6 +18,15 @@ def binary_order_of_magnitude(num)
   binarify(num).chars.count - 1
 end
 
+def is_perfect_bit?(base_ten_num)
+  is_perfect_square?(binary_ones_count(base_ten_num))
+end
+
+def next_perfect_bit(base_ten_num)
+  return 1 if base_ten_num < 1
+  Math.sqrt(base_ten_num) % 1 == 0 ? next_perfect_bit(base_ten_num + 1) : Math.sqrt(base_ten_num).ceil**2
+end
+
 def is_perfect_square?(num)
   return false if num < 1
   Math.sqrt(num) % 1 == 0
@@ -92,27 +101,25 @@ def count_perms_fully_in_noninclusive_range(num1, num2)
   count
 end
 
-p '---'
-p count_perms_fully_in_noninclusive_range(2,16) == 4
-p count_perms_fully_in_noninclusive_range(2,17) == 4
-p '---'
-p count_perms_fully_in_noninclusive_range(4,16) == 3
-p count_perms_fully_in_noninclusive_range(3,17) == 3
-p count_perms_fully_in_noninclusive_range(3,31) == 3
-
-p '---'
-p count_perms_fully_in_noninclusive_range(10,67) == 16
-p count_perms_fully_in_noninclusive_range(16,64) == 16
-
-p '---'
-p count_perms_fully_in_noninclusive_range(3,70) == 19
-p count_perms_fully_in_noninclusive_range(4,64) == 19
-
-p '---'
-p count_perms_fully_in_noninclusive_range(32,64) == 11
-p count_perms_fully_in_noninclusive_range(32,65) == 11
-p '---'
-p count_perms_fully_in_noninclusive_range(4,16)
+# p '---'
+# p count_perms_fully_in_noninclusive_range(2,16) == 4
+# p count_perms_fully_in_noninclusive_range(2,17) == 4
+# p '---'
+# p count_perms_fully_in_noninclusive_range(4,16) == 3
+# p count_perms_fully_in_noninclusive_range(3,17) == 3
+# p count_perms_fully_in_noninclusive_range(3,31) == 3
+#
+# p '---'
+# p count_perms_fully_in_noninclusive_range(10,67) == 16
+# p count_perms_fully_in_noninclusive_range(16,64) == 16
+#
+# p '---'
+# p count_perms_fully_in_noninclusive_range(3,70) == 19
+# p count_perms_fully_in_noninclusive_range(4,64) == 19
+#
+# p '---'
+# p count_perms_fully_in_noninclusive_range(32,64) == 11
+# p count_perms_fully_in_noninclusive_range(32,65) == 11
 # p '---'
 # p count_perms_fully_in_noninclusive_range(32, 1152921504606846976)
 
@@ -141,6 +148,10 @@ p remaining_uniq_permutations_count(53) == 5
 p remaining_uniq_permutations_count(43) == 9
 
 def count_perms_in_initial_range(num1, num2)
+
+  #jump to the first perfect bit
+  num1 = next_perfect_bit(num1)
+  
   current_sq = binarify(num1).count('1')
   current_o_of_mag = binary_order_of_magnitude(num1)
 
@@ -174,8 +185,8 @@ def count_perms_in_initial_range(num1, num2)
   count
 end
 
-p count_perms_in_initial_range(53,65) == 5
-p count_perms_fully_in_noninclusive_range(53,65)
+p count_perms_in_initial_range(10,65)
+p count_perms_fully_in_noninclusive_range(10,65)
 
 def count_perms_in_upper_range(num1, num2)
 end
