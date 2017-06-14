@@ -81,7 +81,7 @@ def uniq_permutations_count_w_set_ones_and_zeroes(ones_count, zeroes_count)
   factorial(ones_count + zeroes_count)/(factorial(ones_count) * factorial(zeroes_count))
 end
 
-def count_perms_fully_in_noninclusive_range(num1, num2)
+def count_perms_in_mid_range(num1, num2)
   min_binary_o_of_mag = binary_order_of_magnitude(initial_base_ten_binary_base_in_range(num1, num2))
   max_binary_o_of_mag = binary_order_of_magnitude(final_base_ten_binary_base_in_range(num1, num2))
 
@@ -106,26 +106,26 @@ def count_perms_fully_in_noninclusive_range(num1, num2)
 end
 
 # p '---'
-# p count_perms_fully_in_noninclusive_range(2,16) == 4
-# p count_perms_fully_in_noninclusive_range(2,17) == 4
+# p count_perms_in_mid_range(2,16) == 4
+# p count_perms_in_mid_range(2,17) == 4
 # p '---'
-# p count_perms_fully_in_noninclusive_range(4,16) == 3
-# p count_perms_fully_in_noninclusive_range(3,17) == 3
-# p count_perms_fully_in_noninclusive_range(3,31) == 3
+# p count_perms_in_mid_range(4,16) == 3
+# p count_perms_in_mid_range(3,17) == 3
+# p count_perms_in_mid_range(3,31) == 3
 #
 # p '---'
-# p count_perms_fully_in_noninclusive_range(10,67) == 16
-# p count_perms_fully_in_noninclusive_range(16,64) == 16
+# p count_perms_in_mid_range(10,67) == 16
+# p count_perms_in_mid_range(16,64) == 16
 #
 # p '---'
-# p count_perms_fully_in_noninclusive_range(3,70) == 19
-# p count_perms_fully_in_noninclusive_range(4,64) == 19
+# p count_perms_in_mid_range(3,70) == 19
+# p count_perms_in_mid_range(4,64) == 19
 #
 # p '---'
-# p count_perms_fully_in_noninclusive_range(32,64) == 11
-# p count_perms_fully_in_noninclusive_range(32,65) == 11
+# p count_perms_in_mid_range(32,64) == 11
+# p count_perms_in_mid_range(32,65) == 11
 # p '---'
-# p count_perms_fully_in_noninclusive_range(32, 1152921504606846976)
+# p count_perms_in_mid_range(32, 1152921504606846976)
 
 def count_zeroes_before_first_hanging_one(base_two_num)
   num_with_initial_ones_removed = base_two_num.slice((base_two_num.index('0'))..base_two_num.length)
@@ -219,7 +219,7 @@ end
 
 # p count_perms_in_initial_range(33, 130)
 # p count_perms_in_initial_range(10,33)
-# p count_perms_fully_in_noninclusive_range(10,33)
+# p count_perms_in_mid_range(10,33)
 
 def count_perms_in_final_range(num1, num2)#with (10, 30)
   initial_num_in_final_range = final_base_ten_binary_base_in_range(num1, num2) # 32
@@ -231,7 +231,7 @@ def count_perms_in_final_range(num1, num2)#with (10, 30)
   count = 0
 # debugger
   #count number of perms that would exist if the range end was actually the next binary base
-  count += count_perms_fully_in_noninclusive_range(initial_num_in_final_range, next_binary_base_beyond_range)
+  count += count_perms_in_mid_range(initial_num_in_final_range, next_binary_base_beyond_range)
 # 11
   #subtract perms in initial range of that
   count -= count_perms_in_initial_range(final_num_in_final_range, next_binary_base_beyond_range)
@@ -249,7 +249,7 @@ def perfect_bits(num1, num2)
     next_binary_base_beyond_range = next_binary_base(num2)
 
     #get count for full range
-    count += count_perms_fully_in_noninclusive_range(prev_binary_base_before_range, next_binary_base_beyond_range)
+    count += count_perms_in_mid_range(prev_binary_base_before_range, next_binary_base_beyond_range)
 
     #subtract initial chunk before num1
     count -= count_perms_in_initial_range(prev_binary_base_before_range, num1)
@@ -258,16 +258,23 @@ def perfect_bits(num1, num2)
     count -= count_perms_in_final_range(num2, next_binary_base_beyond_range)
   else
     count += count_perms_in_initial_range(num1, num2)
-    count += count_perms_fully_in_noninclusive_range(num1, num2)
+    count += count_perms_in_mid_range(num1, num2)
     count += count_perms_in_final_range(num1, num2)
   end
 
   count
 end
 
-p perfect_bits(16,32)#==6
-p perfect_bits(32, 64)# ==12
-p perfect_bits(17,32)#==7
-p perfect_bits(10, 33)#==7
-p perfect_bits(200, 300)#==29
-p perfect_bits(200, 30000)#==5669
+p '---testing mid range, non-inclusive---'
+p perfect_bits(16,32) == 6
+p perfect_bits(32, 64) == 12
+
+p '---testing initial+mid range, non-inclusive---'
+p perfect_bits(10, 32)#==7
+p perfect_bits(30, 64)# ==13
+
+# p '---testing mid+final range---'
+# p perfect_bits(17,32)#==7
+# p perfect_bits(10, 33)#==7
+# p perfect_bits(200, 300)#==29
+# p perfect_bits(200, 30000)#==5669
