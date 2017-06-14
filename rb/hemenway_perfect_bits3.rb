@@ -4,6 +4,8 @@ def binarify(base_ten_num)
   base_ten_num.to_s(2)
 end
 
+# p binarify(3)
+
 def base_tenify(base_two_num)
   base_two_num.to_i(2)
 end
@@ -26,6 +28,18 @@ def next_perfect_square(num)
   is_perfect_square?(num) ? next_perfect_square(num + 1) : Math.sqrt(num).ceil**2
 end
 
+def next_binary_base(base_ten_num)
+  2**(binary_order_of_magnitude(base_ten_num) + 1)
+end
+
+def prev_binary_base(base_ten_num)
+  2**(binary_order_of_magnitude(base_ten_num))
+end
+
+def is_binary_base?(num)
+  binarify(num).count('1') == 1
+end
+
 #how many 3-digit unique permutation sets exist with n possible nums
 def uniq_permutations_count(slots_count, nums_count)
   # debugger
@@ -37,7 +51,7 @@ end
 
 p uniq_permutations_count(3,5)
 
-def count_perms_fully_in_range(num1, num2)
+def count_perms_fully_in_noninclusive_range(num1, num2)
   min_binary_o_of_mag = binary_order_of_magnitude(num1)
   max_binary_o_of_mag = binary_order_of_magnitude(num2)
 
@@ -61,12 +75,39 @@ def count_perms_fully_in_range(num1, num2)
   count
 end
 
-p count_perms_fully_in_range(2,32) == 9
-p count_perms_fully_in_range(2,64) == 20
-p count_perms_fully_in_range(32,64) == 11
+p count_perms_fully_in_noninclusive_range(2,32) == 9
+p count_perms_fully_in_noninclusive_range(2,64) == 20
+p count_perms_fully_in_noninclusive_range(32,64) == 11
+
+def count_perms_in_initial_range(num1, num2)
+end
+
+def count_perms_in_upper_range(num1, num2)
+end
+
+def initial_binary_o_of_mag_in_range(num1, num2)
+  return num1 if is_binary_base?(num1)
+  next_base = next_binary_base(num1)
+  return next_base if next_base <= num2
+  nil
+end
+
+def final_binary_o_of_mag_in_range(num1, num2)
+  return num2 if is_binary_base?(num2)
+  prev_base = prev_binary_base(num2)
+  return prev_base if prev_base >= num1
+  nil
+end
 
 def perfect_bits(num1, num2)
-  # count_perms_fully_in_range(num1, num2)
+  count = 0
+
+  if binary_order_of_magnitude(num1) == binary_order_of_magnitude(num2)
+  else
+    count += count_perms_in_initial_range(num1, num2)
+    count += count_perms_fully_in_noninclusive_range(num1, num2)
+    count += count_perms_in_upper_range(num1, num2)
+  end
 
 end
 
