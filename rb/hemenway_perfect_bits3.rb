@@ -33,7 +33,7 @@ end
 
 def is_perfect_square?(num)
   return false if num < 1
-  Math.sqrt(num) % 1 == 0
+  Math.sqrt(num) % 1 === 0
 end
 
 def next_perfect_square(num)
@@ -77,8 +77,8 @@ def uniq_permutations_count(slots_count, nums_count)
   uniq_perms_count/factorial(slots_count)
 end
 
-def uniq_permutations_count_w_set_ones_and_zeroes(slots_count, ones_count, zeroes_count)
-  factorial(slots_count)/(factorial(ones_count) * factorial(zeroes_count))
+def uniq_permutations_count_w_set_ones_and_zeroes(ones_count, zeroes_count)
+  factorial(ones_count + zeroes_count)/(factorial(ones_count) * factorial(zeroes_count))
 end
 
 def count_perms_fully_in_noninclusive_range(num1, num2)
@@ -127,32 +127,62 @@ end
 # p '---'
 # p count_perms_fully_in_noninclusive_range(32, 1152921504606846976)
 
+def count_zeroes_before_first_hanging_one(base_two_num)
+  num_with_initial_ones_removed = base_two_num.slice((base_two_num.index('0'))..base_two_num.length)
+  first_one_idx = num_with_initial_ones_removed.index('1')
+  first_one_idx ? first_one_idx + 1 : 1
+end
+
+def dynamic_chunk(base_two_num)
+  #remove initial ones
+  num = base_two_num.slice((base_two_num.index('0'))..base_two_num.length)
+
+  first_one_idx = num.index('1')
+
+  if first_one_idx
+
+    # change first 1 to 0
+    num[first_one_idx] = '0'
+
+    #slice off first 0, because 1 will have shifted over there
+    return num.slice(1..num.length)
+  else
+    return num
+  end
+
+end
+
+
+def remaining_uniq_permutations_count_of_broken_set(base_two_num)
+  relevant_chunk = dynamic_chunk(base_two_num)
+  ones_count = relevant_chunk.count('1')
+  zeroes_count = relevant_chunk.count('0')
+  uniq_permutations_count_w_set_ones_and_zeroes(ones_count, zeroes_count)
+end
+
 
 def remaining_uniq_permutations_count(base_ten_num)
   base_two_num = binarify(base_ten_num)
-# debugger
-  # snip off initial ones
-  broken_set = base_two_num.slice((base_two_num.index('0'))..base_two_num.length)
+  count = 0
 
-  #snip off next initial zeroes
-  broken_set = broken_set.slice(1..broken_set.length)
+  # number of zeroes to the left of the first hanging one'1'
+  count += count_zeroes_before_first_hanging_one(base_two_num)
 
-  #snip off any remaining initial ones
-  broken_set = broken_set.slice((base_two_num.index('0') + 1)..broken_set.length)# if base_two_num.index('0') && broken_set[base_two_num.index('0') + 1]
+  # uniq_permutations_count_w_set_ones_and_zeroes
+  count += remaining_uniq_permutations_count_of_broken_set(base_two_num)
 
-  #find all uniq perms of what remains
-  broken_set_perm_count = uniq_permutations_count_w_set_ones_and_zeroes(broken_set.length, (broken_set.count('1') - 1), (broken_set.count('0') + 1))
-
-  full_set = base_two_num.slice((base_two_num.index('0') + 1)..base_two_num.length)
-  full_set_perm_count = uniq_permutations_count_w_set_ones_and_zeroes(full_set.length, (full_set.count('1') - 1), (full_set.count('0') + 1))
-  broken_set_perm_count + full_set_perm_count + 1
+  count
 end
 
-p remaining_uniq_permutations_count(53) == 5
-p remaining_uniq_permutations_count(43) == 9
+# p remaining_uniq_permutations_count(53)# == 5
+# p remaining_uniq_permutations_count(43)# == 9
+# p remaining_uniq_permutations_count(113)# == 5
+# p remaining_uniq_permutations_count(86)# == 14
 
 def count_perms_in_initial_range(num1, num2)
-
+  #skip if there is no initial range
+  return 0 if is_binary_base?(num1)
+  # debugger
   #jump to the first perfect bit
   num1 = is_perfect_bit?(num1) ? num1 : next_perfect_bit(num1)
 
@@ -187,13 +217,15 @@ def count_perms_in_initial_range(num1, num2)
   count
 end
 
-p count_perms_in_initial_range(33, 130)
-p count_perms_in_initial_range(10,33)
-p count_perms_fully_in_noninclusive_range(10,33)
+# p count_perms_in_initial_range(33, 130)
+# p count_perms_in_initial_range(10,33)
+# p count_perms_fully_in_noninclusive_range(10,33)
 
 def count_perms_in_final_range(num1, num2)#with (10, 30)
   initial_num_in_final_range = final_base_ten_binary_base_in_range(num1, num2) # 32
   final_num_in_final_range = num2 # 33
+
+  return 1 if initial_num_in_final_range === final_num_in_final_range
   next_binary_base_beyond_range = next_binary_base(num2) # 64
 
   count = 0
@@ -207,11 +239,11 @@ def count_perms_in_final_range(num1, num2)#with (10, 30)
   count
 end
 
-p count_perms_in_final_range(10,33)
+# p count_perms_in_final_range(10,33)
 
 def perfect_bits(num1, num2)
   count = 0
-
+# debugger
   if binary_order_of_magnitude(num1) == binary_order_of_magnitude(num2)
     prev_binary_base_before_range = prev_binary_base(num1)
     next_binary_base_beyond_range = next_binary_base(num2)
@@ -233,7 +265,9 @@ def perfect_bits(num1, num2)
   count
 end
 
+p perfect_bits(16,32)#==6
+p perfect_bits(32, 64)# ==12
 p perfect_bits(17,32)#==7
-# p perfect_bits(10, 33)#==7
-# p perfect_bits(200, 300)#==29
-# p perfect_bits(200, 30000)#==5669
+p perfect_bits(10, 33)#==7
+p perfect_bits(200, 300)#==29
+p perfect_bits(200, 30000)#==5669
