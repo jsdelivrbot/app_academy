@@ -64,7 +64,22 @@ def uniq_permutations_count(slots_count, nums_count)
   uniq_perms_count/factorial(slots_count)
 end
 
-p uniq_permutations_count(3,5)
+def uniq_permutations_count_w_set_ones_and_zeroes(slots_count, ones_count, zeroes_count)
+  factorial(slots_count)/(factorial(ones_count) * factorial(zeroes_count))
+end
+
+
+def remaining_uniq_permutations_count(base_ten_num)
+  base_two_num = binarify(base_ten_num)
+
+  broken_set = []
+  full_set = base_two_num.slice((base_two_num.index('0') + 1)..base_two_num.length)
+  full_set_perm_count = uniq_permutations_count_w_set_ones_and_zeroes(full_set.length, (full_set.count('1') - 1), (full_set.count('0') + 1))
+
+end
+
+p remaining_uniq_permutations_count(53) == 3
+p remaining_uniq_permutations_count(43) == 6
 
 def count_perms_fully_in_noninclusive_range(num1, num2)
   min_binary_o_of_mag = binary_order_of_magnitude(initial_base_ten_binary_base_in_range(num1, num2))
@@ -109,8 +124,16 @@ end
 # p '---'
 # p count_perms_fully_in_noninclusive_range(32,64) == 11
 # p count_perms_fully_in_noninclusive_range(32,65) == 11
+# p '---'
+# p count_perms_fully_in_noninclusive_range(32, 1152921504606846976)
 
 def count_perms_in_initial_range(num1, num2)
+  current_sq = binarify(num1).count('1')
+  current_o_of_mag = binary_order_of_magnitude(num1)
+
+  # remaining_count_in_current_set =
+  # num1 is in the middle of a permutation set
+  # num2 is the end, which should be non_inclusive
 end
 
 def count_perms_in_upper_range(num1, num2)
