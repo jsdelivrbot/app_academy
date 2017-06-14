@@ -60,8 +60,8 @@ def prev_perfect_bit(base_ten_num, is_initial_recursion = true)
   end
 end
 
-p prev_perfect_bit(33)#==32
-p prev_perfect_bit(16)#==15
+# p prev_perfect_bit(33)#==32
+# p prev_perfect_bit(16)#==15
 
 def next_perfect_square(num)
   return 1 if num < 1
@@ -130,8 +130,6 @@ def count_perms_in_mid_range_noninclusive(num1, num2)
     end
   end
 
-  # make the range non_inclusive
-  count -= 1
   count
 end
 
@@ -158,12 +156,15 @@ end
 # p count_perms_in_mid_range_noninclusive(32, 1152921504606846976)
 
 def count_zeroes_before_first_hanging_one(base_two_num)
+  return 0 unless base_two_num.index('0')
   num_with_initial_ones_removed = base_two_num.slice((base_two_num.index('0'))..base_two_num.length)
   first_one_idx = num_with_initial_ones_removed.index('1')
   first_one_idx ? first_one_idx + 1 : 1
 end
 
 def dynamic_chunk(base_two_num)
+  return '' unless base_two_num.index('0')
+
   #remove initial ones
   num = base_two_num.slice((base_two_num.index('0'))..base_two_num.length)
 
@@ -184,6 +185,7 @@ end
 
 
 def remaining_uniq_permutations_count_of_broken_set(base_two_num)
+
   relevant_chunk = dynamic_chunk(base_two_num)
   ones_count = relevant_chunk.count('1')
   zeroes_count = relevant_chunk.count('0')
@@ -259,7 +261,7 @@ def count_perms_in_final_range_inclusive(num1, num2)#with (10, 30)
   next_binary_base_beyond_range = next_binary_base(num2) # 64
 
   count = 0
-debugger
+# debugger
   #count number of perms that would exist if the range end was actually the next binary base
   count += count_perms_in_mid_range_noninclusive(initial_num_in_final_range, next_binary_base_beyond_range)
 # 11
@@ -296,17 +298,37 @@ def perfect_bits(num1, num2)
   count
 end
 
-# p '---mid range, non-inclusive---'
-# p perfect_bits(16, 32) == 5
-# p perfect_bits(32, 64) == 11
-#
+p '---initial range---'
+p perfect_bits(10, 16)# == 2
+p perfect_bits(100, 128)# == 10
+p perfect_bits(30000, 32768)# == 651
+
+p '---mid range---'
+p perfect_bits(2, 4)# == 2
+p perfect_bits(16, 32)# == 6
+p perfect_bits(128, 256)# == 37
+p perfect_bits(16384, 32768)# == 3369
+
+# p '---final range, inclusive---'
+# p perfect_bits(4, 11)# == 1
+# p perfect_bits(16, 28)# == 2
+# p perfect_bits(32, 35)# == 0
+# p perfect_bits(16384, 30000)# == 2719
+
 # p '---initial+mid range, non-inclusive---'
-# p perfect_bits(10, 32) == 7
-# p perfect_bits(30, 64) == 13
+# p perfect_bits(10, 32)# == 7
+# p perfect_bits(30, 64)# == 13
+# p perfect_bits(100, 256)# == 45
 #
 # p '---mid+final range, inclusive---'
+# p perfect_bits(16, 39)#==7
 # p perfect_bits(16, 40)#==7
-
+# p perfect_bits(16, 43)#==8
+# p perfect_bits(16, 44)#==8
+# p perfect_bits(16, 45)#==9
+# p perfect_bits(16, 46)#==10
+# p perfect_bits(16, 47)#==10
+# p perfect_bits(16, 140)#==40
 
 # p perfect_bits(17,32)#==7
 # p perfect_bits(10, 33)#==7
