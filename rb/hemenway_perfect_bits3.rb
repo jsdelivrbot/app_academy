@@ -229,10 +229,11 @@ def perfect_bits(num1, num2)
     count += count_perms_fully_in_noninclusive_range(num1, num2)
     count += count_perms_in_final_range(num1, num2)
   end
-  
+
   count
 end
 
+p perfect_bits(17,32)#==7
 # p perfect_bits(10, 33)#==7
 # p perfect_bits(200, 300)#==29
 # p perfect_bits(200, 30000)#==5669
