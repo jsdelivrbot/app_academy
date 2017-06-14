@@ -139,28 +139,6 @@ def count_perms_in_mid_range_noninclusive(num1, num2)
   count
 end
 
-# p '---'
-# p count_perms_in_mid_range_noninclusive(2,16) == 4
-# p count_perms_in_mid_range_noninclusive(2,17) == 4
-# p '---'
-# p count_perms_in_mid_range_noninclusive(4,16) == 3
-# p count_perms_in_mid_range_noninclusive(3,17) == 3
-# p count_perms_in_mid_range_noninclusive(3,31) == 3
-#
-# p '---'
-# p count_perms_in_mid_range_noninclusive(10,67) == 16
-# p count_perms_in_mid_range_noninclusive(16,64) == 16
-#
-# p '---'
-# p count_perms_in_mid_range_noninclusive(3,70) == 19
-# p count_perms_in_mid_range_noninclusive(4,64) == 19
-#
-# p '---'
-# p count_perms_in_mid_range_noninclusive(32,64) == 11
-# p count_perms_in_mid_range_noninclusive(32,65) == 11
-# p '---'
-# p count_perms_in_mid_range_noninclusive(32, 1152921504606846976)
-
 def count_zeroes_before_first_hanging_one(base_two_num)
   return 0 unless base_two_num.index('0')
   num_with_initial_ones_removed = base_two_num.slice((base_two_num.index('0'))..base_two_num.length)
@@ -273,7 +251,7 @@ def count_perms_in_final_range_inclusive(num1, num2)
   final_num_in_final_range = is_perfect_bit?(num2) ? num2 : prev_perfect_bit(num2)
 
   return 1 if initial_num_in_final_range === final_num_in_final_range
-  next_binary_base_beyond_range = next_binary_base(num2) # 64
+  next_binary_base_beyond_range = next_binary_base(num2)
 
   count = 0
 
@@ -285,12 +263,20 @@ def count_perms_in_final_range_inclusive(num1, num2)
   count
 end
 
-# p count_perms_in_final_range_inclusive(10,33)
+def within_same_base_range?(num1, num2)
+  (next_binary_base(num1) > num2) && (prev_binary_base(num2) < num1)
+end
+
+# p count_perms_in_final_range_inclusive(10, 33) #==
+# p count_perms_in_final_range_inclusive(32, 33) #== 0
+#
+# p count_perms_in_final_range_inclusive(23,46) #==
+# p count_perms_in_final_range_inclusive(32,46) #== 5
 
 def perfect_bits(num1, num2)
   count = 0
-
-  if binary_order_of_magnitude(num1) == binary_order_of_magnitude(num2)
+# debugger
+  if within_same_base_range?(num1, num2)
     prev_binary_base_before_range = prev_binary_base(num1)
     next_binary_base_beyond_range = next_binary_base(num2)
 
@@ -325,25 +311,25 @@ p perfect_bits(16384, 32768)# == 3369
 p '---final range, inclusive---'
 p perfect_bits(4, 11)# == 1
 p perfect_bits(16, 28)# == 2
-p perfect_bits(32, 35)# == 0
+p perfect_bits(32, 46)# == 5
 p perfect_bits(16384, 30000)# == 2719
 
-# p '---initial+mid range, non-inclusive---'
-# p perfect_bits(10, 32)# == 7
-# p perfect_bits(30, 64)# == 13
-# p perfect_bits(100, 256)# == 45
-#
-# p '---mid+final range, inclusive---'
-# p perfect_bits(16, 39)#==7
-# p perfect_bits(16, 40)#==7
-# p perfect_bits(16, 43)#==8
-# p perfect_bits(16, 44)#==8
-# p perfect_bits(16, 45)#==9
-# p perfect_bits(16, 46)#==10
-# p perfect_bits(16, 47)#==10
-# p perfect_bits(16, 140)#==40
+p '---initial+mid range, non-inclusive---'
+p perfect_bits(10, 32)# == 7
+p perfect_bits(30, 64)# == 13
+p perfect_bits(100, 256)# == 45
 
-# p perfect_bits(17,32)#==7
-# p perfect_bits(10, 33)#==7
-# p perfect_bits(200, 300)#==29
-# p perfect_bits(200, 30000)#==5669
+p '---mid+final range, inclusive---'
+p perfect_bits(16, 39)#==7
+p perfect_bits(16, 40)#==7
+p perfect_bits(16, 43)#==8
+p perfect_bits(16, 44)#==8
+p perfect_bits(16, 45)#==9
+p perfect_bits(16, 46)#==10
+p perfect_bits(16, 47)#==10
+p perfect_bits(16, 140)#==40
+
+p perfect_bits(17,32)#==7
+p perfect_bits(10, 33)#==7
+p perfect_bits(200, 300)#==29
+p perfect_bits(200, 30000)#==5669
