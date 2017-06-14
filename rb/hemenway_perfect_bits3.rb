@@ -68,6 +68,13 @@ def next_perfect_square(num)
   is_perfect_square?(num) ? next_perfect_square(num + 1) : Math.sqrt(num).ceil**2
 end
 
+def prev_perfect_square(num)
+  return nil if num <= 1
+  is_perfect_square?(num) ? prev_perfect_square(num - 1) : Math.sqrt(num).floor**2
+end
+
+
+
 def next_binary_base(base_ten_num)
   2**(binary_order_of_magnitude(base_ten_num) + 1)
 end
@@ -97,7 +104,6 @@ end
 
 #how many 3-digit unique permutation sets exist with n possible nums
 def uniq_permutations_count(slots_count, nums_count)
-  # debugger
   uniq_perms_count = factorial(nums_count)/factorial(nums_count - slots_count)
 
   #uniq perm sets
@@ -121,7 +127,7 @@ def count_perms_in_mid_range_noninclusive(num1, num2)
     count += uniq_permutations_count((current_sq - 1), current_o_of_mag)
 
     next_sq = next_perfect_square(current_sq)
-# debugger
+
     if next_sq > max_binary_o_of_mag
       current_o_of_mag += 1
       current_sq = 1
@@ -231,60 +237,51 @@ end
 def count_perms_in_initial_range_noninclusive(num1, num2)
   #skip if there is no initial range
   return 0 if is_binary_base?(num1)
-  # debugger
-  #jump to the first perfect bit
+  count = 0
+
+  #narrow down range to actually be the initial range, cutting off the mid and/or final range
+
+  # num1 is in the middle of a permutation set
   num1 = is_perfect_bit?(num1) ? num1 : next_perfect_bit(num1)
 
-  current_sq = binarify(num1).count('1')
+  # num2 is the end, which should be non_inclusive
+  num2 = next_binary_base(num1)
+
+  prev_num1_base = prev_binary_base(num1)
+
+  total_perm_count = count_perms_in_mid_range_noninclusive(prev_num1_base, num2)
+  perm_count_minus_current_missing_set = total_perm_count - prev_permutations_count(num1)
+  count = perm_count_minus_current_missing_set
+
+
+  current_sq = prev_perfect_square(binary_ones_count(num1))
   current_o_of_mag = binary_order_of_magnitude(num1)
 
-  count = prev_permutations_count(num1)
-  # num1 is in the middle of a permutation set
-  # num2 is the end, which should be non_inclusive
-
-  next_sq = next_perfect_square(current_sq)
-  max_binary_o_of_mag_of_initial_range = binary_order_of_magnitude(initial_base_ten_binary_base_in_range(num1, num2))
-
-  if next_sq > max_binary_o_of_mag_of_initial_range
-    current_o_of_mag += 1
-    current_sq = 1
-  else
-    current_sq = next_sq
+  while current_sq
+    count -= uniq_permutations_count((current_sq - 1), current_o_of_mag)
+    current_sq = prev_perfect_square(current_sq)
   end
 
-  while current_o_of_mag < max_binary_o_of_mag_of_initial_range
-    count += uniq_permutations_count((current_sq - 1), current_o_of_mag)
-    next_sq = next_perfect_square(current_sq)
-
-    if next_sq > max_binary_o_of_mag_of_initial_range
-      current_o_of_mag += 1
-      current_sq = 1
-    else
-      current_sq = next_sq
-    end
-  end
   count
 end
 
-# p count_perms_in_initial_range_noninclusive(33, 130)
-# p count_perms_in_initial_range_noninclusive(10,33)
-# p count_perms_in_mid_range_noninclusive(10,33)
+# p count_perms_in_initial_range_noninclusive(23,36) #==
+# p count_perms_in_initial_range_noninclusive(23,32) #==4
 
-def count_perms_in_final_range_inclusive(num1, num2)#with (10, 30)
-  initial_num_in_final_range = final_base_ten_binary_base_in_range(num1, num2) # 32
-  final_num_in_final_range = is_perfect_bit?(num2) ? num2 : prev_perfect_bit(num2) # 33
+def count_perms_in_final_range_inclusive(num1, num2)
+  initial_num_in_final_range = final_base_ten_binary_base_in_range(num1, num2)
+  final_num_in_final_range = is_perfect_bit?(num2) ? num2 : prev_perfect_bit(num2)
 
   return 1 if initial_num_in_final_range === final_num_in_final_range
   next_binary_base_beyond_range = next_binary_base(num2) # 64
 
   count = 0
-# debugger
+
   #count number of perms that would exist if the range end was actually the next binary base
   count += count_perms_in_mid_range_noninclusive(initial_num_in_final_range, next_binary_base_beyond_range)
-# 11
+
   #subtract perms in initial range of that
   count -= count_perms_in_initial_range_noninclusive(final_num_in_final_range, next_binary_base_beyond_range)
-  #  12 s/b 10
   count
 end
 
@@ -292,7 +289,7 @@ end
 
 def perfect_bits(num1, num2)
   count = 0
-# debugger
+
   if binary_order_of_magnitude(num1) == binary_order_of_magnitude(num2)
     prev_binary_base_before_range = prev_binary_base(num1)
     next_binary_base_beyond_range = next_binary_base(num2)
@@ -306,7 +303,6 @@ def perfect_bits(num1, num2)
     #subtract final chunk beyond num2
     count -= count_perms_in_final_range_inclusive(num2, next_binary_base_beyond_range)
   else
-    debugger
     count += count_perms_in_initial_range_noninclusive(num1, num2)
     count += count_perms_in_mid_range_noninclusive(num1, num2)
     count += count_perms_in_final_range_inclusive(num1, num2)
@@ -315,22 +311,22 @@ def perfect_bits(num1, num2)
   count
 end
 
-# p '---initial range---'
-# p perfect_bits(10, 16)# == 2
-# p perfect_bits(100, 128)# == 10
-# p perfect_bits(30000, 32768)# == 651
-#
-# p '---mid range---'
-# p perfect_bits(2, 4)# == 2
-# p perfect_bits(16, 32)# == 6
-# p perfect_bits(128, 256)# == 37
-# p perfect_bits(16384, 32768)# == 3369
-#
-# p '---final range, inclusive---'
-# p perfect_bits(4, 11)# == 1
-# p perfect_bits(16, 28)# == 2
-# p perfect_bits(32, 35)# == 0
-# p perfect_bits(16384, 30000)# == 2719
+p '---initial range---'
+p perfect_bits(10, 16)# == 2
+p perfect_bits(100, 128)# == 10
+p perfect_bits(30000, 32768)# == 651
+
+p '---mid range---'
+p perfect_bits(2, 4)# == 2
+p perfect_bits(16, 32)# == 6
+p perfect_bits(128, 256)# == 37
+p perfect_bits(16384, 32768)# == 3369
+
+p '---final range, inclusive---'
+p perfect_bits(4, 11)# == 1
+p perfect_bits(16, 28)# == 2
+p perfect_bits(32, 35)# == 0
+p perfect_bits(16384, 30000)# == 2719
 
 # p '---initial+mid range, non-inclusive---'
 # p perfect_bits(10, 32)# == 7
