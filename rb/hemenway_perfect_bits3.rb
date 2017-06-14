@@ -44,13 +44,24 @@ def next_perfect_bit(base_ten_num, is_initial_recursion = true)
   end
 end
 
-p next_perfect_bit(33)#==39
-p next_perfect_bit(16)#==23
+# p next_perfect_bit(33)#==39
+# p next_perfect_bit(16)#==23
 
-def prev_perfect_bit(base_ten_num)
-  # return 0 if base_ten_num < 1
-  # Math.sqrt(base_ten_num) % 1 == 0 ? next_perfect_bit(base_ten_num + 1) : Math.sqrt(base_ten_num).ceil**2
+def prev_perfect_bit(base_ten_num, is_initial_recursion = true)
+  return nil if base_ten_num < 1
+
+  if is_initial_recursion || !is_perfect_bit?(base_ten_num)
+    prev_num = base_ten_num - 1
+    return next_perfect_bit(prev_num, false)
+
+  # cut out when hits a perfect bit that isn't the initial num
+  elsif is_perfect_bit?(base_ten_num)
+    return base_ten_num
+  end
 end
+
+p prev_perfect_bit(33)#==32
+p prev_perfect_bit(16)#==15
 
 def next_perfect_square(num)
   return 1 if num < 1
