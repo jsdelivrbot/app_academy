@@ -1,3 +1,5 @@
+require 'byebug'
+
 def binarify(base_ten_num)
   base_ten_num.to_s(2)
 end
@@ -14,8 +16,8 @@ def factorial(n)
   (1..n).inject(:*) || 1
 end
 
-def binary_order_of_magnitude(num)
-  binarify(num).chars.count - 1
+def binary_order_of_magnitude(base_ten_num)
+  binarify(base_ten_num).chars.count - 1
 end
 
 def is_perfect_square?(num)
@@ -77,17 +79,18 @@ def is_binary_base?(num)
 end
 
 def next_binary_base(base_ten_num)
-  2**(binarify(base_ten_num).to_s.length + 1)
+  return 0 if base_ten_num < 0
+  next_base = 2**(binary_order_of_magnitude(base_ten_num) + 1)
 end
 
 def prev_binary_base(base_ten_num)
-  return nil if base_ten_num < 0
-  return 0 if base_ten_num < 1
+  return nil if base_ten_num < 1
+  return 0 if base_ten_num === 1
   return base_ten_num - 1 if base_ten_num < 3
-  2**(binarify(base_ten_num).length - 1)
+
+  prev_base = 2**(binary_order_of_magnitude(base_ten_num))
+  prev_base === base_ten_num ? prev_binary_base(prev_base - 1) : prev_base
 end
-
-
 
 def initial_base_ten_binary_base_in_range(num1, num2)
   return num1 if is_binary_base?(num1)
@@ -304,55 +307,55 @@ def perfect_bits(num1, num2)
   count
 end
 
-p '---initial range---'
-p perfect_bits(10, 16) == 2
-p perfect_bits(100, 128) == 10
-p perfect_bits(1000, 1024) == 6
-p perfect_bits(30000, 32768) == 651 => perfect_bits(30000, 32768)
-p perfect_bits(1099511000000, 1099511627776) == 8657 => perfect_bits(1099511000000, 1099511627776)
-# num1 = 1099511000000
-# num2 = 1099511627776
-# p 'initial', count_perms_in_initial_range_noninclusive(num1, num2)
-# p 'mid', count_perms_in_mid_range_noninclusive(num1, num2)
-# p 'final', count_perms_in_final_range_inclusive(num1, num2)
-p perfect_bits(9223372036854770000, 9223372036854775808)==1
-
-p '---mid range---'
-p perfect_bits(2, 4) == 2
-p perfect_bits(16, 32) == 6
-p perfect_bits(128, 256) == 37
-p perfect_bits(16384, 32768) == 3369
-p perfect_bits(2, 9223372036854775808)==734248687150654971
-p perfect_bits(128, 1099511627776)==103351068365
-
-p '---final range, inclusive---'
-p perfect_bits(4, 11) == 2 =>perfect_bits(4, 11)
-p perfect_bits(16, 28) == 2 =>perfect_bits(16, 28)
-p perfect_bits(32, 46) == 5 =>perfect_bits(32, 46)
-p perfect_bits(16384, 30000) == 2719 =>perfect_bits(16384, 30000)
-# num1 = 16384
-# num2 = 30000
-# p 'initial', count_perms_in_initial_range_noninclusive(num1, num2)
-# p 'mid', count_perms_in_mid_range_noninclusive(num1, num2)
-# p 'final', count_perms_in_final_range_inclusive(num1, num2)
-p perfect_bits(9223372036854775807, 9223372036854775815)==2 =>perfect_bits(9223372036854775807, 9223372036854775815)
-
-p '---initial+mid range, non-inclusive---'
-p perfect_bits(10, 32) == 7
-p perfect_bits(30, 64) == 13
-p perfect_bits(100, 256) == 46
-
-p '---middle of mid range--'
-p '---mid+final range, inclusive---'
-p perfect_bits(16, 39)==7
-p perfect_bits(16, 40)==6
-p perfect_bits(16, 43)==8
-p perfect_bits(16, 44)==7
-p perfect_bits(16, 45)==9
-p perfect_bits(16, 46)==10
-p perfect_bits(16, 47)==9
-p perfect_bits(16, 140)==39
-
-p '--when a === b---'
-p perfect_bits(32768, 32768) == 1
-p perfect_bits(32767, 32767) == 0
+# p '---initial range---'
+# p perfect_bits(10, 16) == 2
+# p perfect_bits(100, 128) == 10
+# p perfect_bits(1000, 1024) == 6
+# p perfect_bits(30000, 32768) == 651 => perfect_bits(30000, 32768)
+# p perfect_bits(1099511000000, 1099511627776) == 8657 => perfect_bits(1099511000000, 1099511627776)
+# # num1 = 1099511000000
+# # num2 = 1099511627776
+# # p 'initial', count_perms_in_initial_range_noninclusive(num1, num2)
+# # p 'mid', count_perms_in_mid_range_noninclusive(num1, num2)
+# # p 'final', count_perms_in_final_range_inclusive(num1, num2)
+# p perfect_bits(9223372036854770000, 9223372036854775808)==1
+#
+# p '---mid range---'
+# p perfect_bits(2, 4) == 2
+# p perfect_bits(16, 32) == 6
+# p perfect_bits(128, 256) == 37
+# p perfect_bits(16384, 32768) == 3369
+# p perfect_bits(2, 9223372036854775808)==734248687150654971
+# p perfect_bits(128, 1099511627776)==103351068365
+#
+# p '---final range, inclusive---'
+# p perfect_bits(4, 11) == 2 =>perfect_bits(4, 11)
+# p perfect_bits(16, 28) == 2 =>perfect_bits(16, 28)
+# p perfect_bits(32, 46) == 5 =>perfect_bits(32, 46)
+# p perfect_bits(16384, 30000) == 2719 =>perfect_bits(16384, 30000)
+# # num1 = 16384
+# # num2 = 30000
+# # p 'initial', count_perms_in_initial_range_noninclusive(num1, num2)
+# # p 'mid', count_perms_in_mid_range_noninclusive(num1, num2)
+# # p 'final', count_perms_in_final_range_inclusive(num1, num2)
+# p perfect_bits(9223372036854775807, 9223372036854775815)==2 =>perfect_bits(9223372036854775807, 9223372036854775815)
+#
+# p '---initial+mid range, non-inclusive---'
+# p perfect_bits(10, 32) == 7
+# p perfect_bits(30, 64) == 13
+# p perfect_bits(100, 256) == 46
+#
+# p '---middle of mid range--'
+# p '---mid+final range, inclusive---'
+# p perfect_bits(16, 39)==7
+# p perfect_bits(16, 40)==6
+# p perfect_bits(16, 43)==8
+# p perfect_bits(16, 44)==7
+# p perfect_bits(16, 45)==9
+# p perfect_bits(16, 46)==10
+# p perfect_bits(16, 47)==9
+# p perfect_bits(16, 140)==39
+#
+# p '--when a === b---'
+# p perfect_bits(32768, 32768) == 1
+# p perfect_bits(32767, 32767) == 0

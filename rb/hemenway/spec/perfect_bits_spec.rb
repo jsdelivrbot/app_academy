@@ -77,14 +77,21 @@ end
 
 describe "binary base helper methods" do
   describe "#prev_binary_base" do
+    it "handles bases cases" do
+      expect(prev_binary_base(0)).to be(nil)
+      expect(prev_binary_base(1)).to be(0)
+      expect(prev_binary_base(2)).to be(1)
+    end
     it "returns correct value with small input value" do
-      expect(prev_binary_base(2**1)).to be(2**0)
-      expect(prev_binary_base(2**10)).to be(2**9)
+      expect(prev_binary_base(3)).to be(2)
+      expect(prev_binary_base(4)).to be(2)
+      expect(prev_binary_base(5)).to be(4)
+      expect(prev_binary_base(2**10)).to eq(2**9)
     end
     it "returns correct value with large input value" do
-      expect(prev_binary_base(2**2345 - 1)).to be(2**2344)
-      expect(prev_binary_base(2**2345)).to be(2**2344)
-      expect(prev_binary_base(2**2345 + 1)).to be(2**2345)
+      expect(prev_binary_base(2**2345 - 1)).to eq(2**2344)
+      expect(prev_binary_base(2**2345)).to eq(2**2344)
+      expect(prev_binary_base(2**2345 + 1)).to eq(2**2345)
     end
   end
 
@@ -98,13 +105,13 @@ describe "binary base helper methods" do
 
   describe "#next_binary_base" do
     it "returns correct value with small input value" do
-      expect(next_binary_base(2**0)).to be(2**1)
-      expect(next_binary_base(2**9)).to be(2**10)
+      expect(next_binary_base(2**0)).to eq(2**1)
+      expect(next_binary_base(2**9)).to eq(2**10)
     end
     it "returns correct value with large input value" do
-      expect(next_binary_base(2**2345 - 1)).to be(2**2345)
-      expect(next_binary_base(2**2345)).to be(2**2346)
-      expect(next_binary_base(2**2345 + 1)).to be(2**2346)
+      expect(next_binary_base(2**2345 - 1)).to eq(2**2345)
+      expect(next_binary_base(2**2345)).to eq(2**2346)
+      expect(next_binary_base(2**2345 + 1)).to eq(2**2346)
     end
   end
 end
