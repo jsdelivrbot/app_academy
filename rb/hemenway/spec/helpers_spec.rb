@@ -105,7 +105,9 @@ describe "binary base helper methods" do
 
   describe "#next_binary_base" do
     it "handles base case properly" do
-      expect(next_binary_base(-1)).to eq(0)
+      expect(next_binary_base(0)).to eq(1)
+      expect(next_binary_base(1)).to eq(2)
+      expect(next_binary_base(2)).to eq(4)
     end
     it "returns correct value with small input value" do
       expect(next_binary_base(2**0)).to eq(2**1)
@@ -119,12 +121,17 @@ describe "binary base helper methods" do
   end
 
   describe "#initial_base_ten_binary_base_in_range" do
-    it "returns correct value with edge inputs" do
+    it "returns correct value for edge cases" do
       expect(initial_base_ten_binary_base_in_range(16, 20)).to eq(16)
       expect(initial_base_ten_binary_base_in_range(16, 32)).to eq(16)
       expect(initial_base_ten_binary_base_in_range(512, 9223372036854775808)).to eq(512)
       expect(initial_base_ten_binary_base_in_range(9223372036854775808, 9223372036854776000)).to eq(9223372036854775808)
 
+      expect(initial_base_ten_binary_base_in_range(0, 0)).to be(nil)
+      expect(initial_base_ten_binary_base_in_range(0, 1)).to be(1)
+      expect(initial_base_ten_binary_base_in_range(0, 2)).to be(1)
+      expect(initial_base_ten_binary_base_in_range(0, 2)).to eq(1)
+      expect(initial_base_ten_binary_base_in_range(1, 2)).to eq(1)
       expect(initial_base_ten_binary_base_in_range(10, 16)).to eq(16)
       expect(initial_base_ten_binary_base_in_range(500, 512)).to eq(512)
       expect(initial_base_ten_binary_base_in_range(9223372036854775000, 9223372036854775808)).to eq(9223372036854775808)
@@ -180,29 +187,21 @@ describe "combinatoric helper methods" do
   end
 
   describe "#uniq_permutations_count" do
-    # it "handles base case properly" do
-    #   # expect(factorial(0)).to be(1)
-    #   # expect(factorial(1)).to be(1)
-    # end
-    # it "returns correct value" do
-    #   # expect(factorial(4)).to be(24)
-    #   # expect(factorial(20)).to be(2432902008176640000)
-    # end
   end
 
   describe "#uniq_permutations_count_w_set_ones_and_zeroes" do
-    # it "handles base case properly" do
-    #   # expect(factorial(0)).to be(1)
-    #   # expect(factorial(1)).to be(1)
-    # end
-    # it "returns correct value" do
-    #   # expect(factorial(4)).to be(24)
-    #   # expect(factorial(20)).to be(2432902008176640000)
-    # end
   end
 
   describe "#prev_permutations_count" do
-    it "returns correct value" do
+    it "returns correct values for edge cases" do
+      expect(prev_permutations_count(0)).to be(0)
+      expect(prev_permutations_count(1)).to be(0)
+      expect(prev_permutations_count(16)).to be(0)
+      expect(prev_permutations_count(23)).to be(0)
+      expect(prev_permutations_count(64)).to be(0)
+    end
+
+    it "returns correct value with standard input" do
       expect(prev_permutations_count(53)).to be(5)
       expect(prev_permutations_count(60)).to be(9)
       expect(prev_permutations_count(99)).to be(10)
