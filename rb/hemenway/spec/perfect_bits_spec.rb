@@ -153,17 +153,16 @@ describe "binary base helper methods" do
       expect(final_base_ten_binary_base_in_range(9223372036854775808, 9223372036854776000)).to eq(9223372036854775808)
     end
 
-    # it "returns nil when does not exist" do
-    #   expect(initial_base_ten_binary_base_in_range(17, 20)).to be(nil)
-    #   expect(initial_base_ten_binary_base_in_range(300, 511)).to be(nil)
-    #   expect(initial_base_ten_binary_base_in_range(9223372036854775000, 9223372036854775807)).to be(nil)
-    # end
-    #
-    # it "returns correct value with standard inputs" do
-    #   expect(initial_base_ten_binary_base_in_range(10, 20)).to eq(16)
-    #   expect(initial_base_ten_binary_base_in_range(500, 9223372036854775807)).to eq(512)
-    #   expect(initial_base_ten_binary_base_in_range(10, 9223372036854775807)).to eq(16)
-    # end
+    it "returns nil when does not exist" do
+      expect(final_base_ten_binary_base_in_range(17, 20)).to be(nil)
+      expect(final_base_ten_binary_base_in_range(300, 511)).to be(nil)
+      expect(final_base_ten_binary_base_in_range(9223372036854775000, 9223372036854775807)).to be(nil)
+    end
+
+    it "returns correct value with standard inputs" do
+      expect(final_base_ten_binary_base_in_range(10, 20)).to eq(16)
+      expect(final_base_ten_binary_base_in_range(500, 9223372036854776000)).to eq(9223372036854775808)
+    end
   end
 end
 
