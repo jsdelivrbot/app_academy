@@ -59,7 +59,7 @@ end
 # p is_perfect_bit?(30000)
 # p is_perfect_bit?(29999)
 # p is_perfect_bit?(29998)
-p prev_perfect_bit(30000)#==29998
+# p prev_perfect_bit(30000)#==29998
 # p prev_perfect_bit(16)#==15
 
 def next_perfect_square(num)

@@ -56,8 +56,9 @@ end
 
 describe "perfect bit helper methods" do
   it "#is_perfect_bit?" do
-    # expect(is_perfect_square?(4)).to be(true)
-    expect(is_perfect_square?(2500)).to be(true)
+    expect(is_perfect_bit?(4)).to be(true)
+    expect(is_perfect_bit?(523)).to be(true)
+    expect(is_perfect_bit?(1099511627776)).to be(true)
   end
   it "#next_perfect_bit" do
   end
