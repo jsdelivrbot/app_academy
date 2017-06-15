@@ -1,5 +1,6 @@
 require 'rspec'
-require 'helpers'
+require 'base_helpers'
+require 'mid_helpers'
 require 'perfect_bits'
 
 describe "base two <=> base ten conversion methods" do
@@ -212,19 +213,29 @@ describe "combinatoric helper methods" do
 end
 
 describe "miscellaneous helper methods" do
-  describe "#within_same_base_range?" do
+  describe "#no_binary_bases_in_range?" do
     it "handles edges properly" do
-      expect(within_same_base_range?(16, 30)).to be(true)
-      expect(within_same_base_range?(20, 32)).to be(false)
+      expect(no_binary_bases_in_range?(0, 0)).to be(true)
+      expect(no_binary_bases_in_range?(0, 1)).to be(false)
+      expect(no_binary_bases_in_range?(0, 2)).to be(false)
+      expect(no_binary_bases_in_range?(1, 1)).to be(false)
+      expect(no_binary_bases_in_range?(1, 2)).to be(false)
 
-      expect(within_same_base_range?(511, 512)).to be(false)
+      expect(no_binary_bases_in_range?(15, 15)).to be(true)
+      expect(no_binary_bases_in_range?(16, 16)).to be(false)
+
+      expect(no_binary_bases_in_range?(16, 30)).to be(false)
+      expect(no_binary_bases_in_range?(20, 32)).to be(false)
+
+      expect(no_binary_bases_in_range?(511, 512)).to be(false)
+      expect(no_binary_bases_in_range?(512, 513)).to be(false)
     end
     it "returns correct value on standard input" do
-      expect(within_same_base_range?(20, 40)).to be(false)
-      expect(within_same_base_range?(511, 513)).to be(false)
+      expect(no_binary_bases_in_range?(20, 40)).to be(false)
+      expect(no_binary_bases_in_range?(511, 513)).to be(false)
 
-      expect(within_same_base_range?(20, 31)).to be(true)
-      expect(within_same_base_range?(511, 513)).to be(false)
+      expect(no_binary_bases_in_range?(20, 31)).to be(true)
+      expect(no_binary_bases_in_range?(511, 513)).to be(false)
     end
   end
 end

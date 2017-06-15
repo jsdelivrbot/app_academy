@@ -1,3 +1,5 @@
+require 'byebug'
+
 #### base two <=> base ten conversion methods ####
 def binarify(base_ten_num)
   base_ten_num.to_s(2)
@@ -109,27 +111,6 @@ def uniq_permutations_count_w_set_ones_and_zeroes(ones_count, zeroes_count)
   factorial(ones_count + zeroes_count)/(factorial(ones_count) * factorial(zeroes_count))
 end
 
-def dynamic_chunk(base_two_num)
-  return '' unless base_two_num.index('0')
-
-  #remove initial ones
-  num = base_two_num.slice((base_two_num.index('0'))..base_two_num.length)
-
-  first_one_idx = num.index('1')
-
-  if first_one_idx
-
-    # change first 1 to 0
-    num[first_one_idx] = '0'
-
-    #slice off first 0, because 1 will have shifted over there
-    return num.slice(1..num.length)
-  else
-    return num
-  end
-
-end
-
 # given '110101' in a sorted list of permutations, how many perms precede it with the exact same combination of bits?
 def prev_permutations_count(base_ten_num)
   base_two_num = binarify(base_ten_num)
@@ -174,8 +155,30 @@ def remove_index(arr, idx)
   arr.slice(0...idx) + arr.slice((idx + 1)..arr.length)
 end
 
+def dynamic_chunk(base_two_num)
+  return '' unless base_two_num.index('0')
 
-def within_same_base_range?(num1, num2)
-  # debugger if [num1, num2] == [20, 32]
-  (next_binary_base(num1) > num2) && (prev_binary_base(num2) <= num1)
+  #remove initial ones
+  num = base_two_num.slice((base_two_num.index('0'))..base_two_num.length)
+
+  first_one_idx = num.index('1')
+
+  if first_one_idx
+
+    # change first 1 to 0
+    num[first_one_idx] = '0'
+
+    #slice off first 0, because 1 will have shifted over there
+    return num.slice(1..num.length)
+  else
+    return num
+  end
+
 end
+
+def no_binary_bases_in_range?(num1, num2)
+  return !is_binary_base?(num1) if num1 == num2
+  return false if is_binary_base?(num1) || is_binary_base?(num2)
+  (next_binary_base(num1) > num2) && prev_binary_base(num2) && (prev_binary_base(num2) < num1)
+end
+p no_binary_bases_in_range?(0,0)

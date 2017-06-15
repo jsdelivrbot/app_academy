@@ -1,5 +1,4 @@
 require 'rspec'
-require 'helpers'
 require 'perfect_bits'
 
 describe "main methods" do
