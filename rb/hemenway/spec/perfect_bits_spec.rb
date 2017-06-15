@@ -68,7 +68,7 @@ describe "perfect bit helper methods" do
 
   describe "#next_perfect_bit" do
     it "returns correct value" do
-      expect(next_perfect_bit(4)).to be(true)
+      expect(next_perfect_bit(4)).to be(8)
       expect(next_perfect_bit(512)).to be(519)
       expect(next_perfect_bit(1099511627775)).to be(1099511627776)
     end
@@ -109,19 +109,19 @@ describe "binary base helper methods" do
   end
 end
 
-# describe "combinatoric helper methods" do
-#     describe "#factorial" do
-#     it "handles base case properly" do
-#       expect(factorial(0)).to be(1)
-#       expect(factorial(1)).to be(1)
-#     end
-#     it "returns correct value" do
-#       expect(factorial(4)).to be(24)
-#       expect(factorial(20)).to be(2432902008176640000)
-#     end
-#   end
-# end
-#
+describe "combinatoric helper methods" do
+    describe "#factorial" do
+    it "handles base case properly" do
+      expect(factorial(0)).to be(1)
+      expect(factorial(1)).to be(1)
+    end
+    it "returns correct value" do
+      expect(factorial(4)).to be(24)
+      expect(factorial(20)).to be(2432902008176640000)
+    end
+  end
+end
+
 # describe "other helper methods" do
 #   describe "#binary_order_of_magnitude" do
 #     it "returns correct value" do

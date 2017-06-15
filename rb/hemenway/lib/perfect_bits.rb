@@ -72,19 +72,21 @@ def prev_perfect_square(num)
   is_perfect_square?(num) ? prev_perfect_square(num - 1) : Math.sqrt(num).floor**2
 end
 
-
-
-def next_binary_base(base_ten_num)
-  2**(binary_order_of_magnitude(base_ten_num) + 1)
-end
-
-def prev_binary_base(base_ten_num)
-  2**(binary_order_of_magnitude(base_ten_num))
-end
-
 def is_binary_base?(num)
   binarify(num).count('1') == 1
 end
+
+def next_binary_base(base_ten_num)
+  2**(binarify(base_ten_num).to_s.length + 1)
+end
+
+def prev_binary_base(base_ten_num)
+  return nil if base_ten_num < 0
+  return 0 if base_ten_num < 1
+  return base_ten_num - 1 if base_ten_num < 3
+  2**(binarify(base_ten_num).length - 1)
+end
+
 
 
 def initial_base_ten_binary_base_in_range(num1, num2)
