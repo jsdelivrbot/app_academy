@@ -79,7 +79,6 @@ def prev_binary_base(base_ten_num)
 end
 
 def initial_base_ten_binary_base_in_range(num1, num2)
-  # debugger if [num1, num2] == [0, 1]
   return nil if num2 < 1
   return num1 if is_binary_base?(num1)
   next_base = next_binary_base(num1)
@@ -177,5 +176,6 @@ end
 
 
 def within_same_base_range?(num1, num2)
-  (next_binary_base(num1) > num2) && (prev_binary_base(num2) < num1)
+  # debugger if [num1, num2] == [20, 32]
+  (next_binary_base(num1) > num2) && (prev_binary_base(num2) <= num1)
 end
