@@ -41,20 +41,35 @@ def count_perms_in_initial_range_noninclusive(num1, num2)
   pre_range_binary_base = prev_binary_base(initial_range_start_num)
 
   count = count_perms_in_mid_range_noninclusive(pre_range_binary_base, initial_range_end_num)
-  # debugger if num1 == 54 && num2 ==64
+  #39count == 3368
+  #40count == 3368
+
   count -= prev_permutations_count(initial_range_start_num)
+  #39 count == 0
+  #40 count == 3304
 
-  count -= prev_permutations_count(num1) if initial_range_start_num != num1
-  # debugger if num1 == 16639 && num2 == 32768
+  count -= prev_permutations_count(num1) if initial_range_start_num < num1
 # debugger
-#count == 3368
-  current_sq = prev_perfect_square(binary_ones_count(initial_range_start_num))
-  current_o_of_mag = binary_order_of_magnitude(initial_range_start_num)
+#39count == 3368
+#40count == 3368
+  initial_sq = binary_ones_count(initial_range_start_num)
+  #39initial_sq == 3368
+  #40initial_sq == 3368
 
+  dynamic_chunk = dynamic_chunk(initial_range_start_num)
+  dynamic_slots_count = dynamic_chunk.length
+  highest_possible_sq = is_perfect_square?(dynamic_slots_count) ? dynamic_slots_count : prev_perfect_square(dynamic_slots_count)
+  current_sq = highest_possible_sq
+  # current_o_of_mag = binary_order_of_magnitude(initial_range_start_num)
+
+  # debugger if num1 == 100 && num2 == 128
+  # debugger if num1 == 54 && num2 == 64
   while current_sq
-    # cut off the initial 1 and first 0's, so that the 'dynamic_chunk' that we're working with will be < initial_range_start_num
-    dynamic_chunk = dynamic_chunk(initial_range_start_num)
-    count -= uniq_permutations_count((current_sq - 1), dynamic_chunk.length)
+    unless current_sq === initial_sq #skip bc that range has already been accounted for
+      # cut off the initial 1 and first 0's, so that the 'dynamic_chunk' that we're working with will be < initial_range_start_num
+
+      count -= uniq_permutations_count(current_sq - 1, dynamic_chunk.length - 1)
+    end
     current_sq = prev_perfect_square(current_sq)
 
     # dynamic_chunk = dynamic_chunk(initial_range_start_num)
