@@ -111,13 +111,12 @@ def uniq_permutations_count_w_set_ones_and_zeroes(ones_count, zeroes_count)
   factorial(ones_count + zeroes_count)/(factorial(ones_count) * factorial(zeroes_count))
 end
 
-# given 29998/'111010100101110' in a sorted list of permutations, how many perms precede it with the exact same combination of bits?
 def prev_permutations_count(base_ten_num)
   base_two_num = binarify(base_ten_num)
   bits_arr = base_two_num.chars.slice(1..base_two_num.length)
   count = 0
   only_ones_remain = false
-# debugger if base_ten_num == 23
+
   until bits_arr.length <= 1 || only_ones_remain
 
     if bits_arr.first == '1'
@@ -137,8 +136,6 @@ def prev_permutations_count(base_ten_num)
 
   count
 end
-
-# p prev_permutations_count(29998)
 
 ### miscellaneous helper methods ###
 def binary_order_of_magnitude(base_ten_num)
