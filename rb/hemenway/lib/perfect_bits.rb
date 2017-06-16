@@ -1,4 +1,5 @@
 require 'byebug'
+require 'base_helpers'
 require 'mid_helpers'
 
 def perfect_bits(num1, num2)

@@ -1,4 +1,6 @@
 require 'rspec'
+require 'base_helpers'
+require 'mid_helpers'
 require 'perfect_bits'
 
 describe "main methods" do

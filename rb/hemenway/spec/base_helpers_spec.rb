@@ -1,7 +1,5 @@
 require 'rspec'
 require 'base_helpers'
-require 'mid_helpers'
-require 'perfect_bits'
 
 describe "base two <=> base ten conversion methods" do
   describe "#binarify" do
@@ -236,6 +234,43 @@ describe "miscellaneous helper methods" do
 
       expect(no_binary_bases_in_range?(20, 31)).to be(true)
       expect(no_binary_bases_in_range?(511, 513)).to be(false)
+    end
+  end
+
+  describe "#has_two_binary_bases_in_range?" do
+    it "returns false when no bases in range" do
+      expect(has_two_binary_bases_in_range?(20, 20)).to be(false)
+      expect(has_two_binary_bases_in_range?(20, 21)).to be(false)
+      expect(has_two_binary_bases_in_range?(20, 31)).to be(false)
+      expect(has_two_binary_bases_in_range?(263, 300)).to be(false)
+    end
+    it "returns false when one base in range" do
+      expect(has_two_binary_bases_in_range?(20, 40)).to be(false)
+      expect(has_two_binary_bases_in_range?(32, 40)).to be(false)
+      expect(has_two_binary_bases_in_range?(256, 300)).to be(false)
+      expect(has_two_binary_bases_in_range?(200, 256)).to be(false)
+    end
+
+    it "returns true when input values are binary bases, and no binary bases exist between" do
+      expect(has_two_binary_bases_in_range?(16, 32)).to be(true)
+      expect(has_two_binary_bases_in_range?(256, 512)).to be(true)
+    end
+
+    it "returns true when one input value is binary base, and one binary base exists mid range" do
+      expect(has_two_binary_bases_in_range?(16, 40)).to be(true)
+      expect(has_two_binary_bases_in_range?(200, 512)).to be(true)
+    end
+
+    it "returns true when exactly two binary bases exist mid range" do
+      expect(has_two_binary_bases_in_range?(250, 600)).to be(true)
+      expect(has_two_binary_bases_in_range?(10, 40)).to be(true)
+    end
+
+    it "returns correct value on standard input" do
+      expect(has_two_binary_bases_in_range?(300, 500)).to be(false)
+      expect(has_two_binary_bases_in_range?(1234, 9223372036854775808)).to be(true)
+      expect(has_two_binary_bases_in_range?(1234, 9223372036854775000)).to be(true)
+      expect(has_two_binary_bases_in_range?(9223372036854775000, 9223372036854776000)).to be(false)
     end
   end
 end
