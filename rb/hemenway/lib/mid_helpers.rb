@@ -30,19 +30,22 @@ end
 
 
 def count_perms_in_initial_range_noninclusive(num1, num2)
-  #skip if there is no initial range
   return 0 if is_binary_base?(num1)
-  count = 0
-  #narrow down range to actually be the initial range, cutting off the mid and/or final range
 
   initial_range_start_num = is_perfect_bit?(num1) ? num1 : next_perfect_bit(num1)
   initial_range_end_num = next_binary_base(initial_range_start_num)
 
-  return 0 if num2 <= initial_range_start_num || is_binary_base?(initial_range_start_num)
+  return 0 unless is_in_noninclusive_range?(initial_range_start_num, [num1, num2])
+  return 0 unless is_in_noninclusive_range?(initial_range_end_num, [num1, num2])
+  return 0 if is_binary_base?(initial_range_start_num)
+
+
+  count = 0
 
   pre_range_binary_base = prev_binary_base(initial_range_start_num)
 
-  # debugger
+  # debugger if num1 == 13 && num2 ==15
+  # debugger if num1 = 71 && num2 ==120
   count = count_perms_in_mid_range_noninclusive(pre_range_binary_base, initial_range_end_num) - prev_permutations_count(initial_range_start_num)
 
 
