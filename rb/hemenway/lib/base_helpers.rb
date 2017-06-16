@@ -111,40 +111,34 @@ def uniq_permutations_count_w_set_ones_and_zeroes(ones_count, zeroes_count)
   factorial(ones_count + zeroes_count)/(factorial(ones_count) * factorial(zeroes_count))
 end
 
-# given '110101' in a sorted list of permutations, how many perms precede it with the exact same combination of bits?
+# given 29998/'111010100101110' in a sorted list of permutations, how many perms precede it with the exact same combination of bits?
 def prev_permutations_count(base_ten_num)
   base_two_num = binarify(base_ten_num)
   bits_arr = base_two_num.chars.slice(1..base_two_num.length)
   count = 0
+  only_ones_remain = false
+# debugger if base_ten_num == 23
+  until bits_arr.length <= 1 || only_ones_remain
 
-  idx = 0
-
-  until bits_arr.length <= 1
-    if idx.to_s === bits_arr.first
-      bits_arr.shift
-      idx = 0
-    else
-      dynamic_chunk = bits_arr.slice((idx + 1)..bits_arr.length)
+    if bits_arr.first == '1'
+      dynamic_chunk = bits_arr.slice(1..bits_arr.length)
       ones_count = dynamic_chunk.count('1')
       zeroes_count = dynamic_chunk.count('0')
+      only_ones_remain = zeroes_count.zero?
 
-      # add to ones count if idx == 0, otherwise subtract
-      # add to zeroes count if idx = 1, otherwise subtract
-      if idx === 0
+      if !only_ones_remain
         ones_count += 1
         zeroes_count -= 1
-      else
-        ones_count -= 1
-        zeroes_count += 1
+        count += uniq_permutations_count_w_set_ones_and_zeroes(ones_count, zeroes_count)
       end
-
-      count += uniq_permutations_count_w_set_ones_and_zeroes(ones_count, zeroes_count)
-      idx += 1
     end
+    bits_arr.shift
   end
 
   count
 end
+
+# p prev_permutations_count(29998)
 
 ### miscellaneous helper methods ###
 def binary_order_of_magnitude(base_ten_num)
