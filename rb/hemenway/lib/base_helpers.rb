@@ -189,3 +189,20 @@ end
 def is_in_inclusive_range?(x, range)
   x >= range[0] && x <= range[1]
 end
+
+# if start out with '100111000', the initial '100' must stay fixed and we're only concerned with '111000' if we're curious about permutations of lesser base value.
+def dynamic_chunk(base_ten_num)
+  base_two_num = binarify(base_ten_num)
+
+  return '' unless base_two_num.index('0')
+
+  # remove first '1'
+  sliced_num = base_two_num.slice(1..base_two_num.length)
+
+  if sliced_num[0] == "0"
+    # chop off initial zeroes
+    sliced_num = sliced_num.slice(sliced_num.index('1')..sliced_num.length)
+  end
+
+  sliced_num
+end

@@ -47,12 +47,16 @@ def count_perms_in_initial_range_noninclusive(num1, num2)
 
   count -= prev_permutations_count(num1) if initial_range_start_num != num1
 
-
+#count == 3368
   current_sq = prev_perfect_square(binary_ones_count(initial_range_start_num))
   current_o_of_mag = binary_order_of_magnitude(initial_range_start_num)
 
   while current_sq
-    count -= uniq_permutations_count((current_sq - 1), current_o_of_mag)
+    dynamic_chunk = dynamic_chunk(initial_range_start_num)
+    ones_count = current_sq
+    zeroes_count = dynamic_chunk.length - current_sq
+    # need to pass in the first '0'
+    count -= uniq_permutations_count_w_set_ones_and_zeroes(ones_count, zeroes_count)
     current_sq = prev_perfect_square(current_sq)
   end
 
