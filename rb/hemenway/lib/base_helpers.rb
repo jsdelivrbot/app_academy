@@ -197,10 +197,6 @@ def has_min_two_binary_bases_in_range?(num1, num2)
   binary_bases.uniq.count >= 2
 end
 
-#17, [16,32]==>true
-#16, [16,32]==>true
-#32, [16,32]==>false
-#33, [16,32]==>false
-def is_in_noninclusive_range?(x, range)
-  x >= range[0] && x < range[1]
+def is_in_inclusive_range?(x, range)
+  x >= range[0] && x <= range[1]
 end
