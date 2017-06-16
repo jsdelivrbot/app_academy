@@ -111,8 +111,8 @@ def uniq_permutations_count_w_set_ones_and_zeroes(ones_count, zeroes_count)
   factorial(ones_count + zeroes_count)/(factorial(ones_count) * factorial(zeroes_count))
 end
 
-def prev_permutations_count(base_ten_num)
-  base_two_num = binarify(base_ten_num)
+def prev_permutations_count(base_ten_or_two_num)
+  base_two_num = base_ten_or_two_num.is_a?(String) ? base_ten_or_two_num : binarify(base_ten_or_two_num)
   bits_arr = base_two_num.chars.slice(1..base_two_num.length)
   count = 0
   only_ones_remain = false
@@ -191,7 +191,7 @@ def is_in_inclusive_range?(x, range)
 end
 
 # if start out with '100111000', the initial '100' must stay fixed and we're only concerned with '111000' if we're curious about permutations of lesser base value.
-def dynamic_chunk(base_ten_num)
+def dynamic_chunk(base_ten_num) #=>inncludes first 1 in output
   base_two_num = binarify(base_ten_num)
 
   return '' unless base_two_num.index('0')
@@ -205,4 +205,22 @@ def dynamic_chunk(base_ten_num)
   end
 
   sliced_num
+end
+
+def static_chunk(base_ten_num)# => excludes first one in output
+  base_two_num = binarify(base_ten_num)
+  static_chunk_str = ''
+
+  return '0' if base_ten_num == 0
+  return '1' unless base_two_num.index('0')
+
+  # remove first '1'
+  sliced_num = base_two_num.slice(1..base_two_num.length)
+  static_chunk_str += '1'
+  if sliced_num[0] == "0"
+    # chop off initial zeroes
+    static_chunk_str += sliced_num.slice(0, sliced_num.index('1'))
+  end
+
+  static_chunk_str
 end
