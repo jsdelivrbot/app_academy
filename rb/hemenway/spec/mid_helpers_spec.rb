@@ -57,7 +57,8 @@ describe "#count_perms_in_initial_range_noninclusive" do
     expect(count_perms_in_initial_range_noninclusive(54,64)).to eq(4)
     expect(count_perms_in_initial_range_noninclusive(54,70)).to eq(4)
 
-    # expect(count_perms_in_initial_range_noninclusive(29998, 32768)).to eq(651)
+    expect(count_perms_in_initial_range_noninclusive(16639, 32768)).to eq(3311)
+    expect(count_perms_in_initial_range_noninclusive(29998, 32768)).to eq(651)
   end
 end
 
@@ -84,10 +85,6 @@ describe "#count_perms_in_final_range_inclusive" do
   end
 
   it "returns correct value on standard input" do
-    # p perfect_bits(4, 11) == 2 =>perfect_bits(4, 11)
-    # p perfect_bits(16, 28) == 2 =>perfect_bits(16, 28)
-    # p perfect_bits(32, 46) == 5 =>perfect_bits(32, 46)
-    # p perfect_bits(16384, 30000) == 2719 =>perfect_bits(16384, 30000)
     expect(count_perms_in_final_range_inclusive(16,28)).to eq(3)
     expect(count_perms_in_final_range_inclusive(32,54)).to eq(8)
     expect(count_perms_in_final_range_inclusive(54,70)).to eq(1)
@@ -103,12 +100,31 @@ describe "#count_perms_in_final_range_inclusive" do
     expect(count_perms_in_final_range_inclusive(1024,2000)).to eq(152)
     expect(count_perms_in_final_range_inclusive(8192,16000)).to eq(1483)
 
-    # expect(count_perms_in_final_range_inclusive(16384,30000)).to eq(2718)
 
-    # expect(count_perms_in_final_range_inclusive(16384,29997)).to eq(2717)
-    # expect(count_perms_in_final_range_inclusive(16384,29998)).to eq(2718)
+    expect(count_perms_in_final_range_inclusive(16384,16400)).to eq(5)
+    expect(count_perms_in_final_range_inclusive(16384,16600)).to eq(56)
 
-    # expect(count_perms_in_final_range_inclusive(9223372036854775808, 9223372040000000000)).to eq(453973524)
+    expect(count_perms_in_final_range_inclusive(16384,16625)).to eq(57)
+    expect(count_perms_in_final_range_inclusive(16384,16635)).to eq(57)
+    expect(count_perms_in_final_range_inclusive(16384,16636)).to eq(57)
+    expect(count_perms_in_final_range_inclusive(16384,16637)).to eq(57)
+    expect(count_perms_in_final_range_inclusive(16384,16638)).to eq(57)
+    expect(count_perms_in_final_range_inclusive(16384,16639)).to eq(58)
+    expect(count_perms_in_final_range_inclusive(16384,16640)).to eq(58)
+    expect(count_perms_in_final_range_inclusive(16384,16650)).to eq(63)
+    expect(count_perms_in_final_range_inclusive(16384,16700)).to eq(73)
+
+    expect(count_perms_in_final_range_inclusive(16384,16776)).to eq(84)
+    expect(count_perms_in_final_range_inclusive(16384,16783)).to eq(84)
+    expect(count_perms_in_final_range_inclusive(16384,16784)).to eq(85)
+
+    expect(count_perms_in_final_range_inclusive(16384,16800)).to eq(86)
+    expect(count_perms_in_final_range_inclusive(16384,17000)).to eq(115)
+    expect(count_perms_in_final_range_inclusive(16384,29997)).to eq(2717)
+    expect(count_perms_in_final_range_inclusive(16384,29998)).to eq(2718)
+    expect(count_perms_in_final_range_inclusive(16384,30000)).to eq(2718)
+
+    expect(count_perms_in_final_range_inclusive(9223372036854775808, 9223372040000000000)).to eq(453973524)
   end
 end
 

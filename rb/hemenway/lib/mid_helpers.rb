@@ -1,7 +1,6 @@
 require 'byebug'
 require 'base_helpers'
 
-
 def count_perms_in_mid_range_noninclusive(num1, num2)
   return 0 unless has_min_two_binary_bases_in_range?(num1, num2)
   min_binary_o_of_mag = binary_order_of_magnitude(initial_base_ten_binary_base_in_range(num1, num2))
@@ -38,11 +37,15 @@ def count_perms_in_initial_range_noninclusive(num1, num2)
   return 0 unless is_in_inclusive_range?(initial_range_start_num, [num1, num2])
   return 0 unless is_in_inclusive_range?(initial_range_end_num, [num1, num2])
   return 0 if is_binary_base?(initial_range_start_num)
+  debugger if num1 == 16639 && num2 == 32768
 
-  # debugger if num1 == 29998 && num2 ==32768
   pre_range_binary_base = prev_binary_base(initial_range_start_num)
 
-  count = count_perms_in_mid_range_noninclusive(pre_range_binary_base, initial_range_end_num) - prev_permutations_count(initial_range_start_num)
+  count = count_perms_in_mid_range_noninclusive(pre_range_binary_base, initial_range_end_num)
+  # debugger if num1 == 29998 && num2 ==32768
+  count -= prev_permutations_count(initial_range_start_num)
+
+  count -= prev_permutations_count(num1) if initial_range_start_num != num1
 
 
   current_sq = prev_perfect_square(binary_ones_count(initial_range_start_num))
@@ -56,15 +59,10 @@ def count_perms_in_initial_range_noninclusive(num1, num2)
   count
 end
 
-# p count_perms_in_initial_range_noninclusive(54, 64) #== 450
-# p count_perms_in_initial_range_noninclusive(30000, 32768) #== 450
-# num1 = 16384
-# num2 = 30000
 def count_perms_in_final_range_inclusive(num1, num2)
   return 0 if no_binary_bases_in_range?(num1, num2)
   return 1 if is_binary_base?(num2)
 
-# debugger if num1 == 16384 && num2 == 30000
   initial_num_in_final_range = final_base_ten_binary_base_in_range(num1, num2)
   final_num_in_final_range = is_perfect_bit?(num2) ? num2 : prev_perfect_bit(num2)
 
@@ -72,6 +70,7 @@ def count_perms_in_final_range_inclusive(num1, num2)
   next_binary_base_beyond_range = next_binary_base(num2)
 
   count = 0
+  # debugger if num1 == 16384 && num2 == 16639
 
   count += 1 if is_perfect_bit?(final_num_in_final_range)
   #count number of perms that would exist if the range end was actually the next binary base

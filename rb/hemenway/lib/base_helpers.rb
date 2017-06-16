@@ -120,13 +120,11 @@ def prev_permutations_count(base_ten_num)
   until bits_arr.length <= 1 || only_ones_remain
 
     if bits_arr.first == '1'
-      dynamic_chunk = bits_arr.slice(1..bits_arr.length)
-      ones_count = dynamic_chunk.count('1')
-      zeroes_count = dynamic_chunk.count('0')
+      ones_count = bits_arr.count('1')
+      zeroes_count = bits_arr.count('0')
       only_ones_remain = zeroes_count.zero?
 
-      if !only_ones_remain
-        ones_count += 1
+      unless only_ones_remain
         zeroes_count -= 1
         count += uniq_permutations_count_w_set_ones_and_zeroes(ones_count, zeroes_count)
       end
@@ -145,27 +143,27 @@ end
 def remove_index(arr, idx)
   arr.slice(0...idx) + arr.slice((idx + 1)..arr.length)
 end
-
-def dynamic_chunk(base_two_num)
-  return '' unless base_two_num.index('0')
-
-  #remove initial ones
-  num = base_two_num.slice((base_two_num.index('0'))..base_two_num.length)
-
-  first_one_idx = num.index('1')
-
-  if first_one_idx
-
-    # change first 1 to 0
-    num[first_one_idx] = '0'
-
-    #slice off first 0, because 1 will have shifted over there
-    return num.slice(1..num.length)
-  else
-    return num
-  end
-
-end
+#
+# def dynamic_chunk(base_two_num)
+#   return '' unless base_two_num.index('0')
+#
+#   #remove initial ones
+#   num = base_two_num.slice((base_two_num.index('0'))..base_two_num.length)
+#
+#   first_one_idx = num.index('1')
+#
+#   if first_one_idx
+#
+#     # change first 1 to 0
+#     num[first_one_idx] = '0'
+#
+#     #slice off first 0, because 1 will have shifted over there
+#     return num.slice(1..num.length)
+#   else
+#     return num
+#   end
+#
+# end
 
 def no_binary_bases_in_range?(num1, num2) #(16,32) deliberately returns true
   return !is_binary_base?(num1) if num1 == num2
