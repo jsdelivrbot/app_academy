@@ -37,27 +37,32 @@ def count_perms_in_initial_range_noninclusive(num1, num2)
   return 0 unless is_in_inclusive_range?(initial_range_start_num, [num1, num2])
   return 0 unless is_in_inclusive_range?(initial_range_end_num, [num1, num2])
   return 0 if is_binary_base?(initial_range_start_num)
-  debugger if num1 == 16639 && num2 == 32768
 
   pre_range_binary_base = prev_binary_base(initial_range_start_num)
 
   count = count_perms_in_mid_range_noninclusive(pre_range_binary_base, initial_range_end_num)
-  # debugger if num1 == 29998 && num2 ==32768
+  # debugger if num1 == 54 && num2 ==64
   count -= prev_permutations_count(initial_range_start_num)
 
   count -= prev_permutations_count(num1) if initial_range_start_num != num1
-
+  # debugger if num1 == 16639 && num2 == 32768
+# debugger
 #count == 3368
   current_sq = prev_perfect_square(binary_ones_count(initial_range_start_num))
   current_o_of_mag = binary_order_of_magnitude(initial_range_start_num)
 
   while current_sq
+    # cut off the initial 1 and first 0's, so that the 'dynamic_chunk' that we're working with will be < initial_range_start_num
     dynamic_chunk = dynamic_chunk(initial_range_start_num)
-    ones_count = current_sq
-    zeroes_count = dynamic_chunk.length - current_sq
-    # need to pass in the first '0'
-    count -= uniq_permutations_count_w_set_ones_and_zeroes(ones_count, zeroes_count)
+    count -= uniq_permutations_count((current_sq - 1), dynamic_chunk.length)
     current_sq = prev_perfect_square(current_sq)
+
+    # dynamic_chunk = dynamic_chunk(initial_range_start_num)
+    # ones_count = current_sq
+    # zeroes_count = dynamic_chunk.length - current_sq
+    # # need to pass in the first '0'
+    # count -= uniq_permutations_count_w_set_ones_and_zeroes(ones_count, zeroes_count)
+    # current_sq = prev_perfect_square(current_sq)
   end
 
   count
