@@ -182,7 +182,7 @@ def no_binary_bases_in_range?(num1, num2) #(16,32) deliberately returns true
   (next_binary_base(num1) > num2) && prev_binary_base(num2) && (prev_binary_base(num2) < num1)
 end
 
-def has_two_binary_bases_in_range?(num1, num2)
+def has_min_two_binary_bases_in_range?(num1, num2)
   return false if num1 == num2
   binary_bases = []
   binary_bases << num1 if is_binary_base?(num1)
@@ -194,6 +194,5 @@ def has_two_binary_bases_in_range?(num1, num2)
   binary_bases << first_binary_base if first_binary_base < num2
   binary_bases << last_binary_base if last_binary_base > num1
 
-  # debugger if num1 ==250 && num2 ==600
   binary_bases.uniq.count >= 2
 end

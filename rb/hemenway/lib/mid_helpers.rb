@@ -3,6 +3,7 @@ require 'base_helpers'
 
 
 def count_perms_in_mid_range_noninclusive(num1, num2)
+  return 0 unless has_min_two_binary_bases_in_range?(num1, num2)
   min_binary_o_of_mag = binary_order_of_magnitude(initial_base_ten_binary_base_in_range(num1, num2))
   max_binary_o_of_mag = binary_order_of_magnitude(final_base_ten_binary_base_in_range(num1, num2))
 
