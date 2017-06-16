@@ -62,18 +62,14 @@ def count_perms_in_initial_range_noninclusive(num1, num2)
   current_sq = highest_possible_sq
   # current_o_of_mag = binary_order_of_magnitude(initial_range_start_num)
 
-
-  # debugger if num1 == 54 && num2 == 64
   while current_sq
-    unless current_sq === initial_sq #skip bc that range has already been accounted for
-    end
-
+    # debugger if num1 == 16640
     if current_sq > initial_sq
       current_sq_end_base_two_num = static_chunk(initial_range_start_num) + '0'
-      current_sq_end_base_two_num += ((current_sq - 1) * '1')
-      current_sq_end_base_two_num += ((binarify(initial_range_start_num).length - current_sq_end_base_two_num.length) * '0')
+      current_sq_end_base_two_num += ('1' * (current_sq - 1))
+      current_sq_end_base_two_num += ('0' * (binarify(initial_range_start_num).length - current_sq_end_base_two_num.length))
 
-      debugger if num1 == 16639
+
       count -= prev_permutations_count(current_sq_end_base_two_num)
     elsif current_sq != initial_sq
       # cut off the initial 1 and first 0's, so that the 'dynamic_chunk' that we're working with will be < initial_range_start_num
