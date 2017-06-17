@@ -273,4 +273,31 @@ describe "miscellaneous helper methods" do
       expect(has_min_two_binary_bases_in_range?(9223372036854775000, 9223372036854776000)).to be(false)
     end
   end
+
+  describe "#static_chunk" do
+    it "returns '' for binary bases" do
+      expect(static_chunk(2**0)).to eq('')
+      expect(static_chunk(2**1)).to eq('')
+      expect(static_chunk(2**2)).to eq('')
+      expect(static_chunk(2**3)).to eq('')
+      expect(static_chunk(2**14)).to eq('')
+    end
+    it "returns '' when binary representation of input is exclusively ones" do
+      expect(static_chunk(2**1 - 1)).to eq('')
+      expect(static_chunk(2**2 - 1)).to eq('')
+      expect(static_chunk(2**3 - 1)).to eq('')
+      expect(static_chunk(2**14 - 1)).to eq('')
+    end
+    it "returns correct value on standard input" do
+      expect(static_chunk(5)).to eq('10')
+      expect(static_chunk(6)).to eq('1')
+      expect(static_chunk(9)).to eq('100')
+      expect(static_chunk(16639)).to eq('1000000')
+      expect(static_chunk(16640)).to eq('100000')
+      expect(static_chunk(16643)).to eq('100000')
+      expect(static_chunk(922)).to eq('1')
+      expect(static_chunk(9223372)).to eq('100')
+      expect(static_chunk(922337203685477500)).to eq('1')
+    end
+  end
 end

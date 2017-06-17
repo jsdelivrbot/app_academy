@@ -113,10 +113,15 @@ end
 
 def prev_permutations_count(base_ten_or_two_num, square = nil)
   base_two_num = base_ten_or_two_num.is_a?(String) ? base_ten_or_two_num : binarify(base_ten_or_two_num)
-  square ||= base_two_num.count('1')
-  bits_arr = base_two_num.chars.slice(1..base_two_num.length)
   count = 0
   only_ones_remain = false
+# debugger
+  if square
+    # static_chunk =
+    bits_arr = base_two_num.chars.slice(1..base_two_num.length)
+  else
+    bits_arr = dynamic_chunk(base_two_num).chars.slice(1..base_two_num.length)
+  end
 
   until bits_arr.length <= 1 || only_ones_remain
 
@@ -191,11 +196,23 @@ def is_in_inclusive_range?(x, range)
   x >= range[0] && x <= range[1]
 end
 
+def static_chunk(base_ten_num)# => excludes first one in output
+  base_two_num = binarify(base_ten_num)
+
+  first_zero_idx = base_two_num.index('0')
+  return '' if is_binary_base?(base_ten_num)
+  return '' unless first_zero_idx
+  return '1' if first_zero_idx > 1
+
+  second_one_idx = first_zero_idx + base_two_num.slice(base_two_num.index('0')..base_two_num.length - 1).index('1')
+  base_two_num.slice(0...second_one_idx)
+end
+
 # if start out with '100111000', the initial '100' must stay fixed and we're only concerned with '111000' if we're curious about permutations of lesser base value.
 def dynamic_chunk(base_ten_num) #=>inncludes first 1 in output
   base_two_num = binarify(base_ten_num)
 
-  return '' unless base_two_num.index('0')
+  return '' unless base_two_num.index('0') || base_ten_num < 23
 
   # remove first '1'
   sliced_num = base_two_num.slice(1..base_two_num.length)
@@ -206,24 +223,6 @@ def dynamic_chunk(base_ten_num) #=>inncludes first 1 in output
   end
 
   sliced_num
-end
-
-def static_chunk(base_ten_num)# => excludes first one in output
-  base_two_num = binarify(base_ten_num)
-  static_chunk_str = ''
-
-  return '0' if base_ten_num == 0
-  return '1' unless base_two_num.index('0')
-
-  # remove first '1'
-  sliced_num = base_two_num.slice(1..base_two_num.length)
-  static_chunk_str += '1'
-  if sliced_num[0] == "0"
-    # chop off initial zeroes
-    static_chunk_str += sliced_num.slice(0, sliced_num.index('1'))
-  end
-
-  static_chunk_str
 end
 #
 # def slices_perm_set?(current_sq, base_ten_num)
