@@ -275,18 +275,18 @@ describe "miscellaneous helper methods" do
   end
 
   describe "#static_chunk" do
-    it "returns '' for binary bases" do
-      expect(static_chunk(2**0)).to eq('')
-      expect(static_chunk(2**1)).to eq('')
-      expect(static_chunk(2**2)).to eq('')
-      expect(static_chunk(2**3)).to eq('')
-      expect(static_chunk(2**14)).to eq('')
+    it "returns binary representation of input when is a binary base" do
+      expect(static_chunk(2**0)).to eq('1')
+      expect(static_chunk(2**1)).to eq('10')
+      expect(static_chunk(2**2)).to eq('100')
+      expect(static_chunk(2**3)).to eq('1000')
+      expect(static_chunk(2**14)).to eq('100000000000000')
     end
     it "returns '' when binary representation of input is exclusively ones" do
-      expect(static_chunk(2**1 - 1)).to eq('')
-      expect(static_chunk(2**2 - 1)).to eq('')
-      expect(static_chunk(2**3 - 1)).to eq('')
-      expect(static_chunk(2**14 - 1)).to eq('')
+      expect(static_chunk(2**1 - 1)).to eq('1')
+      expect(static_chunk(2**2 - 1)).to eq('11')
+      expect(static_chunk(2**3 - 1)).to eq('111')
+      expect(static_chunk(2**14 - 1)).to eq('11111111111111')
     end
     it "returns correct value on standard input" do
       expect(static_chunk(5)).to eq('10')
@@ -296,8 +296,44 @@ describe "miscellaneous helper methods" do
       expect(static_chunk(16640)).to eq('100000')
       expect(static_chunk(16643)).to eq('100000')
       expect(static_chunk(922)).to eq('1')
-      expect(static_chunk(9223372)).to eq('100')
+      expect(static_chunk(9223372)).to eq('1000')
       expect(static_chunk(922337203685477500)).to eq('1')
+    end
+  end
+
+  describe "#dynamic_chunk" do
+    it "returns '' when input is binary base" do
+      expect(dynamic_chunk(2**0)).to eq('')
+      expect(dynamic_chunk(2**1)).to eq('')
+      expect(dynamic_chunk(2**2)).to eq('')
+      expect(dynamic_chunk(2**3)).to eq('')
+      expect(dynamic_chunk(2**14)).to eq('')
+    end
+    it "returns '' when binary representation of input is exclusively ones" do
+      expect(dynamic_chunk(2**1 - 1)).to eq('')
+      expect(dynamic_chunk(2**2 - 1)).to eq('')
+      expect(dynamic_chunk(2**3 - 1)).to eq('')
+      expect(dynamic_chunk(2**14 - 1)).to eq('')
+    end
+    it "returns correct value on standard input" do
+      expect(dynamic_chunk(5)).to eq('1')
+      expect(dynamic_chunk(6)).to eq('10')
+      expect(dynamic_chunk(9)).to eq('1')
+      expect(dynamic_chunk(16639)).to eq('11111111')
+      expect(dynamic_chunk(16640)).to eq('100000000')
+      expect(dynamic_chunk(16643)).to eq('100000011')
+      expect(dynamic_chunk(922)).to eq('110011010')
+      expect(dynamic_chunk(9223372)).to eq('11001011110011001100')
+      expect(dynamic_chunk(922337203685477500)).to eq('10011001100110011001100110011001100110011001100110001111100')
+    end
+
+    it "#static_chunk and #dynamic_chunk complement each other" do
+      expect(static_chunk(5) + dynamic_chunk(5)).to eq(5.to_s(2))
+      expect(static_chunk(6) + dynamic_chunk(6)).to eq(6.to_s(2))
+      expect(static_chunk(16639) + dynamic_chunk(16639)).to eq(16639.to_s(2))
+      expect(static_chunk(16640) + dynamic_chunk(16640)).to eq(16640.to_s(2))
+      expect(static_chunk(16643) + dynamic_chunk(16643)).to eq(16643.to_s(2))
+      expect(static_chunk(922337203685477500) + dynamic_chunk(922337203685477500)).to eq(922337203685477500.to_s(2))
     end
   end
 end

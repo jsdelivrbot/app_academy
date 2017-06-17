@@ -200,8 +200,7 @@ def static_chunk(base_ten_num)# => excludes first one in output
   base_two_num = binarify(base_ten_num)
 
   first_zero_idx = base_two_num.index('0')
-  return '' if is_binary_base?(base_ten_num)
-  return '' unless first_zero_idx
+  return base_two_num if is_binary_base?(base_ten_num) || !first_zero_idx
   return '1' if first_zero_idx > 1
 
   second_one_idx = first_zero_idx + base_two_num.slice(base_two_num.index('0')..base_two_num.length - 1).index('1')
@@ -211,18 +210,7 @@ end
 # if start out with '100111000', the initial '100' must stay fixed and we're only concerned with '111000' if we're curious about permutations of lesser base value.
 def dynamic_chunk(base_ten_num) #=>inncludes first 1 in output
   base_two_num = binarify(base_ten_num)
-
-  return '' unless base_two_num.index('0') || base_ten_num < 23
-
-  # remove first '1'
-  sliced_num = base_two_num.slice(1..base_two_num.length)
-
-  if sliced_num[0] == "0"
-    # chop off initial zeroes
-    sliced_num = sliced_num.slice(sliced_num.index('1')..sliced_num.length)
-  end
-
-  sliced_num
+  base_two_num.slice(static_chunk(base_ten_num).length..(base_two_num.length - 1))
 end
 #
 # def slices_perm_set?(current_sq, base_ten_num)
