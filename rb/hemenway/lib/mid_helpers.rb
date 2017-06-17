@@ -58,22 +58,37 @@ def count_perms_in_initial_range_noninclusive(num1, num2)
 
   dynamic_chunk = dynamic_chunk(initial_range_start_num)
   dynamic_slots_count = dynamic_chunk.length
-  highest_possible_sq = is_perfect_square?(dynamic_slots_count) ? dynamic_slots_count : prev_perfect_square(dynamic_slots_count)
+  highest_possible_sq = is_perfect_square?(dynamic_slots_count + 1) ? dynamic_slots_count + 1 : prev_perfect_square(dynamic_slots_count + 1)
   current_sq = highest_possible_sq
   # current_o_of_mag = binary_order_of_magnitude(initial_range_start_num)
 
   while current_sq
+    # debugger if num1 == 16639
     # debugger if num1 == 16640
-    if current_sq > initial_sq
-      current_sq_end_base_two_num = static_chunk(initial_range_start_num) + '0'
+    if current_sq == 1 || highest_possible_sq == 4
+      is_incomplete_perm_set = false
+    else
+      current_sq_end_base_two_num = static_chunk(initial_range_start_num)
       current_sq_end_base_two_num += ('1' * (current_sq - 1))
-      current_sq_end_base_two_num += ('0' * (binarify(initial_range_start_num).length - current_sq_end_base_two_num.length))
+      if (binarify(initial_range_start_num).length - current_sq_end_base_two_num.length) < 0
+        is_incomplete_perm_set = current_sq > initial_sq
+      else
+        current_sq_end_base_two_num += ('0' * (binarify(initial_range_start_num).length - current_sq_end_base_two_num.length))
+        is_incomplete_perm_set = (current_sq > initial_sq) || current_sq_end_base_two_num > binarify(initial_range_start_num)# || (initial_range_start_num >=16639 && current_sq >=4)
+      end
+    end
 
 
+    # perm_exists_beyond_range = biggest_perm(current_sq, initial_range_start_num) > initial_range_start_num
+    # debugger if num1 == 16640
+
+    if is_incomplete_perm_set
       count -= prev_permutations_count(current_sq_end_base_two_num)
     elsif current_sq != initial_sq
       # cut off the initial 1 and first 0's, so that the 'dynamic_chunk' that we're working with will be < initial_range_start_num
-      count -= uniq_permutations_count(current_sq - 1, dynamic_chunk.length - 1)
+      ones_count = current_sq - 1
+      zeroes_count = dynamic_chunk.length - 1
+      count -= uniq_permutations_count_w_set_ones_and_zeroes(ones_count, zeroes_count)
     end
     current_sq = prev_perfect_square(current_sq)
 

@@ -111,8 +111,9 @@ def uniq_permutations_count_w_set_ones_and_zeroes(ones_count, zeroes_count)
   factorial(ones_count + zeroes_count)/(factorial(ones_count) * factorial(zeroes_count))
 end
 
-def prev_permutations_count(base_ten_or_two_num)
+def prev_permutations_count(base_ten_or_two_num, square = nil)
   base_two_num = base_ten_or_two_num.is_a?(String) ? base_ten_or_two_num : binarify(base_ten_or_two_num)
+  square ||= base_two_num.count('1')
   bits_arr = base_two_num.chars.slice(1..base_two_num.length)
   count = 0
   only_ones_remain = false
@@ -224,3 +225,12 @@ def static_chunk(base_ten_num)# => excludes first one in output
 
   static_chunk_str
 end
+#
+# def slices_perm_set?(current_sq, base_ten_num)
+#   relevant_chunk = static_chunk(base_ten_num)
+#   relevant_chunk = relevant_chunk.slice(1..relevant_chunk.length - 1)
+#   relevant_chunk.
+#
+#   return falseunless relevant_chunk.index('0')
+#      && relevant_chunk.index('0')
+# end

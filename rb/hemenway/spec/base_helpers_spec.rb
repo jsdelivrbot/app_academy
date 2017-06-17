@@ -193,7 +193,6 @@ describe "combinatoric helper methods" do
 
   describe "#prev_permutations_count" do
     it "returns correct values for edge cases" do
-      expect(prev_permutations_count(0)).to be(0)
       expect(prev_permutations_count(1)).to be(0)
       expect(prev_permutations_count(16)).to be(0)
       expect(prev_permutations_count(23)).to be(0)
@@ -205,6 +204,7 @@ describe "combinatoric helper methods" do
       expect(prev_permutations_count(60)).to be(9)
       expect(prev_permutations_count(99)).to be(10)
       expect(prev_permutations_count(120)).to be(19)
+      expect(prev_permutations_count(267)).to be(1)
       expect(prev_permutations_count(267)).to be(1)
     end
   end

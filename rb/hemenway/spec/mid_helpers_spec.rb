@@ -62,6 +62,8 @@ describe "#count_perms_in_initial_range_noninclusive" do
 
     expect(count_perms_in_initial_range_noninclusive(16639, 32768)).to eq(3311)
     expect(count_perms_in_initial_range_noninclusive(16640, 32768)).to eq(3311)
+    expect(count_perms_in_initial_range_noninclusive(16643, 32768)).to eq(3311)
+    expect(count_perms_in_initial_range_noninclusive(16644, 32768)).to eq(3312)
     expect(count_perms_in_initial_range_noninclusive(29998, 32768)).to eq(651)
   end
 end
