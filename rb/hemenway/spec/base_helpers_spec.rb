@@ -7,7 +7,7 @@ describe "base two <=> base ten conversion methods" do
       expect(binarify(1234)).to be_kind_of(String)
     end
     it "raises error if input is wrong type" do
-      expect{binarify('1010101')}.to raise_error('input must be an integer')
+      expect{ binarify('1010101') }.to raise_error('input must be an integer')
     end
     it "returns correct value" do
       expect(binarify(1234)).to eq('10011010010')
@@ -19,7 +19,7 @@ describe "base two <=> base ten conversion methods" do
       expect(base_tenify('10011010010')).to be_kind_of(Integer)
     end
     it "raises error if input is wrong type" do
-      expect{base_tenify(1234)}.to raise_error('input must be a String')
+      expect{ base_tenify(1234) }.to raise_error('input must be a String')
     end
     it "returns correct value" do
       expect(base_tenify('10011010010')).to be(1234)
@@ -72,42 +72,47 @@ describe "perfect bit helper methods" do
 
   describe "#closest_prev_perfect_bit_ones_count" do
     it "handles edges" do
-      expect(closest_prev_perfect_bit_has_same_ones_count('1')).to be(false)
-      expect(closest_prev_perfect_bit_has_same_ones_count('10')).to be(1)
-      expect(closest_prev_perfect_bit_has_same_ones_count('100')).to be(1)
-      expect(closest_prev_perfect_bit_has_same_ones_count('1000')).to be(1)
-      expect(closest_prev_perfect_bit_has_same_ones_count('10000')).to be(1)
+      expect{ closest_prev_perfect_bit_ones_count('1') }.to raise_error('invalid input')
+      expect(closest_prev_perfect_bit_ones_count('10')).to be(1)
+      expect(closest_prev_perfect_bit_ones_count('100')).to be(1)
+      expect(closest_prev_perfect_bit_ones_count('1000')).to be(1)
+      expect(closest_prev_perfect_bit_ones_count('10000')).to be(1)
     end
     it "returns correct value" do
-      expect(closest_prev_perfect_bit_has_same_ones_count('1000000')).to be(4)
-      expect(closest_prev_perfect_bit_has_same_ones_count('1000000111')).to be(1)
-      expect(closest_prev_perfect_bit_has_same_ones_count('1000000110')).to be(1)
-      expect(closest_prev_perfect_bit_has_same_ones_count('1000001110')).to be(4)
-      expect(closest_prev_perfect_bit_has_same_ones_count('1011111111')).to be(4)
-      expect(closest_prev_perfect_bit_has_same_ones_count('111111111')).to be(4)
+      expect(closest_prev_perfect_bit_ones_count('1000000')).to be(4)
+      expect(closest_prev_perfect_bit_ones_count('1000000111')).to be(1)
+      expect(closest_prev_perfect_bit_ones_count('1000000110')).to be(1)
+      expect(closest_prev_perfect_bit_ones_count('1000001110')).to be(4)
+      expect(closest_prev_perfect_bit_ones_count('1011111111')).to be(4)
+      expect(closest_prev_perfect_bit_ones_count('111111111')).to be(4)
     end
   end
 
   describe "#prev_perfect_bit" do
-    it "returns correct value with one input" do
-      expect(prev_perfect_bit(4)).to be(2)
-      expect(prev_perfect_bit(523)).to be(519)
-      expect(prev_perfect_bit(16639)).to be(16608)
-      expect(prev_perfect_bit(1099511627776)).to be(1099511627760)
+    it "raises errors when ones count inputed is greater than the number of slots in the base two num" do
+      expect(prev_perfect_bit(38, 9)).to be(nil) #'100110'
+      expect(prev_perfect_bit(63, 9)).to be(nil) #'111111'
+      expect(prev_perfect_bit(67, 4)).to be(nil) #'1000011'
     end
-    it "returns correct value with two inputs" do
-      expect(prev_perfect_bit(4, 1)).to be(2)
-      expect(prev_perfect_bit(523, 4)).to be(519)
-      expect(prev_perfect_bit(16639, 4)).to be(16608)
-      expect(prev_perfect_bit(16639, 9)).to be(16352)
-      expect(prev_perfect_bit(16639, 9)).to be(16352)
+    it "returns correct value when ones count of initial input == ones_count" do
+      expect(prev_perfect_bit(305, 4)).to be(297)
+      expect(prev_perfect_bit(312, 4)).to be(308)
+      # expect(prev_perfect_bit(16639)).to be(16608)
+      # expect(prev_perfect_bit(1099511627776)).to be(1099511627760)
     end
-    it "handles large inputs" do
-      expect(prev_perfect_bit(2**64 + 2**44 + 2**34 + 2**24 + 2**2)).to eq(2**64 + 2**44 + 2**34 + 2**1)
-      expect(prev_perfect_bit(2**64 + 2**54 + 2**44 + 2**34 + 2**2)).to eq(2**64 + 2**44 + 2**34 + 2**24 + 2**1)
-      expect(prev_perfect_bit(2**64 + 2**2 + 2**1 + 2**0, 1)).to eq(2**64)
-      expect(prev_perfect_bit(2**64 + 2**10 + 2**9 + 2**8)).to eq(2**64 + 2**10 + 2**9 + 2**7)
-    end
+    # it "returns correct value with two inputs" do
+    #   expect(prev_perfect_bit(4, 1)).to be(2)
+    #   expect(prev_perfect_bit(523, 4)).to be(519)
+    #   expect(prev_perfect_bit(16639, 4)).to be(16608)
+    #   expect(prev_perfect_bit(16639, 9)).to be(16352)
+    #   expect(prev_perfect_bit(16639, 9)).to be(16352)
+    # end
+    # it "handles large inputs" do
+    #   expect(prev_perfect_bit(2**64 + 2**44 + 2**34 + 2**24 + 2**2)).to eq(2**64 + 2**44 + 2**34 + 2**1)
+    #   expect(prev_perfect_bit(2**64 + 2**54 + 2**44 + 2**34 + 2**2)).to eq(2**64 + 2**44 + 2**34 + 2**24 + 2**1)
+    #   expect(prev_perfect_bit(2**64 + 2**2 + 2**1 + 2**0, 1)).to eq(2**64)
+    #   expect(prev_perfect_bit(2**64 + 2**10 + 2**9 + 2**8)).to eq(2**64 + 2**10 + 2**9 + 2**7)
+    # end
   end
 
   describe "#is_perfect_bit?" do

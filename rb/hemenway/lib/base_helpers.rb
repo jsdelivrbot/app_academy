@@ -36,6 +36,11 @@ def is_perfect_bit?(base_ten_num)
   is_perfect_square?(binary_ones_count(base_ten_num))
 end
 
+def is_goal_perfect_bit?(base_ten_num, ones_count)
+  base_two_num = binarify(base_ten_num)
+  is_perfect_bit?(base_ten_num) && base_two_num.count('1') == ones_count
+end
+
 def next_perfect_bit(base_ten_num, is_initial_recursion = true)
   return 1 if base_ten_num < 1
 
@@ -49,26 +54,49 @@ def next_perfect_bit(base_ten_num, is_initial_recursion = true)
   end
 end
 
-def prev_perfect_bit(base_ten_num, ones_count = nil, prev_recursion_static_chunk = '')
+def prev_perfect_bit(base_ten_num, ones_count = nil, is_initial_recursion = true)
+  return base_ten_num if is_goal_perfect_bit?(base_ten_num, ones_count) && !is_initial_recursion
   base_two_num = binarify(base_ten_num)
 # debugger
+
+  return nil if ones_count && ones_count > base_two_num.length # '100110', 9
   return nil if base_ten_num < 1
   return base_tenify(base_two_num.slice(0..base_two_num.length-2)) if base_ten_num <= 8 #'100'=> '10'
 
+
   ones_count ||= closest_prev_perfect_bit_ones_count(base_two_num)
 
-  if base_two_num.count('1') == ones_count
-    return base_tenify(prev_permutation(base_two_num))
-  # elsif dynamic_chunk.empty?
-  #   # '11111'
-  #   # '100001111'
-  #   # '10000'
+  if dynamic_chunk(base_ten_num).empty?
+    res = drop_one_o_of_mag(base_two_num, ones_count)
+    res = base_tenify(res)
+    return is_goal_perfect_bit?(res, ones_count) ? res : prev_perfect_bit(res, ones_count)
+    #   # '11111', 1 => '10000'
+    #   # '11111', 4 => '11110'
+    #   # '10001', 1 => '1000'
+    #   # '11111', 9 => error
+    #   # '100001111' => '(0)11110000'
+    #   # '10000' => '(0)1111'
+  else
+    if base_two_num.count('1') == ones_count
+      res = base_tenify(prev_permutation(base_two_num))
+      return res if is_goal_perfect_bit?(res, ones_count)
+    else
+
+    end
+
+  else
+    # '1000011000000' =>
+    # '1000011000000'
   end
 
 end
 
-def trim_ones(base_two_num, ones_count)
-
+def drop_one_o_of_mag(base_two_num, ones_count)
+  res_desired_length = base_two_num.length - 1
+  res = ''
+  res += '1' * ones_count
+  res += '0' * (res_desired_length - res.length)
+  res
 end
 
 def prev_perfect_bit_complex(base_ten_num, ones_count = nil, is_initial_recursion = true)
@@ -88,6 +116,7 @@ def prev_perfect_bit_complex(base_ten_num, ones_count = nil, is_initial_recursio
 end
 
 def closest_prev_perfect_bit_ones_count(base_two_num)
+  raise 'invalid input' if base_tenify(base_two_num) < 2
   if closest_prev_perfect_bit_has_same_ones_count(base_two_num)
     base_two_num.count('1')
   else
