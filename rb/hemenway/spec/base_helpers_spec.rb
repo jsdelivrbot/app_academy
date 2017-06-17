@@ -50,6 +50,7 @@ describe "perfect bit helper methods" do
       it "returns correct value" do
         expect(prev_perfect_bit(4)).to be(2)
         expect(prev_perfect_bit(523)).to be(519)
+        expect(prev_perfect_bit(16639)).to be(16608)
         expect(prev_perfect_bit(1099511627776)).to be(1099511627760)
       end
     end
@@ -57,8 +58,8 @@ describe "perfect bit helper methods" do
       it "returns correct value" do
         expect(prev_perfect_bit(4, 1)).to be(2)
         expect(prev_perfect_bit(523, 4)).to be(519)
-        expect(prev_perfect_bit(1099511627776, 1)).to be(1099511627760)
-        expect(prev_perfect_bit(1099511627776, 1)).to be(1099511627760)
+        expect(prev_perfect_bit(16639, 4)).to be(16608)
+        expect(prev_perfect_bit(16639, 9)).to be(16352)
       end
     end
   end

@@ -51,14 +51,14 @@ def prev_perfect_bit(base_ten_num, ones_count = nil, is_initial_recursion = true
   return nil if base_ten_num < 1
   base_two_num = binarify(base_ten_num)
 
-  has_wrong_ones_count = (ones_count != base_two_num.count('1'))
+  has_wrong_ones_count = !!ones_count && (ones_count != base_two_num.count('1'))
 
-  if is_initial_recursion || !is_perfect_bit?(base_ten_num)
+  if is_initial_recursion || !is_perfect_bit?(base_ten_num) || has_wrong_ones_count
     prev_num = base_ten_num - 1
     return prev_perfect_bit(prev_num, ones_count, false)
 
   # cut out when hits a perfect bit that isn't the initial num
-elsif is_perfect_bit?(base_ten_num)
+  elsif is_perfect_bit?(base_ten_num) && !has_wrong_ones_count
     return base_ten_num
   end
 end
