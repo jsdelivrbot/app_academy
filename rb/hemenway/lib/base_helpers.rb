@@ -47,15 +47,18 @@ def next_perfect_bit(base_ten_num, is_initial_recursion = true)
   end
 end
 
-def prev_perfect_bit(base_ten_num, is_initial_recursion = true)
+def prev_perfect_bit(base_ten_num, ones_count = nil, is_initial_recursion = true)
   return nil if base_ten_num < 1
+  base_two_num = binarify(base_ten_num)
+
+  has_wrong_ones_count = (ones_count != base_two_num.count('1'))
 
   if is_initial_recursion || !is_perfect_bit?(base_ten_num)
     prev_num = base_ten_num - 1
-    return prev_perfect_bit(prev_num, false)
+    return prev_perfect_bit(prev_num, ones_count, false)
 
   # cut out when hits a perfect bit that isn't the initial num
-  elsif is_perfect_bit?(base_ten_num)
+elsif is_perfect_bit?(base_ten_num)
     return base_ten_num
   end
 end
@@ -114,20 +117,26 @@ end
 def prev_permutations_count(base_ten_or_two_num, ones_count_goal)
   base_ten_num = !base_ten_or_two_num.is_a?(String) ? base_ten_or_two_num : binarify(base_ten_or_two_num)
   base_two_num = binarify(base_ten_num)
-
   raise 'only accepts perfect bits' unless is_perfect_bit?(base_ten_num)
-  return 1 if ones_count_goal && ones_count_goal == 1 && !is_binary_base?(base_ten_num) #'11111', and ones_count_goal == 1
-  return 0 if base_two_num.count('1') < 2 #'100000000'
-  return 0 if !base_two_num.index('0') && !ones_count_goal #'111111111'
 
+  # set bits arr to relevant base_ten_num
   if base_two_num.count('1') == ones_count_goal
     dynamic_chunk = dynamic_chunk(base_ten_num)
     static_chunk = static_chunk(base_ten_num)
     bits_arr = dynamic_chunk.chars
+  else
+    initial_binary_base = prev_binary_base(base_ten_num)
+    base_ten_num = prev_perfect_bit(base_ten_num, ones_count_goal)
+    return 0 if base_ten_num < initial_binary_base
   end
 
+  # take care of base cases
+  return 1 if ones_count_goal && ones_count_goal == 1 && !is_binary_base?(base_ten_num) #'11111', and ones_count_goal == 1
+  return 0 if base_two_num.count('1') < 2 #'100000000'
+  return 0 if !base_two_num.index('0') && !ones_count_goal #'111111111'
   # debugger if base_two_num.count('1') != ones_count_goal
 
+  # count previous permutations
   count = 0
   only_ones_remain = false
   until bits_arr.length <= 1 || only_ones_remain
