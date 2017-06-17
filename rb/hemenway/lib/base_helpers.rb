@@ -84,19 +84,86 @@ def prev_perfect_bit(base_ten_num, ones_count = nil, is_initial_recursion = true
 
     end
 
-  else
+  # else
     # '1000011000000' =>
     # '1000011000000'
   end
 
 end
 
-def drop_one_o_of_mag(base_two_num, ones_count)
+def drop_one_o_of_mag(base_two_num, ones_count) #'10011', 4 # '1111', 1
   res_desired_length = base_two_num.length - 1
   res = ''
   res += '1' * ones_count
   res += '0' * (res_desired_length - res.length)
   res
+end #=> '1111' #=> '1000'
+
+def adjust_ones_count(base_two_num, ones_count) #'10100100', 4
+  base_ten_num = base_tenify(base_two_num)
+
+  should_add_ones = base_two_num.count('1') < ones_count
+  should_add_zeroes = base_two_num.count('1') > ones_count
+
+  if has_dynamic_one?(base_two_num)
+    res = shiftbase_two_num
+  end
+
+  until base_two_num.count('1') == ones_count
+    if should_add_ones
+      res_arr = static_chunk(with_shifted_dyn_one).chars
+      res = shift_first_dynamic_one_right(base_two_num)
+
+    elsif should_add_zeroes
+
+    end
+  end
+end # => '100111'
+
+def add_ones(base_two_num, ones_count) #'10100100', 4
+  res = base_two_num
+  should_shift_final_dynamic_one = true
+  shifted_into_last_zero_idx = false
+
+  until res.count('1') == ones_count
+    if has_dynamic_one?(res)
+      if should_shift_final_dynamic_one #'10100010'
+        temp_res = shift_final_dynamic_one_right(res)
+        filled_last_zero = final_zero_idx(temp_res) < final_zero_idx(res)
+        should_shift_final_dynamic_one = filled_last_zero ? true : false
+        if filled_last_zero
+          res = temp_res.dup
+          next
+        end
+      else
+        temp_res = res.dup
+      end
+
+      unless filled_last_zero
+
+
+        first_final_dyn_zero_idx = index_of_first_final_dynamic_zero(temp_res)
+        temp_res[first_final_dyn_zero_idx] = '1' unless filled_last_zero
+
+        filled_last_zero = (first_final_dyn_zero_idx == final_zero_idx(res))
+
+        should_shift_final_dynamic_one = filled_last_zero ? true : false
+
+        # debugger
+      end
+      res = temp_res.dup
+    else
+      temp_res = drop_one_o_of_mag(res, ones_count)
+    end
+  end
+  res
+end
+
+def final_zero_idx(base_two_num)
+  (base_two_num.length - 1) - base_two_num.reverse.index('0')
+end
+
+def subtract_ones(base_two_num, ones_count)
 end
 
 def prev_perfect_bit_complex(base_ten_num, ones_count = nil, is_initial_recursion = true)
@@ -191,6 +258,14 @@ def index_of_final_dynamic_one(base_two_num)
   final_one_idx
 end
 
+def index_of_first_final_dynamic_zero(base_two_num)
+  if has_dynamic_one?(base_two_num)
+    index_of_final_dynamic_one(base_two_num) + 1
+  else
+    nil
+  end
+end
+
 def has_dynamic_one?(base_two_num)
   !!(index_of_final_dynamic_one(base_two_num))
 end
@@ -202,6 +277,27 @@ def shift_final_dynamic_one_right(base_two_num)
   bits_arr[index_of_final_dynamic_one + 1] = '1'
   bits_arr.join('')
 end
+
+# def shift_first_dynamic_one_right(base_two_num)
+#   return nil unless has_dynamic_one?(base_two_num)
+#   base_ten_num = base_tenify(base_two_num)
+#
+#   static_chunk = static_chunk(base_ten_num)
+#   dynamic_chunk = dynamic_chunk(base_ten_num)
+#   first_dyn_one_idx = dynamic_chunk.index('1')
+#   first_dyn_zero_idx = dynamic_chunk.index('0')
+#
+#   dynamic_chunk[first_dyn_one_idx] = '0'
+#   dynamic_chunk[first_dyn_zero_idx] = '1'
+#
+#   static_chunk + dynamic_chunk
+# end
+#
+# def first_dynamic_zero_idx(base_two_num)
+#   return nil unless has_dynamic_one?(base_two_num)
+#   base_ten_num = base_tenify(base_two_num)
+#   first_dyn_zero_idx = dynamic_chunk(base_ten_num).index('0')
+# end
 
 def prev_permutation(base_two_num)
   if has_dynamic_one?(base_two_num)
