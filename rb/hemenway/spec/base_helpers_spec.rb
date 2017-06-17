@@ -45,22 +45,41 @@ describe "perfect square helper methods" do
 end
 
 describe "perfect bit helper methods" do
-  describe "#prev_perfect_bit" do
-    describe "with one arg" do
-      it "returns correct value" do
-        expect(prev_perfect_bit(4)).to be(2)
-        expect(prev_perfect_bit(523)).to be(519)
-        expect(prev_perfect_bit(16639)).to be(16608)
-        expect(prev_perfect_bit(1099511627776)).to be(1099511627760)
-      end
+  describe "#closest_prev_perfect_bit_has_same_ones_count" do
+    it "handles edges" do
+      expect(closest_prev_perfect_bit_has_same_ones_count('1')).to be(false)
+      expect(closest_prev_perfect_bit_has_same_ones_count('10')).to be(false)
     end
-    describe "with two args" do
-      it "returns correct value" do
-        expect(prev_perfect_bit(4, 1)).to be(2)
-        expect(prev_perfect_bit(523, 4)).to be(519)
-        expect(prev_perfect_bit(16639, 4)).to be(16608)
-        expect(prev_perfect_bit(16639, 9)).to be(16352)
-      end
+    it "returns correct value" do
+      expect(closest_prev_perfect_bit_has_same_ones_count('1000000')).to be(false)
+      expect(closest_prev_perfect_bit_has_same_ones_count('1000000111')).to be(false)
+      expect(closest_prev_perfect_bit_has_same_ones_count('1000000110')).to be(false)
+      expect(closest_prev_perfect_bit_has_same_ones_count('1000001110')).to be(true)
+      expect(closest_prev_perfect_bit_has_same_ones_count('1011111111')).to be(false)
+      expect(closest_prev_perfect_bit_has_same_ones_count('111111111')).to be(false)
+    end
+  end
+  describe "#prev_perfect_bit" do
+    it "returns correct value with one input" do
+      expect(prev_perfect_bit(4)).to be(2)
+      expect(prev_perfect_bit(523)).to be(519)
+      expect(prev_perfect_bit(16639)).to be(16608)
+      expect(prev_perfect_bit(1099511627776)).to be(1099511627760)
+    end
+
+    it "returns correct value with two inputs" do
+      expect(prev_perfect_bit(4, 1)).to be(2)
+      expect(prev_perfect_bit(523, 4)).to be(519)
+      expect(prev_perfect_bit(16639, 4)).to be(16608)
+      expect(prev_perfect_bit(16639, 9)).to be(16352)
+      expect(prev_perfect_bit(16639, 9)).to be(16352)
+    end
+
+    it "handles large inputs" do
+      expect(prev_perfect_bit(2**64 + 2**44 + 2**34 + 2**24 + 2**2)).to eq(2**64 + 2**44 + 2**34 + 2**1)
+      expect(prev_perfect_bit(2**64 + 2**54 + 2**44 + 2**34 + 2**2)).to eq(2**64 + 2**44 + 2**34 + 2**24 + 2**1)
+      expect(prev_perfect_bit(2**64 + 2**2 + 2**1 + 2**0, 1)).to eq(2**64)
+      expect(prev_perfect_bit(2**64 + 2**10 + 2**9 + 2**8)).to eq(2**64 + 2**10 + 2**9 + 2**7)
     end
   end
 

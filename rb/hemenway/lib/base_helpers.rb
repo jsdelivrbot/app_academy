@@ -47,9 +47,14 @@ def next_perfect_bit(base_ten_num, is_initial_recursion = true)
   end
 end
 
-def prev_perfect_bit(base_ten_num, ones_count = nil, is_initial_recursion = true)
+def prev_perfect_bit_recursive(base_ten_num, ones_count = nil, is_initial_recursion = true)
   return nil if base_ten_num < 1
   base_two_num = binarify(base_ten_num)
+
+  # wo_initial_one = base_two_num.drop(1)
+  # wo_immediate_zeroes = wo_initial_one.index('1') ? wo_initial_one.drop(wo_initial_one.index('1')) : []
+  # has_room = wo_immediate_zeroes.include?('0')
+  # ones_count ||= (is_perfect_square?(base_two_num.count('1')) && has_room) ? base_two_num.count('1') : prev_perfect_square(base_two_num.count('1'))
 
   has_wrong_ones_count = !!ones_count && (ones_count != base_two_num.count('1'))
 
@@ -61,6 +66,14 @@ def prev_perfect_bit(base_ten_num, ones_count = nil, is_initial_recursion = true
   elsif is_perfect_bit?(base_ten_num) && !has_wrong_ones_count
     return base_ten_num
   end
+end
+
+def closest_prev_perfect_bit_has_same_ones_count(base_two_num)
+  return false if base_tenify(base_two_num) < 2
+  wo_initial_one = base_two_num.chars.drop(1)
+  wo_immediate_zeroes = wo_initial_one.index('1') ? wo_initial_one.drop(wo_initial_one.index('1')) : []
+  has_room = wo_immediate_zeroes.include?('0')
+  is_perfect_square?(base_two_num.count('1')) && has_room
 end
 
 #### binary base helper methods ####
