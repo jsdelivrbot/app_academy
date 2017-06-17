@@ -48,7 +48,10 @@ describe "perfect bit helper methods" do
   describe "#closest_prev_perfect_bit_has_same_ones_count" do
     it "handles edges" do
       expect(closest_prev_perfect_bit_has_same_ones_count('1')).to be(false)
-      expect(closest_prev_perfect_bit_has_same_ones_count('10')).to be(false)
+      expect(closest_prev_perfect_bit_has_same_ones_count('10')).to be(true)
+      expect(closest_prev_perfect_bit_has_same_ones_count('100')).to be(true)
+      expect(closest_prev_perfect_bit_has_same_ones_count('1000')).to be(true)
+      expect(closest_prev_perfect_bit_has_same_ones_count('10000')).to be(false)
     end
     it "returns correct value" do
       expect(closest_prev_perfect_bit_has_same_ones_count('1000000')).to be(false)

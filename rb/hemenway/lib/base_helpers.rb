@@ -51,10 +51,7 @@ def prev_perfect_bit_recursive(base_ten_num, ones_count = nil, is_initial_recurs
   return nil if base_ten_num < 1
   base_two_num = binarify(base_ten_num)
 
-  # wo_initial_one = base_two_num.drop(1)
-  # wo_immediate_zeroes = wo_initial_one.index('1') ? wo_initial_one.drop(wo_initial_one.index('1')) : []
-  # has_room = wo_immediate_zeroes.include?('0')
-  # ones_count ||= (is_perfect_square?(base_two_num.count('1')) && has_room) ? base_two_num.count('1') : prev_perfect_square(base_two_num.count('1'))
+  ones_count ||=
 
   has_wrong_ones_count = !!ones_count && (ones_count != base_two_num.count('1'))
 
@@ -68,8 +65,18 @@ def prev_perfect_bit_recursive(base_ten_num, ones_count = nil, is_initial_recurs
   end
 end
 
+def closest_prev_perfect_bit_ones_count(base_two_num)
+  if closest_prev_perfect_bit_has_same_ones_count(base_two_num)
+    base_two_num.count('1')
+  else
+    prev_perfect_square(base_two_num.count('1'))
+  end
+end
+
 def closest_prev_perfect_bit_has_same_ones_count(base_two_num)
-  return false if base_tenify(base_two_num) < 2
+  return false if base_tenify(base_two_num) < 2 #<'10'
+  return true if base_two_num.length <= 4 && base_two_num.count('1') == 1 #'100'
+
   wo_initial_one = base_two_num.chars.drop(1)
   wo_immediate_zeroes = wo_initial_one.index('1') ? wo_initial_one.drop(wo_initial_one.index('1')) : []
   has_room = wo_immediate_zeroes.include?('0')
