@@ -112,16 +112,55 @@ def uniq_permutations_count_w_set_ones_and_zeroes(ones_count, zeroes_count)
 end
 
 def prev_permutations_count(base_ten_or_two_num, square = nil)
-  base_two_num = base_ten_or_two_num.is_a?(String) ? base_ten_or_two_num : binarify(base_ten_or_two_num)
-  count = 0
+  base_ten_num = !base_ten_or_two_num.is_a?(String) ? base_ten_or_two_num : binarify(base_ten_or_two_num)
+  base_two_num = binarify(base_ten_num)
+  return 1 if square && square == 1 && !is_binary_base?(base_ten_num) #'11111', and square == 1
+  return 0 if base_two_num.count('1') < 2 #'100000000'
+  return 0 if !base_two_num.index('0') && !square #'111111111'
   only_ones_remain = false
-# debugger
-  if square
-    # static_chunk =
-    bits_arr = base_two_num.chars.slice(1..base_two_num.length)
+
+  dynamic_chunk = dynamic_chunk(base_ten_num)
+  static_chunk = static_chunk(base_ten_num)
+  count = 0
+
+  # debugger if base_ten_or_two_num == 70
+  # natural_square = is_perfect_bit?(base_ten_num) ? base_two_num.count('1') : next_perfect_square(base_two_num.count('1'))
+  # square# = given_square ? given_square : natural_square
+
+  # debugger if base_ten_or_two_num == 127
+  ones_count_goal = square ? square : (is_perfect_bit?(base_ten_num) ? base_two_num.count('1') : next_perfect_square(base_two_num.count('1')))
+
+  unless square
+    bits_arr = dynamic_chunk.chars
   else
-    bits_arr = dynamic_chunk(base_two_num).chars.slice(1..base_two_num.length)
+    idx = 0
+    no_lesser_perms_exist = false
+    bits_arr = []
+
+    until bits_arr.count('1') == square || no_lesser_perms_exist
+      if base_two_num.chars.drop(1)[idx]
+        bits_arr << base_two_num[idx]
+        idx += 1
+      else
+        no_lesser_perms_exist = true
+      end
+    end
+
+    if (base_two_num.length - bits_arr.length) > 1
+      bits_arr.concat(('0' * (base_two_num.length - bits_arr.length)).chars)
+    else
+      no_lesser_perms_exist = true
+    end
+
+    return 0 if no_lesser_perms_exist
+
+    # remove static chunk
+    dynamic_bits_arr = dynamic_chunk(static_chunk(bits_arr.join(''))).chars
+    bits_arr = dynamic_bits_arr
+
   end
+
+  return 0 if (bits_arr.count('1') + 1) < ones_count_goal
 
   until bits_arr.length <= 1 || only_ones_remain
 
@@ -212,12 +251,3 @@ def dynamic_chunk(base_ten_num) #=>inncludes first 1 in output
   base_two_num = binarify(base_ten_num)
   base_two_num.slice(static_chunk(base_ten_num).length..(base_two_num.length - 1))
 end
-#
-# def slices_perm_set?(current_sq, base_ten_num)
-#   relevant_chunk = static_chunk(base_ten_num)
-#   relevant_chunk = relevant_chunk.slice(1..relevant_chunk.length - 1)
-#   relevant_chunk.
-#
-#   return falseunless relevant_chunk.index('0')
-#      && relevant_chunk.index('0')
-# end

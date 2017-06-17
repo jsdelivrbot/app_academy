@@ -34,7 +34,6 @@ p 'perfect_bits(10, 16) == 2'
 p perfect_bits(10, 16) == 2
 p 'perfect_bits(100, 128) == 10'
 p perfect_bits(100, 128) == 10
-p 'perfect_bits(1000, 1024) == 6'
 p perfect_bits(1000, 1024) == 6
 p perfect_bits(30000, 32768) == 651 => perfect_bits(30000, 32768)
 p perfect_bits(1099511000000, 1099511627776) == 8657 => perfect_bits(1099511000000, 1099511627776)

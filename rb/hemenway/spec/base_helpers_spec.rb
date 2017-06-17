@@ -191,7 +191,7 @@ describe "combinatoric helper methods" do
   describe "#uniq_permutations_count_w_set_ones_and_zeroes" do
   end
 
-  describe "#prev_permutations_count" do
+  describe "#prev_permutations_count without second argument" do
     it "returns correct values for edge cases" do
       expect(prev_permutations_count(1)).to be(0)
       expect(prev_permutations_count(16)).to be(0)
@@ -199,14 +199,96 @@ describe "combinatoric helper methods" do
       expect(prev_permutations_count(64)).to be(0)
     end
 
+    it "returns 0 when no lesser permutations exist" do
+      expect(prev_permutations_count(39)).to be(0)
+      expect(prev_permutations_count(70)).to be(0)
+      expect(prev_permutations_count(71)).to be(0)
+      expect(prev_permutations_count(519)).to be(0)
+      expect(prev_permutations_count(2**0)).to be(0)
+      expect(prev_permutations_count(2**1)).to be(0)
+      expect(prev_permutations_count(2**2)).to be(0)
+      expect(prev_permutations_count(2**5)).to be(0)
+      expect(prev_permutations_count(2**14)).to be(0)
+
+      expect(prev_permutations_count(2**0 - 1)).to be(0)
+      expect(prev_permutations_count(2**1 - 1)).to be(0)
+      expect(prev_permutations_count(2**2 - 1)).to be(0)
+      expect(prev_permutations_count(2**5 - 1)).to be(0)
+      expect(prev_permutations_count(2**14 - 1)).to be(0)
+    end
+
     it "returns correct value with standard input" do
+      expect(prev_permutations_count(39)).to be(0)
       expect(prev_permutations_count(53)).to be(5)
       expect(prev_permutations_count(60)).to be(9)
+      expect(prev_permutations_count(70)).to be(0)
+      expect(prev_permutations_count(71)).to be(0)
       expect(prev_permutations_count(99)).to be(10)
       expect(prev_permutations_count(120)).to be(19)
       expect(prev_permutations_count(267)).to be(1)
-      expect(prev_permutations_count(267)).to be(1)
+      expect(prev_permutations_count(519)).to be(0)
+      expect(prev_permutations_count(16639)).to be(0)
+      expect(prev_permutations_count(16643)).to be(56)
     end
+  end
+
+  describe "#prev_permutations_count with second argument" do
+    it "returns 1 when square passed as second arg is 1 and num isn't binary base" do
+      expect(prev_permutations_count(127, 1)).to be(1)
+      expect(prev_permutations_count(267, 1)).to be(1)
+      expect(prev_permutations_count(16643, 1)).to be(1)
+    end
+
+    it "returns 0 when no lesser permutations exist" do
+      expect(prev_permutations_count(39)).to be(0)
+      expect(prev_permutations_count(70)).to be(0)
+      expect(prev_permutations_count(71)).to be(0)
+      expect(prev_permutations_count(519)).to be(0)
+      expect(prev_permutations_count(2**0)).to be(0)
+      expect(prev_permutations_count(2**1)).to be(0)
+      expect(prev_permutations_count(2**2)).to be(0)
+      expect(prev_permutations_count(2**5)).to be(0)
+      expect(prev_permutations_count(2**14)).to be(0)
+
+      expect(prev_permutations_count(2**0 - 1)).to be(0)
+      expect(prev_permutations_count(2**1 - 1)).to be(0)
+      expect(prev_permutations_count(2**2 - 1)).to be(0)
+      expect(prev_permutations_count(2**5 - 1)).to be(0)
+      expect(prev_permutations_count(2**14 - 1)).to be(0)
+    end
+    #
+    # it "if given an imperfect bit, treats it like its next_perfect_bit" do
+    #   expect(prev_permutations_count(39)).to be(0)
+    #   expect(prev_permutations_count(70)).to be(0)
+    #   expect(prev_permutations_count(71)).to be(0)
+    #   expect(prev_permutations_count(519)).to be(0)
+    # end
+    #
+    # it "returns correct values for edge cases" do
+    #   expect(prev_permutations_count(1)).to be(0)
+    #   expect(prev_permutations_count(16)).to be(0)
+    #   expect(prev_permutations_count(23)).to be(0)
+    #   expect(prev_permutations_count(64)).to be(0)
+    # end
+
+    #
+    # it "returns correct value when first args square is equal to second arg" do
+    #   expect(prev_permutations_count(53)).to be(5)
+    #   expect(prev_permutations_count(60)).to be(9)
+    #   expect(prev_permutations_count(99)).to be(10)
+    #   expect(prev_permutations_count(120)).to be(19)
+    #   expect(prev_permutations_count(267)).to be(1)
+    #   expect(prev_permutations_count(267)).to be(1)
+    # end
+    #
+    # it "returns correct value with standard input" do
+    #   expect(prev_permutations_count(53)).to be(5)
+    #   expect(prev_permutations_count(60)).to be(9)
+    #   expect(prev_permutations_count(99)).to be(10)
+    #   expect(prev_permutations_count(120)).to be(19)
+    #   expect(prev_permutations_count(267)).to be(1)
+    #   expect(prev_permutations_count(267)).to be(1)
+    # end
   end
 end
 
