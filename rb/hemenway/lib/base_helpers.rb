@@ -2,10 +2,12 @@ require 'byebug'
 
 #### base two <=> base ten conversion methods ####
 def binarify(base_ten_num)
+  raise 'input must be an integer' if base_ten_num.is_a?(String)
   base_ten_num.to_s(2)
 end
 
 def base_tenify(base_two_num)
+  raise 'input must be a String' unless base_two_num.is_a?(String)
   base_two_num.to_i(2)
 end
 
@@ -49,19 +51,23 @@ end
 
 def prev_perfect_bit(base_ten_num, ones_count = nil, prev_recursion_static_chunk = '')
   base_two_num = binarify(base_ten_num)
-
+# debugger
   return nil if base_ten_num < 1
   return base_tenify(base_two_num.slice(0..base_two_num.length-2)) if base_ten_num <= 8 #'100'=> '10'
 
   ones_count ||= closest_prev_perfect_bit_ones_count(base_two_num)
 
-  if dynamic_chunk.empty?
-
-  else
-    # # index of the last one with a zero space next to it, that it will shift into
-    # # index of final zero
-    # base_two_num.length - base_two_num.reverse.index('0')
+  if base_two_num.count('1') == ones_count
+    return base_tenify(prev_permutation(base_two_num))
+  # elsif dynamic_chunk.empty?
+  #   # '11111'
+  #   # '100001111'
+  #   # '10000'
   end
+
+end
+
+def trim_ones(base_two_num, ones_count)
 
 end
 
@@ -169,9 +175,6 @@ def shift_final_dynamic_one_right(base_two_num)
 end
 
 def prev_permutation(base_two_num)
-  # index of the last one with a zero space next to it, that it will shift into
-  # the standard case => '1001110' => '1001101'
-
   if has_dynamic_one?(base_two_num)
     shift_final_dynamic_one_right(base_two_num)
   else

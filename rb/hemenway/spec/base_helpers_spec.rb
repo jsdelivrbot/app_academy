@@ -6,6 +6,9 @@ describe "base two <=> base ten conversion methods" do
     it "returns a string" do
       expect(binarify(1234)).to be_kind_of(String)
     end
+    it "raises error if input is wrong type" do
+      expect{binarify('1010101')}.to raise_error('input must be an integer')
+    end
     it "returns correct value" do
       expect(binarify(1234)).to eq('10011010010')
     end
@@ -14,6 +17,9 @@ describe "base two <=> base ten conversion methods" do
   describe "#base_tenify" do
     it "returns an integer" do
       expect(base_tenify('10011010010')).to be_kind_of(Integer)
+    end
+    it "raises error if input is wrong type" do
+      expect{base_tenify(1234)}.to raise_error('input must be a String')
     end
     it "returns correct value" do
       expect(base_tenify('10011010010')).to be(1234)
