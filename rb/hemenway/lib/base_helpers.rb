@@ -141,27 +141,42 @@ def factorial(n)
   (1..n).inject(:*) || 1
 end
 
-def prev_permutation(base_two_num)
-  bits_arr = base_two_num.chars
-  # index of the last one with a zero space next to it, that it will shift into
-  # the standard case => '1001110' => '1001101'
-
-  final_one_idx = final_one_index_with_zeroes_right(base_two_num)
-  bits_arr[final_one_idx] = '0'
-  bits_arr[final_one_idx + 1] = '1'
-
-end
-
-def final_one_index_with_zeroes_right(base_two_num)
-  # index of final zero
+def index_of_final_dynamic_one(base_two_num)
+  return nil unless base_two_num.count('0') > 0
   base_two_num_rev = base_two_num.reverse
+
+  # index of final zero
   final_zero_idx_rev = base_two_num_rev.index('0')
 
   # index of closest one to the left of that
   final_one_idx_rev = base_two_num_rev.slice((final_zero_idx_rev + 1)..base_two_num_rev.length-1).index('1')
   final_one_idx = base_two_num.length - (final_zero_idx_rev + 1) - (final_one_idx_rev + 1)
 
+  return nil if final_one_idx.zero? #'100011'
   final_one_idx
+end
+
+def has_dynamic_one?(base_two_num)
+  !!(index_of_final_dynamic_one(base_two_num))
+end
+
+def shift_final_dynamic_one_right(base_two_num)
+  bits_arr = base_two_num.chars
+  index_of_final_dynamic_one = index_of_final_dynamic_one(base_two_num)
+  bits_arr[index_of_final_dynamic_one] = '0'
+  bits_arr[index_of_final_dynamic_one + 1] = '1'
+  bits_arr.join('')
+end
+
+def prev_permutation(base_two_num)
+  # index of the last one with a zero space next to it, that it will shift into
+  # the standard case => '1001110' => '1001101'
+
+  if has_dynamic_one?(base_two_num)
+    shift_final_dynamic_one_right(base_two_num)
+  else
+    nil
+  end
 end
 
 #how many 3-digit unique permutation sets exist with n possible nums
