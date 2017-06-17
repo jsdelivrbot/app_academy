@@ -57,19 +57,19 @@ end
 def prev_perfect_bit(base_ten_num, ones_count = nil, is_initial_recursion = true)
   return base_ten_num if is_goal_perfect_bit?(base_ten_num, ones_count) && !is_initial_recursion
   base_two_num = binarify(base_ten_num)
-# debugger
 
-  return nil if ones_count && ones_count > base_two_num.length # '100110', 9
+  return nil if !!ones_count && (ones_count > base_two_num.length) # '100110', 9
   return nil if base_ten_num < 1
   return base_tenify(base_two_num.slice(0..base_two_num.length-2)) if base_ten_num <= 8 #'100'=> '10'
 
-
+  res = adjust_ones_count(base_two_num, ones_count) if base_two_num.count('1') != ones_count
+# debugger if base_ten_num == 16639
   ones_count ||= closest_prev_perfect_bit_ones_count(base_two_num)
-
-  if dynamic_chunk(base_ten_num).empty?
+# debugger
+  if !has_dynamic_one?(res)
     res = drop_one_o_of_mag(base_two_num, ones_count)
     res = base_tenify(res)
-    return is_goal_perfect_bit?(res, ones_count) ? res : prev_perfect_bit(res, ones_count)
+    return is_goal_perfect_bit?(res, ones_count) ? res : prev_perfect_bit(res, ones_count, false)
     #   # '11111', 1 => '10000'
     #   # '11111', 4 => '11110'
     #   # '10001', 1 => '1000'
@@ -81,13 +81,16 @@ def prev_perfect_bit(base_ten_num, ones_count = nil, is_initial_recursion = true
       res = base_tenify(prev_permutation(base_two_num))
       return res if is_goal_perfect_bit?(res, ones_count)
     else
-
+      res = adjust_ones_count(base_two_num, ones_count)
+      return base_tenify(res)
     end
-
-  # else
-    # '1000011000000' =>
-    # '1000011000000'
   end
+  # return base_tenifyres
+
+  # # else
+  #   # '1000011000000' =>
+  #   # '1000011000000'
+  # end
 
 end
 
@@ -101,24 +104,10 @@ end #=> '1111' #=> '1000'
 
 def adjust_ones_count(base_two_num, ones_count) #'10100100', 4
   base_ten_num = base_tenify(base_two_num)
-
-  should_add_ones = base_two_num.count('1') < ones_count
-  should_subtract_ones = base_two_num.count('1') > ones_count
-
-  if should_add_ones
-    res = add_ones(base_two_num, ones_count)
-  elsif should_add_zeroes
-    res = subtract_ones(base_two_num, ones_count)
-  end
-
-  until base_two_num.count('1') == ones_count
-    if should_add_ones
-      res_arr = static_chunk(with_shifted_dyn_one).chars
-      res = shift_first_dynamic_one_right(base_two_num)
-
-    elsif should_add_zeroes
-
-    end
+  if base_two_num.count('1') < ones_count
+    add_ones(base_two_num, ones_count)
+  elsif base_two_num.count('1') > ones_count
+    subtract_ones(base_two_num, ones_count)
   end
 end # => '100111'
 
@@ -174,7 +163,7 @@ def subtract_ones(base_two_num, ones_count)
   res
 end
 
-def prev_perfect_bit_complex(base_ten_num, ones_count = nil, is_initial_recursion = true)
+def prev_perfect_bit_expensive(base_ten_num, ones_count = nil, is_initial_recursion = true)
   return nil if base_ten_num < 1
   base_two_num = binarify(base_ten_num)
 

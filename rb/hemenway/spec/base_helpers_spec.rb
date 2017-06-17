@@ -92,27 +92,27 @@ describe "perfect bit helper methods" do
     it "raises errors when ones count inputed is greater than the number of slots in the base two num" do
       expect(prev_perfect_bit(38, 9)).to be(nil) #'100110'
       expect(prev_perfect_bit(63, 9)).to be(nil) #'111111'
-      expect(prev_perfect_bit(67, 4)).to be(nil) #'1000011'
+      expect(prev_perfect_bit(67, 9)).to be(nil) #'1000011'
     end
     it "returns correct value when ones count of initial input == ones_count" do
       expect(prev_perfect_bit(305, 4)).to be(297)
       expect(prev_perfect_bit(312, 4)).to be(308)
-      # expect(prev_perfect_bit(16639)).to be(16608)
-      # expect(prev_perfect_bit(1099511627776)).to be(1099511627760)
+      expect(prev_perfect_bit(16639)).to be(16608)
+      expect(prev_perfect_bit(1099511627776)).to be(1099511627760)
     end
-    # it "returns correct value with two inputs" do
-    #   expect(prev_perfect_bit(4, 1)).to be(2)
-    #   expect(prev_perfect_bit(523, 4)).to be(519)
-    #   expect(prev_perfect_bit(16639, 4)).to be(16608)
-    #   expect(prev_perfect_bit(16639, 9)).to be(16352)
-    #   expect(prev_perfect_bit(16639, 9)).to be(16352)
-    # end
-    # it "handles large inputs" do
-    #   expect(prev_perfect_bit(2**64 + 2**44 + 2**34 + 2**24 + 2**2)).to eq(2**64 + 2**44 + 2**34 + 2**1)
-    #   expect(prev_perfect_bit(2**64 + 2**54 + 2**44 + 2**34 + 2**2)).to eq(2**64 + 2**44 + 2**34 + 2**24 + 2**1)
-    #   expect(prev_perfect_bit(2**64 + 2**2 + 2**1 + 2**0, 1)).to eq(2**64)
-    #   expect(prev_perfect_bit(2**64 + 2**10 + 2**9 + 2**8)).to eq(2**64 + 2**10 + 2**9 + 2**7)
-    # end
+    it "returns correct value with two inputs" do
+      expect(prev_perfect_bit(4, 1)).to be(2)
+      expect(prev_perfect_bit(523, 4)).to be(519)
+      expect(prev_perfect_bit(16639, 4)).to be(16608)
+      expect(prev_perfect_bit(16639, 9)).to be(16352)
+      expect(prev_perfect_bit(16639, 9)).to be(16352)
+    end
+    it "handles large inputs" do
+      expect(prev_perfect_bit(2**64 + 2**44 + 2**34 + 2**24 + 2**2)).to eq(2**64 + 2**44 + 2**34 + 2**1)
+      expect(prev_perfect_bit(2**64 + 2**54 + 2**44 + 2**34 + 2**2)).to eq(2**64 + 2**44 + 2**34 + 2**24 + 2**1)
+      expect(prev_perfect_bit(2**64 + 2**2 + 2**1 + 2**0, 1)).to eq(2**64)
+      expect(prev_perfect_bit(2**64 + 2**10 + 2**9 + 2**8)).to eq(2**64 + 2**10 + 2**9 + 2**7)
+    end
   end
 
   describe "#is_perfect_bit?" do
