@@ -111,29 +111,25 @@ def uniq_permutations_count_w_set_ones_and_zeroes(ones_count, zeroes_count)
   factorial(ones_count + zeroes_count)/(factorial(ones_count) * factorial(zeroes_count))
 end
 
-def prev_permutations_count(base_ten_or_two_num, ones_count_goal = nil) #only works on perfect bits
+def prev_permutations_count(base_ten_or_two_num, ones_count_goal)
   base_ten_num = !base_ten_or_two_num.is_a?(String) ? base_ten_or_two_num : binarify(base_ten_or_two_num)
   base_two_num = binarify(base_ten_num)
-  p base_ten_or_two_num unless is_perfect_bit?(base_ten_num)
+
   raise 'only accepts perfect bits' unless is_perfect_bit?(base_ten_num)
   return 1 if ones_count_goal && ones_count_goal == 1 && !is_binary_base?(base_ten_num) #'11111', and ones_count_goal == 1
   return 0 if base_two_num.count('1') < 2 #'100000000'
   return 0 if !base_two_num.index('0') && !ones_count_goal #'111111111'
-  only_ones_remain = false
 
-  dynamic_chunk = dynamic_chunk(base_ten_num)
-  static_chunk = static_chunk(base_ten_num)
+  if base_two_num.count('1') == ones_count_goal
+    dynamic_chunk = dynamic_chunk(base_ten_num)
+    static_chunk = static_chunk(base_ten_num)
+    bits_arr = dynamic_chunk.chars
+  end
+
+  # debugger if base_two_num.count('1') != ones_count_goal
+
   count = 0
-
-  # debugger if base_ten_or_two_num == 70
-  # natural_ones_count_goal = is_perfect_bit?(base_ten_num) ? base_two_num.count('1') : next_perfect_ones_count_goal(base_two_num.count('1'))
-  # ones_count_goal# = given_ones_count_goal ? given_ones_count_goal : natural_ones_count_goal
-
-  # debugger if base_ten_or_two_num == 16640
-  ones_count_goal = ones_count_goal ? ones_count_goal : (is_perfect_bit?(base_ten_num) ? base_two_num.count('1') : next_perfect_ones_count_goal(base_two_num.count('1')))
-
-  bits_arr = dynamic_chunk.chars
-
+  only_ones_remain = false
   until bits_arr.length <= 1 || only_ones_remain
 
     if bits_arr.first == '1'
