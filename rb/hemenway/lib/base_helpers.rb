@@ -47,11 +47,27 @@ def next_perfect_bit(base_ten_num, is_initial_recursion = true)
   end
 end
 
-def prev_perfect_bit_recursive(base_ten_num, ones_count = nil, is_initial_recursion = true)
-  return nil if base_ten_num < 1
+def prev_perfect_bit(base_ten_num, ones_count = nil, prev_recursion_static_chunk = '')
   base_two_num = binarify(base_ten_num)
 
-  ones_count ||=
+  return nil if base_ten_num < 1
+  return base_tenify(base_two_num.slice(0..base_two_num.length-2)) if base_ten_num <= 8 #'100'=> '10'
+
+  ones_count ||= closest_prev_perfect_bit_ones_count(base_two_num)
+
+  if dynamic_chunk.empty?
+
+  else
+    # # index of the last one with a zero space next to it, that it will shift into
+    # # index of final zero
+    # base_two_num.length - base_two_num.reverse.index('0')
+  end
+
+end
+
+def prev_perfect_bit_complex(base_ten_num, ones_count = nil, is_initial_recursion = true)
+  return nil if base_ten_num < 1
+  base_two_num = binarify(base_ten_num)
 
   has_wrong_ones_count = !!ones_count && (ones_count != base_two_num.count('1'))
 
@@ -82,6 +98,7 @@ def closest_prev_perfect_bit_has_same_ones_count(base_two_num)
   has_room = wo_immediate_zeroes.include?('0')
   is_perfect_square?(base_two_num.count('1')) && has_room
 end
+
 
 #### binary base helper methods ####
 def is_binary_base?(num)
@@ -122,6 +139,29 @@ end
 #### combinatoric helper methods ####
 def factorial(n)
   (1..n).inject(:*) || 1
+end
+
+def prev_permutation(base_two_num)
+  bits_arr = base_two_num.chars
+  # index of the last one with a zero space next to it, that it will shift into
+  # the standard case => '1001110' => '1001101'
+
+  final_one_idx = final_one_index_with_zeroes_right(base_two_num)
+  bits_arr[final_one_idx] = '0'
+  bits_arr[final_one_idx + 1] = '1'
+
+end
+
+def final_one_index_with_zeroes_right(base_two_num)
+  # index of final zero
+  base_two_num_rev = base_two_num.reverse
+  final_zero_idx_rev = base_two_num_rev.index('0')
+
+  # index of closest one to the left of that
+  final_one_idx_rev = base_two_num_rev.slice((final_zero_idx_rev + 1)..base_two_num_rev.length-1).index('1')
+  final_one_idx = base_two_num.length - (final_zero_idx_rev + 1) - (final_one_idx_rev + 1)
+
+  final_one_idx
 end
 
 #how many 3-digit unique permutation sets exist with n possible nums
