@@ -236,6 +236,20 @@ describe "combinatoric helper methods" do
     end
   end
 
+  describe "#prev_permutation" do
+    it "handles base case properly" do
+      expect(prev_permutation('1')).to eq(nil)
+      expect(prev_permutation('10')).to eq(nil)
+      expect(prev_permutation('100000')).to eq(nil)
+      expect(prev_permutation('100111')).to eq(nil)
+      expect(prev_permutation('1111')).to eq(nil)
+    end
+    it "returns correct value" do
+      expect(prev_permutation('10010')).to eq('10001')
+      expect(prev_permutation('1001010101')).to eq('1001010011')
+    end
+  end
+
   describe "#uniq_permutations_count" do
   end
 
