@@ -306,19 +306,22 @@ def uniq_permutations_count_w_set_ones_and_zeroes(ones_count, zeroes_count)
 end
 
 def prev_permutations_count(base_ten_or_two_num, ones_count_goal)
+  # debugger
   base_ten_num = !base_ten_or_two_num.is_a?(String) ? base_ten_or_two_num : binarify(base_ten_or_two_num)
   base_two_num = binarify(base_ten_num)
   raise 'only accepts perfect bits' unless is_perfect_bit?(base_ten_num)
 
   # set bits arr to relevant base_ten_num
+  # debugger if base_ten_or_two_num == 16643 && ones_count_goal == 9
   if base_two_num.count('1') == ones_count_goal
     dynamic_chunk = dynamic_chunk(base_ten_num)
     static_chunk = static_chunk(base_ten_num)
     bits_arr = dynamic_chunk.chars
   else
     initial_binary_base = prev_binary_base(base_ten_num)
-    base_ten_num = prev_perfect_bit(base_ten_num, ones_count_goal)
-    return 0 if base_ten_num < initial_binary_base
+    prev_bit = prev_perfect_bit(base_ten_num, ones_count_goal)
+    return 0 if prev_bit < initial_binary_base
+    bits_arr = dynamic_chunk(prev_bit).chars
   end
 
   # take care of base cases
@@ -330,6 +333,7 @@ def prev_permutations_count(base_ten_or_two_num, ones_count_goal)
   # count previous permutations
   count = 0
   only_ones_remain = false
+
   until bits_arr.length <= 1 || only_ones_remain
 
     if bits_arr.first == '1'
@@ -343,6 +347,22 @@ def prev_permutations_count(base_ten_or_two_num, ones_count_goal)
       end
     end
     bits_arr.shift
+  end
+
+  count
+end
+
+def prev_permutations_count_broken_set(base_ten_num)
+  dynamic_chunk = dynamic_chunk(base_ten_num)
+  dynamic_slots_count = dynamic_chunk.length
+  highest_possible_sq = is_perfect_square?(dynamic_slots_count + 1) ? dynamic_slots_count + 1 : prev_perfect_square(dynamic_slots_count + 1)
+  current_sq = highest_possible_sq
+
+  count = 0
+
+  while current_sq
+    count += prev_permutations_count(base_ten_num, current_sq) # this might go lower that prev binary base
+    current_sq = prev_perfect_square(current_sq)
   end
 
   count
