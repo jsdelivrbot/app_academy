@@ -313,7 +313,7 @@ describe "combinatoric helper methods" do
       # expect(prev_permutations_count(16639, 4)).to be('asdf')
       expect(prev_permutations_count(16639, 9)).to be(0)
       # expect(prev_permutations_count(16643, 4)).to be(56)
-      expect(prev_permutations_count(16643, 9)).to be(0)
+      expect(prev_permutations_count(16643, 9)).to be(1)
     end
   end
 end

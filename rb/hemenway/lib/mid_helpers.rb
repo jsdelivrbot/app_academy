@@ -39,7 +39,8 @@ def count_perms_in_initial_range_noninclusive(num1, num2)
   return 0 if is_binary_base?(initial_range_start_num)
 
   pre_range_binary_base = prev_binary_base(initial_range_start_num)
-
+  debugger if num1 == 16640
+  debugger if num1 == 16639
   count = count_perms_in_mid_range_noninclusive(pre_range_binary_base, initial_range_end_num)
   #39count == 3368
   #40count == 3368
@@ -80,7 +81,6 @@ def count_perms_in_initial_range_noninclusive(num1, num2)
 #
 #
 #     # perm_exists_beyond_range = biggest_perm(current_sq, initial_range_start_num) > initial_range_start_num
-#     # debugger if num1 == 16640
 #
 #     if is_incomplete_perm_set
 #       count -= prev_permutations_count(current_sq_end_base_two_num)
