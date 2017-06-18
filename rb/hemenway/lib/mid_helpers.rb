@@ -23,7 +23,7 @@ def count_perms_in_mid_range_noninclusive(num1, num2)
       current_sq = next_sq
     end
   end
-
+# 
   count
 end
 
@@ -39,8 +39,8 @@ def count_perms_in_initial_range_noninclusive(num1, num2)
   return 0 if is_binary_base?(initial_range_start_num)
 
   pre_range_binary_base = prev_binary_base(initial_range_start_num)
-  debugger if num1 == 16640
-  debugger if num1 == 16639
+  # debugger if num1 == 1000
+  # debugger if num1 == 16639
   count = count_perms_in_mid_range_noninclusive(pre_range_binary_base, initial_range_end_num)
   #39count == 3368
   #40count == 3368

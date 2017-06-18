@@ -41,4 +41,7 @@ describe "#perfect_bits" do
     expect(perfect_bits(16,47)).to be(9)
     expect(perfect_bits(16,140)).to be(39)
   end
+  it "returns correct value with standard input" do
+    expect(perfect_bits(3456345634563,3456345634563000)).to be(393596500205643)
+  end
 end
