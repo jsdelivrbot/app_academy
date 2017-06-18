@@ -3,7 +3,7 @@ require 'base_helpers'
 require 'mid_helpers'
 
 def perfect_bits(num1, num2)
-  return is_perfect_bit?(num1) if num1 == num2
+  return (is_perfect_bit?(num1) ? 1 : 0) if num1 == num2
   num1 = is_perfect_bit?(num1) ? num1 : next_perfect_bit(num1)
   num2 = is_perfect_bit?(num2) ? num2 : prev_perfect_bit(num2)
   count = 0

@@ -306,7 +306,6 @@ def uniq_permutations_count_w_set_ones_and_zeroes(ones_count, zeroes_count)
 end
 
 def prev_permutations_count(base_ten_or_two_num, ones_count_goal)
-  # debugger
   base_ten_num = !base_ten_or_two_num.is_a?(String) ? base_ten_or_two_num : binarify(base_ten_or_two_num)
   base_two_num = binarify(base_ten_num)
   raise 'only accepts perfect bits' unless is_perfect_bit?(base_ten_num)
@@ -354,6 +353,7 @@ def prev_permutations_count(base_ten_or_two_num, ones_count_goal)
 end
 
 def prev_permutations_count_broken_set(base_ten_num)
+
   dynamic_chunk = dynamic_chunk(base_ten_num)
   dynamic_slots_count = dynamic_chunk.length
   highest_possible_sq = is_perfect_square?(dynamic_slots_count + 1) ? dynamic_slots_count + 1 : prev_perfect_square(dynamic_slots_count + 1)
