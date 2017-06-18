@@ -28,5 +28,3 @@ def perfect_bits(num1, num2)
 
   count
 end
-
-p perfect_bits(3456345634563,3456345634563000)
