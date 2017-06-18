@@ -54,6 +54,10 @@ describe "#count_perms_in_initial_range_noninclusive" do
   it "returns correct value on standard input" do
     expect(count_perms_in_initial_range_noninclusive(3,4)).to eq(0)
     expect(count_perms_in_initial_range_noninclusive(3,31)).to eq(0)
+    expect(count_perms_in_initial_range_noninclusive(23,32)).to eq(4)
+    expect(count_perms_in_initial_range_noninclusive(25,32)).to eq(3)
+    expect(count_perms_in_initial_range_noninclusive(27,32)).to eq(3)
+    expect(count_perms_in_initial_range_noninclusive(28,32)).to eq(2)
     expect(count_perms_in_initial_range_noninclusive(54,64)).to eq(4)
     expect(count_perms_in_initial_range_noninclusive(54,70)).to eq(4)
 
@@ -61,11 +65,11 @@ describe "#count_perms_in_initial_range_noninclusive" do
     expect(count_perms_in_initial_range_noninclusive(100,128)).to eq(9)
     expect(count_perms_in_initial_range_noninclusive(1000,1024)).to eq(5)
 
-    expect(count_perms_in_initial_range_noninclusive(16639, 32768)).to eq(3311) #=> 3312
+    expect(count_perms_in_initial_range_noninclusive(16639, 32768)).to eq(3311)
     expect(count_perms_in_initial_range_noninclusive(16640, 32768)).to eq(3311)
     expect(count_perms_in_initial_range_noninclusive(16643, 32768)).to eq(3311)
-    expect(count_perms_in_initial_range_noninclusive(16644, 32768)).to eq(3312) # => 3310
-    expect(count_perms_in_initial_range_noninclusive(29998, 32768)).to eq(651) # 652
+    expect(count_perms_in_initial_range_noninclusive(16644, 32768)).to eq(3312)
+    expect(count_perms_in_initial_range_noninclusive(29998, 32768)).to eq(651)
   end
 end
 
@@ -134,11 +138,3 @@ describe "#count_perms_in_final_range_inclusive" do
     expect(count_perms_in_final_range_inclusive(9223372036854775808, 9223372040000000000)).to eq(453973524)
   end
 end
-
-
-
-# p count_perms_in_final_range_inclusive(10, 33) #==
-# p count_perms_in_final_range_inclusive(32, 33) #== 0
-#
-# p count_perms_in_final_range_inclusive(23,46) #==
-# p count_perms_in_final_range_inclusive(32,46) #== 5

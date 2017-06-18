@@ -313,6 +313,7 @@ def prev_permutations_count(base_ten_or_two_num, ones_count_goal)
 
   # set bits arr to relevant base_ten_num
   # debugger if base_ten_or_two_num == 16643 && ones_count_goal == 9
+  count = 0
   if base_two_num.count('1') == ones_count_goal
     dynamic_chunk = dynamic_chunk(base_ten_num)
     static_chunk = static_chunk(base_ten_num)
@@ -320,6 +321,7 @@ def prev_permutations_count(base_ten_or_two_num, ones_count_goal)
   else
     initial_binary_base = prev_binary_base(base_ten_num)
     prev_bit = prev_perfect_bit(base_ten_num, ones_count_goal)
+    count += 1 if is_goal_perfect_bit?(prev_bit, ones_count_goal)
     return 0 if prev_bit < initial_binary_base
     bits_arr = dynamic_chunk(prev_bit).chars
   end
@@ -331,7 +333,6 @@ def prev_permutations_count(base_ten_or_two_num, ones_count_goal)
   # debugger if base_two_num.count('1') != ones_count_goal
 
   # count previous permutations
-  count = 0
   only_ones_remain = false
 
   until bits_arr.length <= 1 || only_ones_remain
@@ -376,27 +377,6 @@ end
 def remove_index(arr, idx)
   arr.slice(0...idx) + arr.slice((idx + 1)..arr.length)
 end
-#
-# def dynamic_chunk(base_two_num)
-#   return '' unless base_two_num.index('0')
-#
-#   #remove initial ones
-#   num = base_two_num.slice((base_two_num.index('0'))..base_two_num.length)
-#
-#   first_one_idx = num.index('1')
-#
-#   if first_one_idx
-#
-#     # change first 1 to 0
-#     num[first_one_idx] = '0'
-#
-#     #slice off first 0, because 1 will have shifted over there
-#     return num.slice(1..num.length)
-#   else
-#     return num
-#   end
-#
-# end
 
 def no_binary_bases_in_range?(num1, num2) #(16,32) deliberately returns true
   return !is_binary_base?(num1) if num1 == num2
